@@ -33,6 +33,44 @@
         return 'neutral';
     }
 
+    const MATRIX_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*<>[]{}|/\\';
+
+    function matrixReveal(element, finalText, duration) {
+        duration = duration || 1800;
+        const len = finalText.length;
+        const lockInterval = duration / (len + 1);
+        let locked = 0;
+        let frame;
+
+        function scramble() {
+            let display = '';
+            for (let i = 0; i < len; i++) {
+                if (i < locked) {
+                    display += finalText[i];
+                } else if (finalText[i] === ' ') {
+                    display += ' ';
+                } else {
+                    display += MATRIX_CHARS[Math.floor(Math.random() * MATRIX_CHARS.length)];
+                }
+            }
+            element.textContent = display;
+            if (locked <= len) {
+                frame = requestAnimationFrame(scramble);
+            }
+        }
+
+        scramble();
+
+        const lockTimer = setInterval(function () {
+            locked++;
+            if (locked > len) {
+                clearInterval(lockTimer);
+                cancelAnimationFrame(frame);
+                element.textContent = finalText;
+            }
+        }, lockInterval);
+    }
+
     function getBadgeHTML(badge) {
         return `<span class="badge badge-${badge}">${badge.replace(/_/g, ' ')}</span>`;
     }
@@ -238,8 +276,8 @@
 
         const { verdict, cssClass } = calculateOverallVerdict(allBadges);
         const verdictCard = document.getElementById('overallVerdict');
-        verdictCard.querySelector('.verdict-value').textContent = verdict;
         verdictCard.className = `verdict-card ${cssClass}`;
+        matrixReveal(verdictCard.querySelector('.verdict-value'), verdict);
 
         // Update AI summary
         document.getElementById('aiSummary').textContent = data.ai_summary;

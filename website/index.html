@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Are Devs Cooked? | IT Job Market Health Tracker</title>
     <meta name="description" content="Real-time tracking of IT job market health across consultancies, big tech, and AI labs">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main class="container">
-        <!-- Overall Verdict -->
         <section class="verdict-section">
             <div class="verdict-card" id="overallVerdict">
-                <div class="verdict-title">🔥 Are Devs Cooked?</div>
+                <div class="verdict-title">&gt; Are Devs Cooked?</div>
                 <div class="verdict-value">Loading...</div>
                 <div class="verdict-updated" id="lastUpdated">Loading...</div>
             </div>
         </section>
 
-        <!-- AI Summary Section -->
         <section class="summary-section">
             <div class="summary-card">
                 <p id="aiSummary" class="summary-text">Loading market analysis...</p>
             </div>
         </section>
 
-        <!-- Four Tiers Dashboard -->
         <div class="tiers-grid">
-            <!-- Stock Index: IT Consultancies Market (LEFT SIDE) -->
             <section class="tier-card stock-tier">
                 <div class="tier-header">
-                    <h2>📈 IT Consultancies Stock Index</h2>
+                    <h2>$ IT Consultancies :: STOCK_INDEX</h2>
                 </div>
 
                 <div class="metric-section">
@@ -43,19 +42,16 @@
                             <span class="label">Index Value</span>
                         </div>
                         <div class="index-changes" id="stockIndexChanges">
-                            <!-- Populated by JavaScript -->
                         </div>
                     </div>
                     <div class="companies-list" id="stockCompaniesList">
-                        <!-- Populated by JavaScript -->
                     </div>
                 </div>
             </section>
 
-            <!-- Low-End: IT Consultancies -->
             <section class="tier-card low-end">
                 <div class="tier-header">
-                    <h2>🔧 IT Consultancies Headcount</h2>
+                    <h2>$ IT Consultancies :: HEADCOUNT</h2>
                 </div>
 
                 <div class="metric-section">
@@ -63,15 +59,13 @@
                         <span class="badge">neutral</span>
                     </div>
                     <div class="companies-list" id="lowEndHeadcount">
-                        <!-- Populated by JavaScript -->
                     </div>
                 </div>
             </section>
 
-            <!-- Medium-End: Big Tech -->
             <section class="tier-card medium-end">
                 <div class="tier-header">
-                    <h2>💼 Big Tech Headcount</h2>
+                    <h2>$ Big Tech :: HEADCOUNT</h2>
                 </div>
 
                 <div class="metric-section">
@@ -79,15 +73,13 @@
                         <span class="badge">neutral</span>
                     </div>
                     <div class="companies-list" id="mediumEndHeadcount">
-                        <!-- Populated by JavaScript -->
                     </div>
                 </div>
             </section>
 
-            <!-- High-End: AI Labs -->
             <section class="tier-card high-end">
                 <div class="tier-header">
-                    <h2>🚀 AI Labs Job Postings</h2>
+                    <h2>$ AI Labs :: JOB_POSTINGS</h2>
                 </div>
 
                 <div class="metric-section">
@@ -95,19 +87,17 @@
                         <span class="badge">neutral</span>
                     </div>
                     <div class="companies-list" id="highEndJobs">
-                        <!-- Populated by JavaScript -->
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- Legend -->
         <section class="legend-section">
-            <h3>Badge Legend</h3>
+            <h3>&gt; BADGE_LEGEND</h3>
             <div class="legend-grid">
                 <div class="legend-item">
                     <span class="badge badge-strong">Strong</span>
-                    <span>≥ +5% growth (headcount) or ≥ +10 jobs</span>
+                    <span>&gt;= +5% growth (headcount) or &gt;= +10 jobs</span>
                 </div>
                 <div class="legend-item">
                     <span class="badge badge-neutral">Neutral</span>
@@ -123,7 +113,7 @@
                 </div>
                 <div class="legend-item">
                     <span class="badge badge-collapsing">Collapsing</span>
-                    <span>≤ -20% decline or ≤ -40 jobs</span>
+                    <span>&lt;= -20% decline or &lt;= -40 jobs</span>
                 </div>
             </div>
         </section>
@@ -131,8 +121,8 @@
 
     <footer>
         <div class="container">
-            <p>Data collected via Gemini API with web search grounding</p>
-            <p>Updated daily at 08:05 UTC | <a href="https://github.com/yourusername/aredevscooked" target="_blank">View on GitHub</a></p>
+            <p>&gt; Data collected via Gemini API with web search grounding</p>
+            <p>&gt; Updated daily at 08:05 UTC | <a href="https://github.com/yourusername/aredevscooked" target="_blank">[ VIEW SOURCE ON GITHUB ]</a></p>
         </div>
     </footer>
 
