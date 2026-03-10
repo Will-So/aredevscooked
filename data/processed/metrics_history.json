@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-01T08:22:16.491046+00:00"
+    "last_updated": "2026-03-10T08:31:36.826335+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5665,6 +5665,160 @@
         "OpenAI": {
           "total_technical_jobs": 345,
           "collection_date": "2026-03-01"
+        }
+      }
+    },
+    "2026-03-10": {
+      "date": "2026-03-10",
+      "timestamp": "2026-03-10T08:31:36.826312+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1357.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4317.2,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 64.65,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.42,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2498.8,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1328.4,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.31,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226281,
+          "data_date": "2026-02-17",
+          "source_urls": [
+            "https://www.goodreturns.in/news/tech-layoffs-will-indian-it-players-follow-the-us-job-cuts-trend-1433037.html",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFNc2xmJ7aM2doScnAqB0FBOUqO_vh3ZQia1hliDUDmD4UzE3HE8rVAwCAHG0wFwaxniPWirNOtWerM4dKbzwgKqx4qN2x8Srl8Dyp8CWdvqzZXqLoSN_sL18GRC3mOWhd9O5ghP_dZ7PG-49JOAtmVntq7u9Kc_PLo3LfF629dTZ-_Hbaazms5EDSf5XMdKnqQ0aMKiNYK7NlhHp9n6MiuC6hmvfaEACNPRbU=",
+            "https://economictimes.indiatimes.com/tech/information-tech/hcl-lays-off-350-employees-working-on-microsoft-project-report/articleshow/94178032.cms?from=mdr",
+            "https://www.hrkatha.com/news/hcl-tech-to-withhold-salary-increments-for-senior-employees-in-2023/",
+            "https://www.angelone.in/news/stocks/hcltech-share-price-in-focus-revenue-rises-13-percent-yoy-in-q3-fy26-results",
+            "https://www.angelone.in/news/stocks/hcltech-workforce-dips-slightly-in-q3fy26-adds-nearly-2-900-freshers",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYBuvuLd9ua18YL42YKQs6_xGsWZFWHPyWITuBBcJRFMr2Dc9dpaenUvw49JGBxT6jpoE8rh0t4gjj7Gje1Ba6JzblIV5-5ECwFpPMCd4HciTgjBhb2McFwzyQketephMiikw-BLV8nRcwHi3UAikKXjWkHmc3LshYF6g3qOh6GJGmAQabv6Udcit-_E5O7SCZLRgkBOXz",
+            "https://timesofindia.indiatimes.com/business/india-business/hcltech-q3-results-net-profit-falls-11-2-to-rs-4076-crore-revenue-rises-13-3/articleshow/126484523.cms",
+            "https://www.outlookbusiness.com/corporate/hcltech-q3-fy26-profit-falls-11-yoy-revenue-rises-13",
+            "https://economictimes.indiatimes.com/tech/information-tech/hcltech-uses-ai-to-enhance-jobs-not-cut-them-chairperson-roshni-nadar/articleshow/123539931.cms?from=mdr",
+            "https://www.outlookbusiness.com/corporate/hcltech-announces-restructuring-programme-to-cut-jobs-outside-india",
+            "https://www.outlookbusiness.com/news/hcl-tech-lays-off-300-employees-globally-working-on-microsoft-projects-report-news-223289"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.screener.in/company/LTM/consolidated/",
+            "https://www.angelone.in/news/stocks/ltimindtree-to-begin-salary-increments-in-q4-fy26-50-of-employees-to-be-covered",
+            "https://www.etnownews.com/companies/exclusive-short-term-challenges-expected-but-ai-is-key-driver-of-growth-rather-than-threat-says-ltimindtree-ceo-venu-lambu-watch-article-153734735",
+            "https://www.ndtvprofit.com/quarterly-earnings/ltimindtree-q4-results-net-profit-rises-4-meets-estimates"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.financialexpress.com/business/industry-cognizant-likely-to-layoff-employees-as-part-of-its-realignment-program-1567886/"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2023",
+            "https://www.businesstoday.in/latest/corporate/story/tcs-q4fy23-results-44000-freshers-onboarded-all-offer-letters-will-be-honoured-says-tcs-hr-head-377155-2023-04-12"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://stockanalysis.com/quote/nse/TECHM/employees/",
+            "https://www.voicendata.com/industry/tech-mahindra-posts-steady-q3-fy26-growth-on-ai-led-deals-11011404",
+            "https://www.fortuneindia.com/business-news/tech-mahindra-q3-fy26-profit-surges-14-yoy-new-deal-wins-cross-1-billion-milestone/129523",
+            "https://www.peoplematters.in/news/business/tech-mahindras-headcount-falls-by-3098-in-q3-as-it-peers-cut-jobs-48073",
+            "https://www.outlookbusiness.com/corporate/tech-mahindra-q3-net-profit-up-14-yoy-it-headcount-down-by-4671",
+            "https://www.business-standard.com/companies/news/tech-mahindra-denies-layoff-buzz-126030901070_1.html",
+            "https://www.ndtvprofit.com/markets/tech-mahindra-rubbishes-viral-buzz-of-30-000-layoffs-11188148",
+            "https://www.financialexpress.com/business/news/tech-mahindra-laying-off-30000-employees-company-makes-statement/4166907/"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.newsbytesapp.com/news/business/wipros-q3-fy26-quarter-ended-dec-31-2025-profit-dips-but-outlook-for-fy26-brightens/tldr"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 218000,
+          "data_date": "2026-01-31",
+          "source_urls": [
+            "https://www.reddit.com/r/business/comments/1mebvcy/microsoft_confirms_it_made_27_billion_after/",
+            "https://www.geekwire.com/2023/new-numbers-show-how-microsofts-job-cuts-have-impacted-its-global-workforce/"
+          ]
+        },
+        "Meta": {
+          "headcount": 78865,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+Q4+2024+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2025+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+announced+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.india.com/business/massive-layoff-at-apple-tech-giant-cuts-jobs-across-this-dept-globally-as-company-streamlines-operations-says-making-some-changes-to-reach-more-customers-8199407/"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-03-10",
+          "source_urls": [
+            "https://www.geekwire.com/2026/amazon-confirms-16000-more-job-cuts-bringing-total-layoffs-to-30000-since-october/",
+            "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+            "https://www.levelheadedinvesting.com/p/amazon-q4-2025-earnings-and-2026-outlook"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2023+10-K+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2026+10-K+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2025+10-K+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 283,
+          "collection_date": "2026-03-10"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 48,
+          "collection_date": "2026-03-10"
         }
       }
     }
