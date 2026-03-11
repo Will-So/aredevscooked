@@ -31,9 +31,10 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
-      - name: Debug - Check if GEMINI_API_KEY is set
+      - name: Debug - Check API keys
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: |
           if [ -z "$GEMINI_API_KEY" ]; then
             echo "❌ GEMINI_API_KEY is NOT set"
@@ -41,10 +42,16 @@ jobs:
           else
             echo "✓ GEMINI_API_KEY is set (length: ${#GEMINI_API_KEY} characters)"
           fi
+          if [ -z "$FRED_API_KEY" ]; then
+            echo "⚠️  FRED_API_KEY is NOT set (Indeed index will be skipped)"
+          else
+            echo "✓ FRED_API_KEY is set (length: ${#FRED_API_KEY} characters)"
+          fi
 
       - name: Run data collection
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: uv run python scripts/run_collection.py
 
       - name: Commit and push changes
