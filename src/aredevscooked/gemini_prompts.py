@@ -103,6 +103,38 @@ Replace placeholder values with actual data. Include a representative sample of 
 Total technical jobs should be a non-negative integer."""
 
 
+def create_stock_data_prompt(company_name: str, ticker: str, target_date: date) -> str:
+    """Create prompt for collecting stock price data.
+
+    Args:
+        company_name: Full company name (e.g., "HCLTech")
+        ticker: Stock ticker symbol (e.g., "HCL.NS")
+        target_date: The reference date; one-year-ago price will be relative to this date
+
+    Returns:
+        Formatted prompt string for Gemini API
+    """
+    one_year_ago = (target_date - timedelta(days=365)).strftime("%Y-%m-%d")
+    return f"""Look up stock price data for {company_name} ({ticker}).
+
+Find:
+1. The most recent closing price (current_price) and its date (current_date)
+2. The closing price on or nearest to {one_year_ago} (price_1_year_ago) and that date (price_1_year_ago_date)
+
+Return ONLY a JSON object with this exact structure:
+{{
+  "company": "{company_name}",
+  "ticker": "{ticker}",
+  "current_price": 0.0,
+  "current_date": "YYYY-MM-DD",
+  "price_1_year_ago": 0.0,
+  "price_1_year_ago_date": "YYYY-MM-DD",
+  "source_urls": ["url1"]
+}}
+
+Prices must be positive numbers."""
+
+
 def create_summary_prompt(metrics_data: dict[str, Any]) -> str:
     """Create prompt for generating market summary.
 

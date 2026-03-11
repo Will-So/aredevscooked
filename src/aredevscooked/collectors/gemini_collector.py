@@ -15,6 +15,7 @@ from google.genai import types
 from aredevscooked.gemini_prompts import (
     create_headcount_prompt,
     create_job_postings_prompt,
+    create_stock_data_prompt,
     create_summary_prompt,
 )
 from aredevscooked.config import GEMINI_CONFIG, VALIDATION
@@ -207,6 +208,46 @@ class GeminiCollector:
             raise ValueError(
                 f"Headcount {headcount} outside plausible range "
                 f"[{min_headcount}, {max_headcount}]"
+            )
+
+        return data
+
+    def collect_stock_data(
+        self, company_name: str, ticker: str, target_date
+    ) -> dict[str, Any]:
+        """Collect stock price data for a company.
+
+        Args:
+            company_name: Full company name
+            ticker: Stock ticker symbol (e.g., "HCL.NS")
+            target_date: Reference date; one-year-ago price is relative to this
+
+        Returns:
+            Dictionary with current_price, price_1_year_ago, dates, and source_urls
+
+        Raises:
+            ValueError: If current_price is not positive
+        """
+        prompt = create_stock_data_prompt(company_name, ticker, target_date)
+
+        self._set_pending("stock", company_name, prompt)
+        try:
+            api_start = time.time()
+            response = self.client.models.generate_content(
+                model=self.model_name, contents=prompt, config=self.generation_config
+            )
+            api_duration = time.time() - api_start
+        finally:
+            self._clear_pending()
+        text = self._get_response_text(response)
+        self._log_response("stock", company_name, prompt, text, response)
+        print(f"      [API call took {api_duration:.1f}s]")
+        data = self._extract_json(text, response)
+
+        current_price = data.get("current_price", 0)
+        if current_price <= 0:
+            raise ValueError(
+                f"Stock price must be positive: {current_price}"
             )
 
         return data
