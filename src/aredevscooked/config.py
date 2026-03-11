@@ -92,6 +92,19 @@ VALIDATION = {
         "max": 1000,  # Max plausible job postings
         "max_daily_change": 100,  # Max 100 new postings in 1 day
     },
+    "indeed_index": {
+        "min": 0.0,  # Index cannot be negative
+        "max": 500.0,  # Sanity check upper bound
+        "max_daily_change_pct": 10.0,
+    },
+}
+
+# FRED API Configuration
+FRED_CONFIG = {
+    "series_id": "IHLIDXUSTPSOFTDEVE",
+    "base_url": "https://api.stlouisfed.org/fred/series/observations",
+    "description": "Indeed Job Postings Index for US Software Development",
+    "baseline_note": "Index where 100 = February 1, 2020",
 }
 
 # Gemini API Configuration
