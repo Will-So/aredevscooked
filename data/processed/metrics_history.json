@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-11T06:20:56.196799+00:00"
+    "last_updated": "2026-03-11T07:09:31.356397+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5830,6 +5830,160 @@
       "indeed_index": {
         "value": 70.13,
         "date": "2026-03-06"
+      }
+    },
+    "2026-03-11": {
+      "date": "2026-03-11",
+      "timestamp": "2026-03-11T07:09:31.356377+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1363.3,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4323.1,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 62.98,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 14.04,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2487.5,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1351.2,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.55,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226281,
+          "data_date": "2026-02-17",
+          "source_urls": [
+            "https://www.google.com/search?q=HCLTech+headcount+Q3+FY25+December+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q3+FY26+December+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q4+FY23+March+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+March+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+layoffs+announced+January+February+March+2026&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=LTIMindtree+headcount+March+2023+quarterly+report+Q4+FY23&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY24+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+March+2025+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2025-results-302678354.html",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-First-Quarter-2025-Results/default.aspx",
+            "https://www.prnewswire.com/news-releases/cognizant-reports-fourth-quarter-and-full-year-2024-results-302369335.html",
+            "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2023-results-301815111.html",
+            "https://www.thehindu.com/business/cognizant-q1-net-profit-rises-3-personnel-related-action-of-new-programme-to-impact-3500-staff/article66813307.ece",
+            "https://www.nationalheraldindia.com/business/it-major-cognizant-to-lay-off-3500-employees-reduce-office-spaces"
+          ]
+        },
+        "Infosys": {
+          "headcount": 337034,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.republicworld.com/business/it-major-infosys-attrition-plummets-to-123-in-q3fy26-what-s-next",
+            "https://www.thepeoplesboard.com/news/infosys-in-q3-fy26-added-5000-to-the-workforce-attrition-on-decline/"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.thequint.com/news/breaking-news/tcs-workforce-shrinks-q3-fy26-results-restructuring-impact",
+            "https://www.reddit.com/r/india/comments/1qbsefp/tcs_to_keep_firing_employees_if_needed_in_6/",
+            "https://www.business-standard.com/companies/news/tcs-sees-continued-headcount-decline-despite-higher-fresher-intake-126011201081_1.html",
+            "https://www.indiatoday.in/technology/news/story/tcs-to-keep-firing-employees-if-needed-in-6-months-has-let-go-of-30000-2851165-2026-01-13"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+March+2023+Q4+FY23&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q3+FY26+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+March+2025+Q4+FY25&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.business-standard.com/companies/news/wipro-slashes-fy26-fresher-hiring-target-to-7-500-8-000-amid-muted-q3-show-126011601347_1.html"
+          ]
+        },
+        "Meta": {
+          "headcount": 77365,
+          "data_date": "2026-01-13",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+Q4+2024+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2025+earnings+report+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+announced+after+December+31+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://appleinsider.com/articles/25/11/24/apple-has-unexpectedly-laid-off-a-small-amount-of-its-sales-force",
+            "https://www.outlookbusiness.com/deeptech/tech/apple-lays-off-sales-employees-in-one-of-its-rarest-workforce-reductions"
+          ]
+        },
+        "Amazon": {
+          "headcount": 319900,
+          "data_date": "2026-03-11",
+          "source_urls": [
+            "https://redstagfulfillment.com/how-many-people-work-for-amazon/"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://mlq.ai/stocks/NVDA/employee-count/",
+            "https://www.voronoiapp.com/business/Nvidia-grew-its-revenues-by-114-last-year-while-adding-only-20-to-its-headcount-4227",
+            "https://www.businessinsider.com/nvidia-workforce-growth-chart-pay-gender-revenue-data-20-years-2024-11",
+            "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 179,
+          "collection_date": "2026-03-11"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 438,
+          "collection_date": "2026-03-11"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 86,
+          "collection_date": "2026-03-11"
+        }
       }
     }
   }
