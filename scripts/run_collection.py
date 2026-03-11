@@ -56,6 +56,7 @@ def log(message: str) -> None:
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.collectors.stock_collector import StockCollector
+from aredevscooked.collectors.fred_collector import FredCollector
 from aredevscooked.gemini_prompts import (
     create_headcount_prompt,
     create_job_postings_prompt,
@@ -63,6 +64,7 @@ from aredevscooked.gemini_prompts import (
 from aredevscooked.processors.stock_processor import StockProcessor
 from aredevscooked.processors.headcount_processor import HeadcountProcessor
 from aredevscooked.processors.jobs_processor import JobsProcessor
+from aredevscooked.processors.fred_processor import FredProcessor
 from aredevscooked.generators.badge_generator import BadgeGenerator
 from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
 
@@ -312,6 +314,25 @@ async def collect_all_job_posting_data(
     return job_posting_data
 
 
+async def collect_indeed_data(collector: FredCollector) -> dict[str, Any] | None:
+    """Collect Indeed Job Postings index from FRED API.
+
+    Args:
+        collector: FredCollector instance
+
+    Returns:
+        Indeed index data dict or None on error
+    """
+    try:
+        log("  Collecting Indeed Job Postings index...")
+        data = await asyncio.to_thread(collector.collect_indeed_index)
+        log(f"    ✓ Current Indeed index: {data['current_value']}")
+        return data
+    except Exception as e:
+        log(f"    ✗ Error collecting Indeed data: {e}")
+        return None
+
+
 def load_baselines() -> dict[str, Any] | None:
     """Load baseline data from baselines.json.
 
@@ -523,6 +544,7 @@ def build_metrics_structure(
     headcount_data: dict[str, dict[str, Any]],
     job_posting_data: dict[str, dict[str, Any]],
     ai_summary: str,
+    indeed_data: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build the complete metrics_latest.json structure.
 
@@ -531,6 +553,7 @@ def build_metrics_structure(
         headcount_data: Headcount data for all companies
         job_posting_data: Job posting data for AI labs
         ai_summary: AI-generated market summary
+        indeed_data: Indeed Job Postings index data from FRED
 
     Returns:
         Complete metrics structure ready for JSON serialization
@@ -906,7 +929,53 @@ def build_metrics_structure(
         }
     }
 
-    return {
+    # Build Indeed Job Postings index
+    fred_processor = FredProcessor()
+    indeed_index_structure = None
+
+    if indeed_data:
+        indeed_current = indeed_data["current_value"]
+        indeed_changes = {}
+
+        # Calculate changes from history snapshots
+        for period_name, days_ago in [("30_day", 30), ("1_year", 365)]:
+            snapshot = load_history_snapshot(days_ago)
+            if snapshot and "indeed_index" in snapshot:
+                baseline_value = snapshot["indeed_index"]["value"]
+                if baseline_value and baseline_value > 0:
+                    pct = fred_processor.calculate_percentage_change(
+                        indeed_current, baseline_value
+                    )
+                    badge = fred_processor.classify_change(pct)
+                    indeed_changes[period_name] = {
+                        "value": baseline_value,
+                        "pct": round(pct, 2),
+                        "badge": badge,
+                    }
+                    continue
+
+            indeed_changes[period_name] = {
+                "value": None,
+                "pct": None,
+                "badge": "neutral",
+            }
+
+        # Aggregate badge: use 1-year change if available, else neutral
+        if indeed_changes.get("1_year", {}).get("pct") is not None:
+            indeed_aggregate_badge = indeed_changes["1_year"]["badge"]
+        else:
+            indeed_aggregate_badge = "neutral"
+
+        indeed_index_structure = {
+            "current_value": indeed_current,
+            "date": indeed_data["date"],
+            "series_id": indeed_data["series_id"],
+            "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
+            "changes": indeed_changes,
+            "aggregate_badge": indeed_aggregate_badge,
+        }
+
+    result = {
         "metadata": metadata,
         "low_end": low_end,
         "medium_end": medium_end,
@@ -915,11 +984,17 @@ def build_metrics_structure(
         "ai_summary": ai_summary,
     }
 
+    if indeed_index_structure:
+        result["indeed_index"] = indeed_index_structure
+
+    return result
+
 
 def save_daily_snapshot(
     stock_data: dict[str, dict[str, Any]],
     headcount_data: dict[str, dict[str, Any]],
     job_posting_data: dict[str, dict[str, Any]],
+    indeed_data: dict[str, Any] | None = None,
 ) -> None:
     """Save today's raw data as a snapshot in metrics_history.json.
 
@@ -929,6 +1004,7 @@ def save_daily_snapshot(
         stock_data: Stock price data for IT consultancies
         headcount_data: Headcount data for all companies
         job_posting_data: Job posting data for AI labs
+        indeed_data: Indeed Job Postings index data from FRED
     """
     history_file = Path("data/processed/metrics_history.json")
     today = date.today().isoformat()
@@ -977,6 +1053,13 @@ def save_daily_snapshot(
             "collection_date": data.get("collection_date", ""),
         }
 
+    # Save Indeed index
+    if indeed_data:
+        snapshot["indeed_index"] = {
+            "value": indeed_data["current_value"],
+            "date": indeed_data["date"],
+        }
+
     # Add to history
     history["snapshots"][today] = snapshot
     history["metadata"]["last_updated"] = datetime.now(timezone.utc).isoformat()
@@ -1005,19 +1088,33 @@ async def main_async():
 
     try:
         gemini_collector = GeminiCollector()
-        log("✓ GeminiCollector initialized\n")
+        log("✓ GeminiCollector initialized")
     except ValueError as e:
         log(f"❌ Error: {e}")
         log("Make sure GEMINI_API_KEY is set in .env file")
         return 1
 
+    try:
+        fred_collector = FredCollector()
+        log("✓ FredCollector initialized (FRED API)\n")
+    except ValueError as e:
+        log(f"⚠️  FredCollector not initialized: {e}")
+        fred_collector = None
+
     # Calculate dates
     one_year_ago = date.today() - timedelta(days=365)
 
-    # Collect stock data using yfinance
+    # Collect stock data and Indeed data in parallel
     log("\n📊 Collecting stock price data (via yfinance)...")
     stock_data = await collect_all_stock_data(stock_collector, one_year_ago)
     log(f"  Collected {len(stock_data)}/7 companies")
+
+    log("\n📈 Collecting Indeed Job Postings index (via FRED)...")
+    indeed_data = None
+    if fred_collector:
+        indeed_data = await collect_indeed_data(fred_collector)
+    else:
+        log("  ⚠️  Skipped (no FRED_API_KEY)")
 
     log("\n👥 Collecting headcount data...")
     headcount_data = await collect_all_headcount_data(gemini_collector)
@@ -1030,7 +1127,7 @@ async def main_async():
     # Build metrics structure first (needed for summary generation)
     log("\n🏗️  Building metrics structure...")
     metrics_without_summary = build_metrics_structure(
-        stock_data, headcount_data, job_posting_data, ""
+        stock_data, headcount_data, job_posting_data, "", indeed_data=indeed_data
     )
 
     log("\n📝 Generating AI summary...")
@@ -1038,12 +1135,18 @@ async def main_async():
 
     # Rebuild with actual summary
     metrics = build_metrics_structure(
-        stock_data, headcount_data, job_posting_data, ai_summary
+        stock_data,
+        headcount_data,
+        job_posting_data,
+        ai_summary,
+        indeed_data=indeed_data,
     )
 
     # Save daily snapshot to history
     log("\n💾 Saving daily snapshot...")
-    save_daily_snapshot(stock_data, headcount_data, job_posting_data)
+    save_daily_snapshot(
+        stock_data, headcount_data, job_posting_data, indeed_data=indeed_data
+    )
 
     # Write to file
     output_dir = Path("data/processed")
@@ -1068,6 +1171,8 @@ async def main_async():
     # Clean up collectors to release resources
     stock_collector.close()
     gemini_collector.close()
+    if fred_collector:
+        fred_collector.close()
 
     return 0
 

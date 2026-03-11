@@ -358,3 +358,66 @@ def test_build_metrics_structure_high_end_tier(mocker):
     assert "job_postings" in result["high_end"]
     assert "companies" in result["high_end"]["job_postings"]
     assert "aggregate_badge" in result["high_end"]["job_postings"]
+
+
+# Indeed Index Tests
+
+
+def test_build_metrics_structure_includes_indeed_index(mocker):
+    """Should include indeed_index when indeed_data is provided."""
+    indeed_data = {
+        "current_value": 85.23,
+        "date": "2026-03-01",
+        "series_id": "IHLIDXUSTPSOFTDEVE",
+    }
+
+    result = build_metrics_structure(
+        stock_data={},
+        headcount_data={},
+        job_posting_data={},
+        ai_summary="",
+        indeed_data=indeed_data,
+    )
+
+    assert "indeed_index" in result
+    assert result["indeed_index"]["current_value"] == 85.23
+    assert result["indeed_index"]["date"] == "2026-03-01"
+    assert result["indeed_index"]["series_id"] == "IHLIDXUSTPSOFTDEVE"
+    assert "aggregate_badge" in result["indeed_index"]
+    assert "changes" in result["indeed_index"]
+    assert "source_url" in result["indeed_index"]
+
+
+def test_build_metrics_structure_without_indeed_data(mocker):
+    """Should not include indeed_index when indeed_data is None."""
+    result = build_metrics_structure(
+        stock_data={},
+        headcount_data={},
+        job_posting_data={},
+        ai_summary="",
+        indeed_data=None,
+    )
+
+    assert "indeed_index" not in result
+
+
+def test_build_metrics_structure_indeed_changes_default_neutral(mocker):
+    """Indeed changes should default to neutral when no history exists."""
+    indeed_data = {
+        "current_value": 85.23,
+        "date": "2026-03-01",
+        "series_id": "IHLIDXUSTPSOFTDEVE",
+    }
+
+    result = build_metrics_structure(
+        stock_data={},
+        headcount_data={},
+        job_posting_data={},
+        ai_summary="",
+        indeed_data=indeed_data,
+    )
+
+    changes = result["indeed_index"]["changes"]
+    assert changes["30_day"]["badge"] == "neutral"
+    assert changes["1_year"]["badge"] == "neutral"
+    assert result["indeed_index"]["aggregate_badge"] == "neutral"
