@@ -200,6 +200,50 @@
         `;
     }
 
+    function renderIndeedIndex(indeedData) {
+        if (!indeedData) return;
+
+        document.querySelector('#indeedIndexData .value').textContent =
+            indeedData.current_value.toFixed(2);
+
+        renderAggregateBadge('indeedIndexBadge', indeedData.aggregate_badge);
+
+        let changesHTML = '';
+        const changes = indeedData.changes || {};
+
+        for (const [period, change] of Object.entries(changes)) {
+            const periodLabel = period === '30_day' ? '30 Days' : '1 Year';
+
+            if (change.pct == null) {
+                changesHTML += `
+                    <div class="index-change">
+                        <span class="period">${periodLabel}</span>
+                        <span class="value" style="color: #6b7280;">N/A</span>
+                    </div>
+                `;
+            } else {
+                changesHTML += `
+                    <div class="index-change">
+                        <span class="period">${periodLabel}</span>
+                        <span class="value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
+                    </div>
+                `;
+            }
+        }
+
+        document.getElementById('indeedIndexChanges').innerHTML = changesHTML;
+
+        // Show data date and source
+        let metaHTML = '';
+        if (indeedData.date) {
+            metaHTML += `<span style="font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--text-dim);">Data as of ${indeedData.date}</span>`;
+        }
+        if (indeedData.source_url) {
+            metaHTML += ` <a href="${indeedData.source_url}" target="_blank" rel="noopener" style="font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--phosphor-dim); text-decoration: none;">[FRED source]</a>`;
+        }
+        document.getElementById('indeedMeta').innerHTML = metaHTML;
+    }
+
     function renderStockIndex(stockIndexData) {
         const indexValue = stockIndexData.current_value.toFixed(2);
         const changes = stockIndexData.changes;
@@ -268,10 +312,10 @@
 
         // Calculate overall verdict from 4 main metrics
         const allBadges = [
-            data.low_end.headcount.aggregate_badge,
+            (data.stock_index || data.low_end.stock_index).aggregate_badge,
+            data.indeed_index ? data.indeed_index.aggregate_badge : 'neutral',
             data.medium_end.headcount.aggregate_badge,
             data.high_end.job_postings.aggregate_badge,
-            (data.stock_index || data.low_end.stock_index).aggregate_badge
         ];
 
         const { verdict, cssClass } = calculateOverallVerdict(allBadges);
@@ -281,6 +325,11 @@
 
         // Update AI summary
         document.getElementById('aiSummary').textContent = data.ai_summary;
+
+        // Indeed Job Postings Index
+        if (data.indeed_index) {
+            renderIndeedIndex(data.indeed_index);
+        }
 
         // Low-End: IT Consultancies
         let lowEndSummary = null;
