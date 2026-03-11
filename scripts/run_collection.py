@@ -937,28 +937,24 @@ def build_metrics_structure(
         indeed_current = indeed_data["current_value"]
         indeed_changes = {}
 
-        # Calculate changes from history snapshots
-        for period_name, days_ago in [("30_day", 30), ("1_year", 365)]:
-            snapshot = load_history_snapshot(days_ago)
-            if snapshot and "indeed_index" in snapshot:
-                baseline_value = snapshot["indeed_index"]["value"]
-                if baseline_value and baseline_value > 0:
-                    pct = fred_processor.calculate_percentage_change(
-                        indeed_current, baseline_value
-                    )
-                    badge = fred_processor.classify_change(pct)
-                    indeed_changes[period_name] = {
-                        "value": baseline_value,
-                        "pct": round(pct, 2),
-                        "badge": badge,
-                    }
-                    continue
-
-            indeed_changes[period_name] = {
-                "value": None,
-                "pct": None,
-                "badge": "neutral",
-            }
+        for period_name in ["30_day", "1_year"]:
+            baseline = indeed_data.get("baselines", {}).get(period_name)
+            if baseline and baseline["value"] > 0:
+                pct = fred_processor.calculate_percentage_change(
+                    indeed_current, baseline["value"]
+                )
+                badge = fred_processor.classify_change(pct)
+                indeed_changes[period_name] = {
+                    "value": baseline["value"],
+                    "pct": round(pct, 2),
+                    "badge": badge,
+                }
+            else:
+                indeed_changes[period_name] = {
+                    "value": None,
+                    "pct": None,
+                    "badge": "neutral",
+                }
 
         # Aggregate badge: use 1-year change if available, else neutral
         if indeed_changes.get("1_year", {}).get("pct") is not None:

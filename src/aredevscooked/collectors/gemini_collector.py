@@ -246,9 +246,7 @@ class GeminiCollector:
 
         current_price = data.get("current_price", 0)
         if current_price <= 0:
-            raise ValueError(
-                f"Stock price must be positive: {current_price}"
-            )
+            raise ValueError(f"Stock price must be positive: {current_price}")
 
         return data
 

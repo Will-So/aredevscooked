@@ -369,6 +369,10 @@ def test_build_metrics_structure_includes_indeed_index(mocker):
         "current_value": 85.23,
         "date": "2026-03-01",
         "series_id": "IHLIDXUSTPSOFTDEVE",
+        "baselines": {
+            "30_day": {"date": "2026-02-01", "value": 80.0},
+            "1_year": {"date": "2025-03-05", "value": 90.0},
+        },
     }
 
     result = build_metrics_structure(
@@ -386,6 +390,9 @@ def test_build_metrics_structure_includes_indeed_index(mocker):
     assert "aggregate_badge" in result["indeed_index"]
     assert "changes" in result["indeed_index"]
     assert "source_url" in result["indeed_index"]
+    changes = result["indeed_index"]["changes"]
+    assert changes["30_day"]["pct"] is not None
+    assert changes["1_year"]["pct"] is not None
 
 
 def test_build_metrics_structure_without_indeed_data(mocker):
@@ -402,11 +409,12 @@ def test_build_metrics_structure_without_indeed_data(mocker):
 
 
 def test_build_metrics_structure_indeed_changes_default_neutral(mocker):
-    """Indeed changes should default to neutral when no history exists."""
+    """Indeed changes should default to neutral when no baselines exist."""
     indeed_data = {
         "current_value": 85.23,
         "date": "2026-03-01",
         "series_id": "IHLIDXUSTPSOFTDEVE",
+        "baselines": {"30_day": None, "1_year": None},
     }
 
     result = build_metrics_structure(

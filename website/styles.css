@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Share+Tech+Mono&display=swap');
 
 * {
     margin: 0;
@@ -76,7 +76,7 @@
 }
 
 body {
-    font-family: 'VT323', 'Courier New', monospace;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
     background: var(--bg-black);
     color: var(--phosphor);
     line-height: 1.6;
@@ -85,8 +85,6 @@ body {
     position: relative;
     overflow-x: hidden;
     font-size: 18px;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: unset;
 }
 
 body::before {
@@ -100,8 +98,8 @@ body::before {
         0deg,
         transparent,
         transparent 2px,
-        rgba(0, 0, 0, 0.15) 2px,
-        rgba(0, 0, 0, 0.15) 4px
+        rgba(0, 0, 0, 0.06) 2px,
+        rgba(0, 0, 0, 0.06) 4px
     );
     pointer-events: none;
     z-index: 9999;
@@ -151,7 +149,7 @@ body::after {
     text-align: center;
     color: var(--text-dim);
     font-family: 'Share Tech Mono', 'Courier New', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     margin-bottom: 0.5rem;
     overflow: hidden;
@@ -163,14 +161,14 @@ body::after {
     text-align: center;
     color: var(--text-dim);
     font-family: 'Share Tech Mono', 'Courier New', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     margin-top: 0.5rem;
     overflow: hidden;
 }
 
 .verdict-title {
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 2.8rem;
     font-weight: 400;
     margin-bottom: 0.25rem;
@@ -180,7 +178,7 @@ body::after {
 }
 
 .verdict-value {
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 3.5rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -260,7 +258,7 @@ body::after {
     content: '> SYSTEM_ANALYSIS:';
     display: block;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-dim);
     margin-bottom: 0.75rem;
     letter-spacing: 2px;
@@ -321,7 +319,7 @@ body::after {
 }
 
 .tier-header h2 {
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 1.4rem;
     font-weight: 400;
     margin-bottom: 0;
@@ -351,7 +349,7 @@ body::after {
 .badge {
     display: inline-block;
     padding: 0.3rem 0.75rem;
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -426,7 +424,7 @@ body::after {
 }
 
 .company-name {
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 1.15rem;
     margin-bottom: 0.3rem;
@@ -436,7 +434,7 @@ body::after {
 }
 
 .company-value {
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--amber);
@@ -447,7 +445,7 @@ body::after {
 
 .company-meta {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: var(--text-dim);
     margin-bottom: 0.6rem;
     display: flex;
@@ -466,7 +464,7 @@ body::after {
     color: var(--phosphor-dim);
     text-decoration: none;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     opacity: 0.7;
     transition: opacity 0.2s;
 }
@@ -492,14 +490,14 @@ body::after {
 .change-label {
     font-family: 'Share Tech Mono', monospace;
     color: var(--text-dim);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     margin-bottom: 0.2rem;
     letter-spacing: 1px;
 }
 
 .change-value {
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 1.05rem;
     letter-spacing: 1px;
@@ -539,7 +537,7 @@ body::after {
 
 .index-value .value {
     display: block;
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 3rem;
     font-weight: 400;
     color: var(--amber);
@@ -550,7 +548,7 @@ body::after {
 .index-value .label {
     display: block;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -572,7 +570,7 @@ body::after {
 .index-change .period {
     display: block;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: var(--text-dim);
     text-transform: uppercase;
     margin-bottom: 0.2rem;
@@ -581,7 +579,7 @@ body::after {
 
 .index-change .value {
     display: block;
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: 1px;
@@ -599,7 +597,7 @@ body::after {
     margin-bottom: 1rem;
     color: var(--amber);
     text-shadow: var(--glow-amber);
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 1.3rem;
     letter-spacing: 2px;
@@ -622,7 +620,7 @@ body::after {
 .legend-item span:last-child {
     font-family: 'Share Tech Mono', monospace;
     color: var(--text-dim);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     letter-spacing: 0.5px;
 }
 
@@ -717,7 +715,7 @@ footer a:hover {
     padding: 1rem;
     border: 1px solid #330000;
     margin: 1rem 0;
-    font-family: 'VT323', monospace;
+    font-family: 'IBM Plex Mono', monospace;
     letter-spacing: 1px;
 }
 

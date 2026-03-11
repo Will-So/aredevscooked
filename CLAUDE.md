@@ -30,3 +30,6 @@ except json.JSONDecodeError as e:
 ```
 ### Testing
 When you are writing unit tests, please do not use classes. If you see you have states you need to keep track with, favor pytest fixtures
+
+## Planning
+When creating implementation plans, always save them to your memory directory so they persist across sessions. Write plans to files like `memory/plan-<topic>.md` and link them from `MEMORY.md`.
