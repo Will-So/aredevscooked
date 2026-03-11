@@ -81,7 +81,7 @@
         if (element) {
             let html = getBadgeHTML(badge);
             if (summaryText) {
-                html += `<br><span class="summary-text" style="margin-top: 0.5rem; display: inline-block; color: var(--text-secondary); font-size: 0.9rem;">${summaryText}</span>`;
+                html += `<br><span class="summary-text" style="margin-top: 0.5rem; display: inline-block; color: var(--text-dim); font-size: 0.9rem;">${summaryText}</span>`;
             }
             element.innerHTML = html;
         }
@@ -104,7 +104,7 @@
                         <div class="change-item">
                             <span class="change-label">${periodLabel}</span>
                             <span class="change-value" style="color: #6b7280;">N/A</span>
-                            <span class="badge badge-neutral" style="font-size: 0.7rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
+                            <span class="badge badge-neutral" style="font-size: 0.8rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
                         </div>
                     `;
                 } else {
@@ -117,7 +117,7 @@
                         <div class="change-item">
                             <span class="change-label">${periodLabel}</span>
                             <span class="change-value ${valueClass}" ${tooltipAttr}>${pctText}</span>
-                            <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
+                            <span class="badge badge-${change.badge}" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
                         </div>
                     `;
                 }
@@ -162,7 +162,7 @@
                         <div class="change-item">
                             <span class="change-label">${periodLabel}</span>
                             <span class="change-value" style="color: #6b7280;">N/A</span>
-                            <span class="badge badge-neutral" style="font-size: 0.7rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
+                            <span class="badge badge-neutral" style="font-size: 0.8rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
                         </div>
                     `;
                 } else {
@@ -173,7 +173,7 @@
                         <div class="change-item">
                             <span class="change-label">${periodLabel}</span>
                             <span class="change-value ${valueClass}">${valueText} jobs</span>
-                            <span class="badge badge-${change.badge}" style="font-size: 0.7rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
+                            <span class="badge badge-${change.badge}" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
                         </div>
                     `;
                 }
@@ -236,10 +236,10 @@
         // Show data date and source
         let metaHTML = '';
         if (indeedData.date) {
-            metaHTML += `<span style="font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--text-dim);">Data as of ${indeedData.date}</span>`;
+            metaHTML += `<span style="font-size: 0.85rem; color: var(--text-dim);">Data as of ${indeedData.date}</span>`;
         }
         if (indeedData.source_url) {
-            metaHTML += ` <a href="${indeedData.source_url}" target="_blank" rel="noopener" style="font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--phosphor-dim); text-decoration: none;">[FRED source]</a>`;
+            metaHTML += ` <a href="${indeedData.source_url}" target="_blank" rel="noopener" style="font-size: 0.85rem; color: var(--phosphor-dim); text-decoration: none;">[FRED source]</a>`;
         }
         document.getElementById('indeedMeta').innerHTML = metaHTML;
     }
