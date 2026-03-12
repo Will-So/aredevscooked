@@ -104,7 +104,7 @@ FRED_CONFIG = {
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "base_url": "https://api.stlouisfed.org/fred/series/observations",
     "description": "Indeed Job Postings Index for US Software Development",
-    "baseline_note": "Index where 100 = February 1, 2020",
+    "baseline_note": "Index normalized: 100 = 1 year ago",
 }
 
 # Gemini API Configuration

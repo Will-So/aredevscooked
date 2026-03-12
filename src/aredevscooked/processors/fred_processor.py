@@ -6,8 +6,8 @@ from aredevscooked.generators.badge_generator import BadgeGenerator
 class FredProcessor:
     """Process FRED index data and classify changes with badges.
 
-    Uses the same percentage-based thresholds as headcount since
-    the Indeed index is a percentage-based measure (100 = Feb 2020).
+    Uses the same percentage-based thresholds as headcount.
+    The Indeed index is re-normalized so that 1 year ago = 100.
     """
 
     def __init__(self):

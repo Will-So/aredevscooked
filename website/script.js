@@ -212,7 +212,8 @@
         const changes = indeedData.changes || {};
 
         for (const [period, change] of Object.entries(changes)) {
-            const periodLabel = period === '30_day' ? '30 Days' : '1 Year';
+            const periodLabels = { '30_day': '30 Days', '1_year': '1 Year', 'q1_2023': 'vs Q1 2023' };
+            const periodLabel = periodLabels[period] || period;
 
             if (change.pct == null) {
                 changesHTML += `

@@ -364,7 +364,7 @@ def test_build_metrics_structure_high_end_tier(mocker):
 
 
 def test_build_metrics_structure_includes_indeed_index(mocker):
-    """Should include indeed_index when indeed_data is provided."""
+    """Should include indeed_index when indeed_data is provided, normalized to 1yr ago = 100."""
     indeed_data = {
         "current_value": 85.23,
         "date": "2026-03-01",
@@ -372,6 +372,7 @@ def test_build_metrics_structure_includes_indeed_index(mocker):
         "baselines": {
             "30_day": {"date": "2026-02-01", "value": 80.0},
             "1_year": {"date": "2025-03-05", "value": 90.0},
+            "q1_2023": {"date": "2023-03-31", "value": 100.0},
         },
     }
 
@@ -384,7 +385,8 @@ def test_build_metrics_structure_includes_indeed_index(mocker):
     )
 
     assert "indeed_index" in result
-    assert result["indeed_index"]["current_value"] == 85.23
+    # Normalized: (85.23 / 90.0) * 100 = 94.7
+    assert result["indeed_index"]["current_value"] == round((85.23 / 90.0) * 100, 2)
     assert result["indeed_index"]["date"] == "2026-03-01"
     assert result["indeed_index"]["series_id"] == "IHLIDXUSTPSOFTDEVE"
     assert "aggregate_badge" in result["indeed_index"]
@@ -393,6 +395,7 @@ def test_build_metrics_structure_includes_indeed_index(mocker):
     changes = result["indeed_index"]["changes"]
     assert changes["30_day"]["pct"] is not None
     assert changes["1_year"]["pct"] is not None
+    assert changes["q1_2023"]["pct"] is not None
 
 
 def test_build_metrics_structure_without_indeed_data(mocker):
@@ -414,7 +417,7 @@ def test_build_metrics_structure_indeed_changes_default_neutral(mocker):
         "current_value": 85.23,
         "date": "2026-03-01",
         "series_id": "IHLIDXUSTPSOFTDEVE",
-        "baselines": {"30_day": None, "1_year": None},
+        "baselines": {"30_day": None, "1_year": None, "q1_2023": None},
     }
 
     result = build_metrics_structure(
@@ -428,4 +431,7 @@ def test_build_metrics_structure_indeed_changes_default_neutral(mocker):
     changes = result["indeed_index"]["changes"]
     assert changes["30_day"]["badge"] == "neutral"
     assert changes["1_year"]["badge"] == "neutral"
+    assert changes["q1_2023"]["badge"] == "neutral"
     assert result["indeed_index"]["aggregate_badge"] == "neutral"
+    # When no 1yr baseline, current_value falls back to raw value
+    assert result["indeed_index"]["current_value"] == 85.23

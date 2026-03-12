@@ -118,8 +118,9 @@ def test_collect_indeed_index(mock_get, collector, mock_fred_response):
     assert "baselines" in result
     assert "30_day" in result["baselines"]
     assert "1_year" in result["baselines"]
-    # All 3 calls: latest + 30-day baseline + 1-year baseline
-    assert mock_get.call_count == 3
+    assert "q1_2023" in result["baselines"]
+    # All 4 calls: latest + 30-day baseline + 1-year baseline + q1_2023 baseline
+    assert mock_get.call_count == 4
 
 
 @patch("aredevscooked.collectors.fred_collector.requests.get")
@@ -128,10 +129,11 @@ def test_collect_indeed_index_baselines_graceful_on_failure(
 ):
     latest_resp = mock_fred_response([{"date": "2026-03-01", "value": "85.23"}])
     empty_resp = mock_fred_response([])
-    mock_get.side_effect = [latest_resp, empty_resp, empty_resp]
+    mock_get.side_effect = [latest_resp, empty_resp, empty_resp, empty_resp]
 
     result = collector.collect_indeed_index()
 
     assert result["current_value"] == 85.23
     assert result["baselines"]["30_day"] is None
     assert result["baselines"]["1_year"] is None
+    assert result["baselines"]["q1_2023"] is None

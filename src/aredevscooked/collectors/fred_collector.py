@@ -117,19 +117,21 @@ class FredCollector:
         """Collect the latest Indeed Job Postings index for software development.
 
         Returns:
-            Dict with current_value, date, series_id, and baselines for 30-day
-            and 1-year comparisons fetched directly from the FRED API.
+            Dict with current_value, date, series_id, and baselines for 30-day,
+            1-year, and Q1 2023 comparisons fetched directly from the FRED API.
         """
         series_id = FRED_CONFIG["series_id"]
         obs = self.fetch_latest_observation(series_id)
         today = date.today()
 
         baselines = {}
-        for period, days in [("30_day", 30), ("1_year", 365)]:
+        for period, target in [
+            ("30_day", today - timedelta(days=30)),
+            ("1_year", today - timedelta(days=365)),
+            ("q1_2023", date(2023, 3, 31)),
+        ]:
             try:
-                baseline = self.fetch_observation_near_date(
-                    series_id, today - timedelta(days=days)
-                )
+                baseline = self.fetch_observation_near_date(series_id, target)
                 baselines[period] = baseline
             except (ValueError, requests.RequestException):
                 baselines[period] = None

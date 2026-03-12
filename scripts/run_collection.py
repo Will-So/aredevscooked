@@ -934,24 +934,36 @@ def build_metrics_structure(
     indeed_index_structure = None
 
     if indeed_data:
-        indeed_current = indeed_data["current_value"]
+        raw_current = indeed_data["current_value"]
+        baselines = indeed_data.get("baselines", {})
         indeed_changes = {}
 
-        for period_name in ["30_day", "1_year"]:
-            baseline = indeed_data.get("baselines", {}).get(period_name)
+        one_year_baseline = baselines.get("1_year")
+        one_year_value = (
+            one_year_baseline["value"]
+            if one_year_baseline and one_year_baseline["value"] > 0
+            else None
+        )
+
+        # Normalize so 1 year ago = 100
+        if one_year_value:
+            normalized_current = (raw_current / one_year_value) * 100
+        else:
+            normalized_current = raw_current
+
+        for period_name in ["30_day", "1_year", "q1_2023"]:
+            baseline = baselines.get(period_name)
             if baseline and baseline["value"] > 0:
                 pct = fred_processor.calculate_percentage_change(
-                    indeed_current, baseline["value"]
+                    raw_current, baseline["value"]
                 )
                 badge = fred_processor.classify_change(pct)
                 indeed_changes[period_name] = {
-                    "value": baseline["value"],
                     "pct": round(pct, 2),
                     "badge": badge,
                 }
             else:
                 indeed_changes[period_name] = {
-                    "value": None,
                     "pct": None,
                     "badge": "neutral",
                 }
@@ -963,7 +975,7 @@ def build_metrics_structure(
             indeed_aggregate_badge = "neutral"
 
         indeed_index_structure = {
-            "current_value": indeed_current,
+            "current_value": round(normalized_current, 2),
             "date": indeed_data["date"],
             "series_id": indeed_data["series_id"],
             "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
