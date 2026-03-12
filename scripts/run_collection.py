@@ -438,11 +438,14 @@ def calculate_headcount_changes(
     return changes
 
 
-def load_history_snapshot(days_ago: int) -> dict[str, Any] | None:
+def load_history_snapshot(
+    days_ago: int, tolerance_days: int = 0
+) -> dict[str, Any] | None:
     """Load a snapshot from metrics_history.json.
 
     Args:
         days_ago: Number of days ago (1, 30, etc.)
+        tolerance_days: Search ±this many days around target if exact match missing
 
     Returns:
         Snapshot data or None if not found
@@ -451,12 +454,25 @@ def load_history_snapshot(days_ago: int) -> dict[str, Any] | None:
     if not history_file.exists():
         return None
 
-    target_date = (date.today() - timedelta(days=days_ago)).isoformat()
-
     with open(history_file, "r") as f:
         history = json.load(f)
 
-    return history.get("snapshots", {}).get(target_date)
+    snapshots = history.get("snapshots", {})
+    target_date = date.today() - timedelta(days=days_ago)
+
+    if tolerance_days == 0:
+        return snapshots.get(target_date.isoformat())
+
+    for offset in range(tolerance_days + 1):
+        for candidate in [
+            target_date - timedelta(days=offset),
+            target_date + timedelta(days=offset),
+        ]:
+            snapshot = snapshots.get(candidate.isoformat())
+            if snapshot:
+                return snapshot
+
+    return None
 
 
 def find_recent_job_posting_data(
@@ -873,7 +889,7 @@ def build_metrics_structure(
                 changes["1_year_ago"] = {"value": None, "badge": "neutral"}
 
             # Try to get historical snapshots from metrics_history.json for 30 days
-            snapshot = load_history_snapshot(30)
+            snapshot = load_history_snapshot(30, tolerance_days=5)
             if snapshot and name in snapshot.get("job_postings", {}):
                 historical_jobs = snapshot["job_postings"][name]["total_technical_jobs"]
                 job_change = current_jobs - historical_jobs

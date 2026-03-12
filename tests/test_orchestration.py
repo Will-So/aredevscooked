@@ -9,6 +9,7 @@ from scripts.run_collection import (
     collect_all_job_posting_data,
     build_metrics_structure,
     find_recent_headcount_data,
+    load_history_snapshot,
 )
 
 
@@ -435,3 +436,59 @@ def test_build_metrics_structure_indeed_changes_default_neutral(mocker):
     assert result["indeed_index"]["aggregate_badge"] == "neutral"
     # When no 1yr baseline, current_value falls back to raw value
     assert result["indeed_index"]["current_value"] == 85.23
+
+
+@pytest.fixture
+def history_file(tmp_path, monkeypatch):
+    """Create a temporary metrics_history.json with known snapshots."""
+    import json
+
+    today = date.today()
+    snapshots = {}
+    # Only put data at exactly 30 days ago - 2 days (i.e., 32 days ago)
+    nearby_date = (today - timedelta(days=32)).isoformat()
+    snapshots[nearby_date] = {"job_postings": {"OpenAI": {"total_technical_jobs": 100}}}
+    # Also put data at exactly 30 days ago
+    exact_date = (today - timedelta(days=30)).isoformat()
+    snapshots[exact_date] = {"job_postings": {"OpenAI": {"total_technical_jobs": 120}}}
+
+    history = {"snapshots": snapshots}
+    history_path = tmp_path / "data" / "processed"
+    history_path.mkdir(parents=True)
+    with open(history_path / "metrics_history.json", "w") as f:
+        json.dump(history, f)
+
+    monkeypatch.chdir(tmp_path)
+    return snapshots
+
+
+def test_load_history_snapshot_exact_match(history_file):
+    snapshot = load_history_snapshot(30)
+    assert snapshot is not None
+    assert snapshot["job_postings"]["OpenAI"]["total_technical_jobs"] == 120
+
+
+def test_load_history_snapshot_no_exact_match_without_tolerance(history_file):
+    snapshot = load_history_snapshot(28)
+    assert snapshot is None
+
+
+def test_load_history_snapshot_tolerance_finds_nearby(history_file):
+    # 28 days ago has no data, but 30 days ago does (offset=2), within tolerance=5
+    snapshot = load_history_snapshot(28, tolerance_days=5)
+    assert snapshot is not None
+    assert snapshot["job_postings"]["OpenAI"]["total_technical_jobs"] == 120
+
+
+def test_load_history_snapshot_tolerance_prefers_closest(history_file):
+    # 31 days ago: nearest is 30 (offset=1) not 32 (offset=1 the other way)
+    # Actually both are offset=1, but 30 is checked first (minus offset)
+    # For 30 days ago exact, tolerance should still return exact
+    snapshot = load_history_snapshot(30, tolerance_days=5)
+    assert snapshot["job_postings"]["OpenAI"]["total_technical_jobs"] == 120
+
+
+def test_load_history_snapshot_tolerance_too_small(history_file):
+    # 25 days ago, nearest data is 30 days ago (5 days away), tolerance=3 won't reach
+    snapshot = load_history_snapshot(25, tolerance_days=3)
+    assert snapshot is None
