@@ -203,46 +203,50 @@
     function renderIndeedIndex(indeedData) {
         if (!indeedData) return;
 
-        document.querySelector('#indeedIndexData .value').textContent =
-            indeedData.current_value.toFixed(2);
-
         renderAggregateBadge('indeedIndexBadge', indeedData.aggregate_badge);
 
-        let changesHTML = '';
         const changes = indeedData.changes || {};
+        let changesHTML = '<div class="company-changes">';
+        const periodLabels = { '30_day': '30 Days', '1_year': '1 Year', 'q1_2023': 'vs Q1 2023' };
 
         for (const [period, change] of Object.entries(changes)) {
-            const periodLabels = { '30_day': '30 Days', '1_year': '1 Year', 'q1_2023': 'vs Q1 2023' };
             const periodLabel = periodLabels[period] || period;
-
             if (change.pct == null) {
                 changesHTML += `
-                    <div class="index-change">
-                        <span class="period">${periodLabel}</span>
-                        <span class="value" style="color: #6b7280;">N/A</span>
+                    <div class="change-item">
+                        <span class="change-label">${periodLabel}</span>
+                        <span class="change-value" style="color: #6b7280;">N/A</span>
                     </div>
                 `;
             } else {
                 changesHTML += `
-                    <div class="index-change">
-                        <span class="period">${periodLabel}</span>
-                        <span class="value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
+                    <div class="change-item">
+                        <span class="change-label">${periodLabel}</span>
+                        <span class="change-value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
                     </div>
                 `;
             }
         }
+        changesHTML += '</div>';
 
-        document.getElementById('indeedIndexChanges').innerHTML = changesHTML;
-
-        // Show data date and source
-        let metaHTML = '';
-        if (indeedData.date) {
-            metaHTML += `<span style="font-size: 0.85rem; color: var(--text-dim);">Data as of ${indeedData.date}</span>`;
-        }
+        let citationHTML = '';
         if (indeedData.source_url) {
-            metaHTML += ` <a href="${indeedData.source_url}" target="_blank" rel="noopener" style="font-size: 0.85rem; color: var(--phosphor-dim); text-decoration: none;">[FRED source]</a>`;
+            citationHTML = `<span class="citation-links"><a href="${indeedData.source_url}" target="_blank" rel="noopener">[FRED source]</a></span>`;
         }
-        document.getElementById('indeedMeta').innerHTML = metaHTML;
+
+        const html = `
+            <div class="company-item">
+                <div class="company-name">Software Dev Index</div>
+                <div class="company-value">${indeedData.current_value.toFixed(2)} index value</div>
+                <div class="company-meta">
+                    ${indeedData.date ? `<span>as of ${indeedData.date}</span>` : ''}
+                    ${citationHTML}
+                </div>
+                ${changesHTML}
+            </div>
+        `;
+
+        document.getElementById('indeedIndexData').innerHTML = html;
     }
 
     function renderStockIndex(stockIndexData) {
