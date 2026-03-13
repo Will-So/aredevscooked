@@ -1,5 +1,6 @@
 """Tests for orchestration script."""
 
+import json
 import pytest
 from datetime import date, timedelta
 from unittest.mock import Mock, patch
@@ -441,7 +442,6 @@ def test_build_metrics_structure_indeed_changes_default_neutral(mocker):
 @pytest.fixture
 def history_file(tmp_path, monkeypatch):
     """Create a temporary metrics_history.json with known snapshots."""
-    import json
 
     today = date.today()
     snapshots = {}
@@ -491,4 +491,48 @@ def test_load_history_snapshot_tolerance_prefers_closest(history_file):
 def test_load_history_snapshot_tolerance_too_small(history_file):
     # 25 days ago, nearest data is 30 days ago (5 days away), tolerance=3 won't reach
     snapshot = load_history_snapshot(25, tolerance_days=3)
+    assert snapshot is None
+
+
+def test_load_history_snapshot_validate_skips_empty(tmp_path, monkeypatch):
+    """Snapshot at exact date has empty job_postings; validate skips it and finds nearby."""
+    today = date.today()
+    exact_date = (today - timedelta(days=30)).isoformat()
+    nearby_date = (today - timedelta(days=28)).isoformat()
+    snapshots = {
+        exact_date: {"job_postings": {}},
+        nearby_date: {"job_postings": {"OpenAI": {"total_technical_jobs": 200}}},
+    }
+    history = {"snapshots": snapshots}
+    history_path = tmp_path / "data" / "processed"
+    history_path.mkdir(parents=True)
+    with open(history_path / "metrics_history.json", "w") as f:
+        json.dump(history, f)
+    monkeypatch.chdir(tmp_path)
+
+    snapshot = load_history_snapshot(
+        30,
+        tolerance_days=5,
+        validate=lambda s: "OpenAI" in s.get("job_postings", {}),
+    )
+    assert snapshot is not None
+    assert snapshot["job_postings"]["OpenAI"]["total_technical_jobs"] == 200
+
+
+def test_load_history_snapshot_validate_without_tolerance(tmp_path, monkeypatch):
+    """With tolerance_days=0, validate still rejects empty snapshots."""
+    today = date.today()
+    exact_date = (today - timedelta(days=30)).isoformat()
+    snapshots = {exact_date: {"job_postings": {}}}
+    history = {"snapshots": snapshots}
+    history_path = tmp_path / "data" / "processed"
+    history_path.mkdir(parents=True)
+    with open(history_path / "metrics_history.json", "w") as f:
+        json.dump(history, f)
+    monkeypatch.chdir(tmp_path)
+
+    snapshot = load_history_snapshot(
+        30,
+        validate=lambda s: "OpenAI" in s.get("job_postings", {}),
+    )
     assert snapshot is None

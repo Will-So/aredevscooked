@@ -7,6 +7,7 @@ import logging
 import sys
 import time
 from datetime import date, datetime, timedelta, timezone
+from collections.abc import Callable
 from typing import Any, Coroutine
 from pathlib import Path
 from dotenv import load_dotenv
@@ -439,13 +440,17 @@ def calculate_headcount_changes(
 
 
 def load_history_snapshot(
-    days_ago: int, tolerance_days: int = 0
+    days_ago: int,
+    tolerance_days: int = 0,
+    validate: Callable[[dict], bool] | None = None,
 ) -> dict[str, Any] | None:
     """Load a snapshot from metrics_history.json.
 
     Args:
         days_ago: Number of days ago (1, 30, etc.)
         tolerance_days: Search ±this many days around target if exact match missing
+        validate: Optional function that must return True for a snapshot to be accepted.
+            If provided and the snapshot fails validation, the search continues.
 
     Returns:
         Snapshot data or None if not found
@@ -461,7 +466,10 @@ def load_history_snapshot(
     target_date = date.today() - timedelta(days=days_ago)
 
     if tolerance_days == 0:
-        return snapshots.get(target_date.isoformat())
+        snapshot = snapshots.get(target_date.isoformat())
+        if snapshot and (validate is None or validate(snapshot)):
+            return snapshot
+        return None
 
     for offset in range(tolerance_days + 1):
         for candidate in [
@@ -469,7 +477,7 @@ def load_history_snapshot(
             target_date + timedelta(days=offset),
         ]:
             snapshot = snapshots.get(candidate.isoformat())
-            if snapshot:
+            if snapshot and (validate is None or validate(snapshot)):
                 return snapshot
 
     return None
@@ -889,7 +897,11 @@ def build_metrics_structure(
                 changes["1_year_ago"] = {"value": None, "badge": "neutral"}
 
             # Try to get historical snapshots from metrics_history.json for 30 days
-            snapshot = load_history_snapshot(30, tolerance_days=5)
+            snapshot = load_history_snapshot(
+                30,
+                tolerance_days=5,
+                validate=lambda s: name in s.get("job_postings", {}),
+            )
             if snapshot and name in snapshot.get("job_postings", {}):
                 historical_jobs = snapshot["job_postings"][name]["total_technical_jobs"]
                 job_change = current_jobs - historical_jobs
