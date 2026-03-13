@@ -4,6 +4,8 @@ import pytest
 from aredevscooked.gemini_prompts import (
     create_headcount_prompt,
     create_job_postings_prompt,
+    create_joke_candidates_prompt,
+    create_joke_evaluation_prompt,
     create_summary_prompt,
 )
 
@@ -140,3 +142,57 @@ def test_summary_prompt_requests_single_paragraph():
     sample_metrics = {}
     prompt = create_summary_prompt(sample_metrics)
     assert "paragraph" in prompt.lower() or "3-4 sentences" in prompt.lower()
+
+
+def test_summary_prompt_mentions_indeed():
+    """Summary prompt should mention Indeed Job Postings."""
+    prompt = create_summary_prompt({})
+    assert "indeed" in prompt.lower()
+
+
+def test_summary_prompt_excludes_humor_instructions():
+    """Summary prompt should not contain humor instructions (jokes are separate now)."""
+    prompt = create_summary_prompt({})
+    assert "humorous" not in prompt.lower()
+    assert "witty" not in prompt.lower()
+    assert "game of thrones" not in prompt.lower()
+    assert "Not Today" not in prompt
+    assert "Red Wedding" not in prompt
+
+
+def test_summary_prompt_excludes_consultancy_headcount():
+    """Summary prompt should not focus on IT consultancy headcount."""
+    prompt = create_summary_prompt({})
+    assert "Headcount & stock" not in prompt
+
+
+def test_joke_candidates_prompt_requests_ten_jokes():
+    """Joke candidates prompt should request exactly 10 jokes."""
+    prompt = create_joke_candidates_prompt("Summary text.", {})
+    assert "10" in prompt
+
+
+def test_joke_candidates_prompt_includes_summary_context():
+    """Joke candidates prompt should include the summary text."""
+    prompt = create_joke_candidates_prompt("Devs are doing fine today.", {})
+    assert "Devs are doing fine today." in prompt
+
+
+def test_joke_candidates_prompt_includes_got_reference():
+    """Joke candidates prompt should mention Game of Thrones Not Today reference."""
+    prompt = create_joke_candidates_prompt("Summary.", {})
+    assert "Not Today" in prompt
+
+
+def test_joke_evaluation_prompt_asks_for_single_winner():
+    """Joke evaluation prompt should ask for a single winning joke."""
+    prompt = create_joke_evaluation_prompt("Summary.", "1. Joke one\n2. Joke two")
+    assert "single" in prompt.lower() or "one" in prompt.lower()
+
+
+def test_joke_evaluation_prompt_includes_candidates():
+    """Joke evaluation prompt should include the joke candidates."""
+    candidates = "1. First joke\n2. Second joke"
+    prompt = create_joke_evaluation_prompt("Summary.", candidates)
+    assert "First joke" in prompt
+    assert "Second joke" in prompt

@@ -15,6 +15,8 @@ from google.genai import types
 from aredevscooked.gemini_prompts import (
     create_headcount_prompt,
     create_job_postings_prompt,
+    create_joke_candidates_prompt,
+    create_joke_evaluation_prompt,
     create_stock_data_prompt,
     create_summary_prompt,
 )
@@ -287,23 +289,53 @@ class GeminiCollector:
         return data
 
     def generate_summary(self, metrics_data: dict[str, Any]) -> str:
-        """Generate AI-powered market summary.
+        """Generate AI-powered market summary with a separately evaluated joke.
+
+        Uses a 3-step pipeline:
+        1. Generate a factual summary (temperature=0.0)
+        2. Generate 10 joke candidates (temperature=1.0)
+        3. Evaluate and pick the funniest joke (temperature=0.0)
 
         Args:
             metrics_data: Complete metrics data structure
 
         Returns:
-            One-paragraph summary text
+            Combined summary + joke text
         """
-        prompt = create_summary_prompt(metrics_data)
-
-        # Note: Summary generation doesn't need grounding - it's analyzing provided data
+        # Step 1: Factual summary
+        summary_prompt = create_summary_prompt(metrics_data)
+        summary_config = types.GenerateContentConfig(temperature=0.0)
         response = self.client.models.generate_content(
-            model=self.model_name, contents=prompt, config=self.generation_config
+            model=self.model_name, contents=summary_prompt, config=summary_config
         )
-        text = self._get_response_text(response)
-        self._log_response("summary", "market_summary", prompt, text, response)
-        return text.strip()
+        summary_text = self._get_response_text(response).strip()
+        self._log_response(
+            "summary", "market_summary", summary_prompt, summary_text, response
+        )
+
+        # Step 2: Generate 10 joke candidates
+        jokes_prompt = create_joke_candidates_prompt(summary_text, metrics_data)
+        jokes_config = types.GenerateContentConfig(temperature=1.0)
+        response = self.client.models.generate_content(
+            model=self.model_name, contents=jokes_prompt, config=jokes_config
+        )
+        joke_candidates = self._get_response_text(response).strip()
+        self._log_response(
+            "joke_candidates", "market_summary", jokes_prompt, joke_candidates, response
+        )
+
+        # Step 3: Pick the best joke
+        selection_prompt = create_joke_evaluation_prompt(summary_text, joke_candidates)
+        selection_config = types.GenerateContentConfig(temperature=0.0)
+        response = self.client.models.generate_content(
+            model=self.model_name, contents=selection_prompt, config=selection_config
+        )
+        winning_joke = self._get_response_text(response).strip()
+        self._log_response(
+            "joke_selection", "market_summary", selection_prompt, winning_joke, response
+        )
+
+        return f"{summary_text} {winning_joke}"
 
     def _get_response_text(self, response) -> str:
         """Extract text from Gemini API response.

@@ -239,9 +239,12 @@ def test_collect_job_postings_validates_non_negative(
 
 def test_generate_summary_returns_string(collector, mock_gemini_response, mocker):
     """Summary generation should return a string."""
-    mock_response_text = "The tech job market shows mixed signals."
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
-    mock_generate.return_value = mock_gemini_response(mock_response_text)
+    mock_generate.side_effect = [
+        mock_gemini_response("The tech job market shows mixed signals."),
+        mock_gemini_response("1. Joke one\n2. Joke two"),
+        mock_gemini_response("The winning joke."),
+    ]
 
     result = collector.generate_summary({"test": "data"})
 
@@ -249,15 +252,56 @@ def test_generate_summary_returns_string(collector, mock_gemini_response, mocker
     assert len(result) > 0
 
 
-def test_generate_summary_returns_text(collector, mock_gemini_response, mocker):
-    """Summary generation should return the text from response."""
-    mock_response_text = "The tech job market shows mixed signals across all tiers."
+def test_generate_summary_returns_combined_text(
+    collector, mock_gemini_response, mocker
+):
+    """Summary generation should return summary + winning joke combined."""
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
-    mock_generate.return_value = mock_gemini_response(mock_response_text)
+    mock_generate.side_effect = [
+        mock_gemini_response("Market is stable."),
+        mock_gemini_response("1. Joke A\n2. Joke B"),
+        mock_gemini_response("Joke A was the best."),
+    ]
 
     result = collector.generate_summary({"test": "data"})
 
-    assert result == mock_response_text
+    assert "Market is stable." in result
+    assert "Joke A was the best." in result
+
+
+def test_generate_summary_makes_three_api_calls(
+    collector, mock_gemini_response, mocker
+):
+    """Summary generation should make exactly 3 API calls."""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.side_effect = [
+        mock_gemini_response("Summary text."),
+        mock_gemini_response("1. Joke\n2. Joke"),
+        mock_gemini_response("Best joke."),
+    ]
+
+    collector.generate_summary({"test": "data"})
+
+    assert mock_generate.call_count == 3
+
+
+def test_generate_summary_uses_correct_temperatures(
+    collector, mock_gemini_response, mocker
+):
+    """Summary generation should use temp 0.0, 1.0, 0.0 for the three steps."""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.side_effect = [
+        mock_gemini_response("Summary."),
+        mock_gemini_response("1. Joke"),
+        mock_gemini_response("Winner."),
+    ]
+
+    collector.generate_summary({"test": "data"})
+
+    calls = mock_generate.call_args_list
+    assert calls[0].kwargs["config"].temperature == 0.0
+    assert calls[1].kwargs["config"].temperature == 1.0
+    assert calls[2].kwargs["config"].temperature == 0.0
 
 
 # JSON Extraction Tests
