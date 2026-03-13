@@ -534,13 +534,7 @@ footer a:hover {
     text-decoration: none;
 }
 
-@media (max-width: 1400px) {
-    .tiers-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     body {
         font-size: 15px;
     }

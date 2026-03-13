@@ -236,7 +236,7 @@
 
         const html = `
             <div class="company-item">
-                <div class="company-name">Software Dev Index</div>
+                <div class="company-name">Software Job Postings Index</div>
                 <div class="company-value">${indeedData.current_value.toFixed(2)} index value</div>
                 <div class="company-meta">
                     ${indeedData.date ? `<span>as of ${indeedData.date}</span>` : ''}
