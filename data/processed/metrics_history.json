@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-16T05:44:47.545079+00:00"
+    "last_updated": "2026-03-16T08:39:37.392054+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -6342,10 +6342,10 @@
     },
     "2026-03-16": {
       "date": "2026-03-16",
-      "timestamp": "2026-03-16T05:44:47.545058+00:00",
+      "timestamp": "2026-03-16T08:39:37.392027+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1314.2,
+          "price": 1311.6,
           "ticker": "HCLTECH.NS"
         },
         "LTIMindtree": {
@@ -6361,11 +6361,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2375.0,
+          "price": 2381.2,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1324.2,
+          "price": 1325.1,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
