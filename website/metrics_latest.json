@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-16T05:28:52.621137+00:00",
+    "last_updated": "2026-03-16T05:44:47.539980+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -480,7 +480,7 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": 20,
+              "value": 161,
               "badge": "strong"
             }
           }
@@ -495,7 +495,7 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": 150,
+              "value": 45,
               "badge": "strong"
             }
           }
@@ -510,8 +510,8 @@
               "badge": "neutral"
             },
             "30_days_ago": {
-              "value": 11,
-              "badge": "strong"
+              "value": 7,
+              "badge": "neutral"
             }
           }
         }
@@ -521,19 +521,19 @@
     }
   },
   "stock_index": {
-    "current_value": 69.62,
-    "baseline_date": "2025-03-15",
+    "current_value": 69.61,
+    "baseline_date": "2025-03-16",
     "changes": {
-      "30_day": -20.93,
-      "1_year": -30.38
+      "30_day": -20.95,
+      "1_year": -30.39
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1316.3,
+        "current_price": 1314.2,
         "weight": 0.14285714285714285,
-        "change_30_day": -18.64,
-        "change_1_year": -28.12
+        "change_30_day": -18.77,
+        "change_1_year": -28.23
       },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
@@ -558,17 +558,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2379.4,
+        "current_price": 2375.0,
         "weight": 0.14285714285714285,
-        "change_30_day": -24.77,
-        "change_1_year": -40.94
+        "change_30_day": -24.91,
+        "change_1_year": -41.05
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1321.9,
+        "current_price": 1324.2,
         "weight": 0.14285714285714285,
-        "change_30_day": -13.06,
-        "change_1_year": -19.93
+        "change_30_day": -12.9,
+        "change_1_year": -19.79
       },
       "Wipro": {
         "ticker": "WIT",
@@ -580,19 +580,19 @@
     },
     "aggregate_badge": "collapsing"
   },
-  "ai_summary": "Devs aren't cooked yet. While IT consultancy stocks are collapsing (-30% YoY), Big Tech headcount remains stable (-3.4%). Crucially, AI labs show strong hiring momentum, and the Indeed Index reflects growing software dev demand (+13.7% YoY). The market is shifting toward high-value roles rather than disappearing. It turns out \"high-value\" is just recruiter-speak for a Senior Dev who is also a therapist for a hallucinating chatbot.",
+  "ai_summary": "Devs aren't cooked. Despite a 30% collapse in IT consultancy stocks, Big Tech headcount remains stable (-3.4%). AI labs show explosive hiring momentum, and the Indeed index is up 13.7% YoY. While low-end outsourcing faces significant pressure, broader software development demand remains resilient and growing. Devs aren't cooked; we're just being marinated in high interest rates until we're tender enough for the AI labs to snap us up.",
   "indeed_index": {
-    "current_value": 113.7,
+    "current_value": 113.74,
     "date": "2026-03-06",
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
     "changes": {
       "30_day": {
-        "pct": 0.42,
+        "pct": 0.36,
         "badge": "neutral"
       },
       "1_year": {
-        "pct": 13.7,
+        "pct": 13.74,
         "badge": "strong"
       },
       "q1_2023": {
