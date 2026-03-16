@@ -81,7 +81,7 @@
         if (element) {
             let html = getBadgeHTML(badge);
             if (summaryText) {
-                html += `<br><span class="summary-text" style="margin-top: 0.5rem; display: inline-block; color: var(--text-dim); font-size: 0.9rem;">${summaryText}</span>`;
+                html += `<span class="aggregate-summary">${summaryText}</span>`;
             }
             element.innerHTML = html;
         }
@@ -203,26 +203,35 @@
     function renderIndeedIndex(indeedData) {
         if (!indeedData) return;
 
-        renderAggregateBadge('indeedIndexBadge', indeedData.aggregate_badge);
+        let indeedSummary = null;
+        if (indeedData.changes && indeedData.changes['1_year'] && indeedData.changes['1_year'].pct != null) {
+            indeedSummary = `(${formatPercentage(indeedData.changes['1_year'].pct)} index YoY)`;
+        }
+        renderAggregateBadge('indeedIndexBadge', indeedData.aggregate_badge, indeedSummary);
 
         const changes = indeedData.changes || {};
-        let changesHTML = '<div class="company-changes">';
         const periodLabels = { '30_day': '30 Days', '1_year': '1 Year', 'q1_2023': 'vs Q1 2023' };
+        const orderedPeriods = ['30_day', '1_year', 'q1_2023'];
+        let changesHTML = '<div class="index-changes">';
 
-        for (const [period, change] of Object.entries(changes)) {
+        for (const period of orderedPeriods) {
+            const change = changes[period];
+            if (!change) {
+                continue;
+            }
             const periodLabel = periodLabels[period] || period;
             if (change.pct == null) {
                 changesHTML += `
-                    <div class="change-item">
-                        <span class="change-label">${periodLabel}</span>
-                        <span class="change-value" style="color: #6b7280;">N/A</span>
+                    <div class="index-change">
+                        <span class="period">${periodLabel}</span>
+                        <span class="value neutral">N/A</span>
                     </div>
                 `;
             } else {
                 changesHTML += `
-                    <div class="change-item">
-                        <span class="change-label">${periodLabel}</span>
-                        <span class="change-value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
+                    <div class="index-change">
+                        <span class="period">${periodLabel}</span>
+                        <span class="value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
                     </div>
                 `;
             }
@@ -235,10 +244,12 @@
         }
 
         const html = `
-            <div class="company-item">
-                <div class="company-name">Software Job Postings Index</div>
-                <div class="company-value">${indeedData.current_value.toFixed(2)} index value</div>
-                <div class="company-meta">
+            <div class="stock-index indeed-index">
+                <div class="index-value">
+                    <span class="value">${indeedData.current_value.toFixed(2)}</span>
+                    <span class="label">Index Value</span>
+                </div>
+                <div class="company-meta index-meta">
                     ${indeedData.date ? `<span>as of ${indeedData.date}</span>` : ''}
                     ${citationHTML}
                 </div>

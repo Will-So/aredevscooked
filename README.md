@@ -47,7 +47,7 @@ This will:
 - Collect headcount data for 12 companies
 - Collect job postings for 3 AI labs
 - Calculate changes vs historical baselines
-- Generate humorous AI summary (60-word max)
+- Generate humorous AI summary (70-word max)
 - Save results to `data/processed/metrics_latest.json`
 
 ### One-Time Baseline Setup
@@ -130,7 +130,7 @@ aredevscooked/
 
 The static website (`website/` directory) displays:
 - **Prominent Verdict Card**: Shows overall "Are Devs Cooked?" verdict (Yes/Maybe/Not Today) based on all metrics
-- **Humorous AI Summary**: 60-word max contextual summary with witty commentary on market health
+- **Humorous AI Summary**: 70-word max contextual summary with witty commentary on market health
 - **Stock Index**: Equal-weighted index tracking IT consultancies with individual stock prices
 - **Per-Stock Changes**: 30-day and 1-year percentage changes for each stock
 - **Color-Coded Badges**: Quick visual health assessment across all companies
@@ -222,7 +222,7 @@ GEMINI_API_KEY=your_api_key_here  # Get from https://aistudio.google.com/
 Daily collection makes approximately **16 Gemini API requests**:
 - 12 headcount queries (7 consultancies + 5 big tech)
 - 3 job posting counts (AI labs)
-- 1 AI summary generation (humorous, 60-word max)
+- 1 AI summary generation (humorous, 70-word max)
 
 **Note**: Stock prices are collected via yfinance (no API quota usage)
 

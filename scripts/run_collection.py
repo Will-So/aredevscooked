@@ -245,12 +245,27 @@ async def collect_all_headcount_data(
         c["name"] for c in BIG_TECH_COMPANIES
     ]
 
+    same_day_headcount_data = load_same_day_headcount_data()
+    results: list[tuple[str, dict[str, Any] | None]] = []
+
+    for company_name in all_companies:
+        cached_data = same_day_headcount_data.get(company_name)
+        if cached_data is None:
+            continue
+        log(
+            f"  ⏪ Reusing same-day headcount for {company_name}: "
+            f"{cached_data['current_headcount']:,}"
+        )
+        results.append((company_name, cached_data))
+
     tasks = [
         collect_single_headcount_data(collector, company_name, position=i)
         for i, company_name in enumerate(all_companies)
+        if company_name not in same_day_headcount_data
     ]
 
-    results = await asyncio.gather(*tasks)
+    if tasks:
+        results.extend(await asyncio.gather(*tasks))
 
     # Filter out failed collections (None values)
     headcount_data = {name: data for name, data in results if data is not None}
@@ -301,14 +316,30 @@ async def collect_all_job_posting_data(
     Returns:
         Dictionary mapping company name to job posting data
     """
+    same_day_job_posting_data = load_same_day_job_posting_data()
+    results: list[tuple[str, dict[str, Any] | None]] = []
+
+    for lab_info in AI_LABS:
+        company_name = lab_info["name"]
+        cached_data = same_day_job_posting_data.get(company_name)
+        if cached_data is None:
+            continue
+        log(
+            f"  ⏪ Reusing same-day job postings for {company_name}: "
+            f"{cached_data['total_technical_jobs']} jobs"
+        )
+        results.append((company_name, cached_data))
+
     tasks = [
         collect_single_job_posting_data(
             collector, lab_info["name"], lab_info["jobs_url"], position=i
         )
         for i, lab_info in enumerate(AI_LABS)
+        if lab_info["name"] not in same_day_job_posting_data
     ]
 
-    results = await asyncio.gather(*tasks)
+    if tasks:
+        results.extend(await asyncio.gather(*tasks))
 
     # Filter out failed collections (None values)
     job_posting_data = {name: data for name, data in results if data is not None}
@@ -561,6 +592,110 @@ def find_recent_headcount_data(
             }
 
     return None
+
+
+def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
+    """Load today's headcount payloads from metrics_latest.json when available."""
+    metrics_file = Path("data/processed/metrics_latest.json")
+    if not metrics_file.exists():
+        return {}
+
+    with open(metrics_file, "r") as f:
+        metrics = json.load(f)
+
+    last_updated = metrics.get("metadata", {}).get("last_updated", "")
+    if not last_updated:
+        return {}
+
+    try:
+        updated_at = datetime.fromisoformat(last_updated.replace("Z", "+00:00"))
+    except ValueError:
+        return {}
+
+    updated_date = updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
+
+    if updated_date != date.today():
+        return {}
+
+    same_day_data: dict[str, dict[str, Any]] = {}
+
+    for tier_name in ["low_end", "medium_end"]:
+        companies = metrics.get(tier_name, {}).get("headcount", {}).get("companies", {})
+
+        for company_name, company_data in companies.items():
+            current_headcount = company_data.get("current")
+            if current_headcount is None:
+                continue
+
+            reconstructed: dict[str, Any] = {
+                "current_headcount": current_headcount,
+                "data_date": company_data.get("data_date", ""),
+                "source_urls": company_data.get("source_urls", []),
+                "current": {
+                    "headcount": current_headcount,
+                    "as_of_date": company_data.get("data_date", ""),
+                    "source_url": company_data.get("source_url", ""),
+                    "notes": company_data.get("notes", ""),
+                },
+            }
+
+            changes = company_data.get("changes", {})
+            for metrics_key, payload_key in [
+                ("1_year_ago", "one_year_ago"),
+                ("q1_2023", "q1_2023"),
+            ]:
+                change = changes.get(metrics_key, {})
+                baseline_headcount = change.get("baseline_headcount")
+                if baseline_headcount:
+                    reconstructed[payload_key] = {
+                        "headcount": baseline_headcount,
+                        "as_of_date": change.get("baseline_date", ""),
+                        "source_url": change.get("source_url", ""),
+                    }
+
+            same_day_data[company_name] = reconstructed
+
+    return same_day_data
+
+
+def load_same_day_job_posting_data() -> dict[str, dict[str, Any]]:
+    """Load today's AI lab job posting payloads from metrics_latest.json."""
+    metrics_file = Path("data/processed/metrics_latest.json")
+    if not metrics_file.exists():
+        return {}
+
+    with open(metrics_file, "r") as f:
+        metrics = json.load(f)
+
+    last_updated = metrics.get("metadata", {}).get("last_updated", "")
+    if not last_updated:
+        return {}
+
+    try:
+        updated_at = datetime.fromisoformat(last_updated.replace("Z", "+00:00"))
+    except ValueError:
+        return {}
+
+    updated_date = updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
+
+    if updated_date != date.today():
+        return {}
+
+    companies = metrics.get("high_end", {}).get("job_postings", {}).get("companies", {})
+    same_day_data = {}
+
+    for company_name, company_data in companies.items():
+        total_technical_jobs = company_data.get("current")
+        if total_technical_jobs is None:
+            continue
+
+        same_day_data[company_name] = {
+            "total_technical_jobs": total_technical_jobs,
+            "collection_date": company_data.get("collection_date", ""),
+            "source_url": company_data.get("source_url", ""),
+        }
+
+    return same_day_data
 
 
 def build_metrics_structure(

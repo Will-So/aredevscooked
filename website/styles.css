@@ -65,17 +65,17 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 1.5rem 2rem 0 2rem;
+    padding: 1rem 1.5rem 0 1.5rem;
 }
 
 .verdict-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     animation: boot-in 0.6s ease-out both;
 }
 
 .verdict-card {
     background: var(--bg-panel);
-    padding: 1.5rem 2rem 1rem 2rem;
+    padding: 1.2rem 1.5rem 0.85rem 1.5rem;
     border: 1px solid var(--border-bright);
     text-align: center;
     position: relative;
@@ -84,7 +84,7 @@ body {
 
 .verdict-title {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-weight: 400;
     margin-bottom: 0.25rem;
     letter-spacing: 1px;
@@ -93,7 +93,7 @@ body {
 
 .verdict-value {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -142,7 +142,7 @@ body {
 }
 
 .summary-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     animation: boot-in 0.6s ease-out 0.1s both;
 }
 
@@ -153,7 +153,7 @@ body {
 
 .summary-card {
     background: var(--bg-panel);
-    padding: 1.2rem 1.5rem;
+    padding: 0.9rem 1.15rem;
     border-left: 3px solid var(--phosphor-dim);
     border-top: 1px solid var(--border-green);
     border-bottom: 1px solid var(--border-green);
@@ -168,27 +168,27 @@ body {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.85rem;
     color: var(--text-dim);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.45rem;
     letter-spacing: 1px;
 }
 
 .summary-text {
     font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.92rem;
+    line-height: 1.5;
     color: var(--phosphor-dim);
 }
 
 .tiers-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .tier-card {
     background: var(--bg-panel);
-    padding: 1.5rem;
+    padding: 1.1rem;
     border: 1px solid var(--border-bright);
     transition: border-color 0.3s, box-shadow 0.3s;
     position: relative;
@@ -207,17 +207,17 @@ body {
 }
 
 .tier-header {
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.45rem;
     border-bottom: 1px dotted var(--border-bright);
-    min-height: 5.2rem;
+    min-height: 4.35rem;
     display: flex;
     align-items: flex-start;
 }
 
 .tier-header h2 {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0;
     color: var(--amber);
@@ -226,7 +226,7 @@ body {
 }
 
 .metric-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .metric-section:last-child {
@@ -234,25 +234,34 @@ body {
 }
 
 .aggregate-badge {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.85rem;
     text-align: center;
-    padding: 0.75rem;
+    padding: 0.5rem 0.65rem;
     background: var(--bg-card);
     border: 1px solid var(--border-green);
-    min-height: 6.2rem;
+    min-height: 4.5rem;
     border-radius: 4px;
 }
 
 .badge {
     display: inline-block;
-    padding: 0.3rem 0.75rem;
+    padding: 0.1rem 0.35rem;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    font-size: 1.1rem;
+    font-size: 0.92rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     border-radius: 0;
     background: transparent;
+}
+
+.aggregate-summary {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.25;
 }
 
 .badge::before {
@@ -299,12 +308,12 @@ body {
 .companies-list {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
 .company-item {
     background: var(--bg-card);
-    padding: 1rem;
+    padding: 0.85rem;
     border-left: 2px solid var(--text-faint);
     border-top: 1px solid var(--border-green);
     border-bottom: 1px solid var(--border-green);
@@ -320,14 +329,14 @@ body {
 .company-name {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 1.15rem;
-    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
     color: var(--phosphor);
 }
 
 .company-value {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 400;
     color: var(--amber);
     margin-bottom: 0.25rem;
@@ -337,7 +346,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     color: var(--text-dim);
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.45rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -366,7 +375,7 @@ body {
 .company-changes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 0.5rem;
+    gap: 0.4rem;
     font-size: 0.9rem;
 }
 
@@ -380,14 +389,14 @@ body {
     color: var(--text-dim);
     font-size: 0.85rem;
     text-transform: uppercase;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
     letter-spacing: 0.5px;
 }
 
 .change-value {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
 }
 
 .change-value.positive {
@@ -411,20 +420,20 @@ body {
 
 .stock-index {
     background: var(--bg-card);
-    padding: 1.25rem;
+    padding: 0.95rem;
     border: 1px solid var(--border-green);
     border-radius: 4px;
 }
 
 .index-value {
     text-align: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.8rem;
 }
 
 .index-value .value {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 3rem;
+    font-size: 2.2rem;
     font-weight: 400;
     color: var(--amber);
     letter-spacing: 1px;
@@ -433,7 +442,7 @@ body {
 .index-value .label {
     display: block;
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -442,12 +451,12 @@ body {
 .index-changes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
+    gap: 0.5rem;
     text-align: center;
 }
 
 .index-change {
-    padding: 0.6rem;
+    padding: 0.45rem;
     background: var(--bg-panel);
     border: 1px dotted var(--border-green);
     border-radius: 4px;
@@ -456,25 +465,30 @@ body {
 .index-change .period {
     display: block;
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     color: var(--text-dim);
     text-transform: uppercase;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
     letter-spacing: 0.5px;
 }
 
 .index-change .value {
     display: block;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 1.3rem;
+    font-size: 1.05rem;
     font-weight: 400;
+}
+
+.indeed-index .index-meta {
+    justify-content: center;
+    margin-bottom: 0.8rem;
 }
 
 .legend-section {
     background: var(--bg-panel);
-    padding: 1.5rem;
+    padding: 1.1rem;
     border: 1px solid var(--border-bright);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     animation: boot-in 0.6s ease-out 0.55s both;
     border-radius: 4px;
 }
@@ -540,11 +554,11 @@ footer a:hover {
     }
 
     .container {
-        padding: 1rem 0.75rem 0 0.75rem;
+        padding: 0.75rem 0.75rem 0 0.75rem;
     }
 
     .verdict-card {
-        padding: 1.25rem 1rem 0.75rem 1rem;
+        padding: 1rem 0.9rem 0.7rem 0.9rem;
     }
 
     .verdict-title {
@@ -559,7 +573,7 @@ footer a:hover {
 
     .tiers-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.85rem;
     }
 
     .company-changes {
@@ -568,6 +582,10 @@ footer a:hover {
 
     .index-changes {
         grid-template-columns: 1fr;
+    }
+
+    .aggregate-badge {
+        min-height: auto;
     }
 
     .legend-grid {

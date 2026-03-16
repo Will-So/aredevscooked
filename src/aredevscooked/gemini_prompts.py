@@ -148,7 +148,7 @@ def create_summary_prompt(metrics_data: dict[str, Any]) -> str:
 
 {metrics_data}
 
-Write an informative paragraph (MAX 60 words) about whether devs are actually cooked.
+Write an informative paragraph (MAX 50 words) about whether devs are actually cooked.
 
 Context: Small changes like -3% headcount aren’t bad news - that’s just normal market dynamics.
 Real concerns are double-digit declines, collapsing stock prices, or AI labs going on hiring freezes.

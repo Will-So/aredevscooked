@@ -11,6 +11,8 @@ from scripts.run_collection import (
     build_metrics_structure,
     find_recent_headcount_data,
     load_history_snapshot,
+    load_same_day_headcount_data,
+    load_same_day_job_posting_data,
 )
 
 
@@ -98,6 +100,7 @@ async def test_collect_all_headcount_data_returns_dict(mocker):
         "current_headcount": 226640,
         "data_date": "2025-09-30",
     }
+    mocker.patch("scripts.run_collection.load_same_day_headcount_data", return_value={})
 
     result = await collect_all_headcount_data(mock_collector)
 
@@ -116,6 +119,7 @@ async def test_collect_all_headcount_data_calls_collector_for_each_company(mocke
         "company": "Microsoft",
         "current_headcount": 228000,
     }
+    mocker.patch("scripts.run_collection.load_same_day_headcount_data", return_value={})
 
     await collect_all_headcount_data(mock_collector)
 
@@ -125,6 +129,30 @@ async def test_collect_all_headcount_data_calls_collector_for_each_company(mocke
     company_names = [call[0][0] for call in calls]
     assert "HCLTech" in company_names
     assert "Microsoft" in company_names
+
+
+@pytest.mark.asyncio
+async def test_collect_all_headcount_data_reuses_same_day_values(mocker):
+    """Should skip Gemini calls when today's headcount data already exists."""
+    mock_collector = mocker.Mock()
+    same_day_data = {
+        "HCLTech": {"current_headcount": 226640},
+        "Microsoft": {"current_headcount": 228000},
+    }
+
+    mocker.patch(
+        "scripts.run_collection.load_same_day_headcount_data",
+        return_value=same_day_data,
+    )
+
+    result = await collect_all_headcount_data(mock_collector)
+
+    assert result["HCLTech"]["current_headcount"] == 226640
+    assert result["Microsoft"]["current_headcount"] == 228000
+    assert mock_collector.collect_headcount.call_count == 10
+    called_companies = [call[0][0] for call in mock_collector.collect_headcount.call_args_list]
+    assert "HCLTech" not in called_companies
+    assert "Microsoft" not in called_companies
 
 
 def test_find_recent_headcount_data_returns_most_recent(tmp_path, mocker):
@@ -232,6 +260,106 @@ def test_find_recent_headcount_data_respects_max_days_old(tmp_path, mocker):
     assert result is None
 
 
+def test_load_same_day_headcount_data_reconstructs_payload(tmp_path, mocker):
+    """Should rebuild Gemini-compatible headcount payloads from today's metrics file."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today().isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{today}T12:00:00+00:00"},
+        "low_end": {
+            "headcount": {
+                "companies": {
+                    "HCLTech": {
+                        "current": 226640,
+                        "data_date": "2026-03-01",
+                        "source_url": "https://example.com/current",
+                        "notes": "Current note",
+                        "source_urls": ["https://example.com/current"],
+                        "changes": {
+                            "1_year_ago": {
+                                "baseline_headcount": 220000,
+                                "baseline_date": "2025-03-01",
+                                "source_url": "https://example.com/1y",
+                            },
+                            "q1_2023": {
+                                "baseline_headcount": 200000,
+                                "baseline_date": "2023-03-31",
+                                "source_url": "https://example.com/q1-2023",
+                            },
+                        },
+                    }
+                }
+            }
+        },
+        "medium_end": {"headcount": {"companies": {}}},
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_headcount_data()
+
+    assert result["HCLTech"]["current_headcount"] == 226640
+    assert result["HCLTech"]["current"]["notes"] == "Current note"
+    assert result["HCLTech"]["one_year_ago"]["headcount"] == 220000
+    assert result["HCLTech"]["q1_2023"]["headcount"] == 200000
+
+
+def test_load_same_day_headcount_data_ignores_stale_metrics(tmp_path, mocker):
+    """Should not reuse metrics from an earlier day."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    stale_day = (date.today() - timedelta(days=1)).isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{stale_day}T12:00:00+00:00"},
+        "low_end": {"headcount": {"companies": {"HCLTech": {"current": 226640}}}},
+        "medium_end": {"headcount": {"companies": {}}},
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_headcount_data()
+
+    assert result == {}
+
+
+def test_load_same_day_headcount_data_accepts_same_local_day_from_utc_timestamp(
+    tmp_path, mocker
+):
+    """Should reuse data when UTC date rolls over but local date is still the same day."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    metrics_data = {
+        "metadata": {"last_updated": "2026-03-13T04:25:52+00:00"},
+        "low_end": {"headcount": {"companies": {"HCLTech": {"current": 226640}}}},
+        "medium_end": {"headcount": {"companies": {}}},
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    class FakeDate:
+        @classmethod
+        def today(cls):
+            return __import__("datetime").date(2026, 3, 12)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+    mocker.patch("scripts.run_collection.date", FakeDate)
+
+    result = load_same_day_headcount_data()
+
+    assert result["HCLTech"]["current_headcount"] == 226640
+
+
 # Job Posting Data Collection Tests
 
 
@@ -243,6 +371,7 @@ async def test_collect_all_job_posting_data_returns_dict(mocker):
         "company": "DeepMind",
         "total_technical_jobs": 45,
     }
+    mocker.patch("scripts.run_collection.load_same_day_job_posting_data", return_value={})
 
     result = await collect_all_job_posting_data(mock_collector)
 
@@ -260,6 +389,7 @@ async def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker)
         "company": "Anthropic",
         "total_technical_jobs": 35,
     }
+    mocker.patch("scripts.run_collection.load_same_day_job_posting_data", return_value={})
 
     await collect_all_job_posting_data(mock_collector)
 
@@ -271,6 +401,95 @@ async def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker)
     assert any("greenhouse.io/deepmind" in url for url in jobs_urls)
     assert any("anthropic.com/jobs" in url for url in jobs_urls)
     assert any("openai.com/careers" in url for url in jobs_urls)
+
+
+@pytest.mark.asyncio
+async def test_collect_all_job_posting_data_reuses_same_day_values(mocker):
+    """Should skip Gemini calls when today's job posting data already exists."""
+    mock_collector = mocker.Mock()
+    same_day_data = {
+        "DeepMind": {"total_technical_jobs": 45},
+        "Anthropic": {"total_technical_jobs": 35},
+    }
+
+    mocker.patch(
+        "scripts.run_collection.load_same_day_job_posting_data",
+        return_value=same_day_data,
+    )
+
+    result = await collect_all_job_posting_data(mock_collector)
+
+    assert result["DeepMind"]["total_technical_jobs"] == 45
+    assert result["Anthropic"]["total_technical_jobs"] == 35
+    assert mock_collector.collect_job_postings.call_count == 1
+    called_companies = [
+        call[0][0] for call in mock_collector.collect_job_postings.call_args_list
+    ]
+    assert "DeepMind" not in called_companies
+    assert "Anthropic" not in called_companies
+
+
+def test_load_same_day_job_posting_data_reconstructs_payload(tmp_path, mocker):
+    """Should rebuild job posting payloads from today's metrics file."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today().isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{today}T12:00:00+00:00"},
+        "high_end": {
+            "job_postings": {
+                "companies": {
+                    "DeepMind": {
+                        "current": 45,
+                        "collection_date": "2026-03-12",
+                        "source_url": "https://example.com/jobs",
+                    }
+                }
+            }
+        },
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_job_posting_data()
+
+    assert result["DeepMind"]["total_technical_jobs"] == 45
+    assert result["DeepMind"]["collection_date"] == "2026-03-12"
+    assert result["DeepMind"]["source_url"] == "https://example.com/jobs"
+
+
+def test_load_same_day_job_posting_data_accepts_same_local_day_from_utc_timestamp(
+    tmp_path, mocker
+):
+    """Should reuse job postings when UTC date rolls over but local date is still the same day."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    metrics_data = {
+        "metadata": {"last_updated": "2026-03-13T04:25:52+00:00"},
+        "high_end": {
+            "job_postings": {"companies": {"DeepMind": {"current": 45}}}
+        },
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    class FakeDate:
+        @classmethod
+        def today(cls):
+            return date(2026, 3, 12)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+    mocker.patch("scripts.run_collection.date", FakeDate)
+
+    result = load_same_day_job_posting_data()
+
+    assert result["DeepMind"]["total_technical_jobs"] == 45
 
 
 # Metrics Structure Building Tests
