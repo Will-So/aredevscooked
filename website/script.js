@@ -395,6 +395,28 @@
         renderStockIndex(stockIndexData);
     }
 
+    function setupMobileCollapse() {
+        const collapsibleIds = ['stockCompaniesList', 'lowEndHeadcount', 'mediumEndHeadcount', 'highEndJobs'];
+
+        collapsibleIds.forEach(function(id) {
+            const list = document.getElementById(id);
+            if (!list || !list.children.length) return;
+
+            const btn = document.createElement('button');
+            btn.className = 'details-toggle';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerHTML = '&#9654; Show companies';
+
+            btn.addEventListener('click', function() {
+                const expanded = list.classList.toggle('expanded');
+                btn.setAttribute('aria-expanded', expanded);
+                btn.innerHTML = expanded ? '&#9660; Hide companies' : '&#9654; Show companies';
+            });
+
+            list.parentNode.insertBefore(btn, list);
+        });
+    }
+
     function showError(message) {
         const summaryCard = document.querySelector('.summary-card');
         summaryCard.innerHTML = `<div class="error">${message}</div>`;
@@ -411,6 +433,7 @@
 
             const data = await response.json();
             renderMetrics(data);
+            setupMobileCollapse();
         } catch (error) {
             console.error('Failed to load metrics:', error);
             showError(`Failed to load market data: ${error.message}. Please try again later.`);
