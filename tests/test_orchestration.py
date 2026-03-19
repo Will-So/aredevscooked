@@ -150,7 +150,9 @@ async def test_collect_all_headcount_data_reuses_same_day_values(mocker):
     assert result["HCLTech"]["current_headcount"] == 226640
     assert result["Microsoft"]["current_headcount"] == 228000
     assert mock_collector.collect_headcount.call_count == 10
-    called_companies = [call[0][0] for call in mock_collector.collect_headcount.call_args_list]
+    called_companies = [
+        call[0][0] for call in mock_collector.collect_headcount.call_args_list
+    ]
     assert "HCLTech" not in called_companies
     assert "Microsoft" not in called_companies
 
@@ -371,7 +373,9 @@ async def test_collect_all_job_posting_data_returns_dict(mocker):
         "company": "DeepMind",
         "total_technical_jobs": 45,
     }
-    mocker.patch("scripts.run_collection.load_same_day_job_posting_data", return_value={})
+    mocker.patch(
+        "scripts.run_collection.load_same_day_job_posting_data", return_value={}
+    )
 
     result = await collect_all_job_posting_data(mock_collector)
 
@@ -389,7 +393,9 @@ async def test_collect_all_job_posting_data_calls_collector_for_each_lab(mocker)
         "company": "Anthropic",
         "total_technical_jobs": 35,
     }
-    mocker.patch("scripts.run_collection.load_same_day_job_posting_data", return_value={})
+    mocker.patch(
+        "scripts.run_collection.load_same_day_job_posting_data", return_value={}
+    )
 
     await collect_all_job_posting_data(mock_collector)
 
@@ -471,9 +477,7 @@ def test_load_same_day_job_posting_data_accepts_same_local_day_from_utc_timestam
 
     metrics_data = {
         "metadata": {"last_updated": "2026-03-13T04:25:52+00:00"},
-        "high_end": {
-            "job_postings": {"companies": {"DeepMind": {"current": 45}}}
-        },
+        "high_end": {"job_postings": {"companies": {"DeepMind": {"current": 45}}}},
     }
 
     with open(metrics_file, "w") as f:

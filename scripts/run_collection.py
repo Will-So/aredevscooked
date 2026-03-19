@@ -386,11 +386,12 @@ def calculate_headcount_changes(
     baselines_data: dict[str, Any],
     headcount_processor: HeadcountProcessor,
     gemini_data: dict[str, Any] | None = None,
+    history_snapshot_30d: dict[str, Any] | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Calculate headcount changes against baselines and Gemini historical data.
 
     For 1_year_ago and q1_2023, uses Gemini's returned historical data with citations.
-    For 30_days_ago, uses stored baselines.
+    For 30_days_ago, uses the actual headcount from ~30 days ago via metrics_history.json.
 
     Args:
         current: Current headcount
@@ -398,20 +399,25 @@ def calculate_headcount_changes(
         baselines_data: Baseline data structure
         headcount_processor: HeadcountProcessor instance
         gemini_data: Optional Gemini response with one_year_ago and q1_2023 data
+        history_snapshot_30d: Optional snapshot from ~30 days ago from metrics_history.json
 
     Returns:
         Dictionary of changes for each baseline period with source_url citations
     """
     changes = {}
+    null_result = {
+        "value": None,
+        "pct": None,
+        "badge": "neutral",
+        "source_url": "",
+    }
 
-    # Map Gemini response keys to baseline names
     gemini_period_map = {
         "1_year_ago": "one_year_ago",
         "q1_2023": "q1_2023",
     }
 
-    for baseline_name in ["30_days_ago", "1_year_ago", "q1_2023"]:
-        # For 1_year_ago and q1_2023, prefer Gemini's historical data
+    for baseline_name in ["1_year_ago", "q1_2023"]:
         gemini_key = gemini_period_map.get(baseline_name)
         if gemini_key and gemini_data and gemini_key in gemini_data:
             period_data = gemini_data[gemini_key]
@@ -436,7 +442,6 @@ def calculate_headcount_changes(
                     }
                     continue
 
-        # Fall back to stored baselines (always used for 30_days_ago)
         baseline = baselines_data["baselines"].get(baseline_name, {})
         headcounts = baseline.get("headcounts", {})
 
@@ -459,13 +464,35 @@ def calculate_headcount_changes(
                 "baseline_date": headcounts[company_name].get("date", ""),
             }
         else:
-            # No baseline data available
-            changes[baseline_name] = {
-                "value": None,
-                "pct": None,
-                "badge": "neutral",
-                "source_url": "",
-            }
+            changes[baseline_name] = dict(null_result)
+
+    headcount_30d = None
+    snapshot_date = ""
+    if history_snapshot_30d:
+        company_snapshot = history_snapshot_30d.get("headcounts", {}).get(company_name)
+        if company_snapshot:
+            headcount_30d = company_snapshot.get("headcount")
+            snapshot_date = history_snapshot_30d.get("date", "")
+
+    if headcount_30d:
+        pct_change = headcount_processor.calculate_percentage_change(
+            current, headcount_30d
+        )
+        abs_change = headcount_processor.calculate_absolute_change(
+            current, headcount_30d
+        )
+        badge = headcount_processor.classify_change(pct_change)
+
+        changes["30_days_ago"] = {
+            "value": abs_change,
+            "pct": round(pct_change, 2),
+            "badge": badge,
+            "source_url": "",
+            "baseline_headcount": headcount_30d,
+            "baseline_date": snapshot_date,
+        }
+    else:
+        changes["30_days_ago"] = dict(null_result)
 
     return changes
 
@@ -612,7 +639,9 @@ def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
     except ValueError:
         return {}
 
-    updated_date = updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
+    updated_date = (
+        updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
+    )
 
     if updated_date != date.today():
         return {}
@@ -676,7 +705,9 @@ def load_same_day_job_posting_data() -> dict[str, dict[str, Any]]:
     except ValueError:
         return {}
 
-    updated_date = updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
+    updated_date = (
+        updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
+    )
 
     if updated_date != date.today():
         return {}
@@ -736,6 +767,9 @@ def build_metrics_structure(
     # Build low-end tier (IT consultancies)
     low_end_companies = [c["name"] for c in IT_CONSULTANCIES]
 
+    # Load snapshot from ~30 days ago for 30-day change calculation
+    history_snapshot_30d = load_history_snapshot(days_ago=30, tolerance_days=3)
+
     # Populate headcount data for IT consultancies
     low_end_headcount_companies = {}
 
@@ -761,6 +795,7 @@ def build_metrics_structure(
                     baselines_data,
                     headcount_processor,
                     gemini_data=company_headcount_data,
+                    history_snapshot_30d=history_snapshot_30d,
                 )
             else:
                 changes = {}
@@ -938,6 +973,7 @@ def build_metrics_structure(
                     baselines_data,
                     headcount_processor,
                     gemini_data=company_headcount_data,
+                    history_snapshot_30d=history_snapshot_30d,
                 )
             else:
                 changes = {}
