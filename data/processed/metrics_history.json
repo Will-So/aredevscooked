@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-18T08:35:19.206212+00:00"
+    "last_updated": "2026-03-19T17:34:14.214090+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -6639,6 +6639,161 @@
       "indeed_index": {
         "value": 70.13,
         "date": "2026-03-06"
+      }
+    },
+    "2026-03-19": {
+      "date": "2026-03-19",
+      "timestamp": "2026-03-19T17:34:14.214055+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1311.8,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4298.8,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 61.51,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 13.02,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2356.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1340.6,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.17,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226279,
+          "data_date": "2026-02-19",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBX1aTxWMRdlNln0k-YQDxB19kz35Vo1h32he6jMKGIGEW1Gx11y3Sw0W0Hi53I9JtyxNEbjs7DxRj2nUxXGABw9T9C2r3shpSZhCfoBgjMJX3kYw8BFPzLIUETvmQs3nuYLWhIpn_co7XdoeNcGsfOVR9NuMcnqvuxOZKCKTlYC-UM134EYLqMPZSYlpjf4jzcFA1MN00cC8rAUjti0nRZfc=",
+            "https://economictimes.indiatimes.com/tech/information-tech/hcltech-bucks-trend-again-headcount-rises-by-2725-employees/articleshow/109628282.cms?from=mdr",
+            "https://medial.app/news/hcltech-workforce-declines-in-q3fy26-despite-hiring-d0ff2f3b7ee7d"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.investing.com/news/company-news/ltimindtree-q3-fy26-presentation-revenue-up-61-ebit-margin-expands-to-161-93CH-4453709",
+            "https://www.whalesbook.com/news/English/tech/LTIMindtree-to-Hike-Wages-in-Q4-Capping-Margin-Impact/696fc979ad039ca929a9629c",
+            "https://www.freepressjournal.in/business/ltimindtree-to-start-wage-hikes-in-q4-fy26-50-staff-covered-in-first-phase"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351400,
+          "data_date": "2026-03-19",
+          "source_urls": [
+            "https://www.cognizant.com/en_us/about/documents/q1-2025-corporate-factsheet.pdf"
+          ]
+        },
+        "Infosys": {
+          "headcount": 336084,
+          "data_date": "2026-03-19",
+          "source_urls": [
+            "https://www.livemint.com/companies/news/infosys-attrition-drops-to-12-3-in-q3-results-is-a-wage-hike-on-cards-what-cfo-said-11768389522752.html",
+            "https://timesofindia.indiatimes.com/infosys-q4-fy23-nos-miss-estimates-amid-macro-uncertainties-co-gives-single-digit-rev-growth-guidance-for-fy24/articleshow/99471507.cms",
+            "https://www.peoplematters.in/news/economy-policy/infosys-q4-results-show-a-decrease-of-3611-employees-in-headcount-37514",
+            "https://www.livemint.com/companies/news/infosys-let-go-of-3-611-employees-in-q4-attrition-rate-dips-sharply-to-20-9-11681377429373.html"
+          ]
+        },
+        "TCS": {
+          "headcount": 576032,
+          "data_date": "2026-03-19",
+          "source_urls": [
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY23+earnings+report+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q3+FY26+earnings+report+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY25+earnings+report+March+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+layoffs+announced+after+March+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+layoffs+announced+after+December+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.business-standard.com/companies/news/tech-mahindra-denies-layoff-buzz-126030901070_1.html"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY26+December+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY25+March+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+employee+count+March+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+employee+count+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+employee+count+March+2023&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2026-03-19",
+          "source_urls": [
+            "https://www.cbsnews.com/news/microsoft-layoffs-3-percent-workforce/"
+          ]
+        },
+        "Meta": {
+          "headcount": 78865,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.thewrap.com/industry-news/business/meta-earnings-q4-2025/"
+          ]
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+10-Q+Q1+2026+employee+headcount&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-K+2025+employee+headcount&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-Q+Q1+2025+employee+headcount&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+announced+after+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+10-Q+Q2+2023+employee+headcount&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-03-19",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+layoffs+2025+2026+corporate&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+March+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+employee+count+Q1+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+total+employees+vs+corporate+employees+2025+10-K&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://www.gurufocus.com/news/2894509/decoding-nvidia-corp-nvda-a-strategic-swot-insight"
+          ]
+        }
+      },
+      "job_postings": {
+        "OpenAI": {
+          "total_technical_jobs": 385,
+          "collection_date": "2026-03-19"
+        }
+      },
+      "indeed_index": {
+        "value": 70.92,
+        "date": "2026-03-13"
       }
     }
   }
