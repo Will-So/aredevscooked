@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-19T17:34:14.197826+00:00",
+    "last_updated": "2026-03-19T17:41:15.090028+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -514,11 +514,11 @@
     }
   },
   "stock_index": {
-    "current_value": 69.57,
+    "current_value": 69.46,
     "baseline_date": "2025-03-19",
     "changes": {
-      "30_day": -21.15,
-      "1_year": -30.43
+      "30_day": -21.28,
+      "1_year": -30.54
     },
     "companies": {
       "HCLTech": {
@@ -537,17 +537,17 @@
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 61.51,
+        "current_price": 61.24,
         "weight": 0.14285714285714285,
-        "change_30_day": -20.17,
-        "change_1_year": -21.76
+        "change_30_day": -20.52,
+        "change_1_year": -22.11
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 13.02,
+        "current_price": 12.98,
         "weight": 0.14285714285714285,
-        "change_30_day": -25.26,
-        "change_1_year": -40.79
+        "change_30_day": -25.49,
+        "change_1_year": -40.97
       },
       "TCS": {
         "ticker": "TCS.NS",
@@ -565,15 +565,15 @@
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 2.17,
+        "current_price": 2.16,
         "weight": 0.14285714285714285,
-        "change_30_day": -19.33,
-        "change_1_year": -37.46
+        "change_30_day": -19.7,
+        "change_1_year": -37.75
       }
     },
     "aggregate_badge": "collapsing"
   },
-  "ai_summary": "Devs aren't cooked. IT consultancy stocks are collapsing (-30% yoy), but Big Tech headcount remains stable (-3%). AI labs show strong hiring momentum, and the Indeed Index is up 15% annually. While consultancies face pressure, broad market demand for software developers remains resilient and continues to grow. IT consulting stocks are collapsing so hard their charts look like a senior architect\u2019s hairline after a weekend on-call.",
+  "ai_summary": "Devs aren't cooked. While IT consultancy stocks are collapsing (-30% YoY), Big Tech headcount remains stable (-3%). AI labs show explosive hiring momentum, and the Indeed Index is up 15% YoY. Broad hiring momentum suggests the market is evolving toward AI rather than disappearing entirely. We aren't cooked; we're just being slowly marinated in a high-density GPU cluster until we turn into \"Carbon-Based Prompt Interfaces.\"",
   "indeed_index": {
     "current_value": 114.94,
     "date": "2026-03-13",

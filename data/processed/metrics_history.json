@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-19T17:34:14.214090+00:00"
+    "last_updated": "2026-03-19T17:41:15.097125+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -6643,7 +6643,7 @@
     },
     "2026-03-19": {
       "date": "2026-03-19",
-      "timestamp": "2026-03-19T17:34:14.214055+00:00",
+      "timestamp": "2026-03-19T17:41:15.097101+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1311.8,
@@ -6654,11 +6654,11 @@
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
-          "price": 61.51,
+          "price": 61.24,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 13.02,
+          "price": 12.98,
           "ticker": "INFY"
         },
         "TCS": {
@@ -6670,7 +6670,7 @@
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 2.17,
+          "price": 2.16,
           "ticker": "WIT"
         }
       },
@@ -6786,9 +6786,17 @@
         }
       },
       "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 312,
+          "collection_date": "2026-03-18"
+        },
         "OpenAI": {
           "total_technical_jobs": 385,
           "collection_date": "2026-03-19"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 102,
+          "collection_date": "2026-03-16"
         }
       },
       "indeed_index": {
