@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-19T17:41:15.097125+00:00"
+    "last_updated": "2026-03-21T08:26:58.084327+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -6797,6 +6797,147 @@
         "DeepMind": {
           "total_technical_jobs": 102,
           "collection_date": "2026-03-16"
+        }
+      },
+      "indeed_index": {
+        "value": 70.92,
+        "date": "2026-03-13"
+      }
+    },
+    "2026-03-21": {
+      "date": "2026-03-21",
+      "timestamp": "2026-03-21T08:26:58.084306+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1333.7,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4298.8,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 62.07,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 13.12,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2390.6,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1384.8,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.15,
+          "ticker": "WIT"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226279,
+          "data_date": "2026-02-19",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/hcl-tech-q3-results-fy25-revenue-earning-profit-loss-dividend-report-date-time-13-january-2025/liveblog/117185363.cms?from=mdr",
+            "https://www.financialexpress.com/business/industry-hcltech-adds-3489-employees-in-q2-4009596/",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_37pMIffFGBD5GpyoTUzRwqnzN7bBJmmU1X2Gr-5FHsLVY4U8lF0b7wHABfxMJGLCfLvVgOlLziCroWlE29bs0CYSdra6vOJgNnn0JER8G2NoORQ9J3zbZCn-zJkQ2R3IR2HJNx13gog8X-xEz9dacxDNDQ0I2w2gW_WFXdG6oBAbJhWDE5TNKk1fnix8jViylCJKW0c8lxNU5pX2v1g=",
+            "https://content.techgig.com/technology/hcltech-added-2134-new-hires-in-q3fy25-signals-positive-growth/articleshow/117214960.cms"
+          ]
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=LTIMindtree+layoffs+2025+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=LTIMindtree+headcount+Q4+FY25+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/cognizant-reports-first-quarter-2023-results-301815111.html"
+          ]
+        },
+        "Infosys": {
+          "headcount": 336084,
+          "data_date": "2026-03-14",
+          "source_urls": [
+            "https://www.outlookbusiness.com/corporate/infosys-terminates-195-more-trainees-in-fourth-exit-round-of-2025"
+          ]
+        },
+        "TCS": {
+          "headcount": 582163,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.thequint.com/news/breaking-news/tcs-workforce-shrinks-q3-fy26-results-restructuring-impact",
+            "https://www.business-standard.com/companies/news/tcs-sees-continued-headcount-decline-despite-higher-fresher-intake-126011201081_1.html",
+            "https://www.ndtvprofit.com/markets/tcs-q3-attrition-rate-rises-marginally-to-135-headcount-lowers-by-over-11000-employees-10729044",
+            "https://www.outlookbusiness.com/corporate/tcs-reduces-over-11000-staff-in-q3-as-restructuring-continues-fresher-intake-doubles"
+          ]
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.business-standard.com/companies/news/tech-mahindra-denies-layoff-buzz-126030901070_1.html"
+          ]
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY26+December+31+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY25+March+31+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+layoffs+January+February+March+2026&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+layoffs+announced+after+December+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q2+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+announced+after+March+2025&client=app-vertex-grounding&safesearch=active"
+          ]
+        },
+        "Meta": {
+          "headcount": 77365,
+          "data_date": "2026-03-21",
+          "source_urls": [
+            "https://timesofindia.indiatimes.com/technology/tech-news/tech-layoffs-meta-amazon-and-other-companies-cutting-jobs-in-2026/articleshow/129653267.cms",
+            "https://www.salesforceben.com/sweeping-layoffs-at-meta-could-impact-16000-employees/",
+            "https://www.prnewswire.com/news-releases/meta-reports-first-quarter-2023-results-301808794.html"
+          ]
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-03-21",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/amzn/employees/"
+          ]
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://mlq.ai/stocks/NVDA/employee-count/"
+          ]
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 385,
+          "collection_date": "2026-03-21"
         }
       },
       "indeed_index": {
