@@ -6,7 +6,7 @@ from typing import Any
 
 import requests
 
-from aredevscooked.config import FRED_CONFIG
+from aredevscooked.config import FRED_CONFIG, FRED_TOTAL_CONFIG
 
 
 class FredCollector:
@@ -121,6 +121,36 @@ class FredCollector:
             1-year, and Q1 2023 comparisons fetched directly from the FRED API.
         """
         series_id = FRED_CONFIG["series_id"]
+        obs = self.fetch_latest_observation(series_id)
+        today = date.today()
+
+        baselines = {}
+        for period, target in [
+            ("30_day", today - timedelta(days=30)),
+            ("1_year", today - timedelta(days=365)),
+            ("q1_2023", date(2023, 3, 31)),
+        ]:
+            try:
+                baseline = self.fetch_observation_near_date(series_id, target)
+                baselines[period] = baseline
+            except (ValueError, requests.RequestException):
+                baselines[period] = None
+
+        return {
+            "current_value": obs["value"],
+            "date": obs["date"],
+            "series_id": series_id,
+            "baselines": baselines,
+        }
+
+    def collect_total_indeed_index(self) -> dict[str, Any]:
+        """Collect the latest total Indeed Job Postings index (all occupations).
+
+        Returns:
+            Dict with current_value, date, series_id, and baselines for 30-day,
+            1-year, and Q1 2023 comparisons fetched directly from the FRED API.
+        """
+        series_id = FRED_TOTAL_CONFIG["series_id"]
         obs = self.fetch_latest_observation(series_id)
         today = date.today()
 

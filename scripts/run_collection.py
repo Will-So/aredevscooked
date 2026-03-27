@@ -365,6 +365,27 @@ async def collect_indeed_data(collector: FredCollector) -> dict[str, Any] | None
         return None
 
 
+async def collect_total_indeed_data(
+    collector: FredCollector,
+) -> dict[str, Any] | None:
+    """Collect total Indeed Job Postings index (all occupations) from FRED API.
+
+    Args:
+        collector: FredCollector instance
+
+    Returns:
+        Total Indeed index data dict or None on error
+    """
+    try:
+        log("  Collecting total Indeed Job Postings index...")
+        data = await asyncio.to_thread(collector.collect_total_indeed_index)
+        log(f"    ✓ Current total Indeed index: {data['current_value']}")
+        return data
+    except Exception as e:
+        log(f"    ✗ Error collecting total Indeed data: {e}")
+        return None
+
+
 def load_baselines() -> dict[str, Any] | None:
     """Load baseline data from baselines.json.
 
@@ -735,6 +756,7 @@ def build_metrics_structure(
     job_posting_data: dict[str, dict[str, Any]],
     ai_summary: str,
     indeed_data: dict[str, Any] | None = None,
+    total_indeed_data: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build the complete metrics_latest.json structure.
 
@@ -743,7 +765,8 @@ def build_metrics_structure(
         headcount_data: Headcount data for all companies
         job_posting_data: Job posting data for AI labs
         ai_summary: AI-generated market summary
-        indeed_data: Indeed Job Postings index data from FRED
+        indeed_data: Indeed Job Postings index data from FRED (software dev)
+        total_indeed_data: Total Indeed Job Postings index data from FRED (all occupations)
 
     Returns:
         Complete metrics structure ready for JSON serialization
@@ -1182,6 +1205,56 @@ def build_metrics_structure(
             "aggregate_badge": indeed_aggregate_badge,
         }
 
+        if total_indeed_data:
+            total_raw = total_indeed_data["current_value"]
+            total_baselines = total_indeed_data.get("baselines", {})
+            total_changes = {}
+
+            for period_name in ["30_day", "1_year", "q1_2023"]:
+                baseline = total_baselines.get(period_name)
+                if baseline and baseline["value"] > 0:
+                    pct = fred_processor.calculate_percentage_change(
+                        total_raw, baseline["value"]
+                    )
+                    badge = fred_processor.classify_change(pct)
+                    total_changes[period_name] = {
+                        "pct": round(pct, 2),
+                        "badge": badge,
+                    }
+                else:
+                    total_changes[period_name] = {"pct": None, "badge": "neutral"}
+
+            indeed_index_structure["total_market"] = {
+                "current_value": round(total_raw, 2),
+                "date": total_indeed_data["date"],
+                "series_id": total_indeed_data["series_id"],
+                "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
+                "changes": total_changes,
+            }
+
+            relative_changes = {}
+            for period_name in ["30_day", "1_year", "q1_2023"]:
+                sde_pct = indeed_changes.get(period_name, {}).get("pct")
+                total_pct = total_changes.get(period_name, {}).get("pct")
+                if sde_pct is not None and total_pct is not None:
+                    rel_pct = round(sde_pct - total_pct, 2)
+                    rel_badge = fred_processor.classify_change(rel_pct)
+                    relative_changes[period_name] = {
+                        "pct": rel_pct,
+                        "badge": rel_badge,
+                    }
+                else:
+                    relative_changes[period_name] = {"pct": None, "badge": "neutral"}
+
+            rel_1yr = relative_changes.get("1_year", {})
+            rel_aggregate = (
+                rel_1yr["badge"] if rel_1yr.get("pct") is not None else "neutral"
+            )
+            indeed_index_structure["relative_to_market"] = {
+                "changes": relative_changes,
+                "aggregate_badge": rel_aggregate,
+            }
+
     result = {
         "metadata": metadata,
         "low_end": low_end,
@@ -1202,6 +1275,7 @@ def save_daily_snapshot(
     headcount_data: dict[str, dict[str, Any]],
     job_posting_data: dict[str, dict[str, Any]],
     indeed_data: dict[str, Any] | None = None,
+    total_indeed_data: dict[str, Any] | None = None,
 ) -> None:
     """Save today's raw data as a snapshot in metrics_history.json.
 
@@ -1211,7 +1285,8 @@ def save_daily_snapshot(
         stock_data: Stock price data for IT consultancies
         headcount_data: Headcount data for all companies
         job_posting_data: Job posting data for AI labs
-        indeed_data: Indeed Job Postings index data from FRED
+        indeed_data: Indeed Job Postings index data from FRED (software dev)
+        total_indeed_data: Total Indeed Job Postings index data from FRED (all occupations)
     """
     history_file = Path("data/processed/metrics_history.json")
     today = date.today().isoformat()
@@ -1267,6 +1342,12 @@ def save_daily_snapshot(
             "date": indeed_data["date"],
         }
 
+    if total_indeed_data:
+        snapshot["total_indeed_index"] = {
+            "value": total_indeed_data["current_value"],
+            "date": total_indeed_data["date"],
+        }
+
     # Add to history
     history["snapshots"][today] = snapshot
     history["metadata"]["last_updated"] = datetime.now(timezone.utc).isoformat()
@@ -1316,10 +1397,14 @@ async def main_async():
     stock_data = await collect_all_stock_data(stock_collector, one_year_ago)
     log(f"  Collected {len(stock_data)}/7 companies")
 
-    log("\n📈 Collecting Indeed Job Postings index (via FRED)...")
+    log("\n📈 Collecting Indeed Job Postings indices (via FRED)...")
     indeed_data = None
+    total_indeed_data = None
     if fred_collector:
-        indeed_data = await collect_indeed_data(fred_collector)
+        indeed_data, total_indeed_data = await asyncio.gather(
+            collect_indeed_data(fred_collector),
+            collect_total_indeed_data(fred_collector),
+        )
     else:
         log("  ⚠️  Skipped (no FRED_API_KEY)")
 
@@ -1334,7 +1419,12 @@ async def main_async():
     # Build metrics structure first (needed for summary generation)
     log("\n🏗️  Building metrics structure...")
     metrics_without_summary = build_metrics_structure(
-        stock_data, headcount_data, job_posting_data, "", indeed_data=indeed_data
+        stock_data,
+        headcount_data,
+        job_posting_data,
+        "",
+        indeed_data=indeed_data,
+        total_indeed_data=total_indeed_data,
     )
 
     log("\n📝 Generating AI summary...")
@@ -1347,12 +1437,17 @@ async def main_async():
         job_posting_data,
         ai_summary,
         indeed_data=indeed_data,
+        total_indeed_data=total_indeed_data,
     )
 
     # Save daily snapshot to history
     log("\n💾 Saving daily snapshot...")
     save_daily_snapshot(
-        stock_data, headcount_data, job_posting_data, indeed_data=indeed_data
+        stock_data,
+        headcount_data,
+        job_posting_data,
+        indeed_data=indeed_data,
+        total_indeed_data=total_indeed_data,
     )
 
     # Write to file

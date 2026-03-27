@@ -107,6 +107,12 @@ FRED_CONFIG = {
     "baseline_note": "Index normalized: 100 = 1 year ago",
 }
 
+FRED_TOTAL_CONFIG = {
+    "series_id": "IHLIDXUS",
+    "base_url": "https://api.stlouisfed.org/fred/series/observations",
+    "description": "Indeed Job Postings Index for US (Total, All Occupations)",
+}
+
 # Gemini API Configuration
 GEMINI_CONFIG = {
     "model": "gemini-3-flash-preview",  # Gemini 3 Flash with grounding support

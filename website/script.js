@@ -243,6 +243,45 @@
             citationHTML = `<span class="citation-links"><a href="${indeedData.source_url}" target="_blank" rel="noopener">[FRED source]</a></span>`;
         }
 
+        let relativeHTML = '';
+        if (indeedData.relative_to_market) {
+            const relChanges = indeedData.relative_to_market.changes || {};
+            const relBadge = indeedData.relative_to_market.aggregate_badge || 'neutral';
+            let relChangesHTML = '<div class="index-changes">';
+            for (const period of orderedPeriods) {
+                const change = relChanges[period];
+                if (!change) continue;
+                const periodLabel = periodLabels[period] || period;
+                if (change.pct == null) {
+                    relChangesHTML += `
+                        <div class="index-change">
+                            <span class="period">${periodLabel}</span>
+                            <span class="value neutral">N/A</span>
+                        </div>
+                    `;
+                } else {
+                    relChangesHTML += `
+                        <div class="index-change">
+                            <span class="period">${periodLabel}</span>
+                            <span class="value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
+                        </div>
+                    `;
+                }
+            }
+            relChangesHTML += '</div>';
+
+            const badgeClass = relBadge.replace('_', '-');
+            relativeHTML = `
+                <div class="stock-index indeed-index relative-market">
+                    <div class="index-value">
+                        <span class="label">Relative to Total Job Market</span>
+                        <span class="badge ${badgeClass}">${relBadge.replace('_', ' ')}</span>
+                    </div>
+                    ${relChangesHTML}
+                </div>
+            `;
+        }
+
         const html = `
             <div class="stock-index indeed-index">
                 <div class="index-value">
@@ -255,6 +294,7 @@
                 </div>
                 ${changesHTML}
             </div>
+            ${relativeHTML}
         `;
 
         document.getElementById('indeedIndexData').innerHTML = html;
