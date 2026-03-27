@@ -1369,6 +1369,7 @@ def save_daily_snapshot(
             "headcount": data["current_headcount"],
             "data_date": data.get("data_date", ""),
             "source_urls": data.get("source_urls", []),
+            "confidence": data.get("confidence", "unknown"),
         }
 
     # Save job postings

@@ -7,6 +7,7 @@ from scripts.run_collection import (
     calculate_headcount_changes,
     load_history_snapshot,
     load_all_snapshots,
+    save_daily_snapshot,
 )
 from aredevscooked.processors.headcount_processor import HeadcountProcessor
 
@@ -234,3 +235,39 @@ def test_30d_change_within_threshold_is_kept(
 
     assert changes["30_days_ago"]["value"] is not None
     assert changes["30_days_ago"]["pct"] is not None
+
+
+def test_save_daily_snapshot_stores_confidence(tmp_path, monkeypatch):
+    """save_daily_snapshot should store the confidence field in headcount snapshots."""
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "data" / "processed").mkdir(parents=True)
+
+    headcount_data = {
+        "Meta": {
+            "current_headcount": 78165,
+            "data_date": "2026-03-25",
+            "source_urls": ["https://example.com"],
+            "confidence": "high",
+        },
+        "Amazon": {
+            "current_headcount": 320000,
+            "data_date": "2026-03-25",
+            "source_urls": [],
+        },
+    }
+
+    save_daily_snapshot(
+        stock_data={},
+        headcount_data=headcount_data,
+        job_posting_data={},
+    )
+
+    import json
+
+    with open(tmp_path / "data" / "processed" / "metrics_history.json") as f:
+        history = json.load(f)
+
+    today = date.today().isoformat()
+    snapshot = history["snapshots"][today]
+    assert snapshot["headcounts"]["Meta"]["confidence"] == "high"
+    assert snapshot["headcounts"]["Amazon"]["confidence"] == "unknown"
