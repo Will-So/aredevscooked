@@ -1,6 +1,13 @@
+from unittest.mock import patch
+from datetime import date, timedelta
+
 import pytest
 
-from scripts.run_collection import calculate_headcount_changes
+from scripts.run_collection import (
+    calculate_headcount_changes,
+    load_history_snapshot,
+    load_all_snapshots,
+)
 from aredevscooked.processors.headcount_processor import HeadcountProcessor
 
 
@@ -109,3 +116,72 @@ def test_1yr_and_q1_still_use_gemini(headcount_processor, baselines_data, gemini
     assert changes["1_year_ago"]["baseline_headcount"] == 350000
     assert changes["1_year_ago"]["baseline_date"] == "2025-03-18"
     assert changes["q1_2023"]["baseline_headcount"] == 340000
+
+
+def test_per_company_snapshot_finds_company_in_adjacent_date():
+    """When the closest snapshot is missing a company, validate finds it in an adjacent one."""
+    target = date.today() - timedelta(days=30)
+    day_before = (target - timedelta(days=1)).isoformat()
+    target_str = target.isoformat()
+
+    preloaded = {
+        target_str: {
+            "date": target_str,
+            "headcounts": {
+                "Google": {"headcount": 180000},
+            },
+        },
+        day_before: {
+            "date": day_before,
+            "headcounts": {
+                "Google": {"headcount": 180000},
+                "Amazon": {"headcount": 320000},
+            },
+        },
+    }
+
+    result = load_history_snapshot(
+        30,
+        tolerance_days=5,
+        validate=lambda s, n="Amazon": n in s.get("headcounts", {}),
+        preloaded_snapshots=preloaded,
+    )
+
+    assert result is not None
+    assert "Amazon" in result["headcounts"]
+    assert result["date"] == day_before
+
+
+def test_per_company_snapshot_returns_none_when_company_missing_everywhere():
+    target = date.today() - timedelta(days=30)
+    target_str = target.isoformat()
+
+    preloaded = {
+        target_str: {
+            "date": target_str,
+            "headcounts": {
+                "Google": {"headcount": 180000},
+            },
+        },
+    }
+
+    result = load_history_snapshot(
+        30,
+        tolerance_days=5,
+        validate=lambda s, n="Amazon": n in s.get("headcounts", {}),
+        preloaded_snapshots=preloaded,
+    )
+
+    assert result is None
+
+
+def test_preloaded_snapshots_skips_file_read():
+    preloaded = {}
+
+    result = load_history_snapshot(
+        30,
+        tolerance_days=0,
+        preloaded_snapshots=preloaded,
+    )
+
+    assert result is None

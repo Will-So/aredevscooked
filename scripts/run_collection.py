@@ -518,10 +518,27 @@ def calculate_headcount_changes(
     return changes
 
 
+def load_all_snapshots() -> dict[str, Any]:
+    """Load all snapshots from metrics_history.json.
+
+    Returns:
+        Dictionary mapping date strings to snapshot data, or empty dict if file missing
+    """
+    history_file = Path("data/processed/metrics_history.json")
+    if not history_file.exists():
+        return {}
+
+    with open(history_file, "r") as f:
+        history = json.load(f)
+
+    return history.get("snapshots", {})
+
+
 def load_history_snapshot(
     days_ago: int,
     tolerance_days: int = 0,
     validate: Callable[[dict], bool] | None = None,
+    preloaded_snapshots: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
     """Load a snapshot from metrics_history.json.
 
@@ -530,18 +547,19 @@ def load_history_snapshot(
         tolerance_days: Search ±this many days around target if exact match missing
         validate: Optional function that must return True for a snapshot to be accepted.
             If provided and the snapshot fails validation, the search continues.
+        preloaded_snapshots: Pre-loaded snapshots dict to avoid re-reading the file.
+            If None, reads from disk.
 
     Returns:
         Snapshot data or None if not found
     """
-    history_file = Path("data/processed/metrics_history.json")
-    if not history_file.exists():
-        return None
+    if preloaded_snapshots is not None:
+        snapshots = preloaded_snapshots
+    else:
+        snapshots = load_all_snapshots()
+        if not snapshots:
+            return None
 
-    with open(history_file, "r") as f:
-        history = json.load(f)
-
-    snapshots = history.get("snapshots", {})
     target_date = date.today() - timedelta(days=days_ago)
 
     if tolerance_days == 0:
@@ -790,8 +808,7 @@ def build_metrics_structure(
     # Build low-end tier (IT consultancies)
     low_end_companies = [c["name"] for c in IT_CONSULTANCIES]
 
-    # Load snapshot from ~30 days ago for 30-day change calculation
-    history_snapshot_30d = load_history_snapshot(days_ago=30, tolerance_days=3)
+    all_snapshots = load_all_snapshots()
 
     # Populate headcount data for IT consultancies
     low_end_headcount_companies = {}
@@ -812,6 +829,12 @@ def build_metrics_structure(
 
             # Calculate changes if we have baselines
             if has_baselines:
+                history_snapshot_30d = load_history_snapshot(
+                    30,
+                    tolerance_days=5,
+                    validate=lambda s, n=name: n in s.get("headcounts", {}),
+                    preloaded_snapshots=all_snapshots,
+                )
                 changes = calculate_headcount_changes(
                     current_headcount,
                     name,
@@ -990,6 +1013,12 @@ def build_metrics_structure(
 
             # Calculate changes if we have baselines
             if has_baselines:
+                history_snapshot_30d = load_history_snapshot(
+                    30,
+                    tolerance_days=5,
+                    validate=lambda s, n=name: n in s.get("headcounts", {}),
+                    preloaded_snapshots=all_snapshots,
+                )
                 changes = calculate_headcount_changes(
                     current_headcount,
                     name,
@@ -1094,7 +1123,8 @@ def build_metrics_structure(
             snapshot = load_history_snapshot(
                 30,
                 tolerance_days=5,
-                validate=lambda s: name in s.get("job_postings", {}),
+                validate=lambda s, n=name: n in s.get("job_postings", {}),
+                preloaded_snapshots=all_snapshots,
             )
             if snapshot and name in snapshot.get("job_postings", {}):
                 historical_jobs = snapshot["job_postings"][name]["total_technical_jobs"]
