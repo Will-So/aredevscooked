@@ -16,6 +16,8 @@ If you decide to do something with Github Actions, make sure to consult `https:/
 Commit fairly often, once you think you finish a single task. This is especially important if you are about to try something desctructive like deleting code or refactoring a file. 
 
 Don't use `git -C ...` Rather use the commands directly.
+
+When asked to work "in a worktree" or "in a git worktree", always use the `isolation: "worktree"` parameter on the Agent tool to do the work in an isolated git worktree branch, not directly on main.
 ## Style Guide
 General:
 
