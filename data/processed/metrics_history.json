@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-27T08:34:28.875330+00:00"
+    "last_updated": "2026-03-27T18:32:16.819454+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -5443,6 +5443,10 @@
         "DeepMind": {
           "total_technical_jobs": 94,
           "collection_date": "2026-02-26"
+        },
+        "Anthropic": {
+          "total_technical_jobs": 100,
+          "collection_date": "2026-02-17"
         }
       }
     },
@@ -7090,10 +7094,10 @@
     },
     "2026-03-27": {
       "date": "2026-03-27",
-      "timestamp": "2026-03-27T08:34:28.875310+00:00",
+      "timestamp": "2026-03-27T18:32:16.819409+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1375.6,
+          "price": 1364.4,
           "ticker": "HCLTECH.NS"
         },
         "LTIMindtree": {
@@ -7101,19 +7105,19 @@
           "ticker": "LTIM.NS"
         },
         "Cognizant": {
-          "price": 60.76,
+          "price": 59.72,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 13.16,
+          "price": 12.84,
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2413.4,
+          "price": 2389.8,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1397.8,
+          "price": 1391.6,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -7224,13 +7228,25 @@
         }
       },
       "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 211,
+          "collection_date": "2026-03-22"
+        },
         "OpenAI": {
           "total_technical_jobs": 409,
           "collection_date": "2026-03-27"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 92,
+          "collection_date": "2026-03-22"
         }
       },
       "indeed_index": {
         "value": 71.02,
+        "date": "2026-03-20"
+      },
+      "total_indeed_index": {
+        "value": 101.83,
         "date": "2026-03-20"
       }
     }

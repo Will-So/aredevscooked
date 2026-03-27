@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-27T08:34:28.865850+00:00",
+    "last_updated": "2026-03-27T18:32:16.803779+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -460,8 +460,8 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": null,
-              "badge": "neutral"
+              "value": 111,
+              "badge": "strong"
             }
           }
         },
@@ -501,19 +501,19 @@
     }
   },
   "stock_index": {
-    "current_value": 70.38,
+    "current_value": 69.76,
     "baseline_date": "2025-03-27",
     "changes": {
-      "30_day": -20.25,
-      "1_year": -29.62
+      "30_day": -20.97,
+      "1_year": -30.24
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1375.6,
+        "current_price": 1364.4,
         "weight": 0.14285714285714285,
-        "change_30_day": -14.98,
-        "change_1_year": -24.88
+        "change_30_day": -15.67,
+        "change_1_year": -25.49
       },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
@@ -524,31 +524,31 @@
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 60.76,
+        "current_price": 59.72,
         "weight": 0.14285714285714285,
-        "change_30_day": -21.14,
-        "change_1_year": -22.72
+        "change_30_day": -22.49,
+        "change_1_year": -24.04
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 13.16,
+        "current_price": 12.84,
         "weight": 0.14285714285714285,
-        "change_30_day": -24.45,
-        "change_1_year": -40.15
+        "change_30_day": -26.29,
+        "change_1_year": -41.61
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2413.4,
+        "current_price": 2389.8,
         "weight": 0.14285714285714285,
-        "change_30_day": -23.7,
-        "change_1_year": -40.1
+        "change_30_day": -24.44,
+        "change_1_year": -40.68
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1397.8,
+        "current_price": 1391.6,
         "weight": 0.14285714285714285,
-        "change_30_day": -8.06,
-        "change_1_year": -15.33
+        "change_30_day": -8.47,
+        "change_1_year": -15.71
       },
       "Wipro": {
         "ticker": "WIT",
@@ -560,7 +560,7 @@
     },
     "aggregate_badge": "collapsing"
   },
-  "ai_summary": "Devs aren\u2019t \"cooked,\" but the market is shifting. IT consultancy stocks are collapsing (down ~30% YoY), signaling automation pressure. Conversely, Big Tech headcount remains stable (-2.4%), AI lab hiring is surging, and the Indeed Index is up 13%. High-end demand is currently offsetting the decline in consultancy roles. The market isn\u2019t cooked; it\u2019s just being sous-vided at a temperature only high-end engineers can survive.",
+  "ai_summary": "Devs aren't cooked. While IT consultancy stocks are collapsing (down 25-40%), Big Tech headcount remains stable. AI labs show strong hiring momentum, and the Indeed Index for software devs grew 13% year-over-year. Broad hiring demand persists despite significant pain in the low-value consultancy sector. With software job postings up 13% year-over-year, the only thing truly getting \"cooked\" is the CPU on a dev's machine running three Docker containers.",
   "indeed_index": {
     "current_value": 113.16,
     "date": "2026-03-20",
@@ -580,6 +580,43 @@
         "badge": "collapsing"
       }
     },
-    "aggregate_badge": "strong"
+    "aggregate_badge": "strong",
+    "total_market": {
+      "current_value": 101.83,
+      "date": "2026-03-20",
+      "series_id": "IHLIDXUS",
+      "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
+      "changes": {
+        "30_day": {
+          "pct": -1.38,
+          "badge": "neutral"
+        },
+        "1_year": {
+          "pct": -4.81,
+          "badge": "neutral"
+        },
+        "q1_2023": {
+          "pct": -24.87,
+          "badge": "collapsing"
+        }
+      }
+    },
+    "relative_to_market": {
+      "changes": {
+        "30_day": {
+          "pct": 2.19,
+          "badge": "neutral"
+        },
+        "1_year": {
+          "pct": 17.97,
+          "badge": "strong"
+        },
+        "q1_2023": {
+          "pct": -3.92,
+          "badge": "neutral"
+        }
+      },
+      "aggregate_badge": "strong"
+    }
   }
 }
