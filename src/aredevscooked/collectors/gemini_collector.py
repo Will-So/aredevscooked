@@ -212,6 +212,17 @@ class GeminiCollector:
                 f"[{min_headcount}, {max_headcount}]"
             )
 
+        confidence = data.get("confidence", "medium")
+        if confidence == "low":
+            print(
+                f"      [Warning: Low confidence headcount for {company_name}"
+                f" — likely based on estimates or rumors]"
+            )
+            raise ValueError(
+                f"Low confidence headcount for {company_name}"
+                f" — likely based on estimates or rumors"
+            )
+
         return data
 
     def collect_stock_data(

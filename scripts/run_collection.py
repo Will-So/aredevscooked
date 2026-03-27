@@ -67,7 +67,12 @@ from aredevscooked.processors.headcount_processor import HeadcountProcessor
 from aredevscooked.processors.jobs_processor import JobsProcessor
 from aredevscooked.processors.fred_processor import FredProcessor
 from aredevscooked.generators.badge_generator import BadgeGenerator
-from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
+from aredevscooked.config import (
+    IT_CONSULTANCIES,
+    BIG_TECH_COMPANIES,
+    AI_LABS,
+    VALIDATION,
+)
 
 LOG_TIMEOUT_SECONDS = 60
 STAGGER_SECONDS = 5
@@ -499,19 +504,27 @@ def calculate_headcount_changes(
         pct_change = headcount_processor.calculate_percentage_change(
             current, headcount_30d
         )
-        abs_change = headcount_processor.calculate_absolute_change(
-            current, headcount_30d
-        )
-        badge = headcount_processor.classify_change(pct_change)
+        max_30d_pct = VALIDATION["headcount"]["max_30day_change_pct"]
+        if abs(pct_change) > max_30d_pct:
+            log(
+                f"  ⚠️  {company_name}: 30-day change {pct_change:.1f}% exceeds"
+                f" ±{max_30d_pct}% threshold, treating as unreliable"
+            )
+            changes["30_days_ago"] = dict(null_result)
+        else:
+            abs_change = headcount_processor.calculate_absolute_change(
+                current, headcount_30d
+            )
+            badge = headcount_processor.classify_change(pct_change)
 
-        changes["30_days_ago"] = {
-            "value": abs_change,
-            "pct": round(pct_change, 2),
-            "badge": badge,
-            "source_url": "",
-            "baseline_headcount": headcount_30d,
-            "baseline_date": snapshot_date,
-        }
+            changes["30_days_ago"] = {
+                "value": abs_change,
+                "pct": round(pct_change, 2),
+                "badge": badge,
+                "source_url": "",
+                "baseline_headcount": headcount_30d,
+                "baseline_date": snapshot_date,
+            }
     else:
         changes["30_days_ago"] = dict(null_result)
 

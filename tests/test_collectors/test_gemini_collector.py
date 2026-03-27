@@ -163,6 +163,71 @@ def test_collect_headcount_validates_range(collector, mock_gemini_response, mock
         collector.collect_headcount("Microsoft")
 
 
+def test_collect_headcount_rejects_low_confidence(
+    collector, mock_gemini_response, mocker
+):
+    """Low confidence headcount data should be rejected as likely rumor-based."""
+    mock_response_text = """```json
+{
+  "company": "Meta",
+  "current": {
+    "headcount": 63000,
+    "as_of_date": "2026-03-15",
+    "notes": "Estimated after rumored layoffs"
+  },
+  "confidence": "low"
+}
+```"""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
+
+    with pytest.raises(ValueError, match="Low confidence"):
+        collector.collect_headcount("Meta")
+
+
+def test_collect_headcount_accepts_high_confidence(
+    collector, mock_gemini_response, mocker
+):
+    """High confidence headcount data should be accepted."""
+    mock_response_text = """```json
+{
+  "company": "Meta",
+  "current": {
+    "headcount": 78165,
+    "as_of_date": "2026-03-15",
+    "notes": "FY2025 10-K filing"
+  },
+  "confidence": "high"
+}
+```"""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
+
+    result = collector.collect_headcount("Meta")
+    assert result["current_headcount"] == 78165
+
+
+def test_collect_headcount_defaults_missing_confidence_to_medium(
+    collector, mock_gemini_response, mocker
+):
+    """Missing confidence field should default to medium and be accepted."""
+    mock_response_text = """```json
+{
+  "company": "Meta",
+  "current": {
+    "headcount": 78165,
+    "as_of_date": "2026-03-15",
+    "notes": "FY2025 10-K filing"
+  }
+}
+```"""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(mock_response_text)
+
+    result = collector.collect_headcount("Meta")
+    assert result["current_headcount"] == 78165
+
+
 # Job Postings Collection Tests
 
 

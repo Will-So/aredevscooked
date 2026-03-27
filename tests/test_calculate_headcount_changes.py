@@ -185,3 +185,52 @@ def test_preloaded_snapshots_skips_file_read():
     )
 
     assert result is None
+
+
+def test_30d_change_exceeding_threshold_returns_null(
+    headcount_processor, baselines_data, gemini_data
+):
+    """A 30-day change exceeding max_30day_change_pct (20%) should be treated as unreliable."""
+    snapshot = {
+        "date": "2026-02-16",
+        "headcounts": {
+            "Amazon": {"headcount": 400000, "data_date": "2026-02-16"},
+        },
+    }
+
+    changes = calculate_headcount_changes(
+        current=319900,
+        company_name="Amazon",
+        baselines_data=baselines_data,
+        headcount_processor=headcount_processor,
+        gemini_data=gemini_data,
+        history_snapshot_30d=snapshot,
+    )
+
+    assert changes["30_days_ago"]["value"] is None
+    assert changes["30_days_ago"]["pct"] is None
+    assert changes["30_days_ago"]["badge"] == "neutral"
+
+
+def test_30d_change_within_threshold_is_kept(
+    headcount_processor, baselines_data, gemini_data
+):
+    """A 30-day change within ±20% should be kept normally."""
+    snapshot = {
+        "date": "2026-02-16",
+        "headcounts": {
+            "Amazon": {"headcount": 310000, "data_date": "2026-02-16"},
+        },
+    }
+
+    changes = calculate_headcount_changes(
+        current=319900,
+        company_name="Amazon",
+        baselines_data=baselines_data,
+        headcount_processor=headcount_processor,
+        gemini_data=gemini_data,
+        history_snapshot_30d=snapshot,
+    )
+
+    assert changes["30_days_ago"]["value"] is not None
+    assert changes["30_days_ago"]["pct"] is not None
