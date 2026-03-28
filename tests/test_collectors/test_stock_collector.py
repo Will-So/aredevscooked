@@ -166,6 +166,33 @@ def test_collect_stock_data_returns_expected_format(mock_yf, collector):
     assert "yahoo.com" in data["source_urls"][0]
 
 
+@patch("aredevscooked.collectors.stock_collector.yf")
+def test_collect_spy_data(mock_yf, collector):
+    """Should collect SPY data using the same collect_stock_data method."""
+    mock_ticker = MagicMock()
+    mock_yf.Ticker.return_value = mock_ticker
+
+    import pandas as pd
+
+    today = date.today()
+    one_year_ago = today - timedelta(days=365)
+
+    mock_hist_current = pd.DataFrame(
+        {"Close": [565.42]}, index=pd.to_datetime([today.isoformat()])
+    )
+    mock_hist_historical = pd.DataFrame(
+        {"Close": [520.10]}, index=pd.to_datetime([one_year_ago.isoformat()])
+    )
+    mock_ticker.history.side_effect = [mock_hist_current, mock_hist_historical]
+
+    data = collector.collect_stock_data("S&P 500", "SPY", one_year_ago)
+
+    assert data["company"] == "S&P 500"
+    assert data["ticker"] == "SPY"
+    assert data["current_price"] == 565.42
+    assert data["price_1_year_ago"] == 520.10
+
+
 def test_close_does_not_raise(collector):
     """Close method should not raise errors."""
     collector.close()

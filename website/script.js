@@ -346,6 +346,52 @@
                 `}).join('');
             document.getElementById('stockCompaniesList').innerHTML = companiesHTML;
         }
+
+        if (stockIndexData.relative_to_spy) {
+            const relChanges = stockIndexData.relative_to_spy.changes || {};
+            const relBadge = stockIndexData.relative_to_spy.aggregate_badge || 'neutral';
+            let relChangesHTML = '<div class="index-changes">';
+
+            const periods = [
+                { key: '30_day', label: '30 Days' },
+                { key: '1_year', label: '1 Year' }
+            ];
+
+            for (const { key, label } of periods) {
+                const change = relChanges[key];
+                if (!change) continue;
+                if (change.pct == null) {
+                    relChangesHTML += `
+                        <div class="index-change">
+                            <span class="period">${label}</span>
+                            <span class="value neutral">N/A</span>
+                        </div>
+                    `;
+                } else {
+                    relChangesHTML += `
+                        <div class="index-change">
+                            <span class="period">${label}</span>
+                            <span class="value ${getChangeClass(change.pct)}">${formatPercentage(change.pct)}</span>
+                        </div>
+                    `;
+                }
+            }
+            relChangesHTML += '</div>';
+
+            const badgeClass = relBadge.replace('_', '-');
+            const relativeHTML = `
+                <div class="stock-index relative-market">
+                    <div class="index-value">
+                        <span class="label">Relative to S&P 500</span>
+                        <span class="badge ${badgeClass}">${relBadge.replace('_', ' ')}</span>
+                    </div>
+                    ${relChangesHTML}
+                </div>
+            `;
+
+            document.getElementById('stockCompaniesList')
+                .insertAdjacentHTML('beforebegin', relativeHTML);
+        }
     }
 
     function calculateOverallVerdict(badges) {

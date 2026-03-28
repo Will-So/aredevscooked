@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-27T18:32:16.803779+00:00",
+    "last_updated": "2026-03-28T05:28:24.968604+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -180,10 +180,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": null,
-              "pct": null,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral",
-              "source_url": ""
+              "source_url": "",
+              "baseline_headcount": 582163,
+              "baseline_date": "2026-02-28"
             }
           }
         },
@@ -289,10 +291,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": null,
-              "pct": null,
+              "value": 9000,
+              "pct": 4.11,
               "badge": "neutral",
-              "source_url": ""
+              "source_url": "",
+              "baseline_headcount": 219000,
+              "baseline_date": "2026-02-28"
             }
           }
         },
@@ -501,11 +505,11 @@
     }
   },
   "stock_index": {
-    "current_value": 69.76,
+    "current_value": 69.48,
     "baseline_date": "2025-03-27",
     "changes": {
-      "30_day": -20.97,
-      "1_year": -30.24
+      "30_day": -21.25,
+      "1_year": -30.52
     },
     "companies": {
       "HCLTech": {
@@ -517,24 +521,24 @@
       },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
-        "current_price": 4292.9,
+        "current_price": 4200.7,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.12,
-        "change_1_year": -24.4
+        "change_30_day": -28.68,
+        "change_1_year": -26.02
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 59.72,
+        "current_price": 59.73,
         "weight": 0.14285714285714285,
-        "change_30_day": -22.49,
-        "change_1_year": -24.04
+        "change_30_day": -22.48,
+        "change_1_year": -24.03
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 12.84,
+        "current_price": 12.83,
         "weight": 0.14285714285714285,
-        "change_30_day": -26.29,
-        "change_1_year": -41.61
+        "change_30_day": -26.35,
+        "change_1_year": -41.66
       },
       "TCS": {
         "ticker": "TCS.NS",
@@ -552,15 +556,37 @@
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 2.09,
+        "current_price": 2.08,
         "weight": 0.14285714285714285,
-        "change_30_day": -22.3,
-        "change_1_year": -39.77
+        "change_30_day": -22.68,
+        "change_1_year": -40.06
       }
     },
-    "aggregate_badge": "collapsing"
+    "aggregate_badge": "collapsing",
+    "spy_benchmark": {
+      "current_price": 634.09,
+      "ticker": "SPY",
+      "source_url": "https://finance.yahoo.com/quote/SPY",
+      "changes": {
+        "30_day": null,
+        "1_year": null
+      }
+    },
+    "relative_to_spy": {
+      "changes": {
+        "30_day": {
+          "pct": null,
+          "badge": "neutral"
+        },
+        "1_year": {
+          "pct": null,
+          "badge": "neutral"
+        }
+      },
+      "aggregate_badge": "neutral"
+    }
   },
-  "ai_summary": "Devs aren't cooked. While IT consultancy stocks are collapsing (down 25-40%), Big Tech headcount remains stable. AI labs show strong hiring momentum, and the Indeed Index for software devs grew 13% year-over-year. Broad hiring demand persists despite significant pain in the low-value consultancy sector. With software job postings up 13% year-over-year, the only thing truly getting \"cooked\" is the CPU on a dev's machine running three Docker containers.",
+  "ai_summary": "Devs aren\u2019t cooked. Despite collapsing IT consultancy stocks (down 25-40%), broad hiring is resilient; the Indeed Index rose 13% annually. Big Tech headcount remains stable, and AI labs are aggressively expanding. Data suggests a correction in low-value outsourcing rather than a terminal decline for the software profession. Being a dev today is like being in a horror movie where the monster ignores you but absolutely devours the entire consulting firm across the street.",
   "indeed_index": {
     "current_value": 113.16,
     "date": "2026-03-20",

@@ -71,6 +71,7 @@ from aredevscooked.config import (
     IT_CONSULTANCIES,
     BIG_TECH_COMPANIES,
     AI_LABS,
+    MARKET_BENCHMARK,
     VALIDATION,
 )
 
@@ -202,6 +203,33 @@ async def collect_all_stock_data(
     # Filter out failed collections (None values)
     stock_data = {name: data for name, data in results if data is not None}
     return stock_data
+
+
+async def collect_spy_data(
+    collector: StockCollector, one_year_ago: date
+) -> dict[str, Any] | None:
+    """Collect S&P 500 (SPY) benchmark data using yfinance.
+
+    Args:
+        collector: StockCollector instance
+        one_year_ago: Date from exactly 1 year ago
+
+    Returns:
+        Stock data dict for SPY, or None on error
+    """
+    try:
+        log(f"  Collecting SPY (S&P 500) benchmark data...")
+        data = await asyncio.to_thread(
+            collector.collect_stock_data,
+            MARKET_BENCHMARK["name"],
+            MARKET_BENCHMARK["ticker"],
+            one_year_ago,
+        )
+        log(f"    ✓ SPY Current: ${data['current_price']:.2f}")
+        return data
+    except Exception as e:
+        log(f"    ✗ Error collecting SPY data: {e}")
+        return None
 
 
 async def collect_single_headcount_data(
@@ -788,6 +816,7 @@ def build_metrics_structure(
     ai_summary: str,
     indeed_data: dict[str, Any] | None = None,
     total_indeed_data: dict[str, Any] | None = None,
+    spy_data: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build the complete metrics_latest.json structure.
 
@@ -995,6 +1024,52 @@ def build_metrics_structure(
         "companies": stock_index_companies,
         "aggregate_badge": stock_index_badge,
     }
+
+    if spy_data:
+        spy_current = spy_data["current_price"]
+        spy_changes = {}
+
+        for baseline_name, baseline_key in [
+            ("30_day", "30_days_ago"),
+            ("1_year", "1_year_ago"),
+        ]:
+            baseline = baselines_data["baselines"].get(baseline_key, {})
+            baseline_stocks = baseline.get("stock_prices", {})
+            if MARKET_BENCHMARK["name"] in baseline_stocks:
+                spy_baseline_price = baseline_stocks[MARKET_BENCHMARK["name"]]["price"]
+                spy_pct = round(
+                    ((spy_current - spy_baseline_price) / spy_baseline_price) * 100, 2
+                )
+                spy_changes[baseline_name] = spy_pct
+            else:
+                spy_changes[baseline_name] = None
+
+        stock_index_structure["spy_benchmark"] = {
+            "current_price": spy_current,
+            "ticker": MARKET_BENCHMARK["ticker"],
+            "source_url": f"https://finance.yahoo.com/quote/{MARKET_BENCHMARK['ticker']}",
+            "changes": spy_changes,
+        }
+
+        relative_changes = {}
+        for period_name in ["30_day", "1_year"]:
+            it_pct = stock_index_changes.get(period_name)
+            spy_pct = spy_changes.get(period_name)
+            if it_pct is not None and spy_pct is not None:
+                rel_pct = round(it_pct - spy_pct, 2)
+                rel_badge = headcount_processor.classify_change(rel_pct)
+                relative_changes[period_name] = {"pct": rel_pct, "badge": rel_badge}
+            else:
+                relative_changes[period_name] = {"pct": None, "badge": "neutral"}
+
+        rel_1yr = relative_changes.get("1_year", {})
+        rel_aggregate = (
+            rel_1yr["badge"] if rel_1yr.get("pct") is not None else "neutral"
+        )
+        stock_index_structure["relative_to_spy"] = {
+            "changes": relative_changes,
+            "aggregate_badge": rel_aggregate,
+        }
 
     low_end = {
         "headcount": {
@@ -1319,6 +1394,7 @@ def save_daily_snapshot(
     job_posting_data: dict[str, dict[str, Any]],
     indeed_data: dict[str, Any] | None = None,
     total_indeed_data: dict[str, Any] | None = None,
+    spy_data: dict[str, Any] | None = None,
 ) -> None:
     """Save today's raw data as a snapshot in metrics_history.json.
 
@@ -1330,6 +1406,7 @@ def save_daily_snapshot(
         job_posting_data: Job posting data for AI labs
         indeed_data: Indeed Job Postings index data from FRED (software dev)
         total_indeed_data: Total Indeed Job Postings index data from FRED (all occupations)
+        spy_data: S&P 500 (SPY) benchmark data
     """
     history_file = Path("data/processed/metrics_history.json")
     today = date.today().isoformat()
@@ -1361,6 +1438,12 @@ def save_daily_snapshot(
         snapshot["stock_prices"][company_name] = {
             "price": data["current_price"],
             "ticker": data["ticker"],
+        }
+
+    if spy_data:
+        snapshot["stock_prices"][MARKET_BENCHMARK["name"]] = {
+            "price": spy_data["current_price"],
+            "ticker": MARKET_BENCHMARK["ticker"],
         }
 
     # Save headcounts (including source_urls for 30-day citation tracking)
@@ -1438,7 +1521,10 @@ async def main_async():
 
     # Collect stock data and Indeed data in parallel
     log("\n📊 Collecting stock price data (via yfinance)...")
-    stock_data = await collect_all_stock_data(stock_collector, one_year_ago)
+    stock_data, spy_data = await asyncio.gather(
+        collect_all_stock_data(stock_collector, one_year_ago),
+        collect_spy_data(stock_collector, one_year_ago),
+    )
     log(f"  Collected {len(stock_data)}/7 companies")
 
     log("\n📈 Collecting Indeed Job Postings indices (via FRED)...")
@@ -1469,6 +1555,7 @@ async def main_async():
         "",
         indeed_data=indeed_data,
         total_indeed_data=total_indeed_data,
+        spy_data=spy_data,
     )
 
     log("\n📝 Generating AI summary...")
@@ -1482,6 +1569,7 @@ async def main_async():
         ai_summary,
         indeed_data=indeed_data,
         total_indeed_data=total_indeed_data,
+        spy_data=spy_data,
     )
 
     # Save daily snapshot to history
@@ -1492,6 +1580,7 @@ async def main_async():
         job_posting_data,
         indeed_data=indeed_data,
         total_indeed_data=total_indeed_data,
+        spy_data=spy_data,
     )
 
     # Write to file

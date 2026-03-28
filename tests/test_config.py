@@ -5,6 +5,7 @@ from aredevscooked.config import (
     IT_CONSULTANCIES,
     BIG_TECH_COMPANIES,
     AI_LABS,
+    MARKET_BENCHMARK,
     HEADCOUNT_THRESHOLDS,
     JOB_POSTING_THRESHOLDS,
 )
@@ -132,3 +133,9 @@ def test_job_posting_thresholds_values():
     assert JOB_POSTING_THRESHOLDS["weak"]["min"] == -40
     assert JOB_POSTING_THRESHOLDS["weak"]["max"] == -20
     assert JOB_POSTING_THRESHOLDS["collapsing"] <= -40
+
+
+def test_market_benchmark_structure():
+    """Market benchmark should have name and ticker for SPY."""
+    assert MARKET_BENCHMARK["name"] == "S&P 500"
+    assert MARKET_BENCHMARK["ticker"] == "SPY"

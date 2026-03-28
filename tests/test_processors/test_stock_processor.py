@@ -258,3 +258,27 @@ def test_full_workflow_with_realistic_data(processor):
     assert len(weights) == 3
     for weight in weights.values():
         assert weight == pytest.approx(1 / 3, rel=1e-2)
+
+
+def test_relative_to_spy_it_underperforming(processor):
+    """IT index down 30%, SPY up 5% => relative = -35%."""
+    it_index_change = -30.0
+    spy_pct_change = 5.0
+    relative = it_index_change - spy_pct_change
+    assert relative == pytest.approx(-35.0)
+
+
+def test_relative_to_spy_both_declining(processor):
+    """IT index down 30%, SPY down 15% => relative = -15%."""
+    it_index_change = -30.0
+    spy_pct_change = -15.0
+    relative = it_index_change - spy_pct_change
+    assert relative == pytest.approx(-15.0)
+
+
+def test_relative_to_spy_it_outperforming(processor):
+    """IT index up 10%, SPY up 3% => relative = +7%."""
+    it_index_change = 10.0
+    spy_pct_change = 3.0
+    relative = it_index_change - spy_pct_change
+    assert relative == pytest.approx(7.0)

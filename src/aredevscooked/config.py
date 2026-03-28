@@ -11,6 +11,8 @@ IT_CONSULTANCIES = [
     {"name": "Wipro", "ticker": "WIT"},
 ]
 
+MARKET_BENCHMARK = {"name": "S&P 500", "ticker": "SPY"}
+
 # Big Tech Companies (Medium-End Companies)
 BIG_TECH_COMPANIES = [
     {"name": "Microsoft"},
