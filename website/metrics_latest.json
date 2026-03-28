@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-03-28T05:28:24.968604+00:00",
+    "last_updated": "2026-03-28T05:34:00.867943+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -506,7 +506,7 @@
   },
   "stock_index": {
     "current_value": 69.48,
-    "baseline_date": "2025-03-27",
+    "baseline_date": "2025-03-28",
     "changes": {
       "30_day": -21.25,
       "1_year": -30.52
@@ -586,19 +586,19 @@
       "aggregate_badge": "neutral"
     }
   },
-  "ai_summary": "Devs aren\u2019t cooked. Despite collapsing IT consultancy stocks (down 25-40%), broad hiring is resilient; the Indeed Index rose 13% annually. Big Tech headcount remains stable, and AI labs are aggressively expanding. Data suggests a correction in low-value outsourcing rather than a terminal decline for the software profession. Being a dev today is like being in a horror movie where the monster ignores you but absolutely devours the entire consulting firm across the street.",
+  "ai_summary": "Devs aren't cooked. While IT consultancy stocks are collapsing (down 30% YoY), Big Tech headcount remains stable. AI labs show explosive hiring momentum, and the Indeed Index for software roles grew 13% annually. The market is shifting toward high-value AI development rather than disappearing entirely. Hiring at AI labs is so explosive right now that \"experience with linear algebra\" has officially replaced \"enjoys ping-pong\" as the most lied-about skill on a resume.",
   "indeed_index": {
-    "current_value": 113.16,
+    "current_value": 113.34,
     "date": "2026-03-20",
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
     "changes": {
       "30_day": {
-        "pct": 0.81,
+        "pct": 0.68,
         "badge": "neutral"
       },
       "1_year": {
-        "pct": 13.16,
+        "pct": 13.34,
         "badge": "strong"
       },
       "q1_2023": {
@@ -614,11 +614,11 @@
       "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
       "changes": {
         "30_day": {
-          "pct": -1.38,
+          "pct": -1.54,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": -4.81,
+          "pct": -4.74,
           "badge": "neutral"
         },
         "q1_2023": {
@@ -630,11 +630,11 @@
     "relative_to_market": {
       "changes": {
         "30_day": {
-          "pct": 2.19,
+          "pct": 2.22,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": 17.97,
+          "pct": 18.08,
           "badge": "strong"
         },
         "q1_2023": {
