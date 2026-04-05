@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-03-28T05:34:00.871499+00:00"
+    "last_updated": "2026-04-05T08:25:43.964136+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -7438,6 +7438,54 @@
       "total_indeed_index": {
         "value": 101.83,
         "date": "2026-03-20"
+      }
+    },
+    "2026-04-05": {
+      "date": "2026-04-05",
+      "timestamp": "2026-04-05T08:25:43.964119+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1402.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4303.9,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 62.54,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 13.74,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2450.7,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1441.5,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.16,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 655.83,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {},
+      "job_postings": {},
+      "indeed_index": {
+        "value": 72.44,
+        "date": "2026-03-27"
+      },
+      "total_indeed_index": {
+        "value": 101.44,
+        "date": "2026-03-27"
       }
     }
   }
