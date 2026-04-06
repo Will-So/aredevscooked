@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-04-05T08:25:43.941505+00:00",
+    "last_updated": "2026-04-06T08:43:53.369870+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -25,20 +25,13 @@
     }
   },
   "stock_index": {
-    "current_value": 72.11,
-    "baseline_date": "2025-04-05",
+    "current_value": 71.61,
+    "baseline_date": "2025-04-06",
     "changes": {
-      "30_day": -18.23,
-      "1_year": -27.89
+      "30_day": -18.76,
+      "1_year": -28.39
     },
     "companies": {
-      "HCLTech": {
-        "ticker": "HCLTECH.NS",
-        "current_price": 1402.2,
-        "weight": 0.14285714285714285,
-        "change_30_day": -13.33,
-        "change_1_year": -23.42
-      },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
         "current_price": 4303.9,
@@ -62,17 +55,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2450.7,
+        "current_price": 2474.7,
         "weight": 0.14285714285714285,
-        "change_30_day": -22.52,
-        "change_1_year": -39.17
+        "change_30_day": -21.76,
+        "change_1_year": -38.58
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1441.5,
+        "current_price": 1456.0,
         "weight": 0.14285714285714285,
-        "change_30_day": -5.19,
-        "change_1_year": -12.69
+        "change_30_day": -4.24,
+        "change_1_year": -11.81
       },
       "Wipro": {
         "ticker": "WIT",
@@ -106,19 +99,19 @@
       "aggregate_badge": "neutral"
     }
   },
-  "ai_summary": "Devs aren't cooked, but consultancies are reeling; stocks like TCS and Infosys have collapsed nearly 40% annually. Conversely, the Indeed Index shows strong momentum, with software postings up 14.37% this year. While consultancy models face pressure, broader hiring remains robust despite neutral trends in Big Tech and AI labs. If the software industry is a restaurant, the chefs are thriving while the guys who charge $300 an hour to explain how a spoon works are getting evicted.",
+  "ai_summary": "Consultancy stocks are collapsing, down nearly 30% annually, signaling structural alarm. However, devs aren't \"cooked\" yet; the Indeed Index shows software hiring momentum remains strong, up 13.8% YoY. With Big Tech headcount and AI lab postings currently neutral, the market is undergoing a painful shift rather than total erasure. The Indeed Index is so strong that the only thing actually being \"cooked\" is the credibility of every LinkedIn influencer who predicted the Dev Apocalypse.",
   "indeed_index": {
-    "current_value": 114.37,
+    "current_value": 113.88,
     "date": "2026-03-27",
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
     "changes": {
       "30_day": {
-        "pct": 3.31,
+        "pct": 3.19,
         "badge": "neutral"
       },
       "1_year": {
-        "pct": 14.37,
+        "pct": 13.88,
         "badge": "strong"
       },
       "q1_2023": {
@@ -134,11 +127,11 @@
       "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
       "changes": {
         "30_day": {
-          "pct": -1.89,
+          "pct": -1.75,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": -5.21,
+          "pct": -5.23,
           "badge": "reasonably_weak"
         },
         "q1_2023": {
@@ -150,11 +143,11 @@
     "relative_to_market": {
       "changes": {
         "30_day": {
-          "pct": 5.2,
-          "badge": "strong"
+          "pct": 4.94,
+          "badge": "neutral"
         },
         "1_year": {
-          "pct": 19.58,
+          "pct": 19.11,
           "badge": "strong"
         },
         "q1_2023": {
