@@ -1,5 +1,6 @@
 """Stock price collector using yfinance and SQLite for accurate data."""
 
+import math
 import sqlite3
 from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
@@ -101,9 +102,13 @@ class StockCollector:
         if hist.empty:
             raise ValueError(f"No price data available for {ticker}")
 
-        # Get the most recent close price
-        latest_price = float(hist["Close"].iloc[-1])
-        latest_date = hist.index[-1].date()
+        # Drop NaN closes — yfinance includes the current calendar day for non-US
+        # markets before data is reconciled, resulting in a NaN close for that row.
+        valid = hist["Close"].dropna()
+        if valid.empty:
+            raise ValueError(f"No valid close price data for {ticker}")
+        latest_price = float(valid.iloc[-1])
+        latest_date = valid.index[-1].date()
 
         # Cache it
         self._store_price(ticker, latest_date, latest_price)
@@ -150,6 +155,8 @@ class StockCollector:
         for idx in hist.index:
             if idx.date() == closest_date:
                 price = float(hist.loc[idx, "Close"])
+                if math.isnan(price):
+                    raise ValueError(f"Price data for {ticker} on {closest_date} is NaN (API returned incomplete data)")
                 self._store_price(ticker, closest_date, price)
                 return price
 
