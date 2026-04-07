@@ -49,6 +49,12 @@
           "ticker": "WIT",
           "price": 2.15,
           "date": "2023-03-31"
+        },
+        "S&P 500": {
+          "company": "S&P 500",
+          "ticker": "SPY",
+          "price": 393.96,
+          "date": "2023-03-31"
         }
       },
       "headcounts": {
@@ -161,6 +167,12 @@
           "ticker": "WIT",
           "price": 3.47,
           "date": "2024-12-26"
+        },
+        "S&P 500": {
+          "company": "S&P 500",
+          "ticker": "SPY",
+          "price": 592.74,
+          "date": "2024-12-26"
         }
       },
       "headcounts": {
@@ -247,13 +259,13 @@
         "HCLTech": {
           "company": "HCLTech",
           "ticker": "HCLTECH.NS",
-          "price": 1617.90,
+          "price": 1617.9,
           "date": "2025-11-26"
         },
         "LTIMindtree": {
           "company": "LTIMindtree",
           "ticker": "LTIM.NS",
-          "price": 5890.00,
+          "price": 5890.0,
           "date": "2025-11-26"
         },
         "Cognizant": {
@@ -271,19 +283,25 @@
         "TCS": {
           "company": "TCS",
           "ticker": "TCS.NS",
-          "price": 3162.90,
+          "price": 3162.9,
           "date": "2025-11-26"
         },
         "Tech Mahindra": {
           "company": "Tech Mahindra",
           "ticker": "TECHM.NS",
-          "price": 1520.40,
+          "price": 1520.4,
           "date": "2025-11-26"
         },
         "Wipro": {
           "company": "Wipro",
           "ticker": "WIT",
           "price": 2.69,
+          "date": "2025-11-26"
+        },
+        "S&P 500": {
+          "company": "S&P 500",
+          "ticker": "SPY",
+          "price": 675.83,
           "date": "2025-11-26"
         }
       },

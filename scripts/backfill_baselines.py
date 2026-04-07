@@ -18,7 +18,8 @@ from typing import Any
 from dotenv import load_dotenv
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
-from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS
+from aredevscooked.collectors.stock_collector import StockCollector
+from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS, MARKET_BENCHMARK
 
 
 async def collect_historical_stock_data(
@@ -130,6 +131,21 @@ async def backfill_baseline(
     stock_results = await asyncio.gather(*stock_tasks)
     stock_data = {r["company"]: r for r in stock_results if r is not None}
     print(f"  Collected {len(stock_data)}/7 companies")
+
+    print(f"  Fetching {MARKET_BENCHMARK['ticker']} price for {target_date}...")
+    try:
+        spy_price = StockCollector().fetch_historical_price(
+            MARKET_BENCHMARK["ticker"], target_date
+        )
+        stock_data[MARKET_BENCHMARK["name"]] = {
+            "company": MARKET_BENCHMARK["name"],
+            "ticker": MARKET_BENCHMARK["ticker"],
+            "price": round(spy_price, 2),
+            "date": target_date.isoformat(),
+        }
+        print(f"  ✓ {MARKET_BENCHMARK['ticker']}: {round(spy_price, 2)}")
+    except Exception as e:
+        print(f"  ✗ Could not fetch {MARKET_BENCHMARK['ticker']}: {e}")
 
     # Collect headcount for all companies
     print(f"\n👥 Headcount as of {target_date}:")

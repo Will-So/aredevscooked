@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-04-07T23:09:22.173973+00:00",
+    "last_updated": "2026-04-07T23:39:00.906191+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -602,25 +602,25 @@
       "ticker": "SPY",
       "source_url": "https://finance.yahoo.com/quote/SPY",
       "changes": {
-        "30_day": null,
-        "1_year": null
+        "30_day": -2.46,
+        "1_year": 11.22
       }
     },
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": null,
-          "badge": "neutral"
+          "pct": -15.11,
+          "badge": "weak"
         },
         "1_year": {
-          "pct": null,
-          "badge": "neutral"
+          "pct": -38.62,
+          "badge": "collapsing"
         }
       },
-      "aggregate_badge": "neutral"
+      "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't cooked. While IT consultancy stocks are collapsing (TCS/Infosys down >35%), broader software hiring momentum is strong, with Indeed postings up 13% annually. Big Tech headcount dipped slightly (~4%), but AI labs show explosive job growth, indicating a shift in demand rather than a market-wide collapse. We aren't cooked; we\u2019re just being moved from the slow-cooker of legacy IT consulting to the high-heat air-fryer of generative AI.",
+  "ai_summary": "Devs aren't cooked. Although IT consultancy stocks are collapsing (down 27% YoY), Big Tech headcount shows only minor single-digit dips. AI labs are hiring aggressively (+744% YoY), and the Indeed Software Dev Index remains strong, up 13% YoY and significantly outperforming the broader job market. We aren't actually \"cooked\"\u2014we\u2019re just being transferred from the low-heat consultancy frying pan into the high-intensity AI air fryer.",
   "indeed_index": {
     "current_value": 113.44,
     "date": "2026-03-27",
