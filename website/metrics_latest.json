@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-04-07T23:39:00.906191+00:00",
+    "last_updated": "2026-04-08T00:29:10.651139+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -539,26 +539,26 @@
     }
   },
   "stock_index": {
-    "current_value": 72.6,
+    "current_value": 73.68,
     "baseline_date": "2025-04-07",
     "changes": {
-      "30_day": -17.57,
-      "1_year": -27.4
+      "30_day": -16.38,
+      "1_year": -26.32
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1403.3,
+        "current_price": 1441.6,
         "weight": 0.14285714285714285,
-        "change_30_day": -13.26,
-        "change_1_year": -23.36
+        "change_30_day": -10.9,
+        "change_1_year": -21.27
       },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
-        "current_price": 4307.4,
+        "current_price": 4442.5,
         "weight": 0.14285714285714285,
-        "change_30_day": -26.87,
-        "change_1_year": -24.15
+        "change_30_day": -24.58,
+        "change_1_year": -21.77
       },
       "Cognizant": {
         "ticker": "CTSH",
@@ -576,17 +576,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2473.9,
+        "current_price": 2539.8,
         "weight": 0.14285714285714285,
-        "change_30_day": -21.78,
-        "change_1_year": -38.6
+        "change_30_day": -19.7,
+        "change_1_year": -36.96
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1449.5,
+        "current_price": 1473.4,
         "weight": 0.14285714285714285,
-        "change_30_day": -4.66,
-        "change_1_year": -12.2
+        "change_30_day": -3.09,
+        "change_1_year": -10.75
       },
       "Wipro": {
         "ticker": "WIT",
@@ -609,18 +609,18 @@
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -15.11,
+          "pct": -13.92,
           "badge": "weak"
         },
         "1_year": {
-          "pct": -38.62,
+          "pct": -37.54,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't cooked. Although IT consultancy stocks are collapsing (down 27% YoY), Big Tech headcount shows only minor single-digit dips. AI labs are hiring aggressively (+744% YoY), and the Indeed Software Dev Index remains strong, up 13% YoY and significantly outperforming the broader job market. We aren't actually \"cooked\"\u2014we\u2019re just being transferred from the low-heat consultancy frying pan into the high-intensity AI air fryer.",
+  "ai_summary": "Devs aren't cooked. While IT consultancy stocks collapsed 26% YoY, Big Tech headcount remains stable. AI labs maintain strong hiring momentum, and the Indeed Index shows software dev postings up 13% YoY\u2014outperforming the general market. Only low-value consultancy roles face immediate, double-digit structural risk. We aren't cooked, but the IT consultants have been in the microwave so long they\u2019ve started to develop a very concerning structural glow.",
   "indeed_index": {
     "current_value": 113.44,
     "date": "2026-03-27",
