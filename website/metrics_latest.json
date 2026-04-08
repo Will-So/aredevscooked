@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-04-08T00:56:59.953574+00:00",
+    "last_updated": "2026-04-08T08:41:24.002890+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -539,19 +539,19 @@
     }
   },
   "stock_index": {
-    "current_value": 73.68,
+    "current_value": 73.58,
     "baseline_date": "2025-04-08",
     "changes": {
-      "30_day": -16.38,
-      "1_year": -26.32
+      "30_day": -16.48,
+      "1_year": -26.42
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1441.6,
+        "current_price": 1451.5,
         "weight": 0.14285714285714285,
-        "change_30_day": -10.9,
-        "change_1_year": -21.27
+        "change_30_day": -10.28,
+        "change_1_year": -20.73
       },
       "LTIMindtree": {
         "ticker": "LTIM.NS",
@@ -576,17 +576,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2539.8,
+        "current_price": 2550.2,
         "weight": 0.14285714285714285,
-        "change_30_day": -19.7,
-        "change_1_year": -36.96
+        "change_30_day": -19.37,
+        "change_1_year": -36.7
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1473.4,
+        "current_price": 1448.7,
         "weight": 0.14285714285714285,
-        "change_30_day": -3.09,
-        "change_1_year": -10.75
+        "change_30_day": -4.72,
+        "change_1_year": -12.25
       },
       "Wipro": {
         "ticker": "WIT",
@@ -609,18 +609,18 @@
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -13.92,
+          "pct": -14.02,
           "badge": "weak"
         },
         "1_year": {
-          "pct": -37.54,
+          "pct": -37.64,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't \"cooked,\" but the market is bifurcating. IT consultancy stocks are collapsing (TCS/Infosys down >35% YoY), and Big Tech headcount is contracting. Conversely, AI labs show explosive hiring momentum, and the Indeed Index remains strong (+13% YoY), signaling robust demand for developers despite the outsourcing slump. We aren't actually cooked; we\u2019ve just been moved from the \"outsourced consultancy\" crockpot into the \"AI lab\" air fryer.",
+  "ai_summary": "Developers aren't cooked. While IT consultancy stocks are collapsing (-26% YoY), Big Tech headcount remains stable (-4%). AI labs show surging hiring momentum, and the Indeed Index for software devs is up 13% YoY. The market is shifting toward high-value roles rather than disappearing. In other words, you\u2019re not cooked\u2014you\u2019re just being marinated for a much higher-priced skillet.",
   "indeed_index": {
     "current_value": 113.19,
     "date": "2026-03-27",
