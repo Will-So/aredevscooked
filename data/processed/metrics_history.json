@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-04-09T08:54:27.840792+00:00"
+    "last_updated": "2026-04-11T08:37:02.361802+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -8105,6 +8105,170 @@
         "DeepMind": {
           "total_technical_jobs": 72,
           "collection_date": "2026-04-09"
+        }
+      },
+      "indeed_index": {
+        "value": 72.44,
+        "date": "2026-03-27"
+      },
+      "total_indeed_index": {
+        "value": 101.44,
+        "date": "2026-03-27"
+      }
+    },
+    "2026-04-11": {
+      "date": "2026-04-11",
+      "timestamp": "2026-04-11T08:37:02.361779+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1451.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4503.7,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 57.92,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 13.29,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2524.3,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1440.2,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.17,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 679.46,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226279,
+          "data_date": "2026-04-11",
+          "source_urls": [
+            "https://www.peoplematters.in/news/strategic-hr/hcltech-to-lay-off-120-employees-in-orlando-from-may-to-december-2026-49150",
+            "https://startuptalky.com/news/hcltech-announces-120-layoffs/"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://timesofindia.indiatimes.com/technology/tech-news/ltimindtree-md-and-ceo-venu-lambu-we-are-going-to-start-salary-hikes-starting-/articleshow/124662429.cms"
+          ],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://investors.cognizant.com/news-and-events/news/news-details/2026/Cognizant-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+            "https://intellectia.ai/news/stock/cognizant-to-announce-q1-2026-results-on-april-29",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2023/COGNIZANT-REPORTS-FIRST-QUARTER-2023-RESULTS/"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 584519,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://money.rediff.com/news/market/tcs-q4-profit-jumps-12-22-to-13-718-cr/45029120260409"
+          ],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.techmahindra.com/insights/press-releases/techmahindra-q3-fy26-results/",
+            "https://www.fortuneindia.com/business-news/tech-mahindra-q3-fy26-profit-surges-14-yoy-new-deal-wins-cross-1-billion-milestone/129523",
+            "https://www.peoplematters.in/news/business/tech-mahindras-headcount-falls-by-3098-in-q3-as-it-peers-cut-jobs-48073",
+            "https://www.outlookbusiness.com/corporate/tech-mahindra-q3-net-profit-up-14-yoy-it-headcount-down-by-4671",
+            "https://timesofindia.indiatimes.com/technology/tech-news/tech-mahindra-denies-layoff-reports-issues-statement-to-nse/articleshow/129391757.cms",
+            "https://askfuzz.ai/discover/news/companies/tech-mahindra-denies-30-000-job-cut-claims-amid-ai-fears",
+            "https://www.indiatvnews.com/technology/news/tech-mahindra-denies-mass-layoff-rumours-says-no-proposal-for-major-headcount-reduction-2026-03-09-1033141",
+            "https://www.ndtvprofit.com/markets/tech-mahindra-rubbishes-viral-buzz-of-30-000-layoffs-11188148",
+            "https://www.businesstoday.in/technology/news/story/tech-mahindras-30000-layoff-claims-go-viral-company-calls-it-false-519725-2026-03-09"
+          ],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY25+earnings+report+March+31+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+earnings+report+March+31+2023&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 76465,
+          "data_date": "2026-04-11",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+Q1+2025+10-Q+earnings+report+April+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2025+10-K+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+announced+after+December+31+2025+or+March+31+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+10-Q+earnings+report+March+31+2023&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/aapl/employees/",
+            "https://mlq.ai/stocks/AAPL/employee-count/",
+            "https://fintel.io/doc/sec-apple-inc-320193-10k-2025-october-31-20392-514"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-01-28",
+          "source_urls": [
+            "https://wolfstreet.com/2026/02/09/despite-4-years-of-mass-layoffs-at-alphabet-amazon-headcount-rose-in-2025-nearly-flat-with-the-peak-as-hiring-continued/"
+          ],
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/nvda/employees/",
+            "https://mlq.ai/stocks/NVDA/employee-count/",
+            "https://bullfincher.io/companies/nvidia-corporation/number-of-employees"
+          ],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 187,
+          "collection_date": "2026-04-11"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 156,
+          "collection_date": "2026-04-11"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 13,
+          "collection_date": "2025-03-05"
         }
       },
       "indeed_index": {
