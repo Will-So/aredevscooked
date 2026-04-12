@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-04-11T08:37:02.361802+00:00"
+    "last_updated": "2026-04-12T08:39:00.019441+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -8269,6 +8269,175 @@
         "DeepMind": {
           "total_technical_jobs": 13,
           "collection_date": "2025-03-05"
+        }
+      },
+      "indeed_index": {
+        "value": 72.44,
+        "date": "2026-03-27"
+      },
+      "total_indeed_index": {
+        "value": 101.44,
+        "date": "2026-03-27"
+      }
+    },
+    "2026-04-12": {
+      "date": "2026-04-12",
+      "timestamp": "2026-04-12T08:39:00.019417+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1451.2,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4503.7,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 57.92,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 13.29,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2524.3,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1440.2,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.17,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 679.46,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 226159,
+          "data_date": "2026-04-12",
+          "source_urls": [
+            "https://trendlyne.com/equity/about/531/HCLTECH/hcl-technologies-ltd/",
+            "https://economictimes.indiatimes.com/tech/information-tech/hcltech-bucks-trend-again-headcount-rises-by-2725-employees/articleshow/109628282.cms?from=mdr",
+            "https://news.outsourceaccelerator.com/hcltech-revenue-q4/",
+            "https://economictimes.indiatimes.com/tech/information-tech/hcltech-bucks-trend-again-headcount-rises-by-2725-employees/articleshow/109628282.cms?from=mdr",
+            "https://www.hrkatha.com/news/hcltech-sees-lower-attrition-plans-hiring-spree/",
+            "https://dsijpub.s3.ap-south-1.amazonaws.com/productAttachment/BrokerRecommendation/idirect_hcltech_q3fy26.pdf",
+            "https://bsmedia.business-standard.com/_media/bs/data/market-reports/equity-brokertips/2026-01/17683822970.30304700.pdf",
+            "https://timesofindia.indiatimes.com/business/india-business/hcltech-q3-results-net-profit-falls-11-2-to-rs-4076-crore-revenue-rises-13-3/articleshow/126484523.cms"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.investing.com/equities/larsen-toubro-infotech-ltd-earnings",
+            "https://www.angelone.in/news/stocks/ltimindtree-to-begin-salary-increments-in-q4-fy26-50-of-employees-to-be-covered"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 584519,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2026",
+            "https://economictimes.indiatimes.com/tech/information-tech/tcs-q4-fy26-attrition-rises-to-13-7-2356-employees-added-during-the-quarter/articleshow/130148878.cms?from=mdr",
+            "https://www.businessworld.in/article/tcs-headcount-drops-by-23-500-as-demand-softness-hits-fy26-performance-601613",
+            "https://www.ndtvprofit.com/markets/tcs-q4-attrition-rate-rises-to-13-7-headcount-rises-by-over-2-000-employees-11333766",
+            "https://www.thehindu.com/business/Industry/tcs-q4-results-net-profits-april-9-2026/article70842515.ece",
+            "https://rajai.blog/aichi/",
+            "https://techmonk.economictimes.indiatimes.com/amp/news/jobs-layoffs/tcs-workforce-shifts-headcount-down-attrition-up-hiring-targets-experience/130159589"
+          ],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 149616,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.techmahindra.com/insights/press-releases/techmahindra-q3-fy26-results/",
+            "https://www.fortuneindia.com/business-news/tech-mahindra-q3-fy26-profit-surges-14-yoy-new-deal-wins-cross-1-billion-milestone/129523",
+            "https://www.jmfinancialservices.in/market-news-and-insights/1665332",
+            "https://www.peoplematters.in/news/business/tech-mahindras-headcount-falls-by-3098-in-q3-as-it-peers-cut-jobs-48073",
+            "https://www.businesstoday.in/technology/news/story/tech-mahindras-30000-layoff-claims-go-viral-company-calls-it-false-519725-2026-03-09",
+            "https://www.sgssl.co.in/market/news/corporate-news/1594163/tech_mahindra_q4_pat_rises_19_percent__qoq;_declares_dividend_of_rs_30_sh",
+            "https://www.techmahindra.com/insights/press-releases/techmahindra-q4-fy25-results/",
+            "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-slips-64-optimistic-about-upcoming-year",
+            "https://content.techgig.com/technology/tech-mahindra-reports-765-profit-growth-boosts-workforce-in-q4-fy25/articleshow/120720474.cms",
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/tech-mahindra-q4-results-live-tech-m-q4-fy25-revenue-earning-net-profit-loss-date-time-24-april-2025/liveblog/120580040.cms?from=mdr",
+            "https://www.techmahindra.com/insights/press-releases/techmahindra-q4-fy23-results/"
+          ],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 242021,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.sightsinplus.com/news/industry-news/wipro-reduces-total-headcount-by-6180-employees",
+            "https://www.financialexpress.com/business/industry-wipro-q3fy26-earning-results-live-labour-code-costs-guidance-deal-pipeline-profit-revenue-4108894/",
+            "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2025-2026/q3fy26/regulation-33-financial-results-q3fy26.pdf",
+            "https://www.fortuneindia.com/business-news/wipro-q3-profit-falls-7-to-3119-crore-amid-cost-pressures-revenue-up-55/129526",
+            "https://www.angelone.in/news/stocks/wipro-to-roll-out-salary-hikes-from-march-1-pays-100-variable-for-q3fy26",
+            "https://www.macrotrends.net/stocks/charts/WIT/wipro/number-of-employees"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 76465,
+          "data_date": "2026-04-12",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+April+2025+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2025+10-K+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+March+31+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+announced+after+December+2025+or+March+2026&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/aapl/employees/",
+            "https://mlq.ai/stocks/AAPL/employee-count/"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 304000,
+          "data_date": "2026-01-28",
+          "source_urls": [
+            "https://sustainability.aboutamazon.com/2022-sustainability-report.pdf",
+            "https://assets.aboutamazon.com/82/f0/4cefb1c64a8099f743c3b94be0a0/amz-wws24-report-r40b.pdf",
+            "https://www.reddit.com/r/news/comments/1qpa9mt/amazon_to_cut_16000_jobs_in_latest_round_of/"
+          ],
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://mlq.ai/stocks/NVDA/employee-count/"
+          ],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 110,
+          "collection_date": "2026-04-12"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 468,
+          "collection_date": "2026-04-12"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 52,
+          "collection_date": "2026-04-12"
         }
       },
       "indeed_index": {
