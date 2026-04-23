@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-04-22T08:58:46.924119+00:00"
+    "last_updated": "2026-04-23T08:59:07.132245+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -9486,6 +9486,205 @@
         "Anthropic": {
           "total_technical_jobs": 165,
           "collection_date": "2026-04-22"
+        }
+      },
+      "indeed_index": {
+        "value": 72.44,
+        "date": "2026-03-27"
+      },
+      "total_indeed_index": {
+        "value": 101.44,
+        "date": "2026-03-27"
+      }
+    },
+    "2026-04-23": {
+      "date": "2026-04-23",
+      "timestamp": "2026-04-23T08:59:07.132215+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1276.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "LTIMindtree": {
+          "price": 4604.3,
+          "ticker": "LTIM.NS"
+        },
+        "Cognizant": {
+          "price": 58.81,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 13.48,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2526.1,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1430.5,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.11,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 711.21,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 227061,
+          "data_date": "2026-04-23",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBd-6MrsgzIz-5I2GQEtexehuNFQODf1hzBtdUdPC80vqLZCMcWTEanPLH7ODM1Vddot2IdK8fuiBRwzIxkOeYmNsdwQJOWWUrcGS2_-FNXIiBpyep361zRBnLyOR0VJo3xtO73t_Q2VB-8_tRzRph2aFNA0Ob5q04Xb2p2b3o035RmiVrhgAeCFnhUmICeurlCAXH1U0HTc6pzTKVPHhPy2o=",
+            "https://www.prnewswire.com/news-releases/hcltech-q3-fy26-revenue-up-4-2-qoq-cc-as-annualized-revenue-crosses-15b-bookings-exceptionally-high-at-3b-302658801.html",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHN9rUVZ6eIcS8K2MK6KwNU4Y5ZQZrN8AToaO8bYtXPf4gzqcXDrVwj6GY3ePgaLocrUxBcz66gLeWN1gZtipTwn7kS_XLIAbMxn-3Cim05lzH9c2xK4x_4obaAkEg0Kj8bsZtIkm04O5JUDFORJz5tzu4SDf5tIxn2NST2anmNogNtTI2EUkj1s47TRjyrYFvnons6xtc=",
+            "https://www.prnewswire.com/news-releases/hcltech-fy26-revenue-up-3-9-led-by-increasing-demand-for-advanced-ai-302749099.html",
+            "https://infotechlead.com/software/hcltech-q4-revenue-up-5-3-to-3-68-bn-full-year-revenue-hits-14-66-bn-with-ai-growth-momentum-95239",
+            "https://en.wikipedia.org/wiki/HCLTech",
+            "https://www.whalesbook.com/news/English/tech/HCLTech-Powers-Up-Revenue-Per-Employee-Through-Strategic-Hiring/69e7ba75bca97ee1069db845",
+            "https://www.indianewsnetwork.com/en/hcltech-reports-4-2-profit-rise-ai-revenue-reaches-620-million-20260422"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87958,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/tech/information-tech/ltimindtree-to-roll-out-wage-hikes-in-q4-50-workforce-to-be-covered-in-first-phase/articleshow/126796447.cms?from=mdr"
+          ],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 351600,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2025+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q4+2025+10-K+filing&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2023+earnings+report+10-Q&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 335886,
+          "data_date": "2026-04-23",
+          "source_urls": [
+            "https://www.google.com/search?q=Infosys+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q3+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY25+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 584519,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2023"
+          ],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 147623,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.financialexpress.com/business/industry-tech-mahindra-q4-profit-up-20-but-headcount-declines-1-33-at-147-623-on-reduction-in-it-and-bps-workforce-4215498/",
+            "https://insights.dsij.in/dsijarticledetail/tech-mahindra-q4-results-pat-rises-16-yoy-to-rs-1354-crore-margins-expand-rs-51-per-share-dividend-declared",
+            "https://www.mahindra.com/news-room/press-release/en/tech-mahindra-fy26-ebit-rises-to-rupees-7152-crores-up-39.2-percents-yoy-declares-rupees-36-final-dividend-taking-total-to-rupees-51-highest-ever",
+            "https://www.livemint.com/companies/tech-mahindra-q4-results-2026-headcount-falls-by-1-993-as-it-giant-pushes-for-ai-driven-efficiency-11776866159887.html",
+            "https://journeytowardssaving.com/tech-mahindra-q4-fy26-results-key-highlights",
+            "https://economictimes.indiatimes.com/markets/stocks/earnings/tech-mahindra-q4-results-cons-profit-rises-16-yoy-to-rs-1354-crore-revenue-up-13/articleshow/130436235.cms?from=mdr",
+            "https://www.financialexpress.com/business/news/tech-mahindra-laying-off-30000-employees-company-makes-statement/4166907/",
+            "https://www.communicationstoday.co.in/tech-mahindra-denies-rumours-of-mass-layoffs/",
+            "https://www.ndtvprofit.com/markets/tech-mahindra-rubbishes-viral-buzz-of-30-000-layoffs-11188148",
+            "https://www.techmahindra.com/insights/press-releases/techmahindra-q4-fy23-results/"
+          ],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 242156,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.whalesbook.com/news/English/tech/Wipro-Lowers-Attrition-But-Growth-Pace-Faces-Scrutiny/69e0c8f87bc5659bb5b07d0e"
+          ],
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 219000,
+          "data_date": "2025-12-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+layoffs+April+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q3+FY2025+March+31+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q3+FY2026+March+31+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+headcount+Q3+FY2023+March+31+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+April+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+count+March+2023+10-Q&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 68365,
+          "data_date": "2026-04-23",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/meta-reports-first-quarter-2025-results-302443250.html",
+            "https://www.marketbeat.com/earnings/reports/2025-4-30-facebook-inc-stock/",
+            "https://docs.publicnow.com/viewDoc.aspx?filename=76429%5CEXT%5C8F409E4E863598486985B8A4B34349DAB0297F8F_DDCBFE00DD58ACF13A792B9AE3D4AB0704A2307A.PDF",
+            "https://www.mediaweek.com.au/meta-releases-financial-results-for-q1-2023/",
+            "https://www.prnewswire.com/news-releases/meta-reports-first-quarter-2023-results-301808794.html",
+            "https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-First-Quarter-2023-Results-2023.pdf"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.entrepreneur.com/business-news/apple-conducts-rare-round-of-layoffs-affecting-one-team/500066",
+            "https://www.outlookbusiness.com/deeptech/tech/apple-lays-off-sales-employees-in-one-of-its-rarest-workforce-reductions",
+            "https://stlawyers.ca/blog-news/apple-sales-team-shakeup-2025/",
+            "https://electroiq.com/stats/how-many-people-work-at-apple/",
+            "https://www.macrotrends.net/stocks/charts/AAPL/apple/number-of-employees"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-01-28",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/amzn/employees/"
+          ],
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2025+10-K+Jan+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2026+10-K+Jan+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2023+10-K+Jan+2023&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 128,
+          "collection_date": "2026-04-23"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 428,
+          "collection_date": "2026-04-23"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 63,
+          "collection_date": "2026-04-23"
         }
       },
       "indeed_index": {
