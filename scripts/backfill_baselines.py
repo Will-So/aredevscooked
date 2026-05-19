@@ -19,7 +19,12 @@ from dotenv import load_dotenv
 
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.collectors.stock_collector import StockCollector
-from aredevscooked.config import IT_CONSULTANCIES, BIG_TECH_COMPANIES, AI_LABS, MARKET_BENCHMARK
+from aredevscooked.config import (
+    IT_CONSULTANCIES,
+    BIG_TECH_COMPANIES,
+    AI_LABS,
+    MARKET_BENCHMARK,
+)
 
 
 async def collect_historical_stock_data(

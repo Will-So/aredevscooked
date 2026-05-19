@@ -156,7 +156,9 @@ class StockCollector:
             if idx.date() == closest_date:
                 price = float(hist.loc[idx, "Close"])
                 if math.isnan(price):
-                    raise ValueError(f"Price data for {ticker} on {closest_date} is NaN (API returned incomplete data)")
+                    raise ValueError(
+                        f"Price data for {ticker} on {closest_date} is NaN (API returned incomplete data)"
+                    )
                 self._store_price(ticker, closest_date, price)
                 return price
 
