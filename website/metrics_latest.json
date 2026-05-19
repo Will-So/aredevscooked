@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-19T17:39:45.747706+00:00",
+    "last_updated": "2026-05-19T17:59:36.255005+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -529,11 +529,11 @@
     }
   },
   "stock_index": {
-    "current_value": 65.16,
+    "current_value": 65.13,
     "baseline_date": "2025-05-19",
     "changes": {
-      "30_day": -24.02,
-      "1_year": -34.84
+      "30_day": -24.06,
+      "1_year": -34.87
     },
     "companies": {
       "HCLTech": {
@@ -545,17 +545,17 @@
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 51.38,
+        "current_price": 51.26,
         "weight": 0.14285714285714285,
-        "change_30_day": -33.32,
-        "change_1_year": -34.65
+        "change_30_day": -33.47,
+        "change_1_year": -34.8
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 12.78,
+        "current_price": 12.77,
         "weight": 0.14285714285714285,
-        "change_30_day": -26.64,
-        "change_1_year": -41.88
+        "change_30_day": -26.69,
+        "change_1_year": -41.93
       },
       "TCS": {
         "ticker": "TCS.NS",
@@ -581,29 +581,29 @@
     },
     "aggregate_badge": "collapsing",
     "spy_benchmark": {
-      "current_price": 736.78,
+      "current_price": 736.22,
       "ticker": "SPY",
       "source_url": "https://finance.yahoo.com/quote/SPY",
       "changes": {
-        "30_day": 9.02,
-        "1_year": 24.3
+        "30_day": 8.94,
+        "1_year": 24.21
       }
     },
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -33.04,
+          "pct": -33.0,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -59.14,
+          "pct": -59.08,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't cooked. Collapsing consultancy stocks (-40%) suggest AI is automating low-value tasks, but Indeed postings are up 17.6%, signaling strong demand. Big Tech headcounts remain stable, and AI labs are aggressively hiring, not hoarding. Investors are panicked, but the actual labor market remains resilient. Investors are panicking like a junior dev who just realized they\u2019ve been working on a detached HEAD for three days.",
+  "ai_summary": "Devs aren't cooked. Collapsing consultancy stocks signal AI is automating low-value outsourcing, but Indeed postings rose 17.6%, showing strong demand. Big Tech headcounts remain stable, and AI labs are still hiring aggressively, not hoarding. The market is shifting, but the AI 2027 freeze hasn't arrived. Wipro and Infosys stocks are down over 40%, proving that \"cheap labor\" is finally being out-competed by a Python script that doesn't ask for a promotion.",
   "indeed_index": {
     "current_value": 117.6,
     "date": "2026-05-01",

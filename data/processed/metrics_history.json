@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-05-19T17:39:45.753432+00:00"
+    "last_updated": "2026-05-19T17:59:36.259515+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -10962,18 +10962,18 @@
     },
     "2026-05-19": {
       "date": "2026-05-19",
-      "timestamp": "2026-05-19T17:39:45.753406+00:00",
+      "timestamp": "2026-05-19T17:59:36.259490+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1179.4,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
-          "price": 51.38,
+          "price": 51.26,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 12.78,
+          "price": 12.77,
           "ticker": "INFY"
         },
         "TCS": {
@@ -10989,7 +10989,7 @@
           "ticker": "WIT"
         },
         "S&P 500": {
-          "price": 736.78,
+          "price": 736.22,
           "ticker": "SPY"
         }
       },
