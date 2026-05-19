@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-19T03:34:58.882202+00:00",
+    "last_updated": "2026-05-19T03:39:59.950936+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -33,12 +33,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 782,
-              "pct": 0.35,
+              "value": 902,
+              "pct": 0.4,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 226279,
-              "baseline_date": "2026-04-18"
+              "baseline_headcount": 226159,
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -78,7 +78,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 87958,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -116,7 +116,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 351600,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -146,12 +146,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -7292,
-              "pct": -2.17,
+              "value": -7992,
+              "pct": -2.37,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 335886,
-              "baseline_date": "2026-04-18"
+              "baseline_headcount": 336586,
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -188,7 +188,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 584519,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -228,7 +228,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 149616,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -269,7 +269,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 242156,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         }
@@ -310,12 +310,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 2500,
-              "pct": 1.11,
+              "value": 9000,
+              "pct": 4.11,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 225500,
-              "baseline_date": "2026-04-18"
+              "baseline_headcount": 219000,
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -350,12 +350,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -879,
-              "pct": -1.24,
+              "value": 1521,
+              "pct": 2.22,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 70865,
-              "baseline_date": "2026-04-18"
+              "baseline_headcount": 68465,
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -391,7 +391,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 166000,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -422,12 +422,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 57000,
-              "pct": 19.45,
+              "value": 30000,
+              "pct": 9.38,
               "badge": "strong",
               "source_url": "",
-              "baseline_headcount": 293000,
-              "baseline_date": "2026-04-18"
+              "baseline_headcount": 320000,
+              "baseline_date": "2026-04-19"
             }
           }
         },
@@ -466,7 +466,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 42000,
-              "baseline_date": "2026-04-18"
+              "baseline_date": "2026-04-19"
             }
           }
         }
@@ -488,8 +488,8 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": 17,
-              "badge": "strong"
+              "value": -34,
+              "badge": "weak"
             }
           }
         },
@@ -503,8 +503,8 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": 1,
-              "badge": "neutral"
+              "value": 28,
+              "badge": "strong"
             }
           }
         },
@@ -518,8 +518,8 @@
               "badge": "neutral"
             },
             "30_days_ago": {
-              "value": -11,
-              "badge": "reasonably_weak"
+              "value": -25,
+              "badge": "weak"
             }
           }
         }
@@ -530,7 +530,7 @@
   },
   "stock_index": {
     "current_value": 64.07,
-    "baseline_date": "2025-05-18",
+    "baseline_date": "2025-05-19",
     "changes": {
       "30_day": -25.3,
       "1_year": -35.93
@@ -603,9 +603,9 @@
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't cooked, but consultancies are reeling. While IT consultancy stocks have collapsed over 30%, Big Tech headcount remains resilient. AI labs are hiring aggressively, and Indeed\u2019s software dev index is up 18% year-over-year. Low-value services are under pressure, but high-end engineering demand remains robust. Consultancy stocks are currently dropping faster than a junior dev\u2019s confidence after their first merge conflict.",
+  "ai_summary": "Devs aren't \"cooked,\" but the market is bifurcating. IT consultancy stocks are collapsing (down 36% YoY), yet Big Tech headcount remains stable. AI labs show explosive hiring growth, and Indeed\u2019s software dev index is up 17.6% annually. Pain is currently limited to low-value outsourcing, not the broader industry. Saying the entire dev industry is \"cooked\" because low-value outsourcing is failing is like saying the culinary world is over because a local vending machine broke down.",
   "indeed_index": {
-    "current_value": 117.95,
+    "current_value": 117.6,
     "date": "2026-05-01",
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
@@ -615,7 +615,7 @@
         "badge": "neutral"
       },
       "1_year": {
-        "pct": 17.95,
+        "pct": 17.6,
         "badge": "strong"
       },
       "q1_2023": {
@@ -631,11 +631,11 @@
       "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
       "changes": {
         "30_day": {
-          "pct": -0.21,
+          "pct": -0.18,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": -3.15,
+          "pct": -3.2,
           "badge": "neutral"
         },
         "q1_2023": {
@@ -647,11 +647,11 @@
     "relative_to_market": {
       "changes": {
         "30_day": {
-          "pct": -0.52,
+          "pct": -0.55,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": 21.1,
+          "pct": 20.8,
           "badge": "strong"
         },
         "q1_2023": {
