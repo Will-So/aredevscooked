@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-19T09:29:25.899834+00:00",
+    "last_updated": "2026-05-19T17:39:45.747706+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -529,81 +529,81 @@
     }
   },
   "stock_index": {
-    "current_value": 65.03,
+    "current_value": 65.16,
     "baseline_date": "2025-05-19",
     "changes": {
-      "30_day": -24.2,
-      "1_year": -34.97
+      "30_day": -24.02,
+      "1_year": -34.84
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1184.1,
+        "current_price": 1179.4,
         "weight": 0.14285714285714285,
-        "change_30_day": -26.81,
-        "change_1_year": -35.33
+        "change_30_day": -27.1,
+        "change_1_year": -35.59
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 51.4,
+        "current_price": 51.38,
         "weight": 0.14285714285714285,
-        "change_30_day": -33.29,
-        "change_1_year": -34.62
+        "change_30_day": -33.32,
+        "change_1_year": -34.65
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 12.59,
+        "current_price": 12.78,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.73,
-        "change_1_year": -42.75
+        "change_30_day": -26.64,
+        "change_1_year": -41.88
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2335.1,
+        "current_price": 2327.1,
         "weight": 0.14285714285714285,
-        "change_30_day": -26.17,
-        "change_1_year": -42.04
+        "change_30_day": -26.43,
+        "change_1_year": -42.24
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1469.6,
+        "current_price": 1467.1,
         "weight": 0.14285714285714285,
-        "change_30_day": -3.34,
-        "change_1_year": -10.98
+        "change_30_day": -3.51,
+        "change_1_year": -11.13
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 1.94,
+        "current_price": 1.96,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.88,
-        "change_1_year": -44.09
+        "change_30_day": -27.14,
+        "change_1_year": -43.52
       }
     },
     "aggregate_badge": "collapsing",
     "spy_benchmark": {
-      "current_price": 738.65,
+      "current_price": 736.78,
       "ticker": "SPY",
       "source_url": "https://finance.yahoo.com/quote/SPY",
       "changes": {
-        "30_day": 9.3,
-        "1_year": 24.62
+        "30_day": 9.02,
+        "1_year": 24.3
       }
     },
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -33.5,
+          "pct": -33.04,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -59.59,
+          "pct": -59.14,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Developers aren't \"cooked.\" While IT consultancy stocks are collapsing (down ~35%), Big Tech headcount remains stable. AI labs show explosive hiring momentum, and Indeed\u2019s software index is up 17% year-over-year. The crisis is concentrated in low-value outsourcing, while high-end engineering demand remains robust. We aren't cooked; we\u2019re just being sous-vide\u2014slowly heated under intense pressure until we\u2019re expensive enough to justify the headcount.",
+  "ai_summary": "Devs aren't cooked. Collapsing consultancy stocks (-40%) suggest AI is automating low-value tasks, but Indeed postings are up 17.6%, signaling strong demand. Big Tech headcounts remain stable, and AI labs are aggressively hiring, not hoarding. Investors are panicked, but the actual labor market remains resilient. Investors are panicking like a junior dev who just realized they\u2019ve been working on a detached HEAD for three days.",
   "indeed_index": {
     "current_value": 117.6,
     "date": "2026-05-01",

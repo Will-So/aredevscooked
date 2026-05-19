@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-05-19T09:29:25.905010+00:00"
+    "last_updated": "2026-05-19T17:39:45.753432+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -10962,34 +10962,34 @@
     },
     "2026-05-19": {
       "date": "2026-05-19",
-      "timestamp": "2026-05-19T09:29:25.904981+00:00",
+      "timestamp": "2026-05-19T17:39:45.753406+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1184.1,
+          "price": 1179.4,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
-          "price": 51.4,
+          "price": 51.38,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 12.59,
+          "price": 12.78,
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2335.1,
+          "price": 2327.1,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1469.6,
+          "price": 1467.1,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 1.94,
+          "price": 1.96,
           "ticker": "WIT"
         },
         "S&P 500": {
-          "price": 738.65,
+          "price": 736.78,
           "ticker": "SPY"
         }
       },
