@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-19T03:39:59.950936+00:00",
+    "last_updated": "2026-05-19T09:29:25.899834+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -529,19 +529,19 @@
     }
   },
   "stock_index": {
-    "current_value": 64.07,
+    "current_value": 65.03,
     "baseline_date": "2025-05-19",
     "changes": {
-      "30_day": -25.3,
-      "1_year": -35.93
+      "30_day": -24.2,
+      "1_year": -34.97
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1146.6,
+        "current_price": 1184.1,
         "weight": 0.14285714285714285,
-        "change_30_day": -29.13,
-        "change_1_year": -37.38
+        "change_30_day": -26.81,
+        "change_1_year": -35.33
       },
       "Cognizant": {
         "ticker": "CTSH",
@@ -559,17 +559,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2283.2,
+        "current_price": 2335.1,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.81,
-        "change_1_year": -43.33
+        "change_30_day": -26.17,
+        "change_1_year": -42.04
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1430.0,
+        "current_price": 1469.6,
         "weight": 0.14285714285714285,
-        "change_30_day": -5.95,
-        "change_1_year": -13.38
+        "change_30_day": -3.34,
+        "change_1_year": -10.98
       },
       "Wipro": {
         "ticker": "WIT",
@@ -592,18 +592,18 @@
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -34.6,
+          "pct": -33.5,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -60.55,
+          "pct": -59.59,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't \"cooked,\" but the market is bifurcating. IT consultancy stocks are collapsing (down 36% YoY), yet Big Tech headcount remains stable. AI labs show explosive hiring growth, and Indeed\u2019s software dev index is up 17.6% annually. Pain is currently limited to low-value outsourcing, not the broader industry. Saying the entire dev industry is \"cooked\" because low-value outsourcing is failing is like saying the culinary world is over because a local vending machine broke down.",
+  "ai_summary": "Developers aren't \"cooked.\" While IT consultancy stocks are collapsing (down ~35%), Big Tech headcount remains stable. AI labs show explosive hiring momentum, and Indeed\u2019s software index is up 17% year-over-year. The crisis is concentrated in low-value outsourcing, while high-end engineering demand remains robust. We aren't cooked; we\u2019re just being sous-vide\u2014slowly heated under intense pressure until we\u2019re expensive enough to justify the headcount.",
   "indeed_index": {
     "current_value": 117.6,
     "date": "2026-05-01",
