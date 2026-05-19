@@ -495,7 +495,7 @@ class GeminiCollector:
                 data["source_urls"] = grounding_urls
                 # Also replace nested source_url fields (e.g., in current, one_year_ago, q1_2023)
                 first_url = grounding_urls[0]
-                for key in ["current", "one_year_ago", "q1_2023"]:
+                for key in ["current", "30_days_ago", "one_year_ago", "q1_2023"]:
                     if key in data and isinstance(data[key], dict):
                         data[key]["source_url"] = first_url
 

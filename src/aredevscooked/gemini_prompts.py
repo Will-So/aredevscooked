@@ -17,14 +17,22 @@ def create_headcount_prompt(company_name: str, target_date: str | None = None) -
     """
     today = date.today()
     one_year_ago = (today - timedelta(days=365)).strftime("%Y-%m-%d")
+    thirty_days_ago = (today - timedelta(days=30)).strftime("%Y-%m-%d")
     q1_2023 = "2023-03-31"
 
     additional_instruction = ""
     if company_name == "Amazon":
         additional_instruction = """
-AMAZON NOTE: Amazon does not separately report corporate vs warehouse headcount in SEC filings so you will need to rely on other sources to get an estimate of corporate workers. 
-If you see a number 
-above 1 million employees, that's the number including hourly workers and you should not consider number."""
+AMAZON NOTE: Amazon does not separately report corporate vs warehouse headcount in SEC filings.
+You MUST use third-party estimates (stockanalysis.com, mlq.ai, news sources) to estimate corporate workers only.
+- If you see a number above 1 million employees, that is the total including hourly warehouse workers — do NOT use it.
+- Known corporate headcount milestones to anchor your estimates:
+  - Q1 2023: ~385,000 corporate employees (before 2023 layoffs)
+  - Jan 2023: ~18,000 layoffs announced
+  - Jan 2024: ~27,000 layoffs announced (tech and corporate roles)
+  - Late 2025 / Early 2026: ~14,000–30,000 further layoffs announced
+- Search for: "Amazon corporate headcount [YEAR]", "Amazon white-collar employees", "Amazon layoffs corporate [YEAR]"
+"""
 
     return f"""Search for employee headcount data for {company_name} across multiple time periods.
 
@@ -32,12 +40,14 @@ IMPORTANT RULES:
 1. Use QUARTERLY earnings reports or 10-K/10-Q SEC filings as primary sources
 2. Each company reports headcount quarterly - find the closest quarterly report to each target date
 3. If layoffs were announced AFTER the quarterly report date, subtract them and note this in the "notes" field
+4. Each time period will likely show a DIFFERENT headcount due to layoffs and hiring — do NOT use the same number for multiple periods unless your research specifically confirms no change occurred. Find period-specific sources for each.
 {additional_instruction}
 
-Find headcount for these time periods (use closest available quarterly report):
-1. CURRENT: Most recent quarterly report + any subsequent layoff adjustments
-2. ONE YEAR AGO: Quarterly report closest to {one_year_ago}
-3. Q1 2023: Quarterly report closest to {q1_2023}
+Find headcount for these time periods:
+1. CURRENT: Most recent quarterly report + any subsequent layoff/hiring adjustments
+2. 30 DAYS AGO: Estimate headcount as of {thirty_days_ago}, accounting for any layoffs or hiring announcements known at that time
+3. ONE YEAR AGO: Quarterly report closest to {one_year_ago}
+4. Q1 2023: Quarterly report closest to {q1_2023}
 
 Return ONLY a JSON object with this exact structure:
 {{
@@ -46,6 +56,11 @@ Return ONLY a JSON object with this exact structure:
     "headcount": 0,
     "as_of_date": "YYYY-MM-DD",
     "notes": "e.g., 'Q3 2024 10-Q filing minus 5k Jan 2025 layoffs'"
+  }},
+  "30_days_ago": {{
+    "headcount": 0,
+    "as_of_date": "{thirty_days_ago}",
+    "notes": "e.g., 'Same as Q3 2024 filing, no layoffs announced between then and {thirty_days_ago}'"
   }},
   "one_year_ago": {{
     "headcount": 0,
@@ -153,23 +168,11 @@ Write an informative paragraph (MAX 50 words) about whether devs are actually co
 Context: Small changes like -3% headcount aren’t bad news - that’s just normal market dynamics.
 Real concerns are double-digit declines, collapsing stock prices, or AI labs going on hiring freezes.
 
-Focus on:
-1. IT consultancies: Stock price trends
-2. Big Tech: Headcount changes
-3. AI labs: Job posting momentum
-4. Indeed Job Postings Index: Software dev hiring momentum
-
-Here is some additional context about the metrics that might be useful:
-IT Consultancy Stock Price Changes. These are companies like Infosys and TCS that provide relatively low value-add consultancy services.
-    - Strengths of Metric: It seems like they do work that is the closest analogue to LLMs. My guess is that if Generative AI is going to automate large portions of the tech workforce, we will see it in IT Consultancy stock prices first since the stock market is very forward-looking.
-    - Weaknesses of Metric: It’s plausible the companies that are most used to providing LLM-related services are also the most able to use LLMs to provide the services they are already providing more efficiently or by doing more layoffs.
-Big Tech Headcount
-    - Strengths of Metric: They have enormous demand for Software and are quite good at adapting new technologies to their particular use case. They are very sensitive to their stock price and if they think they have an opportunity to cut their labor costs by XX, they will take it.
-    - Weaknesses of Metric: This would go down along with stock prices in a recession. A better metric would account for this by only counting declining headcount as bad if the stock is up or flat. I’m not going to do this now but I will probably make the change if it becomes relevant.
-AI Lab Open Positions.
-    - Strengths of Metric: Handles the AI 2027 case where the major AI labs keep the best technology for themselves in order to gain a strategic advantage. If that happens, the opportunity cost of hiring people will be so high they won’t want to spend any time doing it and new positions will open to zero.
-    - Weaknesses of Metric: (1) Unfortunately Deepmind doesn’t have a web archive of job postings so for now we really only have Anthropic and OpenAI. And job openings are much more noisy than (2) This doesn’t cover the “AI as a normal technology” case where engineers are automatable for 99% of jobs but not for AI research/ safety.
-Indeed Job Postings Index (IHLIDXUSTPSOFTDEVE): Measures software developer job postings volume from Indeed.com, normalized so 100 = one year ago. Values below 100 mean fewer postings than a year ago; values above 100 mean more. This is a broad market indicator covering the entire software dev job market, not company-specific.
+For each metric, answer the specific question it is designed to test:
+1. IT consultancies (stock prices): Is the market already pricing in AI automation of low-value tech work? Declining stocks = investors believe AI will eat their business.
+2. Indeed Job Postings Index: Are companies already signaling they want fewer developers? Closing job postings is the first action taken before actual layoffs — this is a leading indicator of intent.
+3. Big Tech headcount: Are large companies actually cutting developer labor costs via AI? Labor is 40-60% of big tech costs; these firms will aggressively cut if AI enables it.
+4. AI lab open positions: Are we seeing the “AI 2027” hoarding pattern? If labs keep the best AI for strategic advantage, the opportunity cost of hiring skyrockets — postings dropping to zero confirms this scenario.
 
 Return ONLY the paragraph text, no JSON or additional formatting."""
 

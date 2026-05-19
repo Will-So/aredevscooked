@@ -188,10 +188,46 @@ def test_preloaded_snapshots_skips_file_read():
     assert result is None
 
 
+def test_30d_gemini_takes_priority_over_history(headcount_processor, baselines_data):
+    """Gemini's own 30_days_ago estimate should take priority over the history snapshot."""
+    gemini_data_with_30d = {
+        "one_year_ago": {
+            "headcount": 350000,
+            "source_url": "",
+            "as_of_date": "2025-03-18",
+        },
+        "q1_2023": {"headcount": 340000, "source_url": "", "as_of_date": "2023-03-31"},
+        "30_days_ago": {
+            "headcount": 315000,
+            "as_of_date": "2026-04-19",
+            "source_url": "https://example.com/30d",
+        },
+    }
+    history_snapshot = {
+        "date": "2026-04-19",
+        "headcounts": {
+            "Amazon": {"headcount": 293000, "data_date": "2026-04-19"},
+        },
+    }
+
+    changes = calculate_headcount_changes(
+        current=319900,
+        company_name="Amazon",
+        baselines_data=baselines_data,
+        headcount_processor=headcount_processor,
+        gemini_data=gemini_data_with_30d,
+        history_snapshot_30d=history_snapshot,
+    )
+
+    assert changes["30_days_ago"]["baseline_headcount"] == 315000
+    assert changes["30_days_ago"]["source_url"] == "https://example.com/30d"
+    assert changes["30_days_ago"]["baseline_date"] == "2026-04-19"
+
+
 def test_30d_change_exceeding_threshold_returns_null(
     headcount_processor, baselines_data, gemini_data
 ):
-    """A 30-day change exceeding max_30day_change_pct (20%) should be treated as unreliable."""
+    """A 30-day change exceeding max_30day_change_pct (10%) should be treated as unreliable."""
     snapshot = {
         "date": "2026-02-16",
         "headcounts": {
@@ -216,7 +252,7 @@ def test_30d_change_exceeding_threshold_returns_null(
 def test_30d_change_within_threshold_is_kept(
     headcount_processor, baselines_data, gemini_data
 ):
-    """A 30-day change within ±20% should be kept normally."""
+    """A 30-day change within ±10% should be kept normally."""
     snapshot = {
         "date": "2026-02-16",
         "headcounts": {

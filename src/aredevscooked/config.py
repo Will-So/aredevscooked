@@ -83,7 +83,7 @@ VALIDATION = {
         "min": 1000,  # Minimum plausible headcount
         "max": 2_000_000,  # Maximum plausible headcount (Amazon has 1.5M+)
         "max_daily_change_pct": 5.0,  # Max 5% change in 1 day
-        "max_30day_change_pct": 20.0,  # Max 20% change in 30 days
+        "max_30day_change_pct": 10.0,  # Max 10% change in 30 days
     },
     "stock_price": {
         "min": 0.01,  # Must be positive

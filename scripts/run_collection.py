@@ -520,13 +520,24 @@ def calculate_headcount_changes(
         else:
             changes[baseline_name] = dict(null_result)
 
-    headcount_30d = None
-    snapshot_date = ""
-    if history_snapshot_30d:
+    # Prefer Gemini's own 30-day estimate (internally consistent) over cross-run history
+    gemini_30d = gemini_data.get("30_days_ago") if gemini_data else None
+    if gemini_30d and isinstance(gemini_30d, dict) and gemini_30d.get("headcount"):
+        headcount_30d = gemini_30d["headcount"]
+        snapshot_date = gemini_30d.get("as_of_date", "")
+        source_url_30d = gemini_30d.get("source_url", "")
+        source = "gemini"
+    elif history_snapshot_30d:
         company_snapshot = history_snapshot_30d.get("headcounts", {}).get(company_name)
-        if company_snapshot:
-            headcount_30d = company_snapshot.get("headcount")
-            snapshot_date = history_snapshot_30d.get("date", "")
+        headcount_30d = company_snapshot.get("headcount") if company_snapshot else None
+        snapshot_date = history_snapshot_30d.get("date", "") if headcount_30d else ""
+        source_url_30d = ""
+        source = "history"
+    else:
+        headcount_30d = None
+        snapshot_date = ""
+        source_url_30d = ""
+        source = "none"
 
     if headcount_30d:
         pct_change = headcount_processor.calculate_percentage_change(
@@ -536,7 +547,7 @@ def calculate_headcount_changes(
         if abs(pct_change) > max_30d_pct:
             log(
                 f"  ⚠️  {company_name}: 30-day change {pct_change:.1f}% exceeds"
-                f" ±{max_30d_pct}% threshold, treating as unreliable"
+                f" ±{max_30d_pct}% threshold (source: {source}), treating as unreliable"
             )
             changes["30_days_ago"] = dict(null_result)
         else:
@@ -549,7 +560,7 @@ def calculate_headcount_changes(
                 "value": abs_change,
                 "pct": round(pct_change, 2),
                 "badge": badge,
-                "source_url": "",
+                "source_url": source_url_30d,
                 "baseline_headcount": headcount_30d,
                 "baseline_date": snapshot_date,
             }

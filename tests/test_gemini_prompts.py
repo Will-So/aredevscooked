@@ -48,9 +48,10 @@ def test_headcount_prompt_mentions_sources():
 
 
 def test_headcount_prompt_requests_multiple_periods():
-    """Headcount prompt should request data for multiple time periods."""
+    """Headcount prompt should request data for multiple time periods including 30 days ago."""
     prompt = create_headcount_prompt("Microsoft")
     assert "current" in prompt.lower()
+    assert "30 days ago" in prompt.lower() or "30_days_ago" in prompt.lower()
     assert "one year ago" in prompt.lower() or "one_year_ago" in prompt.lower()
     assert "q1 2023" in prompt.lower() or "q1_2023" in prompt.lower()
 
