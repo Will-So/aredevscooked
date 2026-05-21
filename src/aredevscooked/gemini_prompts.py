@@ -45,7 +45,7 @@ IMPORTANT RULES:
 
 Find headcount for these time periods:
 1. CURRENT: Most recent quarterly report + any subsequent layoff/hiring adjustments
-2. 30 DAYS AGO: Estimate headcount as of {thirty_days_ago}, accounting for any layoffs or hiring announcements known at that time
+2. 30 DAYS AGO ({thirty_days_ago}): Use the SAME quarterly report base as CURRENT, but only subtract layoffs or hiring changes announced on or before {thirty_days_ago}. Do NOT subtract events announced after that date. This must be a non-zero number — if no adjustments apply before {thirty_days_ago}, use the raw quarterly figure. Example: if current = Q1 2026 (77,986) minus layoffs announced May 20, and {thirty_days_ago} is April 20 (before those layoffs), then 30_days_ago = 77,986.
 3. ONE YEAR AGO: Quarterly report closest to {one_year_ago}
 4. Q1 2023: Quarterly report closest to {q1_2023}
 
@@ -60,7 +60,7 @@ Return ONLY a JSON object with this exact structure:
   "30_days_ago": {{
     "headcount": 0,
     "as_of_date": "{thirty_days_ago}",
-    "notes": "e.g., 'Same as Q3 2024 filing, no layoffs announced between then and {thirty_days_ago}'"
+    "notes": "e.g., 'Same base as current: Q1 2026 77,986 — layoffs announced after {thirty_days_ago} not subtracted'"
   }},
   "one_year_ago": {{
     "headcount": 0,
