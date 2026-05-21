@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Main orchestration script for data collection and processing."""
 
+import argparse
 import asyncio
 import json
 import logging
@@ -264,15 +265,19 @@ async def collect_single_headcount_data(
 
 async def collect_all_headcount_data(
     collector: GeminiCollector,
+    force_companies: set[str] | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Collect headcount data for all companies (IT consultancies + Big Tech) concurrently.
 
     Args:
         collector: GeminiCollector instance
+        force_companies: Company names to re-collect even if already collected today
 
     Returns:
         Dictionary mapping company name to headcount data
     """
+    force_companies = force_companies or set()
+
     # Combine IT consultancies and big tech
     all_companies = [c["name"] for c in IT_CONSULTANCIES] + [
         c["name"] for c in BIG_TECH_COMPANIES
@@ -282,6 +287,8 @@ async def collect_all_headcount_data(
     results: list[tuple[str, dict[str, Any] | None]] = []
 
     for company_name in all_companies:
+        if company_name in force_companies:
+            continue
         cached_data = same_day_headcount_data.get(company_name)
         if cached_data is None:
             continue
@@ -295,6 +302,7 @@ async def collect_all_headcount_data(
         collect_single_headcount_data(collector, company_name, position=i)
         for i, company_name in enumerate(all_companies)
         if company_name not in same_day_headcount_data
+        or company_name in force_companies
     ]
 
     if tasks:
@@ -1502,6 +1510,17 @@ async def main_async():
     global logger
     logger = setup_logging()
 
+    parser = argparse.ArgumentParser(description="aredevscooked data collection")
+    parser.add_argument(
+        "--force-company",
+        action="append",
+        metavar="COMPANY",
+        dest="force_companies",
+        help="Re-collect headcount for this company even if already collected today (repeatable)",
+    )
+    args = parser.parse_args()
+    force_companies = set(args.force_companies or [])
+
     # Load environment variables
     load_dotenv()
 
@@ -1550,7 +1569,9 @@ async def main_async():
         log("  ⚠️  Skipped (no FRED_API_KEY)")
 
     log("\n👥 Collecting headcount data...")
-    headcount_data = await collect_all_headcount_data(gemini_collector)
+    headcount_data = await collect_all_headcount_data(
+        gemini_collector, force_companies=force_companies
+    )
     log(f"  Collected {len(headcount_data)}/12 companies")
 
     log("\n🎯 Collecting job posting data...")

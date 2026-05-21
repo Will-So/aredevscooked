@@ -157,6 +157,34 @@ async def test_collect_all_headcount_data_reuses_same_day_values(mocker):
     assert "Microsoft" not in called_companies
 
 
+@pytest.mark.asyncio
+async def test_collect_all_headcount_data_force_company_bypasses_cache(mocker):
+    """force_companies should re-collect even when same-day data exists."""
+    mock_collector = mocker.Mock()
+    mock_collector.collect_headcount.return_value = {
+        "current_headcount": 999,
+        "data_date": "2026-05-20",
+    }
+    same_day_data = {
+        "Meta": {"current_headcount": 69986},
+        "Microsoft": {"current_headcount": 228000},
+    }
+
+    mocker.patch(
+        "scripts.run_collection.load_same_day_headcount_data",
+        return_value=same_day_data,
+    )
+
+    result = await collect_all_headcount_data(mock_collector, force_companies={"Meta"})
+
+    called_companies = [
+        call[0][0] for call in mock_collector.collect_headcount.call_args_list
+    ]
+    assert "Meta" in called_companies
+    assert "Microsoft" not in called_companies
+    assert result["Meta"]["current_headcount"] == 999
+
+
 def test_find_recent_headcount_data_returns_most_recent(tmp_path, mocker):
     """Should return most recent headcount data from history."""
     history_file = tmp_path / "data" / "processed" / "metrics_history.json"
