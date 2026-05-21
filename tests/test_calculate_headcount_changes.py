@@ -224,14 +224,14 @@ def test_30d_gemini_takes_priority_over_history(headcount_processor, baselines_d
     assert changes["30_days_ago"]["baseline_date"] == "2026-04-19"
 
 
-def test_30d_change_exceeding_threshold_returns_null(
+def test_30d_positive_change_exceeding_threshold_returns_null(
     headcount_processor, baselines_data, gemini_data
 ):
-    """A 30-day change exceeding max_30day_change_pct (10%) should be treated as unreliable."""
+    """A 30-day increase exceeding +10% is not credible and should be treated as unreliable."""
     snapshot = {
         "date": "2026-02-16",
         "headcounts": {
-            "Amazon": {"headcount": 400000, "data_date": "2026-02-16"},
+            "Amazon": {"headcount": 280000, "data_date": "2026-02-16"},
         },
     }
 
@@ -249,10 +249,34 @@ def test_30d_change_exceeding_threshold_returns_null(
     assert changes["30_days_ago"]["badge"] == "neutral"
 
 
+def test_30d_negative_change_exceeding_threshold_is_kept(
+    headcount_processor, baselines_data, gemini_data
+):
+    """A 30-day drop exceeding -10% is credible (layoffs happen fast) and should be kept."""
+    snapshot = {
+        "date": "2026-02-16",
+        "headcounts": {
+            "Amazon": {"headcount": 400000, "data_date": "2026-02-16"},
+        },
+    }
+
+    changes = calculate_headcount_changes(
+        current=319900,
+        company_name="Amazon",
+        baselines_data=baselines_data,
+        headcount_processor=headcount_processor,
+        gemini_data=gemini_data,
+        history_snapshot_30d=snapshot,
+    )
+
+    assert changes["30_days_ago"]["value"] is not None
+    assert changes["30_days_ago"]["pct"] is not None
+
+
 def test_30d_change_within_threshold_is_kept(
     headcount_processor, baselines_data, gemini_data
 ):
-    """A 30-day change within ±10% should be kept normally."""
+    """A 30-day change within +10% should be kept normally."""
     snapshot = {
         "date": "2026-02-16",
         "headcounts": {

@@ -544,10 +544,10 @@ def calculate_headcount_changes(
             current, headcount_30d
         )
         max_30d_pct = VALIDATION["headcount"]["max_30day_change_pct"]
-        if abs(pct_change) > max_30d_pct:
+        if pct_change > max_30d_pct:
             log(
                 f"  ⚠️  {company_name}: 30-day change {pct_change:.1f}% exceeds"
-                f" ±{max_30d_pct}% threshold (source: {source}), treating as unreliable"
+                f" +{max_30d_pct}% threshold (source: {source}), treating as unreliable"
             )
             changes["30_days_ago"] = dict(null_result)
         else:
