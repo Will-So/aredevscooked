@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-05-22T04:28:31.044108+00:00",
+    "last_updated": "2026-05-22T09:23:07.063399+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -42,7 +42,7 @@
               "value": 120,
               "pct": 0.05,
               "badge": "neutral",
-              "source_url": "https://www.forbesindia.com/article/news/hcltech-profit-rises-4-2-ai-revenues-at-620-million/2993356/1",
+              "source_url": "",
               "baseline_headcount": 227061,
               "baseline_date": "2026-04-22"
             }
@@ -74,12 +74,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -8,
+              "pct": -0.01,
               "badge": "neutral",
-              "source_url": "https://www.stockmirror.in/blog/ltm-q4-fy26-earnings-analysis/",
-              "baseline_headcount": 87950,
-              "baseline_date": "2026-04-22"
+              "source_url": "",
+              "baseline_headcount": 87958,
+              "baseline_date": "2026-04-21"
             }
           }
         },
@@ -112,11 +112,11 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -15000,
-              "pct": -4.19,
+              "value": -9000,
+              "pct": -2.56,
               "badge": "neutral",
-              "source_url": "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-Reports-First-Quarter-2025-Results/default.aspx",
-              "baseline_headcount": 357600,
+              "source_url": "",
+              "baseline_headcount": 351600,
               "baseline_date": "2026-04-22"
             }
           }
@@ -150,11 +150,11 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -7292,
+              "pct": -2.17,
               "badge": "neutral",
-              "source_url": "https://stockanalysis.com/stocks/infy/employees/",
-              "baseline_headcount": 328594,
+              "source_url": "",
+              "baseline_headcount": 335886,
               "baseline_date": "2026-04-22"
             }
           }
@@ -191,7 +191,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://hr.economictimes.indiatimes.com/news/industry/tcs-attrition-edges-up-to-13-7-pc-in-q4-fy26-even-as-headcount-rise/130156820",
+              "source_url": "",
               "baseline_headcount": 584519,
               "baseline_date": "2026-04-22"
             }
@@ -270,7 +270,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Wipro+headcount+March+31+2026&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 242156,
               "baseline_date": "2026-04-22"
             }
@@ -319,7 +319,7 @@
               "value": -8750,
               "pct": -3.84,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Microsoft+headcount+June+30+2025+10-K&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 228000,
               "baseline_date": "2026-04-22"
             }
@@ -355,11 +355,11 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -8000,
-              "pct": -10.26,
-              "badge": "weak",
-              "source_url": "https://thenextweb.com/news/meta-layoffs-8000-ai-restructuring-may-2026",
-              "baseline_headcount": 77986,
+              "value": 1621,
+              "pct": 2.37,
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 68365,
               "baseline_date": "2026-04-22"
             }
           }
@@ -392,12 +392,12 @@
               "baseline_date": "2022-09-24"
             },
             "30_days_ago": {
-              "value": -700,
-              "pct": -0.42,
+              "value": -800,
+              "pct": -0.48,
               "badge": "neutral",
-              "source_url": "https://sqmagazine.co.uk/how-many-people-work-at-apple/",
-              "baseline_headcount": 165900,
-              "baseline_date": "2026-04-22"
+              "source_url": "",
+              "baseline_headcount": 166000,
+              "baseline_date": "2026-04-21"
             }
           }
         },
@@ -435,7 +435,7 @@
               "value": -1000,
               "pct": -0.31,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023+estimate+after+layoffs&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 320000,
               "baseline_date": "2026-04-22"
             }
@@ -476,7 +476,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=NVIDIA+headcount+Q4+FY2025+10-K+filing&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 42000,
               "baseline_date": "2026-04-22"
             }
@@ -541,19 +541,19 @@
     }
   },
   "stock_index": {
-    "current_value": 64.65,
+    "current_value": 64.7,
     "baseline_date": "2025-05-22",
     "changes": {
-      "30_day": -24.6,
-      "1_year": -35.35
+      "30_day": -24.55,
+      "1_year": -35.3
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1166.2,
+        "current_price": 1163.6,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.92,
-        "change_1_year": -36.31
+        "change_30_day": -28.08,
+        "change_1_year": -36.45
       },
       "Cognizant": {
         "ticker": "CTSH",
@@ -571,17 +571,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2318.0,
+        "current_price": 2315.0,
         "weight": 0.14285714285714285,
-        "change_30_day": -26.71,
-        "change_1_year": -42.47
+        "change_30_day": -26.81,
+        "change_1_year": -42.54
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1413.1,
+        "current_price": 1421.9,
         "weight": 0.14285714285714285,
-        "change_30_day": -7.06,
-        "change_1_year": -14.41
+        "change_30_day": -6.48,
+        "change_1_year": -13.87
       },
       "Wipro": {
         "ticker": "WIT",
@@ -604,18 +604,18 @@
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -34.5,
+          "pct": -34.45,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -60.65,
+          "pct": -60.6,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Devs aren't cooked. Collapsing consultancy stocks (-35%) suggest AI is automating low-value outsourcing, but Indeed postings (+16%) show strong hiring intent. Big Tech headcount is trimming (-4%), not gutting labor. AI labs continue hiring aggressively, proving no strategic hoarding. Automation is hitting specific segments, but broad demand remains resilient. If your job was converting JIRA tickets into slightly more expensive JIRA tickets, you might be medium-well, but for everyone else, the stove is off.",
+  "ai_summary": "Devs aren't cooked. Collapsing consultancy stocks (-35%) signal AI automation of low-value work, but Indeed postings remain strong (+16%). Big Tech\u2019s -4% headcount reflects normal market dynamics rather than AI-driven cost-cutting, and AI labs continue aggressive hiring, showing no signs of strategic labor hoarding. AI labs are hiring so aggressively that I\u2019m starting to think the \"Human in the Loop\" is actually just three junior devs in a trench coat.",
   "indeed_index": {
     "current_value": 116.09,
     "date": "2026-05-01",
