@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-05-25T09:49:25.937554+00:00"
+    "last_updated": "2026-05-25T19:55:27.343202+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -11885,10 +11885,10 @@
     },
     "2026-05-25": {
       "date": "2026-05-25",
-      "timestamp": "2026-05-25T09:49:25.937526+00:00",
+      "timestamp": "2026-05-25T19:55:27.343175+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1166.9,
+          "price": 1164.0,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
@@ -11900,11 +11900,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2310.2,
+          "price": 2286.3,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1435.0,
+          "price": 1422.2,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -11934,7 +11934,7 @@
             "https://www.sightsinplus.com/news/hcltech-announces-phased-layoffs-through-december-2026/",
             "https://www.sightsinplus.com/news/hcltech-announces-phased-layoffs-through-december-2026/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 87950,
@@ -11949,7 +11949,7 @@
             "https://www.techcircle.in/2025/04/23/ltimindtree-q4-fy25-results-net-rrofit-rises-2-6-on-strong-ai-driven-digital-transformation-deals-momentum/",
             "https://www.investing.com/news/company-news/ltimindtree-q4-fy25-presentation-revenue-grows-58-yoy-amid-margin-pressure-93CH-3998926"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 342600,
@@ -11957,7 +11957,7 @@
           "source_urls": [
             "https://www.crn.com/news/ai/2026/cognizant-s-project-leap-270m-plan"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328594,
@@ -11969,7 +11969,7 @@
             "https://www.ndtvprofit.com/markets/infosys-q4-attrition-rate-rises-to-12-6-headcount-drops-by-over-8-000-employees-11398598",
             "https://ticker.finology.in/discover/market-update/infosys-q3-fy26-results-analysis"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 584519,
@@ -11984,7 +11984,7 @@
             "https://www.businesstoday.in/latest/corporate/story/tcs-q4fy23-results-44000-freshers-onboarded-all-offer-letters-will-be-honoured-says-tcs-hr-head-377155-2023-04-12",
             "https://www.tcs.com/content/dam/tcs/investor-relations/financial-statements/2022-23/q4/IFRS/Press%20Release%20-%20USD.pdf"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 147623,
@@ -11993,7 +11993,7 @@
             "https://www.techmahindra.com/insights/press-releases/techmahindra-q4-fy23-results/",
             "https://trak.in/stories/tech-mahindra-hired-95-less-employees-in-last-12-months-overall-headcount-reduces-by-4688-qoq/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Wipro": {
           "headcount": 242156,
@@ -12001,7 +12001,7 @@
           "source_urls": [
             "https://economictimes.indiatimes.com/tech/technology/wipro-attrition-falls-to-13-8-headcount-inches-up-by-136/articleshow/130325042.cms?from=mdr"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 218375,
@@ -12014,7 +12014,7 @@
             "https://www.google.com/search?q=Microsoft+employee+headcount+March+2023+10-Q+filing&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Microsoft+total+employees+March+31+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 69986,
@@ -12026,7 +12026,7 @@
             "https://www.google.com/search?q=Meta+headcount+Q4+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Meta+headcount+as+of+March+31+2025&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 164950,
@@ -12039,7 +12039,7 @@
             "https://www.google.com/search?q=Apple+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Apple+employee+headcount+March+2023+10-Q+10-K&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Amazon": {
           "headcount": 320000,
@@ -12052,7 +12052,7 @@
             "https://www.google.com/search?q=Amazon+Q1+2025+10-Q+headcount+total&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Amazon+Q1+2023+10-Q+headcount+total&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "medium"
+          "confidence": "unknown"
         },
         "NVIDIA": {
           "headcount": 46000,
@@ -12060,7 +12060,7 @@
           "source_urls": [
             "https://www.stellantis.com/content/dam/stellantis-corporate/investors/financial-reports/Stellantis-NV-20251231-Annual-Report.pdf"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         }
       },
       "job_postings": {
