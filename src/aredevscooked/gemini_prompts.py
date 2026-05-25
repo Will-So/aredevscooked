@@ -163,16 +163,18 @@ def create_summary_prompt(metrics_data: dict[str, Any]) -> str:
 
 {metrics_data}
 
-Write an informative paragraph (MAX 50 words) about whether devs are actually cooked.
+Write an informative paragraph (MAX 70 words) about whether devs are actually cooked.
 
-Context: Small changes like -3% headcount aren’t bad news - that’s just normal market dynamics.
+CRITICAL: For every metric, compare the 1-year trend AND the 30-day trend. When they diverge (e.g., strong YoY growth but collapsing 30-day numbers), lead with the recent shift - that is the more newsworthy signal. The 1-year trend provides context; the 30-day trend is what just changed.
+
+Context: Small changes like -3% headcount aren't bad news - that's just normal market dynamics.
 Real concerns are double-digit declines, collapsing stock prices, or AI labs going on hiring freezes.
 
 For each metric, answer the specific question it is designed to test:
 1. IT consultancies (stock prices): Is the market already pricing in AI automation of low-value IT consultancy work? Declining stocks = investors believe AI will replace the lower-skilled outsourced work these firms depend on. This is a narrow signal about that segment — do NOT generalize it to broad investor panic or claims about the overall labor market.
 2. Indeed Job Postings Index: Are companies already signaling they want fewer developers? Closing job postings is the first action taken before actual layoffs — this is a leading indicator of intent.
 3. Big Tech headcount: Are large companies actually cutting developer labor costs via AI? Labor is 40-60% of big tech costs; these firms will aggressively cut if AI enables it.
-4. AI lab open positions: Are we seeing the “AI 2027” hoarding pattern? If labs keep the best AI for strategic advantage, the opportunity cost of hiring skyrockets — postings dropping to zero confirms this scenario.
+4. AI lab open positions: Are we seeing the "AI 2027" hoarding pattern? If labs keep the best AI for strategic advantage, the opportunity cost of hiring skyrockets — postings dropping to zero confirms this scenario. Also: are labs that were aggressively hiring now pulling back? A sharp 30-day decline after strong YoY growth is a trend reversal worth highlighting.
 
 Return ONLY the paragraph text, no JSON or additional formatting."""
 
