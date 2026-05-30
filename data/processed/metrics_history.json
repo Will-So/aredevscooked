@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-05-29T09:36:47.684442+00:00"
+    "last_updated": "2026-05-30T09:16:49.653969+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -12427,6 +12427,159 @@
         "DeepMind": {
           "total_technical_jobs": 32,
           "collection_date": "2026-05-29"
+        }
+      },
+      "indeed_index": {
+        "value": 73.44,
+        "date": "2026-05-22"
+      },
+      "total_indeed_index": {
+        "value": 102.11,
+        "date": "2026-05-22"
+      }
+    },
+    "2026-05-30": {
+      "date": "2026-05-30",
+      "timestamp": "2026-05-30T09:16:49.653943+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1183.8,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 55.76,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 12.65,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2258.9,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1483.9,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.36,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 756.48,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 227061,
+          "data_date": "2026-05-30",
+          "source_urls": [
+            "https://www.dqindia.com/news/hcltech-q4-ai-surge-meets-growth-reality-amid-structural-slowdown-11754676",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFOdTfUaKK0JD6fktN8yvSVOOI5OKJ-Yh6v1TIsysY1rDh-ewSc7yMNYzAR7iFt6zuc5NaRYmnw-cXJBshXsyVf7Qctx_5G8Bd8WWLojsoUOaNSy5toL73EAwSG6HPQH-9KiRs_yOi6n2-e23ebZvvuVscXv4iOFZJE2C0ccYpuT0_zOJUGKknnsEAZNjSPAnKNPIv26s-JdEO6Zg==",
+            "https://www.financialexpress.com/business/industry-hcltech-q4-fy26-highlights-5-key-takeaway-fy27-growth-forecast-at-1-4-dividend-declared-4214283/",
+            "https://www.indianewsnetwork.com/en/hcltech-reports-4-2-profit-rise-ai-revenue-reaches-620-million-20260422"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87950,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.marketscreener.com/news/ltimindtree-earnings-call-transcript-earnings-call-transcript-q4fy26-ce7f58dad989f623",
+            "https://scanx.trade/stock-market-news/earnings/ltimindtree-reports-robust-q4-performance-revenue-up-9-9-yoy-declares-45-per-share-dividend/6956018",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFd3sphDHHjIR8SNG3PRj8ZHBaglzUWpTtECDEYqoPoTdhAmUFizZLA9jLIclTPlZ3ItUUdYvB5m4o7Mx_EWHHCaYmFB5jkgfjjeHwXgIuyt5V_h9qxSURhYL0GrGMKMKGpHHafQI0WlrxboTouzpp_iH0Yn5lb1tFEYYSeCC3OZWKX1d9iM2G3WiuvjkHgRpTV5vI=",
+            "https://www.techcircle.in/2025/04/23/ltimindtree-q4-fy25-results-net-rrofit-rises-2-6-on-strong-ai-driven-digital-transformation-deals-momentum/",
+            "https://www.fortuneindia.com/enterprise/ltimindtree-q4-results-profit-flat-at-1114-cr-declares-dividend-of-40/112459",
+            "https://www.newindianexpress.com/business/2024/Apr/24/ltimindtree-ceo-says-growth-will-return-in-q1-of-fy25-as-net-profit-falls-12-in-q4",
+            "https://money.rediff.com/news/market/ltm-q4-net-profit-rises-23-to-rs-1-392-3-crore/45813220260423",
+            "https://upstox.com/news/market-news/earnings/lti-mindtree-q4-results-net-profit-rises-4-qo-q-to-1-128-5-crore-board-recommends-final-dividend-of-45-share/article-162657/"
+          ],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 345065,
+          "data_date": "2026-05-30",
+          "source_urls": [
+            "https://www.cognizant.com/en_us/about/documents/q1-2025-corporate-factsheet.pdf"
+          ],
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328594,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.livemint.com/companies/news/infosys-cfo-jayesh-sanghrajka-says-no-decision-on-the-timing-and-quantum-of-hike-what-we-know-11776949420278.html",
+            "https://www.financialexpress.com/business/industry/infosys-q4-results-live-updates-2026-infy-share-price-company-profit-earnings-dividend-report-updates/4215721/",
+            "https://www.hrkatha.com/news/infosys-workforce-strength-reduced-by-3611-only/",
+            "https://www.ndtvprofit.com/markets/infosys-q4-attrition-rate-rises-to-12-6-headcount-drops-by-over-8-000-employees-11398598",
+            "https://www.republicworld.com/business/it-major-infosys-attrition-plummets-to-123-in-q3fy26-what-s-next",
+            "https://www.financialexpress.com/business/industry-infy-headcount-falls-by-3611-in-q4-attrition-slips-to-21-3046375/"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 584519,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.ndtvprofit.com/business/tcs-asks-managers-to-put-5-staff-in-band-d-stoking-fears-of-fresh-layoffs-report-11512010",
+            "https://economictimes.indiatimes.com/tech/information-tech/tcs-headcount-fell-by-23460-in-fy26-but-no-more-layoffs-for-now-sudeep-kunnummal-chro/articleshow/130286784.cms?from=mdr"
+          ],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 147623,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://economictimes.indiatimes.com/markets/stocks/earnings/tech-mahindra-q4-results-cons-profit-rises-16-yoy-to-rs-1354-crore-revenue-up-13/articleshow/130436235.cms?from=mdr",
+            "https://www.livemint.com/market/stock-market-news/tech-mahindra-q1-attrition-rate-at-12-6-total-headcount-rises-by-897-to-1-48-517-employees-11752664084695.html",
+            "https://www.peoplematters.in/news/recruiting-and-onboarding/tech-mahindra-q1-profit-rises-34percent-headcount-falls-for-third-straight-quarter-42128",
+            "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
+            "https://www.techmahindra.com/investors/quarterly-earnings/"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 68586,
+          "data_date": "2026-05-30",
+          "source_urls": [
+            "https://www.fox13seattle.com/news/1400-seattle-meta-jobs-layoffs",
+            "https://www.fox13seattle.com/news/1400-seattle-meta-jobs-layoffs",
+            "https://www.geekwire.com/2026/meta-cuts-nearly-1400-jobs-in-washington-state-20-of-local-workforce-in-sweeping-ai-revamp/"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 165922,
+          "data_date": "2026-05-30",
+          "source_urls": [
+            "https://bullfincher.io/companies/apple/revenue"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 320000,
+          "data_date": "2026-05-30",
+          "source_urls": [
+            "https://timesofindia.indiatimes.com/technology/tech-news/amazon-cuts-more-jobs-after-30000-layoffs-announced-over-last-six-months-company-says-we-regularly-review-our-organisation-to-ensure-/articleshow/131083190.cms",
+            "https://www.forbes.com/sites/jonmarkman/2026/01/30/amazons-largest-layoff-and-what-this-mean-for-the-entire-sp-500/"
+          ],
+          "confidence": "medium"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 187,
+          "collection_date": "2026-05-30"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 472,
+          "collection_date": "2026-05-30"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 31,
+          "collection_date": "2026-05-30"
         }
       },
       "indeed_index": {
