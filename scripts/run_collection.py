@@ -1192,6 +1192,7 @@ def build_metrics_structure(
 
     # Build high-end tier (AI labs)
     high_end_companies = [c["name"] for c in AI_LABS]
+    ai_lab_urls = {lab["name"]: lab["jobs_url"] for lab in AI_LABS}
 
     # Populate job posting data for AI labs
     # Note: We use history snapshots for job postings since Greenhouse doesn't provide historical data
@@ -1245,7 +1246,7 @@ def build_metrics_structure(
             high_end_job_companies[name] = {
                 "current": current_jobs,
                 "collection_date": collection_date,
-                "source_url": job_data.get("source_url", ""),
+                "source_url": job_data.get("source_url") or ai_lab_urls.get(name, ""),
                 "changes": changes,
             }
 

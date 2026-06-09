@@ -114,6 +114,16 @@ body {
     margin-top: 0.5rem;
 }
 
+.read-more-link {
+    margin-left: 0.5rem;
+    color: var(--text-dim);
+    text-decoration: underline;
+}
+
+.read-more-link:hover {
+    color: var(--text-bright, #fff);
+}
+
 .verdict-yes {
     border-color: var(--badge-collapsing);
 }

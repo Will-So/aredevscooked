@@ -270,6 +270,11 @@
             }
             relChangesHTML += '</div>';
 
+            const totalMarketUrl = indeedData.total_market && indeedData.total_market.source_url;
+            const totalMarketCitation = totalMarketUrl
+                ? `<div class="company-meta index-meta"><span class="citation-links"><a href="${totalMarketUrl}" target="_blank" rel="noopener">[FRED total market source]</a></span></div>`
+                : '';
+
             const badgeClass = relBadge.replace('_', '-');
             relativeHTML = `
                 <div class="stock-index indeed-index relative-market">
@@ -277,6 +282,7 @@
                         <span class="label">Relative to Total Job Market</span>
                         <span class="badge ${badgeClass}">${relBadge.replace('_', ' ')}</span>
                     </div>
+                    ${totalMarketCitation}
                     ${relChangesHTML}
                 </div>
             `;
@@ -410,7 +416,7 @@
 
     function renderMetrics(data) {
         // Update last updated timestamp
-        document.getElementById('lastUpdated').textContent = `Last updated: ${formatDate(data.metadata.last_updated)}`;
+        document.getElementById('lastUpdated').innerHTML = `Last updated: ${formatDate(data.metadata.last_updated)} <a href="https://substack.com/home/post/p-191200751" target="_blank" rel="noopener noreferrer" class="read-more-link">Read More</a>`;
 
         // Calculate overall verdict from 4 main metrics
         const allBadges = [
