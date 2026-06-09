@@ -892,7 +892,7 @@ def build_metrics_structure(
             if has_baselines:
                 history_snapshot_30d = load_history_snapshot(
                     30,
-                    tolerance_days=5,
+                    tolerance_days=14,
                     validate=lambda s, n=name: n in s.get("headcounts", {}),
                     preloaded_snapshots=all_snapshots,
                 )
@@ -1122,7 +1122,7 @@ def build_metrics_structure(
             if has_baselines:
                 history_snapshot_30d = load_history_snapshot(
                     30,
-                    tolerance_days=5,
+                    tolerance_days=14,
                     validate=lambda s, n=name: n in s.get("headcounts", {}),
                     preloaded_snapshots=all_snapshots,
                 )
@@ -1229,7 +1229,7 @@ def build_metrics_structure(
             # Try to get historical snapshots from metrics_history.json for 30 days
             snapshot = load_history_snapshot(
                 30,
-                tolerance_days=5,
+                tolerance_days=14,
                 validate=lambda s, n=name: n in s.get("job_postings", {}),
                 preloaded_snapshots=all_snapshots,
             )
