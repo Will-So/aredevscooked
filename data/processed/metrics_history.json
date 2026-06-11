@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-06-11T09:57:08.199104+00:00"
+    "last_updated": "2026-06-11T17:32:34.634579+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -13842,34 +13842,34 @@
     },
     "2026-06-11": {
       "date": "2026-06-11",
-      "timestamp": "2026-06-11T09:57:08.199080+00:00",
+      "timestamp": "2026-06-11T17:32:34.634554+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1109.1,
+          "price": 1110.2,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
-          "price": 52.94,
+          "price": 50.9,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 12.24,
+          "price": 11.51,
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2135.4,
+          "price": 2135.6,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1464.4,
+          "price": 1465.1,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 2.16,
+          "price": 2.11,
           "ticker": "WIT"
         },
         "S&P 500": {
-          "price": 737.05,
+          "price": 725.97,
           "ticker": "SPY"
         }
       },
@@ -13884,7 +13884,7 @@
             "https://www.google.com/search?q=HCLTech+headcount+March+31+2023+Q4+FY23+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=HCLTech+layoffs+April+May+June+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 87950,
@@ -13897,7 +13897,7 @@
             "https://www.techcircle.in/2025/04/23/ltimindtree-q4-fy25-results-net-rrofit-rises-2-6-on-strong-ai-driven-digital-transformation-deals-momentum/",
             "https://www.fortuneindia.com/enterprise/ltimindtree-q4-results-profit-flat-at-1114-cr-declares-dividend-of-40/112459"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 345065,
@@ -13905,7 +13905,7 @@
           "source_urls": [
             "https://news.cognizant.com/press-releases-conferences?l=5&o=35"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328594,
@@ -13914,7 +13914,7 @@
             "https://www.hrkatha.com/news/infosys-focusses-on-upskilling-not-job-cuts-amid-ai-changes/",
             "https://www.hrkatha.com/news/infosys-focusses-on-upskilling-not-job-cuts-amid-ai-changes/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 584519,
@@ -13925,7 +13925,7 @@
             "https://www.google.com/search?q=TCS+headcount+Q4+FY23+March+31+2023+quarterly+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=TCS+layoffs+announced+after+April+12+2024&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 147623,
@@ -13939,7 +13939,15 @@
             "https://benzatine.com/news-room/tech-mahindra-streamlines-workforce-amidst-strong-profit-growth",
             "https://www.livemint.com/market/stock-market-news/tech-mahindra-q1-attrition-rate-at-12-6-total-headcount-rises-by-897-to-1-48-517-employees-11752664084695.html"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
+        },
+        "Wipro": {
+          "headcount": 242157,
+          "data_date": "2026-06-10",
+          "source_urls": [
+            "https://www.wipro.com/investors/quarterly-results/"
+          ],
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 218950,
@@ -13951,7 +13959,7 @@
             "https://www.google.com/search?q=Microsoft+headcount+March+2023+10-Q+Q3+2023&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Microsoft+layoffs+May+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 69986,
@@ -13963,7 +13971,7 @@
             "https://www.google.com/search?q=Meta+headcount+Q2+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Meta+headcount+Q1+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 166000,
@@ -13976,7 +13984,7 @@
             "https://www.google.com/search?q=Apple+10-K+2025+headcount+employee+count&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Apple+10-Q+Q2+2023+headcount+employee+count&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Amazon": {
           "headcount": 307500,
@@ -13985,7 +13993,36 @@
             "https://stockanalysis.com/stocks/amzn/employees/",
             "https://www.reddit.com/r/amazonemployees/comments/1sgg9yw/amazon_denies_the_reports_of_may_layoffs_of_14k/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-04-26",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000071/zm-20260430.htm",
+            "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000071/zm-20260430.htm",
+            "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000037/annualreport-fiscalyear2025.pdf",
+            "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000037/annualreport-fiscalyear2025.pdf",
+            "https://www.sec.gov/Archives/edgar/data/1408710/000140871025000039/fn-20250627.htm",
+            "https://www.sec.gov/Archives/edgar/data/1375365/000137536525000027/smci-20250630.htm",
+            "https://csimarket.com/stocks/NVDA-Income-per-Employee.html",
+            "https://www.sec.gov/Archives/edgar/data/1582961/000158296126000019/docn-20251231.htm"
+          ],
+          "confidence": "unknown"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 170,
+          "collection_date": "2026-06-10"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 482,
+          "collection_date": "2026-06-10"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 21,
+          "collection_date": "2026-06-10"
         }
       },
       "indeed_index": {

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-11T09:57:08.186120+00:00",
+    "last_updated": "2026-06-11T17:32:34.628789+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -39,9 +39,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=HCLTech+headcount+March+31+2026+Q4+FY26+earnings+report&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 227061,
-              "baseline_date": "2026-05-12"
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -79,9 +79,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.businessworld.in/article/ltm-q4-fy26-net-profit-rises-18-8-yoy-board-recommends-rs-53-dividend-603765",
+              "source_url": "",
               "baseline_headcount": 87950,
-              "baseline_date": "2026-05-12"
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -111,12 +111,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -12535,
+              "pct": -3.51,
               "badge": "neutral",
-              "source_url": "https://news.cognizant.com/press-releases-conferences?l=5&o=35",
-              "baseline_headcount": 345065,
-              "baseline_date": "2026-05-12"
+              "source_url": "",
+              "baseline_headcount": 357600,
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -150,9 +150,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.hrkatha.com/news/infosys-focusses-on-upskilling-not-job-cuts-amid-ai-changes/",
+              "source_url": "",
               "baseline_headcount": 328594,
-              "baseline_date": "2026-05-12"
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -188,9 +188,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=TCS+headcount+Q4+FY24+March+31+2024+quarterly+report&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 584519,
-              "baseline_date": "2026-05-12"
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -229,9 +229,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.techmahindra.com/insights/press-releases/techmahindra-q4-fy26-results/",
+              "source_url": "",
               "baseline_headcount": 147623,
-              "baseline_date": "2026-05-12"
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -308,12 +308,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -300,
-              "pct": -0.14,
+              "value": -9050,
+              "pct": -3.97,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+2026+10-Q+Q4+2025+10-K&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 219250,
-              "baseline_date": "2026-05-12"
+              "source_url": "",
+              "baseline_headcount": 228000,
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -347,12 +347,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -8000,
-              "pct": -10.26,
-              "badge": "weak",
-              "source_url": "https://www.google.com/search?q=Meta+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 77986,
-              "baseline_date": "2026-05-12"
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral",
+              "source_url": "",
+              "baseline_headcount": 69986,
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -390,9 +390,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Apple+10-Q+Q2+2026+headcount+employee+count&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 166000,
-              "baseline_date": "2026-05-12"
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -423,12 +423,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -1000,
-              "pct": -0.32,
-              "badge": "neutral",
-              "source_url": "https://stockanalysis.com/stocks/amzn/employees/",
-              "baseline_headcount": 308500,
-              "baseline_date": "2026-05-12"
+              "value": -42500,
+              "pct": -12.14,
+              "badge": "weak",
+              "source_url": "",
+              "baseline_headcount": 350000,
+              "baseline_date": "2026-05-18"
             }
           }
         },
@@ -483,32 +483,32 @@
     "job_postings": {
       "companies": {
         "Anthropic": {
-          "current": 177,
-          "collection_date": "2026-06-11",
+          "current": 170,
+          "collection_date": "2026-06-10",
           "source_url": "https://www.anthropic.com/jobs",
           "changes": {
             "1_year_ago": {
-              "value": 137,
+              "value": 130,
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": -20,
+              "value": -27,
               "badge": "weak"
             }
           }
         },
         "OpenAI": {
-          "current": 251,
-          "collection_date": "2026-06-11",
+          "current": 482,
+          "collection_date": "2026-06-10",
           "source_url": "https://openai.com/careers/search/",
           "changes": {
             "1_year_ago": {
-              "value": 203,
+              "value": 434,
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": -162,
-              "badge": "collapsing"
+              "value": 69,
+              "badge": "strong"
             }
           }
         },
@@ -529,85 +529,85 @@
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 410.22727272727275
+      "net_change_pct_yoy": 664.7727272727273
     }
   },
   "stock_index": {
-    "current_value": 64.59,
+    "current_value": 63.38,
     "baseline_date": "2025-06-11",
     "changes": {
-      "30_day": -24.72,
-      "1_year": -35.41
+      "30_day": -26.15,
+      "1_year": -36.62
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1109.1,
+        "current_price": 1110.2,
         "weight": 0.14285714285714285,
-        "change_30_day": -31.45,
-        "change_1_year": -39.43
+        "change_30_day": -31.38,
+        "change_1_year": -39.37
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 52.94,
+        "current_price": 50.9,
         "weight": 0.14285714285714285,
-        "change_30_day": -31.29,
-        "change_1_year": -32.66
+        "change_30_day": -33.94,
+        "change_1_year": -35.26
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 12.24,
+        "current_price": 11.51,
         "weight": 0.14285714285714285,
-        "change_30_day": -29.74,
-        "change_1_year": -44.34
+        "change_30_day": -33.93,
+        "change_1_year": -47.66
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2135.4,
+        "current_price": 2135.6,
         "weight": 0.14285714285714285,
-        "change_30_day": -32.49,
-        "change_1_year": -47.0
+        "change_30_day": -32.48,
+        "change_1_year": -46.99
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1464.4,
+        "current_price": 1465.1,
         "weight": 0.14285714285714285,
-        "change_30_day": -3.68,
-        "change_1_year": -11.3
+        "change_30_day": -3.64,
+        "change_1_year": -11.26
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 2.16,
+        "current_price": 2.11,
         "weight": 0.14285714285714285,
-        "change_30_day": -19.7,
-        "change_1_year": -37.75
+        "change_30_day": -21.56,
+        "change_1_year": -39.19
       }
     },
     "aggregate_badge": "collapsing",
     "spy_benchmark": {
-      "current_price": 737.05,
+      "current_price": 725.97,
       "ticker": "SPY",
       "source_url": "https://finance.yahoo.com/quote/SPY",
       "changes": {
-        "30_day": 9.06,
-        "1_year": 24.35
+        "30_day": 7.42,
+        "1_year": 22.48
       }
     },
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -33.78,
+          "pct": -33.57,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -59.76,
+          "pct": -59.1,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "AI labs are pulling back, with OpenAI postings collapsing this month despite strong yearly growth. IT consultancy stocks are also crashing (down 24% monthly, 35% yearly), signaling investors expect AI to automate low-value work. Big Tech headcount dipped recently (Meta -10%), signaling AI-driven labor cuts after a 3.8% yearly decline. Indeed postings dipped 2% this month but remain 10% higher than last year, suggesting intent hasn't fully soured. Between the 35% stock crash and the massive headcount cuts, the IT consultancy sector is having a full-blown Red Wedding\u2014just with more PowerPoint presentations and fewer surviving heirs.",
+  "ai_summary": "Consultancy stocks are collapsing, plunging 26% this month and 36% annually, signaling AI is automating low-value work. Big Tech headcount fell 6% recently, continuing the yearly trend of normal rebalancing rather than an AI purge. Indeed postings dipped 2% this month but remain up 10% YoY, showing resilient intent. AI labs saw a recent pullback at Anthropic and DeepMind despite massive 664% annual growth, suggesting the hiring frenzy is cooling. Consultancies are losing a third of their value because companies realized they don't need to pay a middleman to get an AI hallucination for free.",
   "indeed_index": {
     "current_value": 110.26,
     "date": "2026-06-05",
