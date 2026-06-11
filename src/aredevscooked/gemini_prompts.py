@@ -96,15 +96,27 @@ def create_job_postings_prompt(company_name: str, jobs_url: str) -> str:
     """
     return f"""Search {jobs_url} and count only technical roles.
 
-Technical roles include:
-- Engineering (Software Engineer, ML Engineer, etc.)
-- Research (Fellow, Research Scientist, Applied Scientist, etc.)
-- Technical roles with AI, ML, Data Science in the title
+A role is TECHNICAL if it falls into one of these categories:
+- Software / infra engineering: Software Engineer, Infrastructure Engineer, Backend Engineer, Frontend Engineer, Systems Engineer, Reliability Engineer
+- ML / AI research and science: Research Scientist, Member of Technical Staff, Research Engineer, ML Engineer, Applied Scientist
+- Data roles: Data Scientist, Data Engineer, Analytics Engineer, Research Data roles
+- Security / safety engineering: Security Engineer, Detection Engineer, Abuse/Threat technical roles, some technical investigations roles
+- Technical deployment / solutions: Solutions Engineer, AI Deployment Engineer, Forward Deployed Engineer, Customer Engineer
+- Technical program/product roles: Technical Program Manager, Product Manager for deeply technical areas (API, model behavior, infra, developer platform)
 
-Ignore non-technical roles like:
-- HR, Recruiting, People Operations
-- Marketing, Sales, Business Development
-- Operations, Finance, Legal
+A role is NON-TECHNICAL (do NOT count it) if it falls into one of these categories:
+- Sales / GTM: Account Executive, Sales Manager, Partnerships, Business Development
+- Recruiting / HR / People: Recruiter, Technical Recruiter, People Partner, Compensation, Talent
+- Legal / policy / comms: Counsel, Public Policy, Communications, Government Affairs
+- Finance / operations: Accounting, FP&A, Workplace, Procurement
+- General customer/business roles: Customer Success, Account Management, Support roles without clear technical ownership
+
+TIE-BREAK RULE for ambiguous titles: decide by whether the person's OWN day-to-day
+work is technical, NOT whether they support or work near technical teams or products.
+A modifier like "Technical" only makes a role technical if it describes the person's
+own work. For example:
+- "Technical Program Manager" and "Engineering Manager" → TECHNICAL (the person does technical work)
+- "Technical Recruiter" → NON-TECHNICAL (it is a recruiting role; "technical" only describes who they recruit)
 
 Return ONLY a JSON object with this exact structure:
 {{

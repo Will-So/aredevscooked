@@ -114,6 +114,34 @@ def test_job_postings_prompt_requests_json():
     assert "JSON" in prompt or "json" in prompt
 
 
+def test_job_postings_prompt_lists_technical_categories():
+    """Job postings prompt should list structured technical role examples."""
+    prompt = create_job_postings_prompt(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
+    assert "Solutions Engineer" in prompt
+    assert "Technical Program Manager" in prompt
+    assert "Member of Technical Staff" in prompt
+
+
+def test_job_postings_prompt_lists_nontechnical_exclusions():
+    """Job postings prompt should exclude recruiting/GTM roles like Technical Recruiter."""
+    prompt = create_job_postings_prompt(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
+    assert "Technical Recruiter" in prompt
+    assert "Account Executive" in prompt
+
+
+def test_job_postings_prompt_includes_tie_break_rule():
+    """Job postings prompt should include tie-break guidance for ambiguous titles."""
+    prompt = create_job_postings_prompt(
+        "DeepMind", "https://job-boards.greenhouse.io/deepmind"
+    )
+    assert "TIE-BREAK" in prompt
+    assert "day-to-day" in prompt
+
+
 # Summary Prompt Tests
 
 
