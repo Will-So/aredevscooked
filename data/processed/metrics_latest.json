@@ -483,32 +483,32 @@
     "job_postings": {
       "companies": {
         "Anthropic": {
-          "current": 177,
-          "collection_date": "2026-06-11",
+          "current": 170,
+          "collection_date": "2026-06-10",
           "source_url": "https://www.anthropic.com/jobs",
           "changes": {
             "1_year_ago": {
-              "value": 137,
+              "value": 130,
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": -20,
+              "value": -27,
               "badge": "weak"
             }
           }
         },
         "OpenAI": {
-          "current": 251,
-          "collection_date": "2026-06-11",
+          "current": 482,
+          "collection_date": "2026-06-10",
           "source_url": "https://openai.com/careers/search/",
           "changes": {
             "1_year_ago": {
-              "value": 203,
+              "value": 434,
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": -162,
-              "badge": "collapsing"
+              "value": 69,
+              "badge": "strong"
             }
           }
         },
@@ -529,7 +529,7 @@
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 410.22727272727275
+      "net_change_pct_yoy": 664.7727272727273
     }
   },
   "stock_index": {
