@@ -5,6 +5,7 @@ import pytest
 from datetime import date
 from unittest.mock import Mock, patch, MagicMock
 from aredevscooked.collectors.gemini_collector import GeminiCollector
+from aredevscooked.config import GEMINI_CONFIG
 
 
 # Fixtures
@@ -367,6 +368,46 @@ def test_generate_summary_uses_correct_temperatures(
     assert calls[0].kwargs["config"].temperature == 0.0
     assert calls[1].kwargs["config"].temperature == 1.0
     assert calls[2].kwargs["config"].temperature == 0.0
+
+
+def test_generate_summary_caps_thinking_and_output(
+    collector, mock_gemini_response, mocker
+):
+    """Each summary step should cap thinking_level and max_output_tokens.
+
+    The pick-one joke selection is the costliest call when uncapped (~57k
+    thinking tokens), so it uses minimal thinking; the other two use low.
+    """
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.side_effect = [
+        mock_gemini_response("Summary."),
+        mock_gemini_response("1. Joke"),
+        mock_gemini_response("Winner."),
+    ]
+
+    collector.generate_summary({"test": "data"})
+
+    summary_cfg, jokes_cfg, selection_cfg = (
+        call.kwargs["config"] for call in mock_generate.call_args_list
+    )
+    # The SDK coerces thinking_level to an uppercased enum (e.g. "low" -> LOW).
+    assert (
+        summary_cfg.thinking_config.thinking_level
+        == GEMINI_CONFIG["thinking_level_summary"].upper()
+    )
+    assert (
+        jokes_cfg.thinking_config.thinking_level
+        == GEMINI_CONFIG["thinking_level_jokes"].upper()
+    )
+    assert (
+        selection_cfg.thinking_config.thinking_level
+        == GEMINI_CONFIG["thinking_level_selection"].upper()
+    )
+    assert summary_cfg.max_output_tokens == GEMINI_CONFIG["max_output_tokens_summary"]
+    assert jokes_cfg.max_output_tokens == GEMINI_CONFIG["max_output_tokens_jokes"]
+    assert (
+        selection_cfg.max_output_tokens == GEMINI_CONFIG["max_output_tokens_selection"]
+    )
 
 
 # JSON Extraction Tests

@@ -122,6 +122,22 @@ GEMINI_CONFIG = {
     "retry_delay_seconds": [1, 2, 4],  # Exponential backoff
     "temperature": 0.0,  # Deterministic for structured output
     "enable_grounding": True,
+    # Thinking/output caps for the non-grounded summary + joke calls only.
+    # Gemini 3 Flash is a thinking model; left uncapped, the trivial joke
+    # selection call alone burned ~57k thinking tokens (billed at the output
+    # rate). The grounded data-extraction calls (headcount/jobs/stock) keep
+    # default thinking to protect accuracy.
+    # NOTE: on Gemini 3 thinking models, thinking tokens count against
+    # max_output_tokens, so these caps are generous safety ceilings (not the
+    # cost lever). The cost lever is thinking_level; the caps only exist to
+    # stop a runaway response, set well above answer + low-thinking usage so
+    # the text is never truncated.
+    "thinking_level_summary": "low",  # factual 70-word paragraph
+    "thinking_level_jokes": "low",  # joke generation (temperature 1.0)
+    "thinking_level_selection": "minimal",  # pick-one-of-ten: trivial
+    "max_output_tokens_summary": 1200,  # ~70-word paragraph + low thinking
+    "max_output_tokens_jokes": 1500,  # 10 short jokes + low thinking
+    "max_output_tokens_selection": 400,  # one joke line + minimal thinking
 }
 
 # GitHub Actions Cron Schedule

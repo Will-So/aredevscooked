@@ -315,7 +315,13 @@ class GeminiCollector:
         """
         # Step 1: Factual summary
         summary_prompt = create_summary_prompt(metrics_data)
-        summary_config = types.GenerateContentConfig(temperature=0.0)
+        summary_config = types.GenerateContentConfig(
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(
+                thinking_level=GEMINI_CONFIG["thinking_level_summary"]
+            ),
+            max_output_tokens=GEMINI_CONFIG["max_output_tokens_summary"],
+        )
         response = self.client.models.generate_content(
             model=self.model_name, contents=summary_prompt, config=summary_config
         )
@@ -326,7 +332,13 @@ class GeminiCollector:
 
         # Step 2: Generate 10 joke candidates
         jokes_prompt = create_joke_candidates_prompt(summary_text, metrics_data)
-        jokes_config = types.GenerateContentConfig(temperature=1.0)
+        jokes_config = types.GenerateContentConfig(
+            temperature=1.0,
+            thinking_config=types.ThinkingConfig(
+                thinking_level=GEMINI_CONFIG["thinking_level_jokes"]
+            ),
+            max_output_tokens=GEMINI_CONFIG["max_output_tokens_jokes"],
+        )
         response = self.client.models.generate_content(
             model=self.model_name, contents=jokes_prompt, config=jokes_config
         )
@@ -337,7 +349,13 @@ class GeminiCollector:
 
         # Step 3: Pick the best joke
         selection_prompt = create_joke_evaluation_prompt(summary_text, joke_candidates)
-        selection_config = types.GenerateContentConfig(temperature=0.0)
+        selection_config = types.GenerateContentConfig(
+            temperature=0.0,
+            thinking_config=types.ThinkingConfig(
+                thinking_level=GEMINI_CONFIG["thinking_level_selection"]
+            ),
+            max_output_tokens=GEMINI_CONFIG["max_output_tokens_selection"],
+        )
         response = self.client.models.generate_content(
             model=self.model_name, contents=selection_prompt, config=selection_config
         )
