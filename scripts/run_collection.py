@@ -266,12 +266,14 @@ async def collect_single_headcount_data(
 async def collect_all_headcount_data(
     collector: GeminiCollector,
     force_companies: set[str] | None = None,
+    refresh: bool = False,
 ) -> dict[str, dict[str, Any]]:
     """Collect headcount data for all companies (IT consultancies + Big Tech) concurrently.
 
     Args:
         collector: GeminiCollector instance
         force_companies: Company names to re-collect even if already collected today
+        refresh: Re-collect every company, ignoring today's cached data
 
     Returns:
         Dictionary mapping company name to headcount data
@@ -283,7 +285,7 @@ async def collect_all_headcount_data(
         c["name"] for c in BIG_TECH_COMPANIES
     ]
 
-    same_day_headcount_data = load_same_day_headcount_data()
+    same_day_headcount_data = {} if refresh else load_same_day_headcount_data()
     results: list[tuple[str, dict[str, Any] | None]] = []
 
     for company_name in all_companies:
@@ -348,16 +350,18 @@ async def collect_single_job_posting_data(
 
 async def collect_all_job_posting_data(
     collector: GeminiCollector,
+    refresh: bool = False,
 ) -> dict[str, dict[str, Any]]:
     """Collect job posting data for all AI labs concurrently.
 
     Args:
         collector: GeminiCollector instance
+        refresh: Re-collect every lab, ignoring today's cached data
 
     Returns:
         Dictionary mapping company name to job posting data
     """
-    same_day_job_posting_data = load_same_day_job_posting_data()
+    same_day_job_posting_data = {} if refresh else load_same_day_job_posting_data()
     results: list[tuple[str, dict[str, Any] | None]] = []
 
     for lab_info in AI_LABS:
@@ -720,29 +724,35 @@ def find_recent_headcount_data(
     return None
 
 
-def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
-    """Load today's headcount payloads from metrics_latest.json when available."""
+def _load_today_metrics() -> dict[str, Any] | None:
+    """Return metrics_latest.json only if its last_updated is today, else None."""
     metrics_file = Path("data/processed/metrics_latest.json")
     if not metrics_file.exists():
-        return {}
+        return None
 
     with open(metrics_file, "r") as f:
         metrics = json.load(f)
 
     last_updated = metrics.get("metadata", {}).get("last_updated", "")
     if not last_updated:
-        return {}
+        return None
 
     try:
         updated_at = datetime.fromisoformat(last_updated.replace("Z", "+00:00"))
     except ValueError:
-        return {}
+        return None
 
     updated_date = (
         updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
     )
 
-    if updated_date != date.today():
+    return metrics if updated_date == date.today() else None
+
+
+def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
+    """Load today's headcount payloads from metrics_latest.json when available."""
+    metrics = _load_today_metrics()
+    if metrics is None:
         return {}
 
     same_day_data: dict[str, dict[str, Any]] = {}
@@ -788,27 +798,8 @@ def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
 
 def load_same_day_job_posting_data() -> dict[str, dict[str, Any]]:
     """Load today's AI lab job posting payloads from metrics_latest.json."""
-    metrics_file = Path("data/processed/metrics_latest.json")
-    if not metrics_file.exists():
-        return {}
-
-    with open(metrics_file, "r") as f:
-        metrics = json.load(f)
-
-    last_updated = metrics.get("metadata", {}).get("last_updated", "")
-    if not last_updated:
-        return {}
-
-    try:
-        updated_at = datetime.fromisoformat(last_updated.replace("Z", "+00:00"))
-    except ValueError:
-        return {}
-
-    updated_date = (
-        updated_at.astimezone().date() if updated_at.tzinfo else updated_at.date()
-    )
-
-    if updated_date != date.today():
+    metrics = _load_today_metrics()
+    if metrics is None:
         return {}
 
     companies = metrics.get("high_end", {}).get("job_postings", {}).get("companies", {})
@@ -826,6 +817,16 @@ def load_same_day_job_posting_data() -> dict[str, dict[str, Any]]:
         }
 
     return same_day_data
+
+
+def load_same_day_summary() -> str | None:
+    """Return today's cached ai_summary from metrics_latest.json, else None."""
+    metrics = _load_today_metrics()
+    if metrics is None:
+        return None
+
+    summary = metrics.get("ai_summary", "")
+    return summary or None
 
 
 def build_metrics_structure(
@@ -1519,8 +1520,14 @@ async def main_async():
         dest="force_companies",
         help="Re-collect headcount for this company even if already collected today (repeatable)",
     )
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Re-collect everything from Gemini, ignoring today's cached data",
+    )
     args = parser.parse_args()
     force_companies = set(args.force_companies or [])
+    refresh = args.refresh
 
     # Load environment variables
     load_dotenv()
@@ -1571,12 +1578,14 @@ async def main_async():
 
     log("\n👥 Collecting headcount data...")
     headcount_data = await collect_all_headcount_data(
-        gemini_collector, force_companies=force_companies
+        gemini_collector, force_companies=force_companies, refresh=refresh
     )
     log(f"  Collected {len(headcount_data)}/12 companies")
 
     log("\n🎯 Collecting job posting data...")
-    job_posting_data = await collect_all_job_posting_data(gemini_collector)
+    job_posting_data = await collect_all_job_posting_data(
+        gemini_collector, refresh=refresh
+    )
     log(f"  Collected {len(job_posting_data)}/3 companies")
 
     # Build metrics structure first (needed for summary generation)
@@ -1591,8 +1600,12 @@ async def main_async():
         spy_data=spy_data,
     )
 
-    log("\n📝 Generating AI summary...")
-    ai_summary = gemini_collector.generate_summary(metrics_without_summary)
+    ai_summary = None if refresh else load_same_day_summary()
+    if ai_summary is not None:
+        log("\n📝 ⏪ Reusing same-day AI summary")
+    else:
+        log("\n📝 Generating AI summary...")
+        ai_summary = gemini_collector.generate_summary(metrics_without_summary)
 
     # Rebuild with actual summary
     metrics = build_metrics_structure(

@@ -13,6 +13,7 @@ from scripts.run_collection import (
     load_history_snapshot,
     load_same_day_headcount_data,
     load_same_day_job_posting_data,
+    load_same_day_summary,
 )
 
 
@@ -183,6 +184,31 @@ async def test_collect_all_headcount_data_force_company_bypasses_cache(mocker):
     assert "Meta" in called_companies
     assert "Microsoft" not in called_companies
     assert result["Meta"]["current_headcount"] == 999
+
+
+@pytest.mark.asyncio
+async def test_collect_all_headcount_data_refresh_recollects_all(mocker):
+    """refresh=True should ignore same-day cache and re-collect every company."""
+    mock_collector = mocker.Mock()
+    mock_collector.collect_headcount.return_value = {
+        "current_headcount": 999,
+        "data_date": "2026-05-20",
+    }
+    same_day_data = {
+        "HCLTech": {"current_headcount": 226640},
+        "Microsoft": {"current_headcount": 228000},
+    }
+
+    mock_loader = mocker.patch(
+        "scripts.run_collection.load_same_day_headcount_data",
+        return_value=same_day_data,
+    )
+
+    result = await collect_all_headcount_data(mock_collector, refresh=True)
+
+    assert mock_collector.collect_headcount.call_count == 12
+    mock_loader.assert_not_called()
+    assert len(result) == 12
 
 
 def test_find_recent_headcount_data_returns_most_recent(tmp_path, mocker):
@@ -463,6 +489,31 @@ async def test_collect_all_job_posting_data_reuses_same_day_values(mocker):
     assert "Anthropic" not in called_companies
 
 
+@pytest.mark.asyncio
+async def test_collect_all_job_posting_data_refresh_recollects_all(mocker):
+    """refresh=True should ignore same-day cache and re-collect every lab."""
+    mock_collector = mocker.Mock()
+    mock_collector.collect_job_postings.return_value = {
+        "company": "DeepMind",
+        "total_technical_jobs": 45,
+    }
+    same_day_data = {
+        "DeepMind": {"total_technical_jobs": 45},
+        "Anthropic": {"total_technical_jobs": 35},
+    }
+
+    mock_loader = mocker.patch(
+        "scripts.run_collection.load_same_day_job_posting_data",
+        return_value=same_day_data,
+    )
+
+    result = await collect_all_job_posting_data(mock_collector, refresh=True)
+
+    assert mock_collector.collect_job_postings.call_count == 3
+    mock_loader.assert_not_called()
+    assert len(result) == 3
+
+
 def test_load_same_day_job_posting_data_reconstructs_payload(tmp_path, mocker):
     """Should rebuild job posting payloads from today's metrics file."""
     metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
@@ -522,6 +573,69 @@ def test_load_same_day_job_posting_data_accepts_same_local_day_from_utc_timestam
     result = load_same_day_job_posting_data()
 
     assert result["DeepMind"]["total_technical_jobs"] == 45
+
+
+def test_load_same_day_summary_returns_summary(tmp_path, mocker):
+    """Should return today's ai_summary from the metrics file."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today().isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{today}T12:00:00+00:00"},
+        "ai_summary": "Devs are cooked. But at least the coffee is hot.",
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_summary()
+
+    assert result == "Devs are cooked. But at least the coffee is hot."
+
+
+def test_load_same_day_summary_ignores_stale_metrics(tmp_path, mocker):
+    """Should not reuse a summary from an earlier day."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    stale_day = (date.today() - timedelta(days=1)).isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{stale_day}T12:00:00+00:00"},
+        "ai_summary": "Yesterday's joke.",
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_summary()
+
+    assert result is None
+
+
+def test_load_same_day_summary_returns_none_when_empty(tmp_path, mocker):
+    """Should return None when today's metrics has no ai_summary."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today().isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{today}T12:00:00+00:00"},
+        "ai_summary": "",
+    }
+
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_summary()
+
+    assert result is None
 
 
 # Metrics Structure Building Tests

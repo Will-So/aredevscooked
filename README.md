@@ -50,6 +50,21 @@ This will:
 - Generate humorous AI summary (70-word max)
 - Save results to `data/processed/metrics_latest.json`
 
+#### Skipping redundant Gemini requests
+
+To save Gemini API quota, any component already collected today (headcount,
+job postings, **and the AI summary**) is reused from `metrics_latest.json`
+instead of re-queried. So re-running the script on the same day makes **zero**
+Gemini requests by default — only the free yfinance/FRED data refreshes.
+
+```bash
+# Force a single company's headcount to re-collect, ignoring today's cache
+uv run python scripts/run_collection.py --force-company Meta --force-company Microsoft
+
+# Force everything (all headcount, job postings, and the summary) to re-collect
+uv run python scripts/run_collection.py --refresh
+```
+
 ### One-Time Baseline Setup
 
 ```bash
