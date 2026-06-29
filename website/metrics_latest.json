@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-06-29T10:05:18.973322+00:00",
+    "last_updated": "2026-06-29T16:41:39.719324+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -39,7 +39,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=HCLTech+headcount+Q4+FY24+March+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 227061,
               "baseline_date": "2026-05-30"
             }
@@ -74,7 +74,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.financialexpress.com/business/industry/ltimindtree-q4-results-profit-jumps-23-revenue-up-15-rs-53-dividend-announced/4216271/",
+              "source_url": "",
               "baseline_headcount": 87950,
               "baseline_date": "2026-05-30"
             }
@@ -110,11 +110,11 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 8535,
+              "pct": 2.47,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Cognizant+headcount+Q1+2024+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 353600,
+              "source_url": "",
+              "baseline_headcount": 345065,
               "baseline_date": "2026-05-30"
             }
           }
@@ -160,7 +160,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.livemint.com/companies/news/infosys-q4-results-2026-headcount-falls-by-8-400-even-as-operating-profits-jump-13-6-yoy-11776950086025.html",
+              "source_url": "",
               "baseline_headcount": 328594,
               "baseline_date": "2026-05-30"
             }
@@ -196,7 +196,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://timesofindia.indiatimes.com/technology/tech-news/as-tcs-headcount-falls-by-nearly-24000-hr-head-clarifies-entire-decline-cannot-be-attributed-to-last-years-restructuring-and-we-are-on-track-to-/articleshow/130272090.cms",
+              "source_url": "",
               "baseline_headcount": 584519,
               "baseline_date": "2026-05-30"
             }
@@ -235,7 +235,7 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY26+March+2026+earnings+report&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 147623,
               "baseline_date": "2026-05-30"
             }
@@ -279,9 +279,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://stockanalysis.com/stocks/wit/employees/",
+              "source_url": "",
               "baseline_headcount": 242156,
-              "baseline_date": "2026-05-30"
+              "baseline_date": "2026-05-29"
             }
           }
         }
@@ -326,9 +326,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+2026+SEC+filing+10-Q+10-K&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 210250,
-              "baseline_date": "2026-05-30"
+              "baseline_date": "2026-05-29"
             }
           }
         },
@@ -362,11 +362,11 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 1400,
+              "pct": 2.04,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Meta+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 69986,
+              "source_url": "",
+              "baseline_headcount": 68586,
               "baseline_date": "2026-05-30"
             }
           }
@@ -401,11 +401,11 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -300,
-              "pct": -0.18,
+              "value": -172,
+              "pct": -0.1,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Apple+employee+headcount+2026+10-Q+Q2&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 166050,
+              "source_url": "",
+              "baseline_headcount": 165922,
               "baseline_date": "2026-05-30"
             }
           }
@@ -444,7 +444,7 @@
               "value": 1000,
               "pct": 0.31,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 320000,
               "baseline_date": "2026-05-30"
             }
@@ -546,74 +546,74 @@
     }
   },
   "stock_index": {
-    "current_value": 60.71,
+    "current_value": 60.39,
     "baseline_date": "2025-06-29",
     "changes": {
-      "30_day": -28.87,
-      "1_year": -39.29
+      "30_day": -29.25,
+      "1_year": -39.61
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1101.5,
+        "current_price": 1102.4,
         "weight": 0.14285714285714285,
-        "change_30_day": -31.92,
-        "change_1_year": -39.85
+        "change_30_day": -31.86,
+        "change_1_year": -39.8
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 40.03,
+        "current_price": 39.37,
         "weight": 0.14285714285714285,
-        "change_30_day": -48.05,
-        "change_1_year": -49.08
+        "change_30_day": -48.9,
+        "change_1_year": -49.92
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 10.78,
+        "current_price": 10.69,
         "weight": 0.14285714285714285,
-        "change_30_day": -38.12,
-        "change_1_year": -50.98
+        "change_30_day": -38.63,
+        "change_1_year": -51.39
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2097.8,
+        "current_price": 2097.9,
         "weight": 0.14285714285714285,
         "change_30_day": -33.67,
         "change_1_year": -47.93
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1431.1,
+        "current_price": 1433.8,
         "weight": 0.14285714285714285,
-        "change_30_day": -5.87,
-        "change_1_year": -13.32
+        "change_30_day": -5.7,
+        "change_1_year": -13.15
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 2.27,
+        "current_price": 2.24,
         "weight": 0.14285714285714285,
-        "change_30_day": -15.61,
-        "change_1_year": -34.58
+        "change_30_day": -16.73,
+        "change_1_year": -35.45
       }
     },
     "aggregate_badge": "collapsing",
     "spy_benchmark": {
-      "current_price": 728.99,
+      "current_price": 738.49,
       "ticker": "SPY",
       "source_url": "https://finance.yahoo.com/quote/SPY",
       "changes": {
-        "30_day": 7.87,
-        "1_year": 22.99
+        "30_day": 9.27,
+        "1_year": 24.59
       }
     },
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -36.74,
+          "pct": -38.52,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -62.28,
+          "pct": -64.2,
           "badge": "collapsing"
         }
       },

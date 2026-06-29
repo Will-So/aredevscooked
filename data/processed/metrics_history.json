@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-06-29T10:05:18.986387+00:00"
+    "last_updated": "2026-06-29T16:41:39.724872+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -15103,34 +15103,34 @@
     },
     "2026-06-29": {
       "date": "2026-06-29",
-      "timestamp": "2026-06-29T10:05:18.986361+00:00",
+      "timestamp": "2026-06-29T16:41:39.724845+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1101.5,
+          "price": 1102.4,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
-          "price": 40.03,
+          "price": 39.37,
           "ticker": "CTSH"
         },
         "Infosys": {
-          "price": 10.78,
+          "price": 10.69,
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2097.8,
+          "price": 2097.9,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1431.1,
+          "price": 1433.8,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
-          "price": 2.27,
+          "price": 2.24,
           "ticker": "WIT"
         },
         "S&P 500": {
-          "price": 728.99,
+          "price": 738.49,
           "ticker": "SPY"
         }
       },
@@ -15145,7 +15145,7 @@
             "https://www.google.com/search?q=HCLTech+headcount+Q4+FY23+March+2023+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=HCLTech+layoffs+announced+after+March+2024&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 87950,
@@ -15153,7 +15153,7 @@
           "source_urls": [
             "https://www.financialexpress.com/business/industry/ltimindtree-q4-results-profit-jumps-23-revenue-up-15-rs-53-dividend-announced/4216271/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 353600,
@@ -15165,7 +15165,7 @@
             "https://www.google.com/search?q=Cognizant+headcount+Q2+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Cognizant+layoffs+2024+2025+2026+news&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328594,
@@ -15185,7 +15185,7 @@
             "https://www.financialexpress.com/business/industry/infosys-adds-210-employees-in-q1nbsp/3924542/",
             "https://www.peoplematters.in/news/economy-policy/infosys-q4-results-show-a-decrease-of-3611-employees-in-headcount-37514"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 584519,
@@ -15194,7 +15194,7 @@
             "https://timesofindia.indiatimes.com/technology/tech-news/as-tcs-headcount-falls-by-nearly-24000-hr-head-clarifies-entire-decline-cannot-be-attributed-to-last-years-restructuring-and-we-are-on-track-to-/articleshow/130272090.cms",
             "https://timesofindia.indiatimes.com/technology/tech-news/as-tcs-headcount-falls-by-nearly-24000-hr-head-clarifies-entire-decline-cannot-be-attributed-to-last-years-restructuring-and-we-are-on-track-to-/articleshow/130272090.cms"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 147623,
@@ -15206,7 +15206,7 @@
             "https://www.google.com/search?q=Tech+Mahindra+headcount+June+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Wipro": {
           "headcount": 242156,
@@ -15223,7 +15223,7 @@
             "https://www.businesswireindia.com/wipro-limited-to-announce-results-for-the-fourth-quarter-ended-march-31-2026-on-april-16-2026-99569.html",
             "https://www.businesstoday.in/technology/story/wipro-adds-135-employees-in-q4-attrition-eases-to-14-526016-2026-04-16"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 210250,
@@ -15235,7 +15235,7 @@
             "https://www.google.com/search?q=Microsoft+employee+headcount+March+2023+SEC+filing+10-Q&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Microsoft+headcount+as+of+March+31+2023&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 69986,
@@ -15247,7 +15247,7 @@
             "https://www.google.com/search?q=Meta+headcount+Q1+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Meta+layoffs+2024+2025+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 165750,
@@ -15259,7 +15259,7 @@
             "https://www.google.com/search?q=Apple+employee+headcount+March+2023+10-Q&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Apple+employee+headcount+June+2025+10-Q&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Amazon": {
           "headcount": 321000,
@@ -15272,13 +15272,27 @@
             "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023+estimate&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Amazon+total+employees+vs+corporate+employees+2025+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "medium"
+          "confidence": "unknown"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://seo.ai/blog/how-many-people-work-at-nvidia",
+            "https://tradingeconomics.com/nvda:us:employees",
+            "https://mangothrive.com/how-many-people-work-at-nvidia/"
+          ],
+          "confidence": "unknown"
         }
       },
       "job_postings": {
         "Anthropic": {
           "total_technical_jobs": 223,
           "collection_date": "2026-06-29"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 520,
+          "collection_date": "2026-06-28"
         },
         "DeepMind": {
           "total_technical_jobs": 12,
