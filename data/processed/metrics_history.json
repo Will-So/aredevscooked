@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-07-09T11:25:17.536683+00:00"
+    "last_updated": "2026-07-10T11:25:44.821057+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -16647,6 +16647,200 @@
         "DeepMind": {
           "total_technical_jobs": 20,
           "collection_date": "2026-07-09"
+        }
+      },
+      "indeed_index": {
+        "value": 72.51,
+        "date": "2026-06-26"
+      },
+      "total_indeed_index": {
+        "value": 101.39,
+        "date": "2026-06-26"
+      }
+    },
+    "2026-07-10": {
+      "date": "2026-07-10",
+      "timestamp": "2026-07-10T11:25:44.821033+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1164.1,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 43.4,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 11.13,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2069.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1454.8,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 1.85,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 751.71,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 227061,
+          "data_date": "2026-07-10",
+          "source_urls": [
+            "https://www.google.com/search?q=HCLTech+headcount+March+31+2023+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+June+30+2023+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+March+31+2024+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+June+30+2024+quarterly+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+layoffs+2024+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87950,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://m.rediff.com/news/commentary/2025/jul/18/ltimindtree-profit-rises-10.6/17efcf7e7abc41c4f9d56d5ce6873664"
+          ],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 356200,
+          "data_date": "2026-07-10",
+          "source_urls": [
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q2+2026+earnings+release+date&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+layoffs+announced+April+May+June+July+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q2+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328594,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.ndtvprofit.com/markets/infosys-q4-attrition-rate-rises-to-12-6-headcount-drops-by-over-8-000-employees-11398598",
+            "https://www.livemint.com/companies/news/infosys-q4-results-2026-headcount-falls-by-8-400-even-as-operating-profits-jump-13-6-yoy-11776950086025.html"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 593798,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.google.com/search?q=TCS+headcount+Q1+FY27+July+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY26+March+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q1+FY26+July+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+employee+count+history+2023-2026&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 144123,
+          "data_date": "2026-07-10",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY24+March+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q1+FY25+June+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q1+FY24+June+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2024+2025+2026&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 242156,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY26+March+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q1+FY27+June+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY25+March+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q1+FY26+June+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 220283,
+          "data_date": "2026-07-10",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+2026+10-Q+March+31+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+April+May+June+July+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2025+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+March+31+2023+10-Q&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 69986,
+          "data_date": "2026-07-10",
+          "source_urls": [
+            "https://www.google.com/search?q=Meta+headcount+Q1+2024+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q2+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q3+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q4+2024+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+headcount+Q1+2023+headcount+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Meta+layoffs+2024+2025+2026+list&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 165865,
+          "data_date": "2026-06-24",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+employee+headcount+10-K+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+Q2+2026+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+2026+June+July&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+July+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+March+2023+10-Q+10-K&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 349943,
+          "data_date": "2026-07-10",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+corporate+headcount+2026+layoffs+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=%22Amazon%22+corporate+headcount+%222025%22+%222026%22+estimate&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023+before+layoffs&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+total+headcount+Q1+2026+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+layoffs+late+2025+early+2026+corporate+roles&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+July+2025+estimate&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://aifront-page.com/nvidia-jensen-huang-computex-2026-ai-job-loss/"
+          ],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 320,
+          "collection_date": "2026-07-10"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 417,
+          "collection_date": "2026-07-10"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 42,
+          "collection_date": "2024-05-24"
         }
       },
       "indeed_index": {
