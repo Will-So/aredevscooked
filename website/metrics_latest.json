@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-07-14T10:15:46.709839+00:00",
+    "last_updated": "2026-07-15T10:17:44.422388+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -9,26 +9,31 @@
         "HCLTech": {
           "current": 223889,
           "data_date": "2026-06-30",
-          "source_url": "https://www.whalesbook.com/news/English/technology/HCLTech-Q1-Profit-Rises-20percent-to-indian-rupee4624-Crore-Staff-Count-Falls/6a5536b01210e3dc99a860a9",
-          "notes": "Q1 FY27 investor release (published July 13, 2026) reporting headcount as of June 30, 2026; reflects a net reduction of 3,292 employees during the quarter.",
+          "source_url": "https://hr.economictimes.indiatimes.com/news/industry/hcltechs-workforce-declines-by-3292-in-the-april-june-quarter/132391503",
+          "notes": "Q1 FY27 investor release (July 13, 2026) reported 223,889 employees as of June 30, 2026, a net reduction of 3,292 from the March 31, 2026 headcount of 227,181.",
           "source_urls": [
-            "https://www.whalesbook.com/news/English/technology/HCLTech-Q1-Profit-Rises-20percent-to-indian-rupee4624-Crore-Staff-Count-Falls/6a5536b01210e3dc99a860a9",
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQESItK6CmM09Fpp7rNaB-Ex0P2Hsgr7HeD2KqZM7Y1JKtYlhf-BzoPtW6T1yrudwRtWTHHec3YVHc03ag5v8JC215XP2g6rhfmEe2kgMZW2lEBfa1y0LY38IV3VBQQPU48okNr9pOaRFHD9egkAjwCTg2oiAvRq-xC9fy7k1VAjFt-KPGRlZjDIBJLbab0a3bQmCJ1kObCTfxhIBn3LSw=="
+            "https://hr.economictimes.indiatimes.com/news/industry/hcltechs-workforce-declines-by-3292-in-the-april-june-quarter/132391503",
+            "https://hr.economictimes.indiatimes.com/news/industry/hcltechs-workforce-declines-by-3292-in-the-april-june-quarter/132391503",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa29kPxXZeEiS18QT-8RwlMORlPEcLTIob8z2mumS0x3beZUqETJhFTgM8v07KxlS4LbXFnxnfgSQAIh2TR3pHrlPzz_vGoZOD_vRUtxzLcj6TGznwruAjlG1w7AC9als45vbE_8WcljFQQt0Uvlvqt4pm1VO336pH30bq-Y45XNFKpScuU99_MW4MieNhWgkicSOFU4LqNLL7u2r3KA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhJCeYnrqCFbhsGIWKs4mCr1Eoi8J8LzgbDUD77_yOr70T56vojMbgTxA-TybR1xdaYCAuu_pki2t9-FKz7k4ZMHxSPZSjErmVWBKH-nntdJFWuPAli4g0PW7YoBa5nSXrH6iz0vMav5bs93F_6kEZ11zimf6tXLZ7HAwGU9TRYZBHurrgQJIqefhWICH9M3DV35Tr6GsakBoUNw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHhJCeYnrqCFbhsGIWKs4mCr1Eoi8J8LzgbDUD77_yOr70T56vojMbgTxA-TybR1xdaYCAuu_pki2t9-FKz7k4ZMHxSPZSjErmVWBKH-nntdJFWuPAli4g0PW7YoBa5nSXrH6iz0vMav5bs93F_6kEZ11zimf6tXLZ7HAwGU9TRYZBHurrgQJIqefhWICH9M3DV35Tr6GsakBoUNw==",
+            "https://www.peoplematters.in/news/performance-management/slower-growth-steady-attrition-and-rising-ai-revenue-define-hcltechs-fy26-performance-49340",
+            "https://www.livemint.com/companies/news/hcl-tech-hires-26-734-freshers-in-overall-fy23-adds-4-480-in-fourth-quarter-11681994199129.html"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 451,
-              "pct": 0.2,
+              "value": 738,
+              "pct": 0.33,
               "badge": "neutral",
-              "source_url": "https://www.whalesbook.com/news/English/technology/HCLTech-Q1-Profit-Rises-20percent-to-indian-rupee4624-Crore-Staff-Count-Falls/6a5536b01210e3dc99a860a9",
-              "baseline_headcount": 223438,
+              "source_url": "https://hr.economictimes.indiatimes.com/news/industry/hcltechs-workforce-declines-by-3292-in-the-april-june-quarter/132391503",
+              "baseline_headcount": 223151,
               "baseline_date": "2025-06-30"
             },
             "q1_2023": {
               "value": -2055,
               "pct": -0.91,
               "badge": "neutral",
-              "source_url": "https://www.whalesbook.com/news/English/technology/HCLTech-Q1-Profit-Rises-20percent-to-indian-rupee4624-Crore-Staff-Count-Falls/6a5536b01210e3dc99a860a9",
+              "source_url": "https://hr.economictimes.indiatimes.com/news/industry/hcltechs-workforce-declines-by-3292-in-the-april-june-quarter/132391503",
               "baseline_headcount": 225944,
               "baseline_date": "2023-03-31"
             },
@@ -36,27 +41,28 @@
               "value": -3172,
               "pct": -1.4,
               "badge": "neutral",
-              "source_url": "https://www.whalesbook.com/news/English/technology/HCLTech-Q1-Profit-Rises-20percent-to-indian-rupee4624-Crore-Staff-Count-Falls/6a5536b01210e3dc99a860a9",
+              "source_url": "https://hr.economictimes.indiatimes.com/news/industry/hcltechs-workforce-declines-by-3292-in-the-april-june-quarter/132391503",
               "baseline_headcount": 227061,
-              "baseline_date": "2026-06-14"
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "LTIMindtree": {
           "current": 87886,
           "data_date": "2026-06-30",
-          "source_url": "https://www.business-standard.com/companies/quarterly-results/ltimindtree-q1-profit-revenue-ai-strategy-126071200125_1.html",
-          "notes": "Q1 FY27 earnings report (June 30, 2026). No subsequent layoffs or hiring adjustments were announced between the report date and July 14, 2026.",
+          "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/uploads/news-and-events/2026/04/earnings-release-factsheet-q4fy26.pdf",
+          "notes": "Q1 FY27 earnings report (released July 11, 2026). Headcount declined by 64 during the quarter; no subsequent layoffs reported as of July 15. Note: Company rebranded to LTM Limited in March 2026.",
           "source_urls": [
+            "https://www.ltm.com/content/dam/ltimcorporatewebsite/uploads/news-and-events/2026/04/earnings-release-factsheet-q4fy26.pdf",
             "https://www.business-standard.com/companies/quarterly-results/ltimindtree-q1-profit-revenue-ai-strategy-126071200125_1.html",
-            "https://scanx.trade/stock-market-news/companies/ltm-q1-revenue-rises-18-to-11-608-crore-pat-up-17-1/45323070"
+            "https://www.businessworld.in/article/ltimindtree-q4-fy23-net-profit-flat-at-rs-1114-cr--474477"
           ],
           "changes": {
             "1_year_ago": {
               "value": 3997,
               "pct": 4.76,
               "badge": "neutral",
-              "source_url": "https://www.business-standard.com/companies/quarterly-results/ltimindtree-q1-profit-revenue-ai-strategy-126071200125_1.html",
+              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/uploads/news-and-events/2026/04/earnings-release-factsheet-q4fy26.pdf",
               "baseline_headcount": 83889,
               "baseline_date": "2025-06-30"
             },
@@ -64,87 +70,84 @@
               "value": 3340,
               "pct": 3.95,
               "badge": "neutral",
-              "source_url": "https://www.business-standard.com/companies/quarterly-results/ltimindtree-q1-profit-revenue-ai-strategy-126071200125_1.html",
+              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/uploads/news-and-events/2026/04/earnings-release-factsheet-q4fy26.pdf",
               "baseline_headcount": 84546,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -64,
-              "pct": -0.07,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.business-standard.com/companies/quarterly-results/ltimindtree-q1-profit-revenue-ai-strategy-126071200125_1.html",
-              "baseline_headcount": 87950,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/uploads/news-and-events/2026/04/earnings-release-factsheet-q4fy26.pdf",
+              "baseline_headcount": 87886,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Cognizant": {
-          "current": 356200,
-          "data_date": "2026-07-14",
-          "source_url": "https://news.cognizant.com/2026-06-22-Cognizant-Completes-Acquisition-of-Astreya,-Expanding-AI-Infrastructure-and-Managed-Services-Capabilities",
-          "notes": "Q1 2026 10-Q base (357,600) minus 4,000 Project Leap layoffs announced April/May 2026 plus 2,600 employees from Astreya Partners acquisition completed June 22, 2026",
+          "current": 353600,
+          "data_date": "2026-07-15",
+          "source_url": "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+          "notes": "Q1 2026 10-Q filing (357,600) minus 4,000 layoffs reported in July 2026 as part of the 'Project Leap' restructuring program",
           "source_urls": [
-            "https://news.cognizant.com/2026-06-22-Cognizant-Completes-Acquisition-of-Astreya,-Expanding-AI-Infrastructure-and-Managed-Services-Capabilities",
-            "https://www.investing.com/news/company-news/cognizant-to-acquire-ai-infrastructure-firm-astreya-93CH-4644092",
-            "https://thenextweb.com/news/cognizant-astreya-600-million-acquisition-ai-infrastructure",
-            "https://www.prnewswire.com/news-releases/cognizant-to-scale-to-5-000-frontier-certified-engineers-and-10-000-frontier-business-operators-302821375.html",
-            "https://businesschief.com/news/cognizant-ceo-explains-us-600m-astreya-acquisition",
-            "https://layoffhedge.com/company/cognizant",
-            "https://af.net/realtime/cognizant-acquires-astreya-for-600-million-to-bolster-ai-data-center-capabilities/"
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q2+2026+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q2+2025+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Cognizant+headcount+Q1+2023+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 12400,
-              "pct": 3.61,
+              "value": 9800,
+              "pct": 2.85,
               "badge": "neutral",
-              "source_url": "https://news.cognizant.com/2026-06-22-Cognizant-Completes-Acquisition-of-Astreya,-Expanding-AI-Infrastructure-and-Managed-Services-Capabilities",
+              "source_url": "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
               "baseline_headcount": 343800,
               "baseline_date": "2025-06-30"
             },
             "q1_2023": {
-              "value": 4700,
-              "pct": 1.34,
+              "value": 2100,
+              "pct": 0.6,
               "badge": "neutral",
-              "source_url": "https://news.cognizant.com/2026-06-22-Cognizant-Completes-Acquisition-of-Astreya,-Expanding-AI-Infrastructure-and-Managed-Services-Capabilities",
+              "source_url": "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
               "baseline_headcount": 351500,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 2600,
-              "pct": 0.74,
+              "value": -4000,
+              "pct": -1.12,
               "badge": "neutral",
-              "source_url": "https://news.cognizant.com/2026-06-22-Cognizant-Completes-Acquisition-of-Astreya,-Expanding-AI-Infrastructure-and-Managed-Services-Capabilities",
-              "baseline_headcount": 353600,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://www.google.com/search?q=Cognizant+headcount+Q1+2026+10-Q+earnings+report&client=app-vertex-grounding&safesearch=active",
+              "baseline_headcount": 357600,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Infosys": {
-          "current": 328354,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.google.com/search?q=Infosys+headcount+Q4+FY24+March+31+2024&client=app-vertex-grounding&safesearch=active",
-          "notes": "Q4 FY26 report (328,594 as of March 31, 2026) minus 240 campus recruit terminations reported in April 2026; no further specific layoffs or hiring adjustments were confirmed between April and July 2026.",
+          "current": 328154,
+          "data_date": "2026-07-15",
+          "source_url": "https://medhacloud.com/blog/infosys-layoffs-2026-india-it",
+          "notes": "Q4 FY26 report (328,594) minus 240 April and 200 May 2026 performance-based terminations reported in early 2026",
           "source_urls": [
-            "https://www.google.com/search?q=Infosys+headcount+Q4+FY24+March+31+2024&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Infosys+headcount+Q1+FY25+June+30+2024&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Infosys+headcount+Q1+FY26+June+30+2025&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Infosys+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Infosys+employee+count+history+quarterly+2023+2024+2025&client=app-vertex-grounding&safesearch=active"
+            "https://medhacloud.com/blog/infosys-layoffs-2026-india-it",
+            "https://www.businesstoday.in/technology/story/infosys-ceo-salil-parekh-rules-out-layoffs-plans-20000-campus-hires-as-ai-reshapes-it-industry-528165-2026-04-30",
+            "https://www.livemint.com/companies/news/infosys-q4-results-2026-headcount-falls-by-8-400-even-as-operating-profits-jump-13-6-yoy-11776950086025.html",
+            "https://upstox.com/news/market-news/earnings/infosys-q1-fy-27-results-schedule-out-check-date-timing-share-price-trend-and-other-details/article-195351/"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 4566,
-              "pct": 1.41,
+              "value": 4366,
+              "pct": 1.35,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Infosys+headcount+Q4+FY24+March+31+2024&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://medhacloud.com/blog/infosys-layoffs-2026-india-it",
               "baseline_headcount": 323788,
               "baseline_date": "2025-06-30"
             },
             "q1_2023": {
-              "value": -14880,
-              "pct": -4.34,
+              "value": -15080,
+              "pct": -4.39,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Infosys+headcount+Q4+FY24+March+31+2024&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://medhacloud.com/blog/infosys-layoffs-2026-india-it",
               "baseline_headcount": 343234,
               "baseline_date": "2023-03-31"
             },
@@ -152,64 +155,66 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Infosys+headcount+Q4+FY24+March+31+2024&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 328354,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://medhacloud.com/blog/infosys-layoffs-2026-india-it",
+              "baseline_headcount": 328154,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "TCS": {
           "current": 593798,
-          "data_date": "2026-06-30",
-          "source_url": "https://www.ndtvprofit.com/markets/tcs-reports-higher-than-expected-voluntary-attrition-at-13-6-headcount-jumps-by-over-9-000-employees-11748819",
-          "notes": "Q1 FY27 earnings report (ending June 30, 2026) released July 9, 2026.",
+          "data_date": "2026-07-15",
+          "source_url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027",
+          "notes": "Q1 FY27 earnings report (June 30, 2026) headcount of 593,798; no subsequent layoffs or hiring changes announced as of July 15, 2026.",
           "source_urls": [
-            "https://www.ndtvprofit.com/markets/tcs-reports-higher-than-expected-voluntary-attrition-at-13-6-headcount-jumps-by-over-9-000-employees-11748819",
-            "https://www.ndtvprofit.com/markets/tcs-reports-higher-than-expected-voluntary-attrition-at-13-6-headcount-jumps-by-over-9-000-employees-11748819"
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027",
+            "https://www.staffingindustry.com/news/global-daily-news/tcs-q1-revenue-up-32-despite-macroeconomic-headwinds",
+            "https://www.reveliolabs.com/companies/tata-consultancy-services/employees/",
+            "https://analyticsindiamag.com/ai-news-updates/tcs-ends-fy-2023-with-a-bang-reports-17-6-yoy-growth/",
+            "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q4-fy-2023"
           ],
           "changes": {
             "1_year_ago": {
               "value": -7271,
               "pct": -1.21,
               "badge": "neutral",
-              "source_url": "https://www.ndtvprofit.com/markets/tcs-reports-higher-than-expected-voluntary-attrition-at-13-6-headcount-jumps-by-over-9-000-employees-11748819",
+              "source_url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027",
               "baseline_headcount": 601069,
-              "baseline_date": "2025-07-14"
+              "baseline_date": "2025-07-15"
             },
             "q1_2023": {
               "value": -20997,
               "pct": -3.42,
               "badge": "neutral",
-              "source_url": "https://www.ndtvprofit.com/markets/tcs-reports-higher-than-expected-voluntary-attrition-at-13-6-headcount-jumps-by-over-9-000-employees-11748819",
+              "source_url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027",
               "baseline_headcount": 614795,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 9279,
-              "pct": 1.59,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.ndtvprofit.com/markets/tcs-reports-higher-than-expected-voluntary-attrition-at-13-6-headcount-jumps-by-over-9-000-employees-11748819",
-              "baseline_headcount": 584519,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://www.tcs.com/who-we-are/newsroom/press-release/tcs-financial-results-q1-fy-2027",
+              "baseline_headcount": 593798,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Tech Mahindra": {
           "current": 147623,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
-          "notes": "Q4 FY26 earnings report (as of March 31, 2026). No subsequent specific layoff or hiring adjustments found as of July 14, 2026.",
+          "data_date": "2026-03-31",
+          "source_url": "https://www.livemint.com/companies/tech-mahindra-q4-results-2026-headcount-falls-by-1-993-as-it-giant-pushes-for-ai-driven-efficiency-11776866159887.html",
+          "notes": "Based on the Q4 FY26 earnings report released on April 22, 2026. While industry reports mention 'silent layoffs' in mid-2026, no specific subsequent headcount reduction has been officially disclosed by the company as of July 15, 2026. Q1 FY27 results are scheduled for release on July 16, 2026.",
           "source_urls": [
-            "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
-            "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
-            "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe"
+            "https://www.livemint.com/companies/tech-mahindra-q4-results-2026-headcount-falls-by-1-993-as-it-giant-pushes-for-ai-driven-efficiency-11776866159887.html",
+            "https://www.business-standard.com/markets/news/tech-mahindra-q1-preview-pat-can-rise-over-40-yoy-on-firm-revenue-growth-126071500161_1.html"
           ],
           "changes": {
             "1_year_ago": {
               "value": -894,
               "pct": -0.6,
               "badge": "neutral",
-              "source_url": "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
+              "source_url": "https://www.livemint.com/companies/tech-mahindra-q4-results-2026-headcount-falls-by-1-993-as-it-giant-pushes-for-ai-driven-efficiency-11776866159887.html",
               "baseline_headcount": 148517,
               "baseline_date": "2025-06-30"
             },
@@ -217,7 +222,7 @@
               "value": -4777,
               "pct": -3.13,
               "badge": "neutral",
-              "source_url": "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
+              "source_url": "https://www.livemint.com/companies/tech-mahindra-q4-results-2026-headcount-falls-by-1-993-as-it-giant-pushes-for-ai-driven-efficiency-11776866159887.html",
               "baseline_headcount": 152400,
               "baseline_date": "2023-03-31"
             },
@@ -225,116 +230,112 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.staffingindustry.com/news/global-daily-news/tech-mahindra-q4-revenue-rises-amid-growth-in-us-and-europe",
+              "source_url": "https://www.livemint.com/companies/tech-mahindra-q4-results-2026-headcount-falls-by-1-993-as-it-giant-pushes-for-ai-driven-efficiency-11776866159887.html",
               "baseline_headcount": 147623,
-              "baseline_date": "2026-06-14"
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Wipro": {
-          "current": 245355,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
-          "notes": "Q4 FY26 base of 242,156 plus 3,200 employees from Mindsprint acquisition (completed May 15, 2026) minus 1 confirmed layoff on June 29, 2026.",
+          "current": 242156,
+          "data_date": "2026-03-31",
+          "source_url": "https://stockanalysis.com/stocks/wit/employees/",
+          "notes": "Q4 FY26 earnings report (March 31, 2026). Note: A layoff was reported on July 2, 2026, involving employees in Delhi, but no specific company-wide reduction figure was disclosed prior to the Q1 FY27 results scheduled for July 16, 2026.",
           "source_urls": [
-            "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+headcount+Q1+FY26+June+30+2025&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+headcount+Q4+FY26+March+31+2026&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+headcount+Q1+FY27+June+30+2026&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Wipro+layoffs+2026+news&client=app-vertex-grounding&safesearch=active"
+            "https://stockanalysis.com/stocks/wit/employees/",
+            "https://www.wipro.com/content/dam/nexus/en/investor/corporate-governance/stock-exchange-filing/auditors-report-on-financial-statements-for-the-quarter-and-year-ended-march-31-2026-with-udin-16-apr-2026.pdf",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG90Z6k0Nr3SHeB3f3SMHXGq0k5Hl0khieD-PSwH0GEtumylILzoBd0Wqf7ZUexx95dhzPmMWdGCSKNlu1xZrgKBQd_WN_fKo-OogjxZUxIK2Iv1wy7oZyIH5F4HZSf8HxEFPw0D86-GD9TkzRg73I5UuAfy2hy9XER22Qw1o3XGAHa99z6X2TOhJ769E6KMDNjaUleVj7eclC2_1CJ4PUdc_I=",
+            "https://www.wipro.com/newsroom/press-releases/2026/wipro-announces-results-for-the-quarter-and-year-ended-march-31-2026/",
+            "https://www.wipro.com/investors/guidance-vs-actuals/"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 12123,
-              "pct": 5.2,
-              "badge": "strong",
-              "source_url": "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+              "value": 8924,
+              "pct": 3.83,
+              "badge": "neutral",
+              "source_url": "https://stockanalysis.com/stocks/wit/employees/",
               "baseline_headcount": 233232,
               "baseline_date": "2025-06-30"
             },
             "q1_2023": {
-              "value": -11566,
-              "pct": -4.5,
-              "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+              "value": -14765,
+              "pct": -5.75,
+              "badge": "reasonably_weak",
+              "source_url": "https://stockanalysis.com/stocks/wit/employees/",
               "baseline_headcount": 256921,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -1,
-              "pct": -0.0,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Wipro+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 245356,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://stockanalysis.com/stocks/wit/employees/",
+              "baseline_headcount": 242156,
+              "baseline_date": "2026-06-15"
             }
           }
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": 1.2959887788579953
+      "net_headcount_pct_yoy": 1.0043699800658614
     }
   },
   "medium_end": {
     "headcount": {
       "companies": {
         "Microsoft": {
-          "current": 211575,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2026+10-K&client=app-vertex-grounding&safesearch=active",
-          "notes": "FY2025 10-K base of 228,000 minus 9,000 July 2025 layoffs, 2,625 April 2026 voluntary retirement (VRP) exits, and 4,800 July 2026 layoffs.",
+          "current": 220200,
+          "data_date": "2026-07-06",
+          "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2026+10-Q+March+31+2026&client=app-vertex-grounding&safesearch=active",
+          "notes": "Q3 FY2026 10-Q base of 228,000 minus 3,000 May 2026 voluntary retirements and 4,800 layoffs announced July 6, 2026",
           "source_urls": [
-            "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2026+10-K&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+layoffs+announced+April+May+June+July+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2026+10-Q+March+31+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+FY2026+10-K+June+30+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+2026+list&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2025+10-K&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+employee+headcount+March+31+2023+10-Q&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Microsoft+layoffs+2025+list&client=app-vertex-grounding&safesearch=active"
+            "https://www.google.com/search?q=Microsoft+employee+headcount+March+31+2023+10-Q&client=app-vertex-grounding&safesearch=active"
           ],
           "changes": {
             "1_year_ago": {
-              "value": -7425,
-              "pct": -3.39,
+              "value": 1200,
+              "pct": 0.55,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2026+10-K&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2026+10-Q+March+31+2026&client=app-vertex-grounding&safesearch=active",
               "baseline_headcount": 219000,
-              "baseline_date": "2025-07-14"
+              "baseline_date": "2025-07-02"
             },
             "q1_2023": {
-              "value": 575,
-              "pct": 0.27,
+              "value": -5421,
+              "pct": -2.4,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2026+10-K&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 211000,
+              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2026+10-Q+March+31+2026&client=app-vertex-grounding&safesearch=active",
+              "baseline_headcount": 225621,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
               "value": -4800,
-              "pct": -2.22,
+              "pct": -2.13,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2026+10-K&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 216375,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+FY2026+10-Q+March+31+2026&client=app-vertex-grounding&safesearch=active",
+              "baseline_headcount": 225000,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Meta": {
           "current": 69986,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.google.com/search?q=Meta+headcount+Q1+2023+SEC+filing&client=app-vertex-grounding&safesearch=active",
-          "notes": "Q1 2026 headcount of 77,986 (as of March 31) minus ~8,000 layoffs announced May 20, 2026; no further major adjustments reported through July 14.",
+          "data_date": "2026-07-15",
+          "source_url": "https://stockanalysis.com/stocks/meta/employees/",
+          "notes": "Q1 2026 10-Q filing (77,986) minus 8,000 layoffs announced April 17, 2026 and executed starting May 20, 2026.",
           "source_urls": [
-            "https://www.google.com/search?q=Meta+headcount+Q1+2023+SEC+filing&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Meta+headcount+Q2+2025+earnings+report&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Meta+headcount+Q1+2026+earnings+report&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Meta+layoffs+announced+after+Q1+2026&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Meta+headcount+July+2025&client=app-vertex-grounding&safesearch=active"
+            "https://stockanalysis.com/stocks/meta/employees/"
           ],
           "changes": {
             "1_year_ago": {
               "value": -5959,
               "pct": -7.85,
               "badge": "reasonably_weak",
-              "source_url": "https://www.google.com/search?q=Meta+headcount+Q1+2023+SEC+filing&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://stockanalysis.com/stocks/meta/employees/",
               "baseline_headcount": 75945,
               "baseline_date": "2025-06-30"
             },
@@ -342,7 +343,7 @@
               "value": -7128,
               "pct": -9.24,
               "badge": "reasonably_weak",
-              "source_url": "https://www.google.com/search?q=Meta+headcount+Q1+2023+SEC+filing&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://stockanalysis.com/stocks/meta/employees/",
               "baseline_headcount": 77114,
               "baseline_date": "2023-03-31"
             },
@@ -350,114 +351,103 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Meta+headcount+Q1+2023+SEC+filing&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://stockanalysis.com/stocks/meta/employees/",
               "baseline_headcount": 69986,
-              "baseline_date": "2026-06-14"
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Apple": {
-          "current": 165815,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.google.com/search?q=Apple+employee+headcount+2025+2026+SEC+filings&client=app-vertex-grounding&safesearch=active",
-          "notes": "Base: FY2025 10-K (166,000) minus 135 layoffs effective June 24, 2026 (WARN notice) and approximately 50 sales team roles eliminated July 9, 2026.",
+          "current": 165808,
+          "data_date": "2026-07-15",
+          "source_url": "https://plutux.ai/stock/aapl/employee_count",
+          "notes": "Base of 166,000 from FY 2025 10-K (as of Sept 27, 2025) minus 192 layoffs announced in April 2026 and effective June 24, 2026 (per California and Maryland WARN notices).",
           "source_urls": [
-            "https://www.google.com/search?q=Apple+employee+headcount+2025+2026+SEC+filings&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Apple+headcount+Q2+2026+10-Q&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Apple+headcount+Q3+2025+10-Q&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Apple+headcount+March+2023+10-Q+or+Q2+2023+earnings&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Apple+layoffs+2024+2025+2026+list&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Apple+total+number+of+employees+2023+2024+2025&client=app-vertex-grounding&safesearch=active"
+            "https://plutux.ai/stock/aapl/employee_count"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 1815,
-              "pct": 1.11,
+              "value": -192,
+              "pct": -0.12,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Apple+employee+headcount+2025+2026+SEC+filings&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 164000,
-              "baseline_date": "2025-06-28"
+              "source_url": "https://plutux.ai/stock/aapl/employee_count",
+              "baseline_headcount": 166000,
+              "baseline_date": "2025-09-27"
             },
             "q1_2023": {
-              "value": 1815,
-              "pct": 1.11,
+              "value": 1808,
+              "pct": 1.1,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Apple+employee+headcount+2025+2026+SEC+filings&client=app-vertex-grounding&safesearch=active",
+              "source_url": "https://plutux.ai/stock/aapl/employee_count",
               "baseline_headcount": 164000,
-              "baseline_date": "2023-04-01"
+              "baseline_date": "2022-09-24"
             },
             "30_days_ago": {
-              "value": -50,
-              "pct": -0.03,
+              "value": -192,
+              "pct": -0.12,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Apple+employee+headcount+2025+2026+SEC+filings&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 165865,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://plutux.ai/stock/aapl/employee_count",
+              "baseline_headcount": 166000,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "Amazon": {
-          "current": 319943,
-          "data_date": "2026-07-14",
-          "source_url": "https://www.google.com/search?q=Amazon+corporate+headcount+2026+layoffs+news&client=app-vertex-grounding&safesearch=active",
-          "notes": "Based on a corporate headcount estimate of ~350,000 in mid-2025, adjusted for the 'Project Dawn' restructuring wave (14,000 in Oct 2025 and 16,000 in Jan 2026) and a small July 2026 cut of 57 tech roles.",
+          "current": 355000,
+          "data_date": "2026-07-15",
+          "source_url": "https://www.makerstations.io/amazon-employee-statistics/",
+          "notes": "Estimated corporate headcount based on Q1 2026 10-Q total of 1,576,000 scaled by a 22% corporate-to-operations ratio (Source: Maker Stations/Revelio Labs) and adjusted for the completion of 30,000 layoffs announced between Oct 2025 and Jan 2026.",
           "source_urls": [
-            "https://www.google.com/search?q=Amazon+corporate+headcount+2026+layoffs+news&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2026+Q2+2026&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Amazon+corporate+headcount+July+2025&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023+estimate&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Amazon+layoffs+late+2025+early+2026+corporate+roles&client=app-vertex-grounding&safesearch=active",
-            "https://www.google.com/search?q=Amazon+total+employees+vs+corporate+employees+2025+2026&client=app-vertex-grounding&safesearch=active"
+            "https://www.makerstations.io/amazon-employee-statistics/",
+            "https://www.makerstations.io/amazon-employee-statistics/",
+            "https://www.makerstations.io/amazon-employee-statistics/",
+            "https://www.reddit.com/r/Layoffs/comments/1qkzxux/i_just_heard_that_amazon_is_laying_off_23000/"
           ],
           "changes": {
             "1_year_ago": {
-              "value": -30057,
-              "pct": -8.59,
+              "value": -19800,
+              "pct": -5.28,
               "badge": "reasonably_weak",
-              "source_url": "https://www.google.com/search?q=Amazon+corporate+headcount+2026+layoffs+news&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 350000,
-              "baseline_date": "2025-07-14"
+              "source_url": "https://www.makerstations.io/amazon-employee-statistics/",
+              "baseline_headcount": 374800,
+              "baseline_date": "2025-07-15"
             },
             "q1_2023": {
-              "value": -38057,
-              "pct": -10.63,
-              "badge": "weak",
-              "source_url": "https://www.google.com/search?q=Amazon+corporate+headcount+2026+layoffs+news&client=app-vertex-grounding&safesearch=active",
+              "value": -3000,
+              "pct": -0.84,
+              "badge": "neutral",
+              "source_url": "https://www.makerstations.io/amazon-employee-statistics/",
               "baseline_headcount": 358000,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -57,
-              "pct": -0.02,
+              "value": 0,
+              "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Amazon+corporate+headcount+2026+layoffs+news&client=app-vertex-grounding&safesearch=active",
-              "baseline_headcount": 320000,
-              "baseline_date": "2026-06-14"
+              "source_url": "https://www.makerstations.io/amazon-employee-statistics/",
+              "baseline_headcount": 355000,
+              "baseline_date": "2026-06-15"
             }
           }
         },
         "NVIDIA": {
           "current": 42000,
           "data_date": "2026-01-25",
-          "source_url": "https://businesschief.com/news/jensen-huang-nvidia-will-have-100-ai-agents-for-each-worker",
-          "notes": "FY2026 10-K filing reported 42,000 full-time employees as of Jan 25, 2026. This figure was confirmed by CEO Jensen Huang in March 2026. No layoffs reported through July 2026; hiring remains active.",
+          "source_url": "https://www.google.com/search?q=NVIDIA+employee+headcount+Q1+FY2025+10-Q&client=app-vertex-grounding&safesearch=active",
+          "notes": "Headcount from FY2026 10-K filing (ended Jan 25, 2026). No layoffs or significant workforce adjustments announced between Jan 2026 and July 2026; company reported scaling headcount in Q1 FY2027 CFO commentary.",
           "source_urls": [
-            "https://businesschief.com/news/jensen-huang-nvidia-will-have-100-ai-agents-for-each-worker",
-            "https://pub.towardsai.net/jensen-huang-says-the-future-is-100-ai-agents-per-employee-what-this-means-for-jobs-business-and-a6e2f90d2a3a",
-            "https://www.techradar.com/pro/a-lot-of-people-are-saying-ai-is-coming-were-going-to-run-out-of-jobs-i-think-the-opposite-nvidia-ceo-jensen-huang-says-we-dont-need-to-fear-ai",
-            "https://www.cnet.com/news-live/nvidia-gtc-2026-live-blog-updates/",
-            "https://www.bny.com/assets/corporate/documents/pdf/investor-relations/earnings/quarterly-update-presentation-1q-2026.pdf",
-            "https://www.bny.com/assets/corporate/documents/pdf/investor-relations/earnings/quarterly-update-presentation-1q-2026.pdf",
-            "https://s201.q4cdn.com/141608511/files/doc_financials/annual/2018/NVIDIA2018_AnnualReview-(new).pdf",
-            "https://investors.veritone.com/sec-filings/all-sec-filings/content/0000950170-24-038819/veri-20231231.htm",
-            "https://www.thestreet.com/technology/nvidias-workplace-culture-sends-big-tech-a-warning"
+            "https://www.google.com/search?q=NVIDIA+employee+headcount+Q1+FY2025+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+employee+headcount+FY2024+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+employee+headcount+FY2023+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+layoffs+2024+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+July+2025&client=app-vertex-grounding&safesearch=active"
           ],
           "changes": {
             "1_year_ago": {
               "value": 6000,
               "pct": 16.67,
               "badge": "strong",
-              "source_url": "https://businesschief.com/news/jensen-huang-nvidia-will-have-100-ai-agents-for-each-worker",
+              "source_url": "https://www.google.com/search?q=NVIDIA+employee+headcount+Q1+FY2025+10-Q&client=app-vertex-grounding&safesearch=active",
               "baseline_headcount": 36000,
               "baseline_date": "2025-01-26"
             },
@@ -465,7 +455,7 @@
               "value": 15804,
               "pct": 60.33,
               "badge": "strong",
-              "source_url": "https://businesschief.com/news/jensen-huang-nvidia-will-have-100-ai-agents-for-each-worker",
+              "source_url": "https://www.google.com/search?q=NVIDIA+employee+headcount+Q1+FY2025+10-Q&client=app-vertex-grounding&safesearch=active",
               "baseline_headcount": 26196,
               "baseline_date": "2023-01-29"
             },
@@ -473,53 +463,53 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://businesschief.com/news/jensen-huang-nvidia-will-have-100-ai-agents-for-each-worker",
+              "source_url": "https://www.google.com/search?q=NVIDIA+employee+headcount+Q1+FY2025+10-Q&client=app-vertex-grounding&safesearch=active",
               "baseline_headcount": 42000,
-              "baseline_date": "2026-06-14"
+              "baseline_date": "2026-06-15"
             }
           }
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": -4.2163691127824885
+      "net_headcount_pct_yoy": -2.150973048311146
     }
   },
   "high_end": {
     "job_postings": {
       "companies": {
         "Anthropic": {
-          "current": 212,
-          "collection_date": "2026-07-14",
+          "current": 236,
+          "collection_date": "2026-07-15",
           "source_url": "https://www.anthropic.com/jobs",
           "changes": {
             "1_year_ago": {
-              "value": 172,
+              "value": 196,
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": 27,
+              "value": 51,
               "badge": "strong"
             }
           }
         },
         "OpenAI": {
-          "current": 550,
-          "collection_date": "2026-07-14",
+          "current": 515,
+          "collection_date": "2026-07-15",
           "source_url": "https://openai.com/careers/search/",
           "changes": {
             "1_year_ago": {
-              "value": 502,
+              "value": 467,
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": 28,
-              "badge": "strong"
+              "value": -7,
+              "badge": "neutral"
             }
           }
         },
         "DeepMind": {
-          "current": 33,
-          "collection_date": "2026-07-14",
+          "current": 37,
+          "collection_date": "2026-07-15",
           "source_url": "https://job-boards.greenhouse.io/deepmind",
           "changes": {
             "1_year_ago": {
@@ -527,30 +517,30 @@
               "badge": "neutral"
             },
             "30_days_ago": {
-              "value": 11,
+              "value": 15,
               "badge": "strong"
             }
           }
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 803.4090909090909
+      "net_change_pct_yoy": 795.4545454545454
     }
   },
   "stock_index": {
-    "current_value": 61.91,
-    "baseline_date": "2025-07-14",
+    "current_value": 62.02,
+    "baseline_date": "2025-07-15",
     "changes": {
-      "30_day": -27.79,
-      "1_year": -38.09
+      "30_day": -27.68,
+      "1_year": -37.98
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1166.7,
+        "current_price": 1168.0,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.89,
-        "change_1_year": -36.28
+        "change_30_day": -27.81,
+        "change_1_year": -36.21
       },
       "Cognizant": {
         "ticker": "CTSH",
@@ -568,17 +558,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2200.6,
+        "current_price": 2189.2,
         "weight": 0.14285714285714285,
-        "change_30_day": -30.42,
-        "change_1_year": -45.38
+        "change_30_day": -30.79,
+        "change_1_year": -45.66
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1484.3,
+        "current_price": 1498.7,
         "weight": 0.14285714285714285,
-        "change_30_day": -2.37,
-        "change_1_year": -10.09
+        "change_30_day": -1.43,
+        "change_1_year": -9.22
       },
       "Wipro": {
         "ticker": "WIT",
@@ -601,30 +591,30 @@
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -38.64,
+          "pct": -38.53,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -64.48,
+          "pct": -64.37,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Consultancy stocks are collapsing, down 27.79% this month and 38.09% annually, as investors price in AI automation of low-value work. Indeed postings flattened to 1.53% At this rate, the only \"consultant\" left in 2027 will be a Python script that just replies \"have you tried cloud migration?\" to every prompt.",
+  "ai_summary": "Consultancy stocks collapsed 28% this month, extending a 38% yearly decline as investors price in AI replacing low-value work. However, Indeed postings rose 1.6% recently and 11% YoY, showing resilient demand. Big Tech headcount fell just 2% over 30 days and annually, suggesting no massive AI-driven labor cuts. AI labs remain aggressive; Anthropic and DeepMind added roles this month, fueling a 795% yearly surge. Devs aren't cooked yet. At this rate, the only way a dev is getting \"cooked\" is if they try to run a 405B parameter model on their laptop and use the exhaust as a George Foreman grill.",
   "indeed_index": {
-    "current_value": 111.33,
+    "current_value": 111.11,
     "date": "2026-06-26",
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
     "changes": {
       "30_day": {
-        "pct": 1.53,
+        "pct": 1.57,
         "badge": "neutral"
       },
       "1_year": {
-        "pct": 11.33,
+        "pct": 11.11,
         "badge": "strong"
       },
       "q1_2023": {
@@ -640,11 +630,11 @@
       "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
       "changes": {
         "30_day": {
-          "pct": 0.97,
+          "pct": 0.85,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": -2.2,
+          "pct": -2.32,
           "badge": "neutral"
         },
         "q1_2023": {
@@ -656,11 +646,11 @@
     "relative_to_market": {
       "changes": {
         "30_day": {
-          "pct": 0.56,
+          "pct": 0.72,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": 13.53,
+          "pct": 13.43,
           "badge": "strong"
         },
         "q1_2023": {
