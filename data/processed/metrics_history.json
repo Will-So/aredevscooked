@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-07-15T10:17:44.429720+00:00"
+    "last_updated": "2026-07-16T10:28:06.851661+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -17814,6 +17814,191 @@
         "DeepMind": {
           "total_technical_jobs": 37,
           "collection_date": "2026-07-15"
+        }
+      },
+      "indeed_index": {
+        "value": 72.51,
+        "date": "2026-06-26"
+      },
+      "total_indeed_index": {
+        "value": 101.39,
+        "date": "2026-06-26"
+      }
+    },
+    "2026-07-16": {
+      "date": "2026-07-16",
+      "timestamp": "2026-07-16T10:28:06.851636+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1187.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 43.18,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 11.04,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2201.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1510.3,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 1.84,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 754.81,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 223889,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkgyIcO-37WDBf_Rw5xdDPnskKvHZmWHRvGwJ_s-1YrRMQrBMhZjm_OODg4AQYiN8yqW9YiaFGtWyOqHRkoXorSivLqGNxk2WwMDXOg626DJnYMQge3UoUaAq8VmrpjNjjYhHNP6xE3SlM1bzxKzlQ",
+            "https://www.ndtvprofit.com/markets/hcl-tech-q4-attrition-rate-rises-marginally-to-12-5-headcount-increases-by-802-employees-11388568",
+            "https://www.ndtvprofit.com/markets/hcl-tech-q4-attrition-rate-rises-marginally-to-12-5-headcount-increases-by-802-employees-11388568",
+            "https://www.multibagg.ai/market-pulse/articles/hcltech-q1fy26-profit-dividend-cmriykuvz3ddonw0js5acqny3",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHnmvlQm6a0OHeRjq8o6S0pSVsKpvpxxeg4Za4oVhEozcFQ7GjrtKy7YLLvt1f5kFiqGFHtJHCp3jW9QAIFUMt6-46PNf1mZ4GtiS9p_6SRQDoAICvaDz8Uz7PEXPZPk8b7uJ54tA3KbsLMjK6nNSBbKfP_TgAuMtu6OswzgmJs7Fpxvx-I-Bo0q382R6JCFBvGP2G5c5180ww-NjOWQA==",
+            "https://www.livemint.com/companies/company-results/hcl-tech-attrition-continues-to-lower-at-19-5-net-addition-of-over-3-000-employees-in-q4-11681991256442.html"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87950,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.businessworld.in/article/ltimindtree-q4-fy23-net-profit-flat-at-rs-1114-cr--474477",
+            "https://www.fortuneindia.com/enterprise/ltimindtree-q4-results-profit-flat-at-1114-cr-declares-dividend-of-40/112459"
+          ],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 357700,
+          "data_date": "2026-07-16",
+          "source_urls": [
+            "https://news.cognizant.com/2026-06-22-Cognizant-Completes-Acquisition-of-Astreya,-Expanding-AI-Infrastructure-and-Managed-Services-Capabilities",
+            "https://www.gryphon-inv.com/news/gryphon-investors-to-sell-3cloud-to-cognizant/",
+            "https://www.sec.gov/Archives/edgar/data/1058290/000105829024000204/exhibit991.htm",
+            "https://news.cognizant.com/2026-07-15-Cognizant-On-Track-to-Hire-1,500-U-S-College-Graduates-in-2026-to-Power-AI-Era-Workforce",
+            "https://www.prnewswire.com/news-releases/cognizant-on-track-to-hire-1-500-us-college-graduates-in-2026-to-power-ai-era-workforce-302825550.html",
+            "https://investors.cognizant.com/news-and-events/news/news-details/2025/Cognizant-to-Acquire-3Cloud-Creating-a-Leading-Force-in-Microsoft-Azure-Services-and-Enterprise-AI-Transformation/default.aspx",
+            "https://www.consulting.us/news/13324/cognizant-acquires-it-managed-services-firm-astreya",
+            "https://www.telugutimes.net/en/bnews/cognizant-announces-major-human-capital-initiative-aims-to-scale-to-5000-frontier-engineers-and-10000-business-operators-352335.html",
+            "https://intellectia.ai/news/stock/cognizant-expands-ai-workforce-to-15000-certified-professionals",
+            "https://af.net/realtime/cognizant-acquires-astreya-for-600-million-to-bolster-ai-data-center-capabilities/"
+          ],
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328594,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://informistmedia.com/MoneyWire/49032/analyst-concall-infosys-to-stick-to-fy26-freshers-hiring-plan-this-year-too",
+            "https://www.infosys.com/investors/reports-filings/quarterly-results/2023-2024/q4.html",
+            "https://www.thestatesman.com/business/infosys-headcount-rises-for-3rd-straight-quarter-adds-6388-employees-in-fy25-1503421689.html"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 593798,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY24+March+31+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q1+FY24+June+30+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+headcount+Q4+FY23+March+31+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=TCS+layoffs+2024+2025+2026+news&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 242156,
+          "data_date": "2026-03-31",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/wit/employees/",
+            "https://www.wipro.com/newsroom/press-releases/2026/wipro-limited-to-announce-results-for-the-first-quarter-ended-june-30-2026-on-july-16-2026/",
+            "https://www.barchart.com/story/news/3164229/wipro-limited-to-announce-results-for-the-first-quarter-ended-june-30-2026-on-july-16-2026",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEbLQ4WMQZgOY1Ix5zaPRrq0mF4_Fo8cLUnQf6f3EMoa1YoEYkdakrXh1QLG19Le--Bo1p4qAqJlxkVw7O_HDUX0x71mrB6CeWmog7Y4XfGakuqaVN1PBJdcU9kaRoDFRWXtXudloV85QWuOKWJfE01C0A2ty7xIPNRf7GvafxMHb4PWyM8_cT4ShwMrOQBh_MWXjBeJ4IwZ1nFUs1hRHkjOMpJA2seFXWyo8M8jOnw_CB1c_FgAJHMsJEDO8tKOWwDCo7acxs7WFiJ",
+            "https://www.cimdata.com/en/industry-summary-articles/item/30401-wipro-limited-to-announce-results-for-the-first-quarter-ended-june-30-2026-on-july-16-2026",
+            "https://www.cimdata.com/en/industry-summary-articles/item/30401-wipro-limited-to-announce-results-for-the-first-quarter-ended-june-30-2026-on-july-16-2026",
+            "https://www.moomoo.com/403"
+          ],
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 215200,
+          "data_date": "2026-07-06",
+          "source_urls": [
+            "https://www.google.com/search?q=Microsoft+employee+headcount+Q3+2026+10-Q+Q4+2026+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+June+30+2025+10-K&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+employee+headcount+March+31+2023+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Microsoft+layoffs+2025+news&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 69986,
+          "data_date": "2026-05-20",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/meta/employees/"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 165815,
+          "data_date": "2026-07-16",
+          "source_urls": [
+            "https://www.google.com/search?q=Apple+employee+headcount+2026+10-Q+Q2+Q3&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+2025+10-K+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+employee+headcount+March+2023+10-Q&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+2026+news&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Apple+layoffs+2025+news&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 338220,
+          "data_date": "2026-07-16",
+          "source_urls": [
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2026+Q4+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+July+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+corporate+headcount+Q1+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+layoffs+late+2025+early+2026+corporate&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+white-collar+employee+count+2025+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Amazon+total+employees+vs+corporate+employees+2025+2026&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-05-20",
+          "source_urls": [
+            "https://www.google.com/search?q=NVIDIA+headcount+Q1+FY2027+10-Q+April+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q1+FY2026+10-Q+April+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+Q2+FY2026+10-Q+July+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+headcount+FY2023+10-K+January+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=NVIDIA+layoffs+2026+2025&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 232,
+          "collection_date": "2026-07-16"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 561,
+          "collection_date": "2026-07-16"
         }
       },
       "indeed_index": {
