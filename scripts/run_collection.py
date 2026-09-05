@@ -648,6 +648,35 @@ def load_history_snapshot(
     return None
 
 
+def deepmind_long_term_change(current_jobs: int, snapshots: dict) -> dict:
+    """Use the first reliable baseline until a full year of history exists."""
+    first_date = date(2026, 1, 6)
+    target = date.today() - timedelta(days=365)
+    temporary = target < first_date
+    if temporary:
+        snapshot = snapshots.get(first_date.isoformat())
+    else:
+        snapshot = load_history_snapshot(
+            365,
+            tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
+            validate=lambda s: "DeepMind" in s.get("job_postings", {}),
+            preloaded_snapshots={d: s for d, s in snapshots.items() if d >= first_date.isoformat()},
+        )
+    baseline = (snapshot or {}).get("job_postings", {}).get("DeepMind")
+    value = current_jobs - baseline["total_technical_jobs"] if baseline else None
+    change = {
+        "value": value,
+        "badge": JobsProcessor().classify_change(value) if value is not None else "neutral",
+    }
+    if temporary:
+        change.update(
+            label="Since Jan 6, 2026",
+            tooltip="We do not have DeepMind data from one year ago, so this compares with January 6, 2026. It will switch to a one-year comparison once a full year of history is available.",
+            baseline_date=first_date.isoformat(),
+        )
+    return change
+
+
 def find_recent_job_posting_data(
     company_name: str, max_days_old: int = 7
 ) -> dict[str, Any] | None:
@@ -1223,7 +1252,9 @@ def build_metrics_structure(
             baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
             baseline_jobs = baseline_1yr.get("job_postings", {})
 
-            if name in baseline_jobs:
+            if name == "DeepMind":
+                changes["1_year_ago"] = deepmind_long_term_change(current_jobs, all_snapshots)
+            elif name in baseline_jobs:
                 historical_jobs = baseline_jobs[name]["total_technical_jobs"]
                 job_change = current_jobs - historical_jobs
                 badge = jobs_processor.classify_change(job_change)

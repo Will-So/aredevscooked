@@ -154,13 +154,13 @@
         if (data.changes && Object.keys(data.changes).length > 0) {
             changesHTML = '<div class="company-changes">';
             for (const [period, change] of Object.entries(data.changes)) {
-                const periodLabel = period.replace(/_/g, ' ').replace('ago', '');
+                const periodLabel = change.label || period.replace(/_/g, ' ').replace('ago', '');
 
                 // Check if data is available
                 if (change.value === null) {
                     changesHTML += `
                         <div class="change-item">
-                            <span class="change-label">${periodLabel}</span>
+                            <span class="change-label" ${change.tooltip ? `tabindex="0" title="${change.tooltip}" aria-label="${periodLabel}. ${change.tooltip}"` : ''}>${periodLabel}${change.tooltip ? ' ⓘ' : ''}</span>
                             <span class="change-value" style="color: #6b7280;">N/A</span>
                             <span class="badge badge-neutral" style="font-size: 0.8rem; padding: 0.25rem 0.5rem; opacity: 0.5;">no data</span>
                         </div>
@@ -171,7 +171,7 @@
 
                     changesHTML += `
                         <div class="change-item">
-                            <span class="change-label">${periodLabel}</span>
+                            <span class="change-label" ${change.tooltip ? `tabindex="0" title="${change.tooltip}" aria-label="${periodLabel}. ${change.tooltip}"` : ''}>${periodLabel}${change.tooltip ? ' ⓘ' : ''}</span>
                             <span class="change-value ${valueClass}">${valueText} jobs</span>
                             <span class="badge badge-${change.badge}" style="font-size: 0.8rem; padding: 0.25rem 0.5rem;">${change.badge}</span>
                         </div>

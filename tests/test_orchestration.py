@@ -6,6 +6,7 @@ from datetime import date, timedelta
 from unittest.mock import Mock, patch
 from scripts.run_collection import (
     HISTORY_30_DAY_TOLERANCE_DAYS,
+    deepmind_long_term_change,
     collect_all_stock_data,
     collect_all_headcount_data,
     collect_all_job_posting_data,
@@ -19,6 +20,28 @@ from scripts.run_collection import (
 
 
 # Stock Data Collection Tests
+
+
+@pytest.mark.parametrize("today,expected,label", [
+    (date(2026, 9, 5), -66, True),
+    (date(2027, 1, 6), -66, False),
+    (date(2027, 2, 6), -14, False),
+])
+def test_deepmind_baseline_switches_to_rolling_year(mocker, today, expected, label):
+    mocked_date = mocker.patch("scripts.run_collection.date", wraps=date)
+    mocked_date.today.return_value = today
+    snapshots = {
+        "2026-01-06": {"job_postings": {"DeepMind": {"total_technical_jobs": 72}}},
+        "2026-02-06": {"job_postings": {"DeepMind": {"total_technical_jobs": 20}}},
+    }
+    change = deepmind_long_term_change(6, snapshots)
+    assert change["value"] == expected
+    assert ("tooltip" in change) == label
+    assert ("label" in change) == label
+
+
+def test_deepmind_missing_baseline_does_not_invent_value():
+    assert deepmind_long_term_change(6, {})["value"] is None
 
 
 @pytest.mark.asyncio

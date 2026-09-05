@@ -506,8 +506,11 @@
           "source_url": "https://job-boards.greenhouse.io/deepmind",
           "changes": {
             "1_year_ago": {
-              "value": null,
-              "badge": "neutral"
+              "value": -66,
+              "badge": "collapsing",
+              "label": "Since Jan 6, 2026",
+              "tooltip": "We do not have DeepMind data from one year ago, so this compares with January 6, 2026. It will switch to a one-year comparison once a full year of history is available.",
+              "baseline_date": "2026-01-06"
             },
             "30_days_ago": {
               "value": -7,
