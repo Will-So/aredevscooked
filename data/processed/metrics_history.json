@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-05T16:46:50.919277+00:00"
+    "last_updated": "2026-09-05T21:01:09.241882+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -18906,7 +18906,7 @@
     },
     "2026-09-05": {
       "date": "2026-09-05",
-      "timestamp": "2026-09-05T16:46:50.919252+00:00",
+      "timestamp": "2026-09-05T21:01:09.241855+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1293.4,
@@ -18948,7 +18948,7 @@
             "https://www.google.com/search?q=HCLTech+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=HCLTech+layoffs+2024+2025+2026&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 87886,
@@ -18958,7 +18958,7 @@
             "https://en.wikipedia.org/wiki/LTIMindtree",
             "https://en.wikipedia.org/wiki/LTIMindtree"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 356700,
@@ -18966,7 +18966,7 @@
           "source_urls": [
             "https://www.crn.com/news/ai/2026/cognizant-s-project-leap-270m-plan"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328062,
@@ -18983,7 +18983,7 @@
             "https://timesofindia.indiatimes.com/infosys-q4-fy23-nos-miss-estimates-amid-macro-uncertainties-co-gives-single-digit-rev-growth-guidance-for-fy24/articleshow/99471507.cms",
             "https://www.peoplematters.in/news/economy-policy/infosys-q4-results-show-a-decrease-of-3611-employees-in-headcount-37514"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 593798,
@@ -18991,7 +18991,7 @@
           "source_urls": [
             "https://www.outlookbusiness.com/corporate/tcs-looking-to-weed-out-5-under-performers-after-over-23000-job-cuts-in-fy26"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 146760,
@@ -19004,7 +19004,7 @@
             "https://www.google.com/search?q=Tech+Mahindra+layoffs+2026&client=app-vertex-grounding&safesearch=active",
             "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025&client=app-vertex-grounding&safesearch=active"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Wipro": {
           "headcount": 243044,
@@ -19013,7 +19013,7 @@
             "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2026-2027/q1fy27/press-release-q1fy27.pdf",
             "https://www.wipro.com/investors/guidance-vs-actuals/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 213975,
@@ -19026,7 +19026,7 @@
             "https://www.geekwire.com/2026/microsoft-product-rd-jobs-decline-for-second-straight-year-new-filing-shows/",
             "https://sqmagazine.co.uk/how-many-people-work-at-microsoft/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 75472,
@@ -19034,7 +19034,7 @@
           "source_urls": [
             "https://stockanalysis.com/stocks/meta/employees/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 165596,
@@ -19042,7 +19042,7 @@
           "source_urls": [
             "https://www.reveliolabs.com/companies/apple/employees"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Amazon": {
           "headcount": 342471,
@@ -19050,7 +19050,7 @@
           "source_urls": [
             "https://stockanalysis.com/stocks/amzn/financials/"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "NVIDIA": {
           "headcount": 45000,
@@ -19062,7 +19062,7 @@
             "https://sqmagazine.co.uk/nvidia-employee-count-statistics/",
             "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000017/nvda-20230129.htm"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         }
       },
       "job_postings": {

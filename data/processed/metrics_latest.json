@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-05T16:46:50.911157+00:00",
+    "last_updated": "2026-09-05T21:01:09.234201+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -39,9 +39,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=HCLTech+headcount+Q1+FY25+June+2024&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 223889,
-              "baseline_date": "2026-08-06"
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -76,9 +76,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.ltm.com/news-events/press-releases/2025/ltimindtree-earnings-release-and-fact-sheet-q1fy26",
+              "source_url": "",
               "baseline_headcount": 87886,
-              "baseline_date": "2026-08-06"
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -108,12 +108,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 3100,
+              "pct": 0.88,
               "badge": "neutral",
-              "source_url": "https://www.crn.com/news/ai/2026/cognizant-s-project-leap-270m-plan",
-              "baseline_headcount": 356700,
-              "baseline_date": "2026-08-06"
+              "source_url": "",
+              "baseline_headcount": 353600,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -152,12 +152,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -532,
+              "pct": -0.16,
               "badge": "neutral",
-              "source_url": "https://www.infosys.com/about/last-quarter.html",
-              "baseline_headcount": 328062,
-              "baseline_date": "2026-08-06"
+              "source_url": "",
+              "baseline_headcount": 328594,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -187,12 +187,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 12000,
+              "pct": 2.06,
               "badge": "neutral",
-              "source_url": "https://www.outlookbusiness.com/corporate/tcs-looking-to-weed-out-5-under-performers-after-over-23000-job-cuts-in-fy26",
-              "baseline_headcount": 593798,
-              "baseline_date": "2026-08-06"
+              "source_url": "",
+              "baseline_headcount": 581798,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -230,9 +230,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.google.com/search?q=Tech+Mahindra+headcount+Q1+FY27+June+2026&client=app-vertex-grounding&safesearch=active",
+              "source_url": "",
               "baseline_headcount": 146760,
-              "baseline_date": "2026-08-06"
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -266,9 +266,9 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2026-2027/q1fy27/press-release-q1fy27.pdf",
+              "source_url": "",
               "baseline_headcount": 243044,
-              "baseline_date": "2026-08-06"
+              "baseline_date": "2026-07-21"
             }
           }
         }
@@ -311,12 +311,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -1600,
-              "pct": -0.74,
+              "value": -6225,
+              "pct": -2.83,
               "badge": "neutral",
-              "source_url": "https://stockanalysis.com/stocks/msft/employees/",
-              "baseline_headcount": 215575,
-              "baseline_date": "2026-08-06"
+              "source_url": "",
+              "baseline_headcount": 220200,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -346,12 +346,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral",
-              "source_url": "https://stockanalysis.com/stocks/meta/employees/",
-              "baseline_headcount": 75472,
-              "baseline_date": "2026-08-06"
+              "value": 5486,
+              "pct": 7.84,
+              "badge": "strong",
+              "source_url": "",
+              "baseline_headcount": 69986,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -381,12 +381,12 @@
               "baseline_date": "2022-09-24"
             },
             "30_days_ago": {
-              "value": -200,
-              "pct": -0.12,
+              "value": 781,
+              "pct": 0.47,
               "badge": "neutral",
-              "source_url": "https://www.reveliolabs.com/companies/apple/employees",
-              "baseline_headcount": 165796,
-              "baseline_date": "2026-08-06"
+              "source_url": "",
+              "baseline_headcount": 164815,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -416,12 +416,10 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -271,
-              "pct": -0.08,
+              "value": null,
+              "pct": null,
               "badge": "neutral",
-              "source_url": "https://stockanalysis.com/stocks/amzn/financials/",
-              "baseline_headcount": 342742,
-              "baseline_date": "2026-08-06"
+              "source_url": ""
             }
           }
         },
@@ -458,9 +456,9 @@
               "value": 3000,
               "pct": 7.14,
               "badge": "strong",
-              "source_url": "https://stockanalysis.com/stocks/nvda/employees/",
+              "source_url": "",
               "baseline_headcount": 42000,
-              "baseline_date": "2026-08-06"
+              "baseline_date": "2026-07-21"
             }
           }
         }
@@ -482,8 +480,8 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": null,
-              "badge": "neutral"
+              "value": 42,
+              "badge": "strong"
             }
           }
         },
@@ -497,8 +495,8 @@
               "badge": "strong"
             },
             "30_days_ago": {
-              "value": null,
-              "badge": "neutral"
+              "value": -167,
+              "badge": "collapsing"
             }
           }
         },
@@ -512,7 +510,7 @@
               "badge": "neutral"
             },
             "30_days_ago": {
-              "value": null,
+              "value": -7,
               "badge": "neutral"
             }
           }
