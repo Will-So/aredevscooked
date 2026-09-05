@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-07-21T10:42:28.756672+00:00"
+    "last_updated": "2026-09-05T16:46:50.919277+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -18902,6 +18902,190 @@
       "total_indeed_index": {
         "value": 101.17,
         "date": "2026-07-10"
+      }
+    },
+    "2026-09-05": {
+      "date": "2026-09-05",
+      "timestamp": "2026-09-05T16:46:50.919252+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1293.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 62.31,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 11.7,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2304.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1596.9,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 1.81,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 770.19,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 223889,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.google.com/search?q=HCLTech+headcount+Q1+FY25+June+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q4+FY24+March+2024&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q1+FY24+June+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=HCLTech+layoffs+2024+2025+2026&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87886,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.ltm.com/news-events/press-releases/2025/ltimindtree-earnings-release-and-fact-sheet-q1fy26",
+            "https://en.wikipedia.org/wiki/LTIMindtree",
+            "https://en.wikipedia.org/wiki/LTIMindtree"
+          ],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 356700,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.crn.com/news/ai/2026/cognizant-s-project-leap-270m-plan"
+          ],
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328062,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.infosys.com/about/last-quarter.html",
+            "https://www.financialexpress.com/business/industry-infosys-annual-headcount-rises-by-4274-to-recruit-6000-forward-deployed-engineers-4300528/",
+            "https://www.financialexpress.com/business/industry-infosys-annual-headcount-rises-by-4274-to-recruit-6000-forward-deployed-engineers-4300528/",
+            "https://www.livemint.com/market/stock-market-news/infosys-q1-results-attrition-rate-improves-to-13-headcount-slips-sequentially-11784806287780.html",
+            "https://www.hrkatha.com/news/infosys-headcount-declines-by-532-in-q1-attrition-edges-up-to-13/",
+            "https://economictimes.indiatimes.com/tech/information-tech/infosys-headcount-falls-by-532-employees-in-june-quarter/articleshow/132588803.cms?from=mdr",
+            "https://economictimes.indiatimes.com/tech/information-tech/infosys-headcount-falls-by-532-employees-in-june-quarter/articleshow/132588803.cms?from=mdr",
+            "https://www.newsbytesapp.com/news/business/infosys-adds-8203-employees-in-q2-fy26/tldr",
+            "https://timesofindia.indiatimes.com/infosys-q4-fy23-nos-miss-estimates-amid-macro-uncertainties-co-gives-single-digit-rev-growth-guidance-for-fy24/articleshow/99471507.cms",
+            "https://www.peoplematters.in/news/economy-policy/infosys-q4-results-show-a-decrease-of-3611-employees-in-headcount-37514"
+          ],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 593798,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.outlookbusiness.com/corporate/tcs-looking-to-weed-out-5-under-performers-after-over-23000-job-cuts-in-fy26"
+          ],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 146760,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q1+FY27+June+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY26+March+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q1+FY26+June+2025&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+headcount+Q4+FY23+March+2023&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2026&client=app-vertex-grounding&safesearch=active",
+            "https://www.google.com/search?q=Tech+Mahindra+layoffs+2025&client=app-vertex-grounding&safesearch=active"
+          ],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 243044,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2026-2027/q1fy27/press-release-q1fy27.pdf",
+            "https://www.wipro.com/investors/guidance-vs-actuals/"
+          ],
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 213975,
+          "data_date": "2026-09-01",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/msft/employees/",
+            "https://stockanalysis.com/stocks/msft/employees/",
+            "https://www.geekwire.com/2026/microsoft-product-rd-jobs-decline-for-second-straight-year-new-filing-shows/",
+            "https://www.geekwire.com/2026/microsoft-product-rd-jobs-decline-for-second-straight-year-new-filing-shows/",
+            "https://www.geekwire.com/2026/microsoft-product-rd-jobs-decline-for-second-straight-year-new-filing-shows/",
+            "https://sqmagazine.co.uk/how-many-people-work-at-microsoft/"
+          ],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 75472,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/meta/employees/"
+          ],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 165596,
+          "data_date": "2026-08-21",
+          "source_urls": [
+            "https://www.reveliolabs.com/companies/apple/employees"
+          ],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 342471,
+          "data_date": "2026-09-05",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/amzn/financials/"
+          ],
+          "confidence": "high"
+        },
+        "NVIDIA": {
+          "headcount": 45000,
+          "data_date": "2026-08-18",
+          "source_urls": [
+            "https://stockanalysis.com/stocks/nvda/employees/",
+            "https://companiesmarketcap.com/nvidia/sec-reports-10k/0001045810-26-000021",
+            "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2027",
+            "https://sqmagazine.co.uk/nvidia-employee-count-statistics/",
+            "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000017/nvda-20230129.htm"
+          ],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 256,
+          "collection_date": "2026-09-05"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 338,
+          "collection_date": "2026-09-05"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 6,
+          "collection_date": "2026-09-05"
+        }
+      },
+      "indeed_index": {
+        "value": 74.61,
+        "date": "2026-08-28"
+      },
+      "total_indeed_index": {
+        "value": 102.13,
+        "date": "2026-08-28"
       }
     }
   }
