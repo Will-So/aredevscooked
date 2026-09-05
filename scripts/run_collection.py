@@ -79,6 +79,10 @@ from aredevscooked.config import (
 LOG_TIMEOUT_SECONDS = 60
 STAGGER_SECONDS = 5
 MAX_TIMEOUT_SECONDS = 600
+# Allow headcounts and AI lab job postings to recover after collection gaps of
+# up to 51 days without using recent
+# snapshots as a nominal 30-day baseline (minimum baseline age is 9 days).
+HISTORY_30_DAY_TOLERANCE_DAYS = 21
 
 
 async def with_timeout_logging(
@@ -893,7 +897,7 @@ def build_metrics_structure(
             if has_baselines:
                 history_snapshot_30d = load_history_snapshot(
                     30,
-                    tolerance_days=14,
+                    tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
                     validate=lambda s, n=name: n in s.get("headcounts", {}),
                     preloaded_snapshots=all_snapshots,
                 )
@@ -1123,7 +1127,7 @@ def build_metrics_structure(
             if has_baselines:
                 history_snapshot_30d = load_history_snapshot(
                     30,
-                    tolerance_days=14,
+                    tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
                     validate=lambda s, n=name: n in s.get("headcounts", {}),
                     preloaded_snapshots=all_snapshots,
                 )
@@ -1231,7 +1235,7 @@ def build_metrics_structure(
             # Try to get historical snapshots from metrics_history.json for 30 days
             snapshot = load_history_snapshot(
                 30,
-                tolerance_days=14,
+                tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
                 validate=lambda s, n=name: n in s.get("job_postings", {}),
                 preloaded_snapshots=all_snapshots,
             )

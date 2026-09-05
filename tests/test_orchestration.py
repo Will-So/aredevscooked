@@ -5,6 +5,7 @@ import pytest
 from datetime import date, timedelta
 from unittest.mock import Mock, patch
 from scripts.run_collection import (
+    HISTORY_30_DAY_TOLERANCE_DAYS,
     collect_all_stock_data,
     collect_all_headcount_data,
     collect_all_job_posting_data,
@@ -851,6 +852,18 @@ def test_load_history_snapshot_tolerance_prefers_closest(history_file):
     # For 30 days ago exact, tolerance should still return exact
     snapshot = load_history_snapshot(30, tolerance_days=5)
     assert snapshot["job_postings"]["OpenAI"]["total_technical_jobs"] == 120
+
+
+@pytest.mark.parametrize("age,accepted", [(46, True), (51, True), (52, False), (8, False)])
+def test_30_day_history_outage_window(age, accepted):
+    snapshot = {"job_postings": {"OpenAI": {"total_technical_jobs": 100}}}
+    snapshots = {(date.today() - timedelta(days=age)).isoformat(): snapshot}
+    result = load_history_snapshot(
+        30,
+        tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
+        preloaded_snapshots=snapshots,
+    )
+    assert result == (snapshot if accepted else None)
 
 
 def test_load_history_snapshot_tolerance_too_small(history_file):

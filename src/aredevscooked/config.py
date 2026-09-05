@@ -117,7 +117,7 @@ FRED_TOTAL_CONFIG = {
 
 # Gemini API Configuration
 GEMINI_CONFIG = {
-    "model": "gemini-3-flash-preview",  # Gemini 3 Flash with grounding support
+    "model": "gemini-3.5-flash-lite",  # Gemini 3.5 Flash-Lite with grounding support
     "max_retries": 3,
     "retry_delay_seconds": [1, 2, 4],  # Exponential backoff
     "temperature": 0.0,  # Deterministic for structured output
