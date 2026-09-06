@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-05T21:10:49.654261+00:00"
+    "last_updated": "2026-09-06T12:05:57.300180+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -19077,6 +19077,136 @@
         "DeepMind": {
           "total_technical_jobs": 6,
           "collection_date": "2026-09-05"
+        }
+      },
+      "indeed_index": {
+        "value": 74.61,
+        "date": "2026-08-28"
+      },
+      "total_indeed_index": {
+        "value": 102.13,
+        "date": "2026-08-28"
+      }
+    },
+    "2026-09-06": {
+      "date": "2026-09-06",
+      "timestamp": "2026-09-06T12:05:57.300140+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1293.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 62.31,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 11.7,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2304.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1596.9,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 1.81,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 770.19,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 223889,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87886,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 356700,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328062,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 593798,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 146760,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 243044,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 223000,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 75472,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [],
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 330000,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [],
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 285,
+          "collection_date": "2026-09-06"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 778,
+          "collection_date": "2026-03-30"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 0,
+          "collection_date": "2026-06-06"
         }
       },
       "indeed_index": {
