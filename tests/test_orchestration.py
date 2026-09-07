@@ -22,11 +22,14 @@ from scripts.run_collection import (
 # Stock Data Collection Tests
 
 
-@pytest.mark.parametrize("today,expected,label", [
-    (date(2026, 9, 5), -66, True),
-    (date(2027, 1, 6), -66, False),
-    (date(2027, 2, 6), -14, False),
-])
+@pytest.mark.parametrize(
+    "today,expected,label",
+    [
+        (date(2026, 9, 5), -66, True),
+        (date(2027, 1, 6), -66, False),
+        (date(2027, 2, 6), -14, False),
+    ],
+)
 def test_deepmind_baseline_switches_to_rolling_year(mocker, today, expected, label):
     mocked_date = mocker.patch("scripts.run_collection.date", wraps=date)
     mocked_date.today.return_value = today
@@ -441,6 +444,36 @@ def test_load_same_day_headcount_data_accepts_same_local_day_from_utc_timestamp(
 
 
 # Job Posting Data Collection Tests
+
+
+def test_zero_job_cache_is_not_reused(mocker):
+    mocker.patch(
+        "scripts.run_collection._load_today_metrics",
+        return_value={
+            "high_end": {"job_postings": {"companies": {"Anthropic": {"current": 0}}}}
+        },
+    )
+    assert load_same_day_job_posting_data() == {}
+
+
+@pytest.mark.asyncio
+async def test_force_company_recollects_only_requested_jobs(mocker):
+    cached = {
+        n: {"total_technical_jobs": 45} for n in ["Anthropic", "OpenAI", "DeepMind"]
+    }
+    mocker.patch(
+        "scripts.run_collection.load_same_day_job_posting_data", return_value=cached
+    )
+    collect = mocker.patch(
+        "scripts.run_collection.collect_single_job_posting_data",
+        return_value=("Anthropic", {"total_technical_jobs": 322}),
+    )
+    result = await collect_all_job_posting_data(
+        mocker.Mock(), force_companies={"Anthropic"}
+    )
+    assert collect.call_count == 1
+    assert collect.call_args.args[1] == "Anthropic"
+    assert result["Anthropic"]["total_technical_jobs"] == 322
 
 
 @pytest.mark.asyncio
@@ -877,7 +910,9 @@ def test_load_history_snapshot_tolerance_prefers_closest(history_file):
     assert snapshot["job_postings"]["OpenAI"]["total_technical_jobs"] == 120
 
 
-@pytest.mark.parametrize("age,accepted", [(46, True), (51, True), (52, False), (8, False)])
+@pytest.mark.parametrize(
+    "age,accepted", [(46, True), (51, True), (52, False), (8, False)]
+)
 def test_30_day_history_outage_window(age, accepted):
     snapshot = {"job_postings": {"OpenAI": {"total_technical_jobs": 100}}}
     snapshots = {(date.today() - timedelta(days=age)).isoformat(): snapshot}

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-07T14:12:07.907775+00:00",
+    "last_updated": "2026-09-07T19:06:43.747968+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -421,17 +421,18 @@
     "job_postings": {
       "companies": {
         "Anthropic": {
-          "current": 0,
+          "current": 322,
           "collection_date": "2026-09-07",
-          "source_url": "https://www.anthropic.com/jobs",
+          "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
+          "collection_method": "greenhouse_classified_ids",
           "changes": {
             "1_year_ago": {
-              "value": -40,
-              "badge": "collapsing"
+              "value": 282,
+              "badge": "strong"
             },
             "30_days_ago": {
-              "value": -214,
-              "badge": "collapsing"
+              "value": 108,
+              "badge": "strong"
             }
           }
         },
@@ -439,6 +440,7 @@
           "current": 781,
           "collection_date": "2026-09-07",
           "source_url": "https://openai.com/careers/search/",
+          "collection_method": "google_search",
           "changes": {
             "1_year_ago": {
               "value": 733,
@@ -454,6 +456,7 @@
           "current": 3,
           "collection_date": "2026-03-07",
           "source_url": "https://job-boards.greenhouse.io/deepmind",
+          "collection_method": "google_search",
           "changes": {
             "1_year_ago": {
               "value": -69,
@@ -470,7 +473,7 @@
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 790.9090909090909
+      "net_change_pct_yoy": 1156.8181818181818
     }
   },
   "stock_index": {
@@ -548,7 +551,7 @@
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "Recent 30-day drops in AI lab openings reverse strong yearly growth, signaling a hoarding shift, while IT consultancy stocks plunged 21.79% this month (-32.37% YoY), pricing in AI automation for outsourced work. Meanwhile, Big Tech headcount is flat (-2.36% YoY), showing no mass AI-driven IT consultancy stocks just plummeted 21% in a month, proving that replacing outsourced engineering with AI is going great until the AI starts asking for a 30-day notice.",
+  "ai_summary": "AI lab technical postings rose by 374 versus the available July 21 snapshots: OpenAI +276, Anthropic +108, and DeepMind -10. Meanwhile, IT consultancy stocks plunged 32.37% YoY and 21.79% in 30 days, pricing in AI replacing outsourced work. However, Big Tech headcount remains flat (-2.36% YoY), showing no mass AI layoffs. The Indeed Job Postings Index is up 14.98% YoY with steady 30-day gains (+1.23%). Devs aren't broadly cooked, but outsourcing faces structural pressure. The Indeed job postings index is up nearly 15% year-over-year, proving that companies still desperately need humans to clean up after their brilliant AI experiments.",
   "indeed_index": {
     "current_value": 114.98,
     "date": "2026-08-28",

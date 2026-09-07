@@ -94,7 +94,9 @@ def create_job_postings_prompt(company_name: str, jobs_url: str) -> str:
     Returns:
         Formatted prompt string for Gemini API
     """
-    return f"""Search {jobs_url} and count only technical roles.
+    return f"""Today is {date.today().isoformat()}. Use Google Search to inspect {jobs_url} and count currently open technical roles.
+You must actually search and provide supporting sources. Do not answer from memory.
+If you cannot access or count the postings, return total_technical_jobs as null, never 0 as a placeholder.
 
 A role is TECHNICAL if it falls into one of these categories:
 - Software / infra engineering: Software Engineer, Infrastructure Engineer, Backend Engineer, Frontend Engineer, Systems Engineer, Reliability Engineer

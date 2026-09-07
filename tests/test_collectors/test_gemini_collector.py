@@ -245,6 +245,14 @@ def test_collect_job_postings_returns_dict(collector, mock_gemini_response, mock
 ```"""
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
     mock_generate.return_value = mock_gemini_response(mock_response_text)
+    mocker.patch.object(
+        collector,
+        "_extract_grounding_urls",
+        return_value=["https://job-boards.greenhouse.io/deepmind"],
+    )
+    mock_generate.return_value.candidates = [
+        Mock(grounding_metadata=Mock(grounding_chunks=[Mock()], web_search_queries=[]))
+    ]
 
     result = collector.collect_job_postings(
         "DeepMind", "https://job-boards.greenhouse.io/deepmind"
@@ -268,6 +276,14 @@ def test_collect_job_postings_parses_json(collector, mock_gemini_response, mocke
 ```"""
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
     mock_generate.return_value = mock_gemini_response(mock_response_text)
+    mocker.patch.object(
+        collector,
+        "_extract_grounding_urls",
+        return_value=["https://job-boards.greenhouse.io/deepmind"],
+    )
+    mock_generate.return_value.candidates = [
+        Mock(grounding_metadata=Mock(grounding_chunks=[Mock()], web_search_queries=[]))
+    ]
 
     result = collector.collect_job_postings(
         "DeepMind", "https://job-boards.greenhouse.io/deepmind"
@@ -301,6 +317,77 @@ def test_collect_job_postings_validates_non_negative(
 
 
 # Summary Generation Tests
+
+
+def test_jobs_reject_ungrounded_count_even_with_claimed_sources(collector, mocker):
+    response = Mock(
+        text=json.dumps(
+            {"total_technical_jobs": 43, "source_urls": ["https://example.com"]}
+        ),
+        candidates=[],
+    )
+    mocker.patch.object(
+        collector.client.models, "generate_content", return_value=response
+    )
+    with pytest.raises(ValueError, match="Ungrounded"):
+        collector.collect_job_postings("OpenAI", "https://openai.com/careers")
+
+
+@pytest.mark.parametrize("count", [None, 0, "42", True])
+def test_jobs_reject_invalid_or_zero_counts(collector, mocker, count):
+    response = Mock(text=json.dumps({"total_technical_jobs": count}), candidates=[])
+    mocker.patch.object(
+        collector.client.models, "generate_content", return_value=response
+    )
+    with pytest.raises(ValueError):
+        collector.collect_job_postings("DeepMind", "https://example.com")
+
+
+@pytest.mark.parametrize("incomplete", [False, True])
+def test_anthropic_counts_ids_and_requires_complete_classification(
+    collector, mocker, tmp_path, incomplete
+):
+    collector.log_dir = tmp_path
+    jobs = [
+        {"id": 1, "title": "Research Engineer"},
+        {"id": 2, "title": "Technical Recruiter"},
+    ]
+    feed = Mock()
+    feed.json.return_value = {"jobs": jobs}
+    mocker.patch(
+        "aredevscooked.collectors.gemini_collector.requests.get", return_value=feed
+    )
+    decisions = [{"id": 1, "technical": True}, {"id": 2, "technical": False}]
+    if incomplete:
+        decisions.pop()
+    response = Mock(text=json.dumps({"decisions": decisions}), candidates=[])
+    generate = mocker.patch.object(
+        collector.client.models, "generate_content", return_value=response
+    )
+    if incomplete:
+        with pytest.raises(ValueError, match="Incomplete"):
+            collector.collect_job_postings(
+                "Anthropic", "https://www.anthropic.com/jobs"
+            )
+        assert generate.call_count == 2
+    else:
+        result = collector.collect_job_postings(
+            "Anthropic", "https://www.anthropic.com/jobs"
+        )
+        assert result["total_technical_jobs"] == 1
+        assert result["job_titles"] == ["Research Engineer"]
+        assert result["collection_date"] == date.today().isoformat()
+        assert list(tmp_path.glob("*_job_audit.json"))
+
+
+def test_anthropic_empty_feed_is_not_zero(collector, mocker):
+    feed = Mock()
+    feed.json.return_value = {"jobs": []}
+    mocker.patch(
+        "aredevscooked.collectors.gemini_collector.requests.get", return_value=feed
+    )
+    with pytest.raises(ValueError, match="empty or malformed"):
+        collector.collect_job_postings("Anthropic", "https://www.anthropic.com/jobs")
 
 
 def test_generate_summary_returns_string(collector, mock_gemini_response, mocker):

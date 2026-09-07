@@ -322,6 +322,26 @@ git commit -m "feat: implement feature with tests"
 8. Push to branch (`git push origin feature/amazing-feature`)
 9. Open a Pull Request
 
+## Job collection diagnostics
+
+Anthropic postings come from its public Greenhouse feed. Gemini classifies every
+posting ID using the technical-role rules, and Python counts the accepted IDs.
+Duplicate IDs, incomplete classifications, empty feeds, and unverified zero counts
+are rejected. Other AI lab search results must include grounding evidence.
+Classification is based on titles and departments, so ambiguous roles may still
+need review.
+
+Use `uv run python scripts/run_collection.py --force-company Anthropic` to bypass
+today's Anthropic job cache and regenerate the summary. Cached zero job counts
+are automatically recollected. Failed collection falls back to recent nonzero
+history when available, retaining its collection date.
+
+Each Actions run uploads `collection-diagnostics-<run-id>-<attempt>` for 30 days,
+even on failure. Inspect `logs/gemini_responses/` for prompts, responses, token
+usage, and the Anthropic feed/classification audit. Console diagnostics show
+search queries, job totals, and previous-count deltas; changes over 50% emit a
+GitHub warning for review.
+
 ## License
 
 MIT License - see LICENSE file for details

@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-07T14:12:07.919991+00:00"
+    "last_updated": "2026-09-07T19:06:43.747968+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -19323,8 +19323,9 @@
       },
       "job_postings": {
         "Anthropic": {
-          "total_technical_jobs": 0,
-          "collection_date": "2026-09-07"
+          "total_technical_jobs": 322,
+          "collection_date": "2026-09-07",
+          "collection_method": "greenhouse_classified_ids"
         },
         "OpenAI": {
           "total_technical_jobs": 781,

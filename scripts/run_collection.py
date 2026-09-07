@@ -345,7 +345,31 @@ async def collect_single_job_posting_data(
         data = await with_timeout_logging(
             do_collect(), f"{company_name} jobs", position, prompt
         )
-        log(f"    ✓ Technical jobs: {data['total_technical_jobs']}")
+        snapshots = load_all_snapshots()
+        prior = next(
+            (
+                s["job_postings"][company_name]
+                for d, s in sorted(snapshots.items(), reverse=True)
+                if d < date.today().isoformat()
+                and company_name in s.get("job_postings", {})
+                and s["job_postings"][company_name].get("total_technical_jobs", 0) > 0
+            ),
+            None,
+        )
+        count = data["total_technical_jobs"]
+        log(
+            f"    ✓ {company_name} technical jobs: {count}; method={data.get('collection_method', 'google_search')}; date={data.get('collection_date')}"
+        )
+        if prior:
+            previous = prior["total_technical_jobs"]
+            pct = (count - previous) / previous * 100
+            log(
+                f"    [jobs] {company_name} previous={previous} current={count} change={pct:+.1f}%"
+            )
+            if abs(pct) > 50:
+                log(
+                    f"::warning title=Job count anomaly::{company_name} job count changed {pct:+.1f}% ({previous} to {count}); inspect collection diagnostics"
+                )
         return company_name, data
     except Exception as e:
         log(f"    ✗ Error collecting {company_name}: {e}")
@@ -355,17 +379,21 @@ async def collect_single_job_posting_data(
 async def collect_all_job_posting_data(
     collector: GeminiCollector,
     refresh: bool = False,
+    force_companies: set[str] | None = None,
 ) -> dict[str, dict[str, Any]]:
     """Collect job posting data for all AI labs concurrently.
 
     Args:
         collector: GeminiCollector instance
         refresh: Re-collect every lab, ignoring today's cached data
+        force_companies: Re-collect these labs even if cached today
 
     Returns:
         Dictionary mapping company name to job posting data
     """
     same_day_job_posting_data = {} if refresh else load_same_day_job_posting_data()
+    for company in force_companies or set():
+        same_day_job_posting_data.pop(company, None)
     results: list[tuple[str, dict[str, Any] | None]] = []
 
     for lab_info in AI_LABS:
@@ -660,13 +688,17 @@ def deepmind_long_term_change(current_jobs: int, snapshots: dict) -> dict:
             365,
             tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
             validate=lambda s: "DeepMind" in s.get("job_postings", {}),
-            preloaded_snapshots={d: s for d, s in snapshots.items() if d >= first_date.isoformat()},
+            preloaded_snapshots={
+                d: s for d, s in snapshots.items() if d >= first_date.isoformat()
+            },
         )
     baseline = (snapshot or {}).get("job_postings", {}).get("DeepMind")
     value = current_jobs - baseline["total_technical_jobs"] if baseline else None
     change = {
         "value": value,
-        "badge": JobsProcessor().classify_change(value) if value is not None else "neutral",
+        "badge": (
+            JobsProcessor().classify_change(value) if value is not None else "neutral"
+        ),
     }
     if temporary:
         change.update(
@@ -707,6 +739,11 @@ def find_recent_job_posting_data(
 
         if snapshot and company_name in snapshot.get("job_postings", {}):
             job_data = snapshot["job_postings"][company_name]
+            if job_data.get("total_technical_jobs", 0) <= 0:
+                log(
+                    f"  ⚠️  Ignoring unverified zero job history for {company_name} on {target_date}"
+                )
+                continue
             log(
                 f"  ⏪ Using {days_back}-day-old data for {company_name}: {job_data['total_technical_jobs']} jobs"
             )
@@ -840,13 +877,17 @@ def load_same_day_job_posting_data() -> dict[str, dict[str, Any]]:
 
     for company_name, company_data in companies.items():
         total_technical_jobs = company_data.get("current")
-        if total_technical_jobs is None:
+        if total_technical_jobs is None or total_technical_jobs <= 0:
+            log(
+                f"  ⚠️  Recollecting {company_name}: cached job count is missing or zero"
+            )
             continue
 
         same_day_data[company_name] = {
             "total_technical_jobs": total_technical_jobs,
             "collection_date": company_data.get("collection_date", ""),
             "source_url": company_data.get("source_url", ""),
+            "collection_method": company_data.get("collection_method", "google_search"),
         }
 
     return same_day_data
@@ -1253,7 +1294,9 @@ def build_metrics_structure(
             baseline_jobs = baseline_1yr.get("job_postings", {})
 
             if name == "DeepMind":
-                changes["1_year_ago"] = deepmind_long_term_change(current_jobs, all_snapshots)
+                changes["1_year_ago"] = deepmind_long_term_change(
+                    current_jobs, all_snapshots
+                )
             elif name in baseline_jobs:
                 historical_jobs = baseline_jobs[name]["total_technical_jobs"]
                 job_change = current_jobs - historical_jobs
@@ -1283,6 +1326,7 @@ def build_metrics_structure(
                 "current": current_jobs,
                 "collection_date": collection_date,
                 "source_url": job_data.get("source_url") or ai_lab_urls.get(name, ""),
+                "collection_method": job_data.get("collection_method", "google_search"),
                 "changes": changes,
             }
 
@@ -1516,6 +1560,7 @@ def save_daily_snapshot(
         snapshot["job_postings"][company_name] = {
             "total_technical_jobs": data["total_technical_jobs"],
             "collection_date": data.get("collection_date", ""),
+            "collection_method": data.get("collection_method", "google_search"),
         }
 
     # Save Indeed index
@@ -1553,7 +1598,7 @@ async def main_async():
         action="append",
         metavar="COMPANY",
         dest="force_companies",
-        help="Re-collect headcount for this company even if already collected today (repeatable)",
+        help="Re-collect headcount or AI lab jobs for this company even if already collected today (repeatable)",
     )
     parser.add_argument(
         "--refresh",
@@ -1619,7 +1664,7 @@ async def main_async():
 
     log("\n🎯 Collecting job posting data...")
     job_posting_data = await collect_all_job_posting_data(
-        gemini_collector, refresh=refresh
+        gemini_collector, refresh=refresh, force_companies=force_companies
     )
     log(f"  Collected {len(job_posting_data)}/3 companies")
 
@@ -1635,7 +1680,7 @@ async def main_async():
         spy_data=spy_data,
     )
 
-    ai_summary = None if refresh else load_same_day_summary()
+    ai_summary = None if refresh or force_companies else load_same_day_summary()
     if ai_summary is not None:
         log("\n📝 ⏪ Reusing same-day AI summary")
     else:
