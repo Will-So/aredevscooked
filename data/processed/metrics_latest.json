@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-09-07T19:06:43.747968+00:00",
+    "last_updated": "2026-09-07T19:58:33.591872+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -35,7 +35,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 223889,
-              "baseline_date": "2026-08-08"
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -63,12 +63,10 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": null,
+              "pct": null,
               "badge": "neutral",
-              "source_url": "",
-              "baseline_headcount": 97824,
-              "baseline_date": "2026-08-08"
+              "source_url": ""
             }
           }
         },
@@ -96,12 +94,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 3100,
+              "pct": 0.88,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 356700,
-              "baseline_date": "2026-08-08"
+              "baseline_headcount": 353600,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -129,12 +127,12 @@
               "baseline_date": "2022-06-30"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -532,
+              "pct": -0.16,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 328062,
-              "baseline_date": "2026-08-08"
+              "baseline_headcount": 328594,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -162,12 +160,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 12000,
+              "pct": 2.06,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 593798,
-              "baseline_date": "2026-08-08"
+              "baseline_headcount": 581798,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -200,7 +198,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 146760,
-              "baseline_date": "2026-08-08"
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -233,7 +231,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 243044,
-              "baseline_date": "2026-08-08"
+              "baseline_date": "2026-07-21"
             }
           }
         }
@@ -269,12 +267,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 2800,
+              "pct": 1.27,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 223000,
-              "baseline_date": "2026-08-08"
+              "baseline_headcount": 220200,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -304,12 +302,12 @@
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral",
-              "source_url": "https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-First-Quarter-2023-Results-2023.pdf",
-              "baseline_headcount": 75472,
-              "baseline_date": "2026-08-08"
+              "value": 5486,
+              "pct": 7.84,
+              "badge": "strong",
+              "source_url": "",
+              "baseline_headcount": 69986,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -337,12 +335,12 @@
               "baseline_date": "2023-09-30"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": 1185,
+              "pct": 0.72,
               "badge": "neutral",
               "source_url": "",
-              "baseline_headcount": 166000,
-              "baseline_date": "2026-08-08"
+              "baseline_headcount": 164815,
+              "baseline_date": "2026-07-21"
             }
           }
         },
@@ -408,7 +406,7 @@
               "badge": "neutral",
               "source_url": "",
               "baseline_headcount": 42000,
-              "baseline_date": "2026-08-08"
+              "baseline_date": "2026-07-21"
             }
           }
         }
@@ -477,19 +475,19 @@
     }
   },
   "stock_index": {
-    "current_value": 67.63,
+    "current_value": 68.19,
     "baseline_date": "2025-09-07",
     "changes": {
-      "30_day": -21.79,
-      "1_year": -32.37
+      "30_day": -21.14,
+      "1_year": -31.81
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1282.8,
+        "current_price": 1293.4,
         "weight": 0.14285714285714285,
-        "change_30_day": -20.71,
-        "change_1_year": -29.94
+        "change_30_day": -20.06,
+        "change_1_year": -29.37
       },
       "Cognizant": {
         "ticker": "CTSH",
@@ -507,17 +505,17 @@
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2270.0,
+        "current_price": 2304.0,
         "weight": 0.14285714285714285,
-        "change_30_day": -28.23,
-        "change_1_year": -43.66
+        "change_30_day": -27.16,
+        "change_1_year": -42.81
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1564.0,
+        "current_price": 1596.9,
         "weight": 0.14285714285714285,
-        "change_30_day": 2.87,
-        "change_1_year": -5.27
+        "change_30_day": 5.03,
+        "change_1_year": -3.27
       },
       "Wipro": {
         "ticker": "WIT",
@@ -540,11 +538,11 @@
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -35.75,
+          "pct": -35.1,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -62.31,
+          "pct": -61.75,
           "badge": "collapsing"
         }
       },

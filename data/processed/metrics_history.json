@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-07T19:06:43.747968+00:00"
+    "last_updated": "2026-09-07T19:58:33.600646+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -19220,10 +19220,10 @@
     },
     "2026-09-07": {
       "date": "2026-09-07",
-      "timestamp": "2026-09-07T14:12:07.919961+00:00",
+      "timestamp": "2026-09-07T19:58:33.600620+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1282.8,
+          "price": 1293.4,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
@@ -19235,11 +19235,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2270.0,
+          "price": 2304.0,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1564.0,
+          "price": 1596.9,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -19256,49 +19256,49 @@
           "headcount": 223889,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 97824,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 356700,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328062,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 593798,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 146760,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Wipro": {
           "headcount": 243044,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 223000,
           "data_date": "2026-06-30",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 75472,
@@ -19306,19 +19306,25 @@
           "source_urls": [
             "https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-First-Quarter-2023-Results-2023.pdf"
           ],
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 166000,
           "data_date": "2025-09-27",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
+        },
+        "Amazon": {
+          "headcount": 330000,
+          "data_date": "2026-06-30",
+          "source_urls": [],
+          "confidence": "unknown"
         },
         "NVIDIA": {
           "headcount": 42000,
           "data_date": "2026-01-25",
           "source_urls": [],
-          "confidence": "high"
+          "confidence": "unknown"
         }
       },
       "job_postings": {
@@ -19329,11 +19335,13 @@
         },
         "OpenAI": {
           "total_technical_jobs": 781,
-          "collection_date": "2026-09-07"
+          "collection_date": "2026-09-07",
+          "collection_method": "google_search"
         },
         "DeepMind": {
           "total_technical_jobs": 3,
-          "collection_date": "2026-03-07"
+          "collection_date": "2026-03-07",
+          "collection_method": "google_search"
         }
       },
       "indeed_index": {
