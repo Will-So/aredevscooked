@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-08T01:13:19.125762+00:00"
+    "last_updated": "2026-09-08T12:49:15.916761+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -19355,10 +19355,10 @@
     },
     "2026-09-08": {
       "date": "2026-09-08",
-      "timestamp": "2026-09-08T01:13:19.125723+00:00",
+      "timestamp": "2026-09-08T12:49:15.916733+00:00",
       "stock_prices": {
         "HCLTech": {
-          "price": 1282.8,
+          "price": 1277.0,
           "ticker": "HCLTECH.NS"
         },
         "Cognizant": {
@@ -19370,11 +19370,11 @@
           "ticker": "INFY"
         },
         "TCS": {
-          "price": 2270.0,
+          "price": 2255.5,
           "ticker": "TCS.NS"
         },
         "Tech Mahindra": {
-          "price": 1564.0,
+          "price": 1559.0,
           "ticker": "TECHM.NS"
         },
         "Wipro": {
@@ -19394,7 +19394,7 @@
             "https://www.hcltech.com/investor-relations/financial-results"
           ],
           "source_url": "https://www.hcltech.com/investor-relations/financial-results",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 87886,
@@ -19403,7 +19403,7 @@
             "https://www.moneycontrol.com/news/business/earnings/ltms-net-profit-jumps-17-to-rs-1-466-crore-in-q1-revenue-rises-18-12759901.html"
           ],
           "source_url": "https://www.moneycontrol.com/news/business/earnings/ltms-net-profit-jumps-17-to-rs-1-466-crore-in-q1-revenue-rises-18-12759901.html",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 356700,
@@ -19412,7 +19412,7 @@
             "https://investors.cognizant.com"
           ],
           "source_url": "https://investors.cognizant.com",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328062,
@@ -19421,7 +19421,7 @@
             "https://www.infosys.com/investor/reports-filings/quarterly-results/2026-2027/q1/documents/fact-sheet.pdf"
           ],
           "source_url": "https://www.infosys.com/investor/reports-filings/quarterly-results/2026-2027/q1/documents/fact-sheet.pdf",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 593798,
@@ -19430,7 +19430,7 @@
             "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_MWknh6V0P9kLoGbbv9ChGVnqjDm6qXtHqCHP8JIuOx-7eUTBVNWbg3yo6pCypvvB3pgw0s8FiZEUa0YLZAW-LrqH37qg8PSQPsGKbAw04pkMJ2ZFX7_tH581C8WCoBISq0dtY5-kKx-YPEhugb7lJrqzt7vEbQfs2KKoKh8raOCPGaQF7D_5-WKhvA=="
           ],
           "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_MWknh6V0P9kLoGbbv9ChGVnqjDm6qXtHqCHP8JIuOx-7eUTBVNWbg3yo6pCypvvB3pgw0s8FiZEUa0YLZAW-LrqH37qg8PSQPsGKbAw04pkMJ2ZFX7_tH581C8WCoBISq0dtY5-kKx-YPEhugb7lJrqzt7vEbQfs2KKoKh8raOCPGaQF7D_5-WKhvA==",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 146760,
@@ -19439,7 +19439,7 @@
             "https://www.techmahindra.com/insights/press-releases/techmahindra-q1-fy27-results/"
           ],
           "source_url": "https://www.techmahindra.com/insights/press-releases/techmahindra-q1-fy27-results/",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Wipro": {
           "headcount": 243044,
@@ -19448,7 +19448,7 @@
             "https://www.peoplematters.in/article/strategic-HR/wipro-adds-888-employees-attrition-stays-below-14-47021"
           ],
           "source_url": "https://www.peoplematters.in/article/strategic-HR/wipro-adds-888-employees-attrition-stays-below-14-47021",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 223000,
@@ -19457,7 +19457,7 @@
             "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/26000021/msft-20260630.htm"
           ],
           "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/26000021/msft-20260630.htm",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 75472,
@@ -19466,7 +19466,7 @@
             "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
           ],
           "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 166000,
@@ -19475,7 +19475,7 @@
             "https://www.sec.gov/edgar/browse/?CIK=320193"
           ],
           "source_url": "https://www.sec.gov/edgar/browse/?CIK=320193",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Amazon": {
           "headcount": 320000,
@@ -19484,7 +19484,7 @@
             "https://s2.q4cdn.com/299287126/files/doc_news/archive/Amazon.com-Announces-Second-Quarter-2026-Results.html"
           ],
           "source_url": "https://s2.q4cdn.com/299287126/files/doc_news/archive/Amazon.com-Announces-Second-Quarter-2026-Results.html",
-          "confidence": "medium"
+          "confidence": "unknown"
         },
         "NVIDIA": {
           "headcount": 42000,
@@ -19493,7 +19493,7 @@
             "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
           ],
           "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
-          "confidence": "high"
+          "confidence": "unknown"
         }
       },
       "job_postings": {
@@ -19503,6 +19503,20 @@
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 781,
+          "collection_date": "2026-09-07",
+          "source_url": "https://openai.com/careers/search/",
+          "additional_source_urls": [],
+          "collection_method": "google_search"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 3,
+          "collection_date": "2026-03-07",
+          "source_url": "https://job-boards.greenhouse.io/deepmind",
+          "additional_source_urls": [],
+          "collection_method": "google_search"
         }
       },
       "indeed_index": {
