@@ -2,7 +2,7 @@
 
 import json
 import pytest
-from datetime import date
+from datetime import date, datetime, timezone
 from unittest.mock import Mock, patch, MagicMock
 from aredevscooked.collectors.gemini_collector import GeminiCollector
 from aredevscooked.config import GEMINI_CONFIG
@@ -240,7 +240,8 @@ def test_collect_job_postings_returns_dict(collector, mock_gemini_response, mock
   "total_technical_jobs": 45,
   "job_titles": ["Senior ML Engineer", "Research Scientist"],
   "collection_date": "2025-12-26",
-  "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs"
+  "source_url": "https://boards.greenhouse.io/v1/boards/deepmind/jobs",
+  "additional_source_urls": ["https://example.com/unverified"]
 }
 ```"""
     mock_generate = mocker.patch.object(collector.client.models, "generate_content")
@@ -261,6 +262,8 @@ def test_collect_job_postings_returns_dict(collector, mock_gemini_response, mock
     assert isinstance(result, dict)
     assert "company" in result
     assert "total_technical_jobs" in result
+    assert result["source_url"] == "https://job-boards.greenhouse.io/deepmind"
+    assert result["additional_source_urls"] == []
 
 
 def test_collect_job_postings_parses_json(collector, mock_gemini_response, mocker):
@@ -376,7 +379,9 @@ def test_anthropic_counts_ids_and_requires_complete_classification(
         )
         assert result["total_technical_jobs"] == 1
         assert result["job_titles"] == ["Research Engineer"]
-        assert result["collection_date"] == date.today().isoformat()
+        assert (
+            result["collection_date"] == datetime.now(timezone.utc).date().isoformat()
+        )
         assert list(tmp_path.glob("*_job_audit.json"))
 
 
@@ -534,3 +539,35 @@ def test_extract_json_raises_on_invalid_json(collector):
     text = "not valid json"
     with pytest.raises(ValueError, match="JSON"):
         collector._extract_json(text)
+
+
+def test_period_citations_preserve_selected_grounded_sources(collector):
+    payload = {
+        "current": {"source_url": "https://example.com/current"},
+        "30_days_ago": {"source_url": "https://example.com/current"},
+        "one_year_ago": {"source_url": "https://example.com/year"},
+        "q1_2023": {"headcount": 1000},
+    }
+    with patch.object(
+        collector,
+        "_extract_grounding_urls",
+        return_value=[
+            "https://example.com/irrelevant",
+            "https://example.com/year",
+            "https://example.com/current",
+        ],
+    ):
+        result = collector._extract_json(json.dumps(payload), Mock())
+    assert result["current"]["source_url"] == "https://example.com/current"
+    assert result["30_days_ago"]["source_url"] == "https://example.com/current"
+    assert result["one_year_ago"]["source_url"] == "https://example.com/year"
+    assert result["q1_2023"]["source_url"] == ""
+
+
+def test_ungrounded_period_citation_is_not_replaced_with_unrelated_result(collector):
+    payload = {"current": {"source_url": "https://invented.example/report"}}
+    with patch.object(
+        collector, "_extract_grounding_urls", return_value=["https://example.com/other"]
+    ):
+        result = collector._extract_json(json.dumps(payload), Mock())
+    assert result["current"]["source_url"] == ""

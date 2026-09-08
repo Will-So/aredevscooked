@@ -7,6 +7,7 @@ from unittest.mock import Mock, patch
 from scripts.run_collection import (
     HISTORY_30_DAY_TOLERANCE_DAYS,
     deepmind_long_term_change,
+    researched_job_change,
     collect_all_stock_data,
     collect_all_headcount_data,
     collect_all_job_posting_data,
@@ -45,6 +46,74 @@ def test_deepmind_baseline_switches_to_rolling_year(mocker, today, expected, lab
 
 def test_deepmind_missing_baseline_does_not_invent_value():
     assert deepmind_long_term_change(6, {})["value"] is None
+
+
+def test_researched_job_change_uses_nearest_cited_baseline(mocker):
+    mocked_date = mocker.patch("scripts.run_collection.date", wraps=date)
+    mocked_date.today.return_value = date(2026, 9, 7)
+    research = {
+        "records": [
+            {
+                "company": "OpenAI",
+                "date": "2026-08-07",
+                "source_url": "https://example.com/archive",
+                "total_technical_jobs": 446,
+                "is_estimate": True,
+                "notes": "Classified archived job titles.",
+            }
+        ]
+    }
+
+    result = researched_job_change(781, "OpenAI", 30, {}, research)
+
+    assert result["value"] == 335
+    assert result["baseline_jobs"] == 446
+    assert result["baseline_date"] == "2026-08-07"
+    assert result["source_url"] == "https://example.com/archive"
+    assert result["is_estimate"] is True
+
+
+def test_researched_job_change_cites_partial_archive_without_inventing_count(mocker):
+    mocked_date = mocker.patch("scripts.run_collection.date", wraps=date)
+    mocked_date.today.return_value = date(2026, 9, 7)
+    research = {
+        "records": [
+            {
+                "company": "DeepMind",
+                "date": "2025-09-06",
+                "source_url": "https://example.com/partial-archive",
+                "total_technical_jobs": None,
+                "notes": "The archive is incomplete.",
+            }
+        ]
+    }
+
+    result = researched_job_change(3, "DeepMind", 365, {}, research)
+
+    assert result["value"] is None
+    assert result["baseline_jobs"] is None
+    assert result["source_url"] == "https://example.com/partial-archive"
+    assert "incomplete" in result["tooltip"]
+
+
+def test_researched_job_change_rejects_distant_baseline(mocker):
+    mocked_date = mocker.patch("scripts.run_collection.date", wraps=date)
+    mocked_date.today.return_value = date(2026, 9, 7)
+    research = {
+        "records": [
+            {
+                "company": "Anthropic",
+                "date": "2024-12-26",
+                "source_url": "https://example.com/old",
+                "total_technical_jobs": 40,
+            }
+        ]
+    }
+
+    result = researched_job_change(322, "Anthropic", 365, {}, research)
+
+    assert result["value"] is None
+    assert result["source_url"] == ""
 
 
 @pytest.mark.asyncio

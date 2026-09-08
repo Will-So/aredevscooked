@@ -678,3 +678,14 @@ footer a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--phosphor-dim);
 }
+
+.period-citations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.65rem;
+    width: 100%;
+    font-size: 0.75rem;
+}
+
+.period-citations a { font-size: inherit; }
+.citation-missing { color: var(--text-secondary, #9ca3af); }

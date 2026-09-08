@@ -87,10 +87,41 @@
         }
     }
 
+    function escapeAttribute(value) {
+        return String(value).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+            .replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function renderCitations(data) {
+        const changes = data.changes || {};
+        const periods = [
+            [1, 'Current', data],
+            [2, '30 days ago', changes['30_days_ago']],
+            [3, '1 year ago', changes['1_year_ago']],
+        ];
+        if (changes.q1_2023) periods.push([4, 'Q1 2023', changes.q1_2023]);
+        const seen = new Set();
+        const link = (number, label, url, detail = '') => {
+            const description = `${label}${detail ? ` — ${detail}` : ''}`;
+            if (!/^https?:\/\//i.test(url || '')) {
+                return `<span class="citation-missing" tabindex="0" title="${escapeAttribute(description)}: source unavailable" aria-label="Citation ${number}: ${escapeAttribute(description)}: source unavailable">[${number}]?</span>`;
+            }
+            seen.add(url);
+            return `<a href="${escapeAttribute(url)}" target="_blank" rel="noopener" title="${escapeAttribute(description)} source" aria-label="Citation ${number}: ${escapeAttribute(description)}">[${number}]</a>`;
+        };
+        const links = periods.map(([number, label, period]) => link(number, label, period?.source_url, period?.tooltip || period?.baseline_date || period?.data_date || period?.collection_date));
+        let next = periods.length + 1;
+        for (const [, label, period] of periods) {
+            for (const url of period?.additional_source_urls || []) {
+                if (!seen.has(url) && /^https?:\/\//i.test(url)) links.push(link(next++, `${label} supporting source`, url));
+            }
+        }
+        return `<span class="citation-links period-citations"><span>Sources:</span>${links.join('')}</span>`;
+    }
+
     function renderHeadcountCompany(companyName, data) {
         const current = formatNumber(data.current);
         const dataDate = data.data_date ? `as of ${data.data_date}` : '';
-        const sourceUrls = data.source_urls || [];
 
         let changesHTML = '';
         if (data.changes && Object.keys(data.changes).length > 0) {
@@ -125,12 +156,7 @@
             changesHTML += '</div>';
         }
 
-        // Build citation links
-        let citationHTML = '';
-        if (sourceUrls.length > 0) {
-            const links = sourceUrls.map((url, i) => `<a href="${url}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(' ');
-            citationHTML = `<span class="citation-links">${links}</span>`;
-        }
+        const citationHTML = renderCitations(data);
 
         return `
             <div class="company-item">
@@ -148,7 +174,6 @@
     function renderJobPostingCompany(companyName, data) {
         const current = formatNumber(data.current);
         const collectionDate = data.collection_date ? `as of ${data.collection_date}` : '';
-        const sourceUrl = data.source_url || '';
 
         let changesHTML = '';
         if (data.changes && Object.keys(data.changes).length > 0) {
@@ -167,7 +192,7 @@
                     `;
                 } else {
                     const valueClass = getChangeClass(change.value);
-                    const valueText = change.value >= 0 ? `+${change.value}` : change.value;
+                    const valueText = `${change.is_estimate ? '≈ ' : ''}${change.value >= 0 ? '+' : ''}${change.value}`;
 
                     changesHTML += `
                         <div class="change-item">
@@ -181,11 +206,7 @@
             changesHTML += '</div>';
         }
 
-        // Build citation link
-        let citationHTML = '';
-        if (sourceUrl) {
-            citationHTML = `<span class="citation-links"><a href="${sourceUrl}" target="_blank" rel="noopener">[source]</a></span>`;
-        }
+        const citationHTML = renderCitations(data);
 
         return `
             <div class="company-item">

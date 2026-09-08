@@ -449,6 +449,13 @@ class GeminiCollector:
                 f"Unverified zero job count for {company_name}; manual verification required"
             )
         data["collection_date"] = datetime.now(timezone.utc).date().isoformat()
+        data["source_url"] = jobs_url
+        grounded_urls = data.get("source_urls", [])
+        data["additional_source_urls"] = [
+            url
+            for url in data.get("additional_source_urls", [])
+            if url in grounded_urls and url != jobs_url
+        ]
 
         return data
 
@@ -658,16 +665,21 @@ class GeminiCollector:
         except json.JSONDecodeError as e:
             raise ValueError(f"Invalid JSON in response: {e}")
 
-        # Replace all source URLs with actual grounding URLs if available
-        # This prevents the model from hallucinating URLs
+        # Search results are not interchangeable citations. Keep each period's
+        # selected evidence, but accept only URLs returned by the grounded search.
         if response:
             grounding_urls = self._extract_grounding_urls(response)
             if grounding_urls:
                 data["source_urls"] = grounding_urls
-                # Also replace nested source_url fields (e.g., in current, one_year_ago, q1_2023)
-                first_url = grounding_urls[0]
                 for key in ["current", "30_days_ago", "one_year_ago", "q1_2023"]:
-                    if key in data and isinstance(data[key], dict):
-                        data[key]["source_url"] = first_url
+                    period = data.get(key)
+                    if isinstance(period, dict):
+                        if period.get("source_url") not in grounding_urls:
+                            period["source_url"] = ""
+                        period["additional_source_urls"] = [
+                            url
+                            for url in period.get("additional_source_urls", [])
+                            if url in grounding_urls and url != period.get("source_url")
+                        ]
 
         return data

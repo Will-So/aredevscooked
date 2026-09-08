@@ -54,21 +54,29 @@ Return ONLY a JSON object with this exact structure:
   "company": "{company_name}",
   "current": {{
     "headcount": 0,
+    "source_url": "Direct URL of the best supporting source for this period",
+    "additional_source_urls": [],
     "as_of_date": "YYYY-MM-DD",
     "notes": "e.g., 'Q3 2024 10-Q filing minus 5k Jan 2025 layoffs'"
   }},
   "30_days_ago": {{
     "headcount": 0,
+    "source_url": "Direct URL of the best supporting source for this period",
+    "additional_source_urls": [],
     "as_of_date": "{thirty_days_ago}",
     "notes": "e.g., 'Same base as current: Q1 2026 77,986 — layoffs announced after {thirty_days_ago} not subtracted'"
   }},
   "one_year_ago": {{
     "headcount": 0,
+    "source_url": "Direct URL of the best supporting source for this period",
+    "additional_source_urls": [],
     "as_of_date": "YYYY-MM-DD",
     "notes": "e.g., 'Q4 2023 earnings report'"
   }},
   "q1_2023": {{
     "headcount": 0,
+    "source_url": "Direct URL of the best supporting source for this period",
+    "additional_source_urls": [],
     "as_of_date": "YYYY-MM-DD",
     "notes": "e.g., 'FY2023 10-K filing'"
   }},
@@ -76,6 +84,8 @@ Return ONLY a JSON object with this exact structure:
 }}
 
 RULES:
+- Every non-null period MUST include its own source_url. Prefer a dated official earnings release or SEC filing that actually states the figure; otherwise use a reputable dated report. Never substitute an unrelated search result or a current page for historical evidence.
+- Use additional_source_urls only when needed to support adjustments or estimates. Reuse a URL across periods only when that document supports both figures. If no supporting source can be found, return null for the period.
 - headcount must be integers between 1,000 and 2,000,000
 - as_of_date is when the headcount number is valid (after any layoff adjustments)
 - notes should explain the source and any adjustments made (e.g., layoffs subtracted)
@@ -125,11 +135,13 @@ Return ONLY a JSON object with this exact structure:
   "company": "{company_name}",
   "total_technical_jobs": 0,
   "job_titles": ["Job Title 1", "Job Title 2", "..."],
-  "collection_date": "YYYY-MM-DD"
+  "collection_date": "YYYY-MM-DD",
+  "additional_source_urls": []
 }}
 
 Replace placeholder values with actual data. Include a representative sample of job titles (up to 10).
-Total technical jobs should be a non-negative integer."""
+Total technical jobs should be a non-negative integer.
+Use additional_source_urls only when another source is necessary to support the count."""
 
 
 def create_stock_data_prompt(company_name: str, ticker: str, target_date: date) -> str:

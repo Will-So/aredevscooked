@@ -279,7 +279,7 @@
         "Meta": {
           "current": 75472,
           "data_date": "2026-06-30",
-          "source_url": "https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-First-Quarter-2023-Results-2023.pdf",
+          "source_url": "",
           "notes": "Q2 2026 Form 10-Q filing; includes approximately 8,000 employees impacted by the May 2026 headcount reduction who were still reflected in the headcount at quarter-end.",
           "source_urls": [
             "https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-First-Quarter-2023-Results-2023.pdf"
@@ -289,7 +289,7 @@
               "value": -3233,
               "pct": -4.11,
               "badge": "neutral",
-              "source_url": "https://s21.q4cdn.com/399680738/files/doc_news/Meta-Reports-First-Quarter-2023-Results-2023.pdf",
+              "source_url": "",
               "baseline_headcount": 78705,
               "baseline_date": "2025-09-30"
             },
@@ -424,13 +424,23 @@
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "collection_method": "greenhouse_classified_ids",
           "changes": {
-            "1_year_ago": {
-              "value": 282,
-              "badge": "strong"
-            },
             "30_days_ago": {
-              "value": 108,
-              "badge": "strong"
+              "value": 104,
+              "badge": "strong",
+              "baseline_jobs": 218,
+              "baseline_date": "2026-08-09",
+              "source_url": "https://web.archive.org/web/20260809133054/https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
+              "is_estimate": true,
+              "tooltip": "Baseline: 2026-08-09. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
+            },
+            "1_year_ago": {
+              "value": null,
+              "badge": "neutral",
+              "baseline_jobs": null,
+              "baseline_date": "2025-09-07",
+              "source_url": "https://web.archive.org/web/20250907201520/https://job-boards.greenhouse.io/anthropic",
+              "is_estimate": false,
+              "tooltip": "Baseline: 2025-09-07. Archived board reports 167 total roles but contains only 50 listings. Remaining pages have different capture dates; a complete technical count could not be verified."
             }
           }
         },
@@ -440,13 +450,23 @@
           "source_url": "https://openai.com/careers/search/",
           "collection_method": "google_search",
           "changes": {
-            "1_year_ago": {
-              "value": 733,
-              "badge": "strong"
-            },
             "30_days_ago": {
-              "value": 276,
-              "badge": "strong"
+              "value": 335,
+              "badge": "strong",
+              "baseline_jobs": 446,
+              "baseline_date": "2026-08-07",
+              "source_url": "https://web.archive.org/web/20260807141931/https://api.ashbyhq.com/posting-api/job-board/openai",
+              "is_estimate": true,
+              "tooltip": "Baseline: 2026-08-07. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
+            },
+            "1_year_ago": {
+              "value": 583,
+              "badge": "strong",
+              "baseline_jobs": 198,
+              "baseline_date": "2025-09-06",
+              "source_url": "https://web.archive.org/web/20250906010425/https://openai.com/careers/search/",
+              "is_estimate": true,
+              "tooltip": "Baseline: 2025-09-06. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             }
           }
         },
@@ -456,22 +476,29 @@
           "source_url": "https://job-boards.greenhouse.io/deepmind",
           "collection_method": "google_search",
           "changes": {
-            "1_year_ago": {
-              "value": -69,
-              "badge": "collapsing",
-              "label": "Since Jan 6, 2026",
-              "tooltip": "We do not have DeepMind data from one year ago, so this compares with January 6, 2026. It will switch to a one-year comparison once a full year of history is available.",
-              "baseline_date": "2026-01-06"
-            },
             "30_days_ago": {
-              "value": -10,
-              "badge": "neutral"
+              "value": null,
+              "badge": "neutral",
+              "baseline_jobs": null,
+              "baseline_date": "",
+              "source_url": "",
+              "is_estimate": false,
+              "tooltip": "No cited technical-job count found within seven days of the target date."
+            },
+            "1_year_ago": {
+              "value": null,
+              "badge": "neutral",
+              "baseline_jobs": null,
+              "baseline_date": "2025-09-06",
+              "source_url": "https://web.archive.org/web/20250906191804/https://job-boards.greenhouse.io/deepmind",
+              "is_estimate": false,
+              "tooltip": "Baseline: 2025-09-06. Archived board reports 67 total roles but contains only 50 listings. Page two was not found; a complete technical count could not be verified."
             }
           }
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 1156.8181818181818
+      "net_change_pct_yoy": 294.44444444444446
     }
   },
   "stock_index": {

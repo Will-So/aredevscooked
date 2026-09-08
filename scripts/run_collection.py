@@ -535,6 +535,9 @@ def calculate_headcount_changes(
                         "pct": round(pct_change, 2),
                         "badge": badge,
                         "source_url": period_data.get("source_url", ""),
+                        "additional_source_urls": period_data.get(
+                            "additional_source_urls", []
+                        ),
                         "baseline_headcount": baseline_value,
                         "baseline_date": period_data.get("as_of_date", ""),
                     }
@@ -575,7 +578,7 @@ def calculate_headcount_changes(
         company_snapshot = history_snapshot_30d.get("headcounts", {}).get(company_name)
         headcount_30d = company_snapshot.get("headcount") if company_snapshot else None
         snapshot_date = history_snapshot_30d.get("date", "") if headcount_30d else ""
-        source_url_30d = ""
+        source_url_30d = (company_snapshot or {}).get("source_url", "")
         source = "history"
     else:
         headcount_30d = None
@@ -605,6 +608,11 @@ def calculate_headcount_changes(
                 "pct": round(pct_change, 2),
                 "badge": badge,
                 "source_url": source_url_30d,
+                "additional_source_urls": (
+                    (gemini_30d or {}).get("additional_source_urls", [])
+                    if source == "gemini"
+                    else []
+                ),
                 "baseline_headcount": headcount_30d,
                 "baseline_date": snapshot_date,
             }
@@ -700,6 +708,7 @@ def deepmind_long_term_change(current_jobs: int, snapshots: dict) -> dict:
             JobsProcessor().classify_change(value) if value is not None else "neutral"
         ),
     }
+    change["source_url"] = (baseline or {}).get("source_url", "")
     if temporary:
         change.update(
             label="Since Jan 6, 2026",
@@ -707,6 +716,64 @@ def deepmind_long_term_change(current_jobs: int, snapshots: dict) -> dict:
             baseline_date=first_date.isoformat(),
         )
     return change
+
+
+def researched_job_change(
+    current_jobs: int,
+    company: str,
+    days_ago: int,
+    snapshots: dict,
+    research: dict | None = None,
+) -> dict:
+    """Use dated, cited evidence within seven days of the comparison target."""
+    if research is None:
+        path = (
+            Path(__file__).resolve().parents[1]
+            / "data/processed/job_posting_baselines.json"
+        )
+        research = json.loads(path.read_text()) if path.exists() else {}
+    target = date.today() - timedelta(days=days_ago)
+    candidates = [
+        record
+        for record in research.get("records", [])
+        if record.get("company") == company
+    ]
+    for snapshot_date, snapshot in snapshots.items():
+        record = snapshot.get("job_postings", {}).get(company, {})
+        if record.get("source_url"):
+            candidates.append(
+                {**record, "date": record.get("collection_date") or snapshot_date}
+            )
+    dated = []
+    for record in candidates:
+        try:
+            distance = abs((date.fromisoformat(record["date"]) - target).days)
+        except (KeyError, TypeError, ValueError):
+            continue
+        if distance <= 7 and record.get("source_url"):
+            dated.append((distance, record))
+    # Prefer a complete count, then the closest date. Partial archives are still
+    # useful citations for an explicitly unavailable historical technical count.
+    dated.sort(key=lambda item: (item[1].get("total_technical_jobs") is None, item[0]))
+    baseline = dated[0][1] if dated else {}
+    count = baseline.get("total_technical_jobs")
+    value = current_jobs - count if count is not None else None
+    notes = baseline.get(
+        "notes",
+        "No cited technical-job count found within seven days of the target date.",
+    )
+    baseline_date = baseline.get("date", "")
+    return {
+        "value": value,
+        "badge": (
+            JobsProcessor().classify_change(value) if value is not None else "neutral"
+        ),
+        "baseline_jobs": count,
+        "baseline_date": baseline_date,
+        "source_url": baseline.get("source_url", ""),
+        "is_estimate": baseline.get("is_estimate", False),
+        "tooltip": f"Baseline: {baseline_date}. {notes}" if baseline_date else notes,
+    }
 
 
 def find_recent_job_posting_data(
@@ -843,6 +910,9 @@ def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
                     "headcount": current_headcount,
                     "as_of_date": company_data.get("data_date", ""),
                     "source_url": company_data.get("source_url", ""),
+                    "additional_source_urls": company_data.get(
+                        "additional_source_urls", []
+                    ),
                     "notes": company_data.get("notes", ""),
                 },
             }
@@ -859,6 +929,9 @@ def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
                         "headcount": baseline_headcount,
                         "as_of_date": change.get("baseline_date", ""),
                         "source_url": change.get("source_url", ""),
+                        "additional_source_urls": change.get(
+                            "additional_source_urls", []
+                        ),
                     }
 
             same_day_data[company_name] = reconstructed
@@ -997,6 +1070,9 @@ def build_metrics_structure(
                 "current": current_headcount,
                 "data_date": company_headcount_data.get("data_date", ""),
                 "source_url": current_source_url,
+                "additional_source_urls": (
+                    company_headcount_data.get("current") or {}
+                ).get("additional_source_urls", []),
                 "notes": current_notes,
                 "source_urls": company_headcount_data.get("source_urls", []),
                 "changes": changes,
@@ -1227,6 +1303,9 @@ def build_metrics_structure(
                 "current": current_headcount,
                 "data_date": company_headcount_data.get("data_date", ""),
                 "source_url": current_source_url,
+                "additional_source_urls": (
+                    company_headcount_data.get("current") or {}
+                ).get("additional_source_urls", []),
                 "notes": current_notes,
                 "source_urls": company_headcount_data.get("source_urls", []),
                 "changes": changes,
@@ -1287,73 +1366,37 @@ def build_metrics_structure(
         if job_data:
             current_jobs = job_data["total_technical_jobs"]
             collection_date = job_data.get("collection_date", date.today().isoformat())
-            changes = {}
-
-            # Try to get historical data from baselines (1_year_ago = Dec 26, 2024)
-            baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
-            baseline_jobs = baseline_1yr.get("job_postings", {})
-
-            if name == "DeepMind":
-                changes["1_year_ago"] = deepmind_long_term_change(
-                    current_jobs, all_snapshots
-                )
-            elif name in baseline_jobs:
-                historical_jobs = baseline_jobs[name]["total_technical_jobs"]
-                job_change = current_jobs - historical_jobs
-                badge = jobs_processor.classify_change(job_change)
-                changes["1_year_ago"] = {"value": job_change, "badge": badge}
-            else:
-                # No baseline data available for 1 year ago
-                changes["1_year_ago"] = {"value": None, "badge": "neutral"}
-
-            # Try to get historical snapshots from metrics_history.json for 30 days
-            snapshot = load_history_snapshot(
-                30,
-                tolerance_days=HISTORY_30_DAY_TOLERANCE_DAYS,
-                validate=lambda s, n=name: n in s.get("job_postings", {}),
-                preloaded_snapshots=all_snapshots,
-            )
-            if snapshot and name in snapshot.get("job_postings", {}):
-                historical_jobs = snapshot["job_postings"][name]["total_technical_jobs"]
-                job_change = current_jobs - historical_jobs
-                badge = jobs_processor.classify_change(job_change)
-                changes["30_days_ago"] = {"value": job_change, "badge": badge}
-            else:
-                # No 30-day snapshot available
-                changes["30_days_ago"] = {"value": None, "badge": "neutral"}
+            changes = {
+                "30_days_ago": researched_job_change(
+                    current_jobs, name, 30, all_snapshots
+                ),
+                "1_year_ago": researched_job_change(
+                    current_jobs, name, 365, all_snapshots
+                ),
+            }
 
             high_end_job_companies[name] = {
                 "current": current_jobs,
                 "collection_date": collection_date,
                 "source_url": job_data.get("source_url") or ai_lab_urls.get(name, ""),
+                "additional_source_urls": job_data.get("additional_source_urls", []),
                 "collection_method": job_data.get("collection_method", "google_search"),
                 "changes": changes,
             }
 
-    # Calculate net jobs YoY percentage and total change
-    total_current_jobs = sum(
-        data["current"] for data in high_end_job_companies.values()
+    # Compare only companies with a dated year-ago baseline.
+    comparable = [
+        data["changes"]["1_year_ago"]
+        for data in high_end_job_companies.values()
+        if data["changes"]["1_year_ago"].get("baseline_jobs") is not None
+    ]
+    total_baseline_jobs = sum(change["baseline_jobs"] for change in comparable)
+    total_job_change_yoy = sum(change["value"] for change in comparable)
+    net_change_pct_yoy = (
+        total_job_change_yoy / total_baseline_jobs * 100
+        if total_baseline_jobs > 0
+        else None
     )
-
-    net_change_pct_yoy = None
-    total_job_change_yoy = 0
-    if has_baselines:
-        baseline_1yr = baselines_data["baselines"].get("1_year_ago", {})
-        baseline_jobs = baseline_1yr.get("job_postings", {})
-
-        if baseline_jobs:
-            total_baseline_jobs = sum(
-                baseline_jobs[name]["total_technical_jobs"]
-                for name in baseline_jobs
-                if name in high_end_job_companies
-            )
-            if total_baseline_jobs > 0:
-                net_change_pct_yoy = (
-                    (total_current_jobs - total_baseline_jobs)
-                    / total_baseline_jobs
-                    * 100
-                )
-                total_job_change_yoy = total_current_jobs - total_baseline_jobs
 
     # Calculate aggregate badge based on total YoY job change (absolute number)
     if total_job_change_yoy != 0:
@@ -1552,6 +1595,7 @@ def save_daily_snapshot(
             "headcount": data["current_headcount"],
             "data_date": data.get("data_date", ""),
             "source_urls": data.get("source_urls", []),
+            "source_url": (data.get("current") or {}).get("source_url", ""),
             "confidence": data.get("confidence", "unknown"),
         }
 
@@ -1560,6 +1604,8 @@ def save_daily_snapshot(
         snapshot["job_postings"][company_name] = {
             "total_technical_jobs": data["total_technical_jobs"],
             "collection_date": data.get("collection_date", ""),
+            "source_url": data.get("source_url", ""),
+            "additional_source_urls": data.get("additional_source_urls", []),
             "collection_method": data.get("collection_method", "google_search"),
         }
 
