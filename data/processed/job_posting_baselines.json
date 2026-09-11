@@ -1,5 +1,5 @@
 {
-  "researched_on": "2026-09-07",
+  "researched_on": "2026-09-11",
   "records": [
     {
       "company": "OpenAI",
@@ -41,6 +41,42 @@
       "source_url": "https://web.archive.org/web/20250906191804/https://job-boards.greenhouse.io/deepmind",
       "total_technical_jobs": null,
       "notes": "Archived board reports 67 total roles but contains only 50 listings. Page two was not found; a complete technical count could not be verified."
+    },
+    {
+      "company": "Anthropic",
+      "date": "2025-09-06",
+      "source_url": "https://web.archive.org/web/20250906013525/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
+      "total_technical_jobs": 97,
+      "is_estimate": true,
+      "notes": "Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total.",
+      "evidence_file": "website/evidence/job-postings/anthropic-2025-09-06.json"
+    },
+    {
+      "company": "Anthropic",
+      "date": "2025-09-17",
+      "source_url": "https://web.archive.org/web/20250917181657/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
+      "total_technical_jobs": 108,
+      "is_estimate": true,
+      "notes": "Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total.",
+      "evidence_file": "website/evidence/job-postings/anthropic-2025-09-17.json"
+    },
+    {
+      "company": "Anthropic",
+      "date": "2025-09-30",
+      "source_url": "https://web.archive.org/web/20250930231542/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
+      "total_technical_jobs": 114,
+      "is_estimate": true,
+      "notes": "Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total.",
+      "evidence_file": "website/evidence/job-postings/anthropic-2025-09-30.json"
+    },
+    {
+      "company": "Anthropic",
+      "date": "2025-10-06",
+      "source_url": "https://web.archive.org/web/20251006015337/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
+      "total_technical_jobs": 112,
+      "is_estimate": true,
+      "notes": "Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total.",
+      "evidence_file": "website/evidence/job-postings/anthropic-2025-10-06.json"
     }
   ]
 }

@@ -176,12 +176,26 @@ class GeminiCollector:
             )
         )
 
-    def _collect_anthropic_jobs(self) -> dict[str, Any]:
-        """Count classified IDs from the complete public feed, never a search estimate."""
-        url = "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs"
-        response = requests.get(url, timeout=30)
-        response.raise_for_status()
-        jobs = response.json().get("jobs")
+    def classify_anthropic_jobs(
+        self, jobs: list[dict[str, Any]], url: str
+    ) -> list[dict[str, Any]]:
+        """Classify a complete Greenhouse board into technical/non-technical decisions.
+
+        Shared by live collection and by historical backfills of archived boards so
+        that a baseline and the current count are produced by identical rules.
+
+        Args:
+            jobs: Greenhouse job records with integer ``id``, ``title`` and
+                optional ``departments``
+            url: Source URL of the board, used for logging and audit records
+
+        Returns:
+            One ``{"id": int, "technical": bool}`` decision per input job
+
+        Raises:
+            ValueError: If the board is empty/malformed or a batch cannot be
+                classified completely after a retry
+        """
         if not isinstance(jobs, list) or not jobs:
             raise ValueError(
                 "Anthropic job feed is empty or malformed; refusing to publish zero"
@@ -193,11 +207,10 @@ class GeminiCollector:
             for j in jobs
         ):
             raise ValueError("Anthropic job feed contains invalid records")
-        by_id = {j["id"]: j for j in jobs}
-        if len(by_id) != len(jobs):
+        if len({j["id"] for j in jobs}) != len(jobs):
             raise ValueError("Anthropic job feed contains duplicate IDs")
-        print(f"[jobs] Anthropic fetched {len(jobs)} postings from {url}")
-        decisions = []
+        print(f"[jobs] Anthropic classifying {len(jobs)} postings from {url}")
+        decisions: list[dict[str, Any]] = []
         rules = (
             create_job_postings_prompt("Anthropic", url)
             .split("A role is TECHNICAL", 1)[1]
@@ -261,6 +274,16 @@ class GeminiCollector:
                         raise ValueError(
                             "Incomplete Anthropic classification; refusing partial count"
                         ) from exc
+        return decisions
+
+    def _collect_anthropic_jobs(self) -> dict[str, Any]:
+        """Count classified IDs from the complete public feed, never a search estimate."""
+        url = "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs"
+        response = requests.get(url, timeout=30)
+        response.raise_for_status()
+        jobs = response.json().get("jobs")
+        decisions = self.classify_anthropic_jobs(jobs, url)
+        by_id = {j["id"]: j for j in jobs}
         technical = [by_id[r["id"]] for r in decisions if r["technical"]]
         if not technical:
             raise ValueError(

@@ -776,6 +776,67 @@ def researched_job_change(
     }
 
 
+def build_job_postings_section(
+    job_data_by_company: dict[str, dict[str, Any]],
+    snapshots: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Assemble the AI-lab job postings section from per-company technical counts.
+
+    Kept separate from collection so a baseline backfill can rebuild the
+    section from counts that were already collected, without spending another
+    round of API calls.
+
+    Args:
+        job_data_by_company: Company name to collected job data, each with at
+            least ``total_technical_jobs``
+        snapshots: Pre-loaded history snapshots; read from disk when omitted
+
+    Returns:
+        Section dict with per-company entries, aggregate badge and net YoY percent
+    """
+    if snapshots is None:
+        snapshots = load_all_snapshots()
+    ai_lab_urls = {lab["name"]: lab["jobs_url"] for lab in AI_LABS}
+    companies = {}
+    for name, job_data in job_data_by_company.items():
+        current_jobs = job_data["total_technical_jobs"]
+        companies[name] = {
+            "current": current_jobs,
+            "collection_date": job_data.get(
+                "collection_date", date.today().isoformat()
+            ),
+            "source_url": job_data.get("source_url") or ai_lab_urls.get(name, ""),
+            "additional_source_urls": job_data.get("additional_source_urls", []),
+            "collection_method": job_data.get("collection_method", "google_search"),
+            "changes": {
+                "30_days_ago": researched_job_change(current_jobs, name, 30, snapshots),
+                "1_year_ago": researched_job_change(current_jobs, name, 365, snapshots),
+            },
+        }
+
+    # Compare only companies with a dated year-ago baseline.
+    comparable = [
+        data["changes"]["1_year_ago"]
+        for data in companies.values()
+        if data["changes"]["1_year_ago"].get("baseline_jobs") is not None
+    ]
+    total_baseline_jobs = sum(change["baseline_jobs"] for change in comparable)
+    total_job_change_yoy = sum(change["value"] for change in comparable)
+    return {
+        "companies": companies,
+        "aggregate_badge": (
+            JobsProcessor().classify_change(total_job_change_yoy)
+            if total_job_change_yoy != 0
+            else "neutral"
+        ),
+        "net_change_pct_yoy": (
+            total_job_change_yoy / total_baseline_jobs * 100
+            if total_baseline_jobs > 0
+            else None
+        ),
+    }
+
+
 def find_recent_job_posting_data(
     company_name: str, max_days_old: int = 7
 ) -> dict[str, Any] | None:
@@ -1350,7 +1411,7 @@ def build_metrics_structure(
 
     # Populate job posting data for AI labs
     # Note: We use history snapshots for job postings since Greenhouse doesn't provide historical data
-    high_end_job_companies = {}
+    collected_job_data = {}
 
     for name in high_end_companies:
         # Try to get fresh data first, fallback to recent historical data (up to 7 days old)
@@ -1364,52 +1425,10 @@ def build_metrics_structure(
                 job_data = historical_job_data
 
         if job_data:
-            current_jobs = job_data["total_technical_jobs"]
-            collection_date = job_data.get("collection_date", date.today().isoformat())
-            changes = {
-                "30_days_ago": researched_job_change(
-                    current_jobs, name, 30, all_snapshots
-                ),
-                "1_year_ago": researched_job_change(
-                    current_jobs, name, 365, all_snapshots
-                ),
-            }
-
-            high_end_job_companies[name] = {
-                "current": current_jobs,
-                "collection_date": collection_date,
-                "source_url": job_data.get("source_url") or ai_lab_urls.get(name, ""),
-                "additional_source_urls": job_data.get("additional_source_urls", []),
-                "collection_method": job_data.get("collection_method", "google_search"),
-                "changes": changes,
-            }
-
-    # Compare only companies with a dated year-ago baseline.
-    comparable = [
-        data["changes"]["1_year_ago"]
-        for data in high_end_job_companies.values()
-        if data["changes"]["1_year_ago"].get("baseline_jobs") is not None
-    ]
-    total_baseline_jobs = sum(change["baseline_jobs"] for change in comparable)
-    total_job_change_yoy = sum(change["value"] for change in comparable)
-    net_change_pct_yoy = (
-        total_job_change_yoy / total_baseline_jobs * 100
-        if total_baseline_jobs > 0
-        else None
-    )
-
-    # Calculate aggregate badge based on total YoY job change (absolute number)
-    if total_job_change_yoy != 0:
-        high_end_aggregate_badge = jobs_processor.classify_change(total_job_change_yoy)
-    else:
-        high_end_aggregate_badge = "neutral"
+            collected_job_data[name] = job_data
 
     high_end = {
-        "job_postings": {
-            "companies": high_end_job_companies,
-            "aggregate_badge": high_end_aggregate_badge,
-            "net_change_pct_yoy": net_change_pct_yoy,
-        }
+        "job_postings": build_job_postings_section(collected_job_data, all_snapshots)
     }
 
     # Build Indeed Job Postings index

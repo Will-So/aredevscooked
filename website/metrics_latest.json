@@ -559,13 +559,13 @@
               "tooltip": "Baseline: 2026-08-09. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             },
             "1_year_ago": {
-              "value": null,
-              "badge": "neutral",
-              "baseline_jobs": null,
-              "baseline_date": "2025-09-07",
-              "source_url": "https://web.archive.org/web/20250907201520/https://job-boards.greenhouse.io/anthropic",
-              "is_estimate": false,
-              "tooltip": "Baseline: 2025-09-07. Archived board reports 167 total roles but contains only 50 listings. Remaining pages have different capture dates; a complete technical count could not be verified."
+              "value": 212,
+              "badge": "strong",
+              "baseline_jobs": 97,
+              "baseline_date": "2025-09-06",
+              "source_url": "https://web.archive.org/web/20250906013525/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
+              "is_estimate": true,
+              "tooltip": "Baseline: 2025-09-06. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             }
           }
         },
@@ -625,7 +625,7 @@
         }
       },
       "aggregate_badge": "strong",
-      "net_change_pct_yoy": 294.44444444444446
+      "net_change_pct_yoy": 269.49152542372883
     }
   },
   "stock_index": {

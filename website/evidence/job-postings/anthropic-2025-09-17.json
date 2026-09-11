@@ -1,0 +1,1291 @@
+{
+  "company": "Anthropic",
+  "date": "2025-09-17",
+  "source_url": "https://web.archive.org/web/20250917181657/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
+  "method": "Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total.",
+  "total_roles": 183,
+  "total_technical_jobs": 108,
+  "jobs": [
+    {
+      "id": "4673061008",
+      "title": " Internal Communications Manager - Legal, People & Finance",
+      "department": "Communications & Brand",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4673061008",
+      "technical": false
+    },
+    {
+      "id": "4613599008",
+      "title": "[Expression of Interest] Research Engineer, Reward Models",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4613599008",
+      "technical": true
+    },
+    {
+      "id": "4520279008",
+      "title": "[Expression of Interest] Research Scientist/Engineer, Alignment Finetuning",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4520279008",
+      "technical": true
+    },
+    {
+      "id": "4532887008",
+      "title": "[Expression of Interest] Research Scientist/Engineer, Honesty",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4532887008",
+      "technical": true
+    },
+    {
+      "id": "4554963008",
+      "title": "Administrative Business Partner",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4554963008",
+      "technical": false
+    },
+    {
+      "id": "4924269008",
+      "title": "Administrative Business Partner, London, UK",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4924269008",
+      "technical": false
+    },
+    {
+      "id": "4756214008",
+      "title": "AI Infrastructure Accounting Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4756214008",
+      "technical": false
+    },
+    {
+      "id": "4899511008",
+      "title": "Android Engineer, Product ",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4899511008",
+      "technical": true
+    },
+    {
+      "id": "4888400008",
+      "title": "Anthropic Fellows Program Lead, Alignment Science",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4888400008",
+      "technical": true
+    },
+    {
+      "id": "4502508008",
+      "title": "Application Security Engineer",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4502508008",
+      "technical": true
+    },
+    {
+      "id": "4562813008",
+      "title": "Application Security Engineering Manager",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4562813008",
+      "technical": true
+    },
+    {
+      "id": "4898568008",
+      "title": "Associate Solutions Architect, Claude Code",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4898568008",
+      "technical": true
+    },
+    {
+      "id": "4906732008",
+      "title": "Audit and Compliance",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4906732008",
+      "technical": false
+    },
+    {
+      "id": "4411328008",
+      "title": "Audit and Compliance",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4411328008",
+      "technical": false
+    },
+    {
+      "id": "4675700008",
+      "title": "B2B Growth Marketing Lead",
+      "department": "Marketing",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4675700008",
+      "technical": false
+    },
+    {
+      "id": "4897301008",
+      "title": "Business Development Representative, APJ",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4897301008",
+      "technical": false
+    },
+    {
+      "id": "4801218008",
+      "title": "Capacity Engineer, Compute",
+      "department": "Compute",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4801218008",
+      "technical": true
+    },
+    {
+      "id": "4919879008",
+      "title": "Channel Account Manager, SI & Reseller",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4919879008",
+      "technical": false
+    },
+    {
+      "id": "4803982008",
+      "title": "Cloud GTM Partnerships Lead, APJ",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4803982008",
+      "technical": false
+    },
+    {
+      "id": "4903531008",
+      "title": "Corporate Accountant, Payroll",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4903531008",
+      "technical": false
+    },
+    {
+      "id": "4464871008",
+      "title": "Customer Success: AI Success Architect (API)",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4464871008",
+      "technical": true
+    },
+    {
+      "id": "4747479008",
+      "title": "Data Operations Manager, Horizons",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4747479008",
+      "technical": false
+    },
+    {
+      "id": "4915058008",
+      "title": "Data Scientist, API",
+      "department": "Data Science & Analytics",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4915058008",
+      "technical": true
+    },
+    {
+      "id": "4826091008",
+      "title": "Data Scientist, Claude Code",
+      "department": "Data Science & Analytics",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4826091008",
+      "technical": true
+    },
+    {
+      "id": "4801333008",
+      "title": "Data Scientist, Platform (Reliability/Latency/Inference)",
+      "department": "Data Science & Analytics",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4801333008",
+      "technical": true
+    },
+    {
+      "id": "4806060008",
+      "title": "Detection and Response Engineering Manager",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4806060008",
+      "technical": true
+    },
+    {
+      "id": "4915364008",
+      "title": "Employment Counsel",
+      "department": "Legal",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4915364008",
+      "technical": false
+    },
+    {
+      "id": "4907786008",
+      "title": "Engineering Manager - CI Infrastructure ",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4907786008",
+      "technical": true
+    },
+    {
+      "id": "4721383008",
+      "title": "Engineering Manager, API Product (Several API Teams Hiring)",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4721383008",
+      "technical": true
+    },
+    {
+      "id": "4738189008",
+      "title": "Engineering Manager, Claude Code",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4738189008",
+      "technical": true
+    },
+    {
+      "id": "4915056008",
+      "title": "Engineering Manager, Cloud Inference",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4915056008",
+      "technical": true
+    },
+    {
+      "id": "4897424008",
+      "title": "Engineering Manager, Cloud Security",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4897424008",
+      "technical": true
+    },
+    {
+      "id": "4811414008",
+      "title": "Engineering Manager, Frontier Prototyping",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4811414008",
+      "technical": true
+    },
+    {
+      "id": "4741102008",
+      "title": "Engineering Manager, Inference",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4741102008",
+      "technical": true
+    },
+    {
+      "id": "4741104008",
+      "title": "Engineering Manager, ML Acceleration",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4741104008",
+      "technical": true
+    },
+    {
+      "id": "4889396008",
+      "title": "Engineering Manager, Product Platform & Accounts Platform",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4889396008",
+      "technical": true
+    },
+    {
+      "id": "4903385008",
+      "title": "Engineering Manager, Public Sector",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4903385008",
+      "technical": true
+    },
+    {
+      "id": "4921729008",
+      "title": "Engineering Manager, Secure Frameworks",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4921729008",
+      "technical": true
+    },
+    {
+      "id": "4916412008",
+      "title": "Engineering Manager, Security",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4916412008",
+      "technical": true
+    },
+    {
+      "id": "4881466008",
+      "title": "Enterprise Account Executive, Digital Native Business",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4881466008",
+      "technical": false
+    },
+    {
+      "id": "4493001008",
+      "title": "Enterprise Account Executive, Digital Native Business",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4493001008",
+      "technical": false
+    },
+    {
+      "id": "4677205008",
+      "title": "Enterprise Account Executive, EMEA Industries (Healthcare & Life Sciences)",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4677205008",
+      "technical": false
+    },
+    {
+      "id": "4803859008",
+      "title": "Enterprise Account Executive, Federal Civilian Sales",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4803859008",
+      "technical": false
+    },
+    {
+      "id": "4881468008",
+      "title": "Enterprise Account Executive, Financial Services",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4881468008",
+      "technical": false
+    },
+    {
+      "id": "4493035008",
+      "title": "Enterprise Account Executive, Industries",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4493035008",
+      "technical": false
+    },
+    {
+      "id": "4629246008",
+      "title": "Enterprise Account Executive, Industries (Healthcare & Life Sciences)",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4629246008",
+      "technical": false
+    },
+    {
+      "id": "4526705008",
+      "title": "Enterprise Account Executive, Industries (Higher Education)",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4526705008",
+      "technical": false
+    },
+    {
+      "id": "4798695008",
+      "title": "Enterprise Account Executive, Japan",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4798695008",
+      "technical": false
+    },
+    {
+      "id": "4914303008",
+      "title": "External Affairs, Japan",
+      "department": "AI Policy & Societal Impacts",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4914303008",
+      "technical": false
+    },
+    {
+      "id": "4903965008",
+      "title": "Finance & Strategy Lead, APAC",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4903965008",
+      "technical": false
+    },
+    {
+      "id": "4676168008",
+      "title": "Finance & Strategy Lead, EMEA",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4676168008",
+      "technical": false
+    },
+    {
+      "id": "4914369008",
+      "title": "Finance Analytics, Product & Compute",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4914369008",
+      "technical": false
+    },
+    {
+      "id": "4825724008",
+      "title": "Finance Systems Engineer",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4825724008",
+      "technical": true
+    },
+    {
+      "id": "4814670008",
+      "title": "Finance Systems PMO Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4814670008",
+      "technical": false
+    },
+    {
+      "id": "4821968008",
+      "title": "Finance Systems, Finance & Strategy",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4821968008",
+      "technical": false
+    },
+    {
+      "id": "4883264008",
+      "title": "Finance Systems, QTC Program Manager",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4883264008",
+      "technical": false
+    },
+    {
+      "id": "4831485008",
+      "title": "Finance Variable Compensation Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4831485008",
+      "technical": false
+    },
+    {
+      "id": "4874194008",
+      "title": "Financial Reporting Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4874194008",
+      "technical": false
+    },
+    {
+      "id": "4914352008",
+      "title": "Global Onboarding Program Manager",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4914352008",
+      "technical": false
+    },
+    {
+      "id": "4890845008",
+      "title": "Global Senior Equity Program Manager",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4890845008",
+      "technical": false
+    },
+    {
+      "id": "4776171008",
+      "title": "Google Cloud GTM Partnership, Enterprise",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4776171008",
+      "technical": false
+    },
+    {
+      "id": "4924430008",
+      "title": "GTM Head of International Enablement",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4924430008",
+      "technical": false
+    },
+    {
+      "id": "4895169008",
+      "title": "GTM Partner Enablement",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4895169008",
+      "technical": false
+    },
+    {
+      "id": "4831327008",
+      "title": "GTM Recruiter, APAC",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4831327008",
+      "technical": false
+    },
+    {
+      "id": "4894935008",
+      "title": "GTM Strategy & Operations",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4894935008",
+      "technical": false
+    },
+    {
+      "id": "4865298008",
+      "title": "GTM Strategy and Operations, Customer Success",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4865298008",
+      "technical": false
+    },
+    {
+      "id": "4707330008",
+      "title": "Head of Corporate Communications",
+      "department": "Communications & Brand",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4707330008",
+      "technical": false
+    },
+    {
+      "id": "4781798008",
+      "title": "Head of Developer Relations",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4781798008",
+      "technical": true
+    },
+    {
+      "id": "4748190008",
+      "title": "Head of Partner Success",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4748190008",
+      "technical": false
+    },
+    {
+      "id": "4815294008",
+      "title": "Head of Policy Communications ",
+      "department": "Communications & Brand",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4815294008",
+      "technical": false
+    },
+    {
+      "id": "4825592008",
+      "title": "Head of Transfer Pricing",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4825592008",
+      "technical": false
+    },
+    {
+      "id": "4794191008",
+      "title": "Immigration Strategy Program Manager",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4794191008",
+      "technical": false
+    },
+    {
+      "id": "4895774008",
+      "title": "Infrastructure Accounting",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4895774008",
+      "technical": false
+    },
+    {
+      "id": "4856513008",
+      "title": "Insider Risk Investigator",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4856513008",
+      "technical": true
+    },
+    {
+      "id": "4677688008",
+      "title": "Internal Communications Manager, Research & Policy ",
+      "department": "Communications & Brand",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4677688008",
+      "technical": false
+    },
+    {
+      "id": "4879674008",
+      "title": "IT Engineering - Corporate Network Engineer",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4879674008",
+      "technical": true
+    },
+    {
+      "id": "4802076008",
+      "title": "IT Support Engineer",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4802076008",
+      "technical": true
+    },
+    {
+      "id": "4684257008",
+      "title": "Lead Product Manager, Research",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4684257008",
+      "technical": true
+    },
+    {
+      "id": "4461625008",
+      "title": "Machine Learning Engineer, Safeguards",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4461625008",
+      "technical": true
+    },
+    {
+      "id": "4579552008",
+      "title": "Machine Learning Systems Engineer, Encodings and Tokenization",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4579552008",
+      "technical": true
+    },
+    {
+      "id": "4579550008",
+      "title": "Machine Learning Systems Engineer, Research Tools",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4579550008",
+      "technical": true
+    },
+    {
+      "id": "4577144008",
+      "title": "Machine Learning Systems Engineer, RL Engineering",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4577144008",
+      "technical": true
+    },
+    {
+      "id": "4613882008",
+      "title": "Machine Learning Systems Engineer, Safeguards Research",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4613882008",
+      "technical": true
+    },
+    {
+      "id": "4819732008",
+      "title": "Manager of Solutions Architecture, Applied AI",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4819732008",
+      "technical": true
+    },
+    {
+      "id": "4880880008",
+      "title": "Manager, Account Executive - Startups ",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4880880008",
+      "technical": false
+    },
+    {
+      "id": "4886293008",
+      "title": "Manager, Enterprise Account Executive - Digital Native Sales",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4886293008",
+      "technical": false
+    },
+    {
+      "id": "4829844008",
+      "title": "Manager, Recruiting Coordination",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4829844008",
+      "technical": false
+    },
+    {
+      "id": "4884644008",
+      "title": "Manager, Sales Development",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4884644008",
+      "technical": false
+    },
+    {
+      "id": "4886697008",
+      "title": "Manager, Solutions Architecture ",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4886697008",
+      "technical": true
+    },
+    {
+      "id": "4914907008",
+      "title": "Manager, Technical Success (API)",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4914907008",
+      "technical": true
+    },
+    {
+      "id": "4886736008",
+      "title": "Marketing Insights Research Manager",
+      "department": "Communications & Brand",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4886736008",
+      "technical": false
+    },
+    {
+      "id": "4920215008",
+      "title": "MCP Engineer",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4920215008",
+      "technical": true
+    },
+    {
+      "id": "4778843008",
+      "title": "ML Infrastructure Engineer, Safeguards",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4778843008",
+      "technical": true
+    },
+    {
+      "id": "4895395008",
+      "title": "People Partner, Product & Core Tech",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4895395008",
+      "technical": false
+    },
+    {
+      "id": "4020350008",
+      "title": "Performance Engineer",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4020350008",
+      "technical": true
+    },
+    {
+      "id": "4904775008",
+      "title": "Principal Capacity Engineer, Compute",
+      "department": "Compute",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4904775008",
+      "technical": true
+    },
+    {
+      "id": "4900975008",
+      "title": "Procurement Operations Business Partner, Compute Infrastructure",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4900975008",
+      "technical": false
+    },
+    {
+      "id": "4910806008",
+      "title": "Procurement Operations Business Partner, R&D",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4910806008",
+      "technical": false
+    },
+    {
+      "id": "4780837008",
+      "title": "Product Designer, Enterprise",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4780837008",
+      "technical": false
+    },
+    {
+      "id": "4461430008",
+      "title": "Product Engineer, Applied AI",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4461430008",
+      "technical": true
+    },
+    {
+      "id": "4830207008",
+      "title": "Product Engineer, Applied AI",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4830207008",
+      "technical": true
+    },
+    {
+      "id": "4914176008",
+      "title": "Product Manager, API",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4914176008",
+      "technical": true
+    },
+    {
+      "id": "4887900008",
+      "title": "Product Manager, B2B Growth",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4887900008",
+      "technical": true
+    },
+    {
+      "id": "4858247008",
+      "title": "Product Manager, Claude Code (Enterprise)",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4858247008",
+      "technical": true
+    },
+    {
+      "id": "4858249008",
+      "title": "Product Manager, Claude Code (Platform)",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4858249008",
+      "technical": true
+    },
+    {
+      "id": "4807590008",
+      "title": "Product Manager, Research",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4807590008",
+      "technical": true
+    },
+    {
+      "id": "4898706008",
+      "title": "Product Support Specialist (Ireland, Contract)",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4898706008",
+      "technical": false
+    },
+    {
+      "id": "4898964008",
+      "title": "Product Support Specialist (UK, Contract)",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4898964008",
+      "technical": false
+    },
+    {
+      "id": "4604015008",
+      "title": "Recruiter, AI Research",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4604015008",
+      "technical": false
+    },
+    {
+      "id": "4924599008",
+      "title": "Recruiting Analytics Scientist",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4924599008",
+      "technical": true
+    },
+    {
+      "id": "4407096008",
+      "title": "Recruiting Coordinator [contract]",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4407096008",
+      "technical": false
+    },
+    {
+      "id": "4886415008",
+      "title": "Recruiting Data Analytics",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4886415008",
+      "technical": true
+    },
+    {
+      "id": "4552119008",
+      "title": "Regulatory Operations Specialist",
+      "department": "Product Management, Support, & Operations",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4552119008",
+      "technical": false
+    },
+    {
+      "id": "4629430008",
+      "title": "Research Engineer / Research Scientist, Multimodal ",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4629430008",
+      "technical": true
+    },
+    {
+      "id": "4799425008",
+      "title": "Research Engineer / Research Scientist, Pre-training",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4799425008",
+      "technical": true
+    },
+    {
+      "id": "4631822008",
+      "title": "Research Engineer / Scientist, Alignment Science",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4631822008",
+      "technical": true
+    },
+    {
+      "id": "4610158008",
+      "title": "Research Engineer / Scientist, Alignment Science, London",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4610158008",
+      "technical": true
+    },
+    {
+      "id": "4812169008",
+      "title": "Research Engineer / Scientist, Model Welfare",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4812169008",
+      "technical": true
+    },
+    {
+      "id": "4825989008",
+      "title": "Research Engineer / Scientist, Tool Use",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4825989008",
+      "technical": true
+    },
+    {
+      "id": "4816634008",
+      "title": "Research Engineer, CLIO",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4816634008",
+      "technical": true
+    },
+    {
+      "id": "4020305008",
+      "title": "Research Engineer, Interpretability",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4020305008",
+      "technical": true
+    },
+    {
+      "id": "4825872008",
+      "title": "Research Engineer, Model Performance & Quality",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4825872008",
+      "technical": true
+    },
+    {
+      "id": "4616971008",
+      "title": "Research Engineer, Pre-training",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4616971008",
+      "technical": true
+    },
+    {
+      "id": "4613592008",
+      "title": "Research Engineer, Production Model Post Training",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4613592008",
+      "technical": true
+    },
+    {
+      "id": "4516810008",
+      "title": "Research Engineer, Tokens (Pre-training)",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4516810008",
+      "technical": true
+    },
+    {
+      "id": "4009173008",
+      "title": "Research Manager, Interpretability",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4009173008",
+      "technical": true
+    },
+    {
+      "id": "4681526008",
+      "title": "Research Scientist / Research Engineer, Pre-training",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4681526008",
+      "technical": true
+    },
+    {
+      "id": "4020159008",
+      "title": "Research Scientist, Interpretability",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4020159008",
+      "technical": true
+    },
+    {
+      "id": "4628787008",
+      "title": "Research Scientist, Tokens (Multimodal)",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4628787008",
+      "technical": true
+    },
+    {
+      "id": "4887175008",
+      "title": "Revenue Accounting",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4887175008",
+      "technical": false
+    },
+    {
+      "id": "4922566008",
+      "title": "Revenue Accounting Operations Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4922566008",
+      "technical": false
+    },
+    {
+      "id": "4873436008",
+      "title": "Revenue Operations, Quote-to-Cash Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4873436008",
+      "technical": false
+    },
+    {
+      "id": "4596677008",
+      "title": "Security Engineer: Detection and Response",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4596677008",
+      "technical": true
+    },
+    {
+      "id": "4595465008",
+      "title": "Security Engineer: Detection and Response",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4595465008",
+      "technical": true
+    },
+    {
+      "id": "4740845008",
+      "title": "Security Software Engineer: Detection Platform (Insider Risk)",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4740845008",
+      "technical": true
+    },
+    {
+      "id": "4595463008",
+      "title": "Security Software Engineer: Detection Platform Infrastructure",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4595463008",
+      "technical": true
+    },
+    {
+      "id": "4609502008",
+      "title": "Senior / Staff Engineer, Inference",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4609502008",
+      "technical": true
+    },
+    {
+      "id": "4747937008",
+      "title": "Senior Alliance Manager, Deloitte",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4747937008",
+      "technical": false
+    },
+    {
+      "id": "4904958008",
+      "title": "Senior Capacity Planner",
+      "department": "Compute",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4904958008",
+      "technical": false
+    },
+    {
+      "id": "4738780008",
+      "title": "Senior Software Engineer, Search",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4738780008",
+      "technical": true
+    },
+    {
+      "id": "4887959008",
+      "title": "Senior Software Security Engineer",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4887959008",
+      "technical": true
+    },
+    {
+      "id": "4019963008",
+      "title": "Senior Software Security Engineer",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4019963008",
+      "technical": true
+    },
+    {
+      "id": "4608196008",
+      "title": "Software Engineer, AI Reliability Engineering",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4608196008",
+      "technical": true
+    },
+    {
+      "id": "4554982008",
+      "title": "Software Engineer, Business Technology ",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4554982008",
+      "technical": true
+    },
+    {
+      "id": "4816199008",
+      "title": "Software Engineer, Claude Code",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4816199008",
+      "technical": true
+    },
+    {
+      "id": "4915842008",
+      "title": "Software Engineer, Core Infrastructure",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4915842008",
+      "technical": true
+    },
+    {
+      "id": "4797724008",
+      "title": "Software Engineer, Data Intelligence",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4797724008",
+      "technical": true
+    },
+    {
+      "id": "4667572008",
+      "title": "Software Engineer, Enterprise",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4667572008",
+      "technical": true
+    },
+    {
+      "id": "4141519008",
+      "title": "Software Engineer, Growth ",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4141519008",
+      "technical": true
+    },
+    {
+      "id": "4641822008",
+      "title": "Software Engineer, Inference",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4641822008",
+      "technical": true
+    },
+    {
+      "id": "4632118008",
+      "title": "Software Engineer, Infrastructure (All Levels) ",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4632118008",
+      "technical": true
+    },
+    {
+      "id": "4902636008",
+      "title": "Software Engineer, Public Sector",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4902636008",
+      "technical": true
+    },
+    {
+      "id": "4033986008",
+      "title": "Software Engineer, Safeguards",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4033986008",
+      "technical": true
+    },
+    {
+      "id": "4819502008",
+      "title": "Solutions Architect, Applied AI",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4819502008",
+      "technical": true
+    },
+    {
+      "id": "4858547008",
+      "title": "Solutions Architect, Applied AI",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4858547008",
+      "technical": true
+    },
+    {
+      "id": "4461444008",
+      "title": "Solutions Architect, Applied AI",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4461444008",
+      "technical": true
+    },
+    {
+      "id": "4669581008",
+      "title": "Staff Infrastructure Engineer, Discovery Team",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4669581008",
+      "technical": true
+    },
+    {
+      "id": "4593216008",
+      "title": "Staff Research Engineer, Discovery Team",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4593216008",
+      "technical": true
+    },
+    {
+      "id": "4807626008",
+      "title": "Staff Security Engineer, Container & VM Security",
+      "department": "Security",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4807626008",
+      "technical": true
+    },
+    {
+      "id": "4561282008",
+      "title": "Staff Software Engineer, API Product (Several Teams Hiring)",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4561282008",
+      "technical": true
+    },
+    {
+      "id": "4891180008",
+      "title": "Staff Software Engineer, Databases",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4891180008",
+      "technical": true
+    },
+    {
+      "id": "4549507008",
+      "title": "Staff Software Engineer, Platform ",
+      "department": "Engineering & Design - Product",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4549507008",
+      "technical": true
+    },
+    {
+      "id": "4896265008",
+      "title": "Staff Software Engineer, Privacy Infrastructure",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4896265008",
+      "technical": true
+    },
+    {
+      "id": "4807607008",
+      "title": "Staff Systems Engineer, Agents Infrastructure ",
+      "department": "Software Engineering - Infrastructure",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4807607008",
+      "technical": true
+    },
+    {
+      "id": "4461450008",
+      "title": "Startup Account Executive",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4461450008",
+      "technical": false
+    },
+    {
+      "id": "4535292008",
+      "title": "Startup Account Executive, Hebrew",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4535292008",
+      "technical": false
+    },
+    {
+      "id": "4423394008",
+      "title": "Startup Account Manager",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4423394008",
+      "technical": false
+    },
+    {
+      "id": "4803880008",
+      "title": "Strategic Account Executive, Digital Native Business",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4803880008",
+      "technical": false
+    },
+    {
+      "id": "4809968008",
+      "title": "Strategic Account Executive, Financial Services",
+      "department": "Sales",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4809968008",
+      "technical": false
+    },
+    {
+      "id": "4508956008",
+      "title": "Tax Operations, Provision, and Compliance Lead",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4508956008",
+      "technical": false
+    },
+    {
+      "id": "4778852008",
+      "title": "Tech Lead Manager, Safeguards ML Infrastructure",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4778852008",
+      "technical": true
+    },
+    {
+      "id": "4829381008",
+      "title": "Technical Documentation & Content Engineer, Claude Code",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4829381008",
+      "technical": true
+    },
+    {
+      "id": "4792697008",
+      "title": "Technical Program Manager, API",
+      "department": "Technical Program Management",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4792697008",
+      "technical": true
+    },
+    {
+      "id": "4798693008",
+      "title": "Technical Program Manager, Compute",
+      "department": "Technical Program Management",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4798693008",
+      "technical": true
+    },
+    {
+      "id": "4892952008",
+      "title": "Technical Program Manager, Compute Partnerships",
+      "department": "Technical Program Management",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4892952008",
+      "technical": true
+    },
+    {
+      "id": "4913784008",
+      "title": "Technical Program Manager, Inference",
+      "department": "Technical Program Management",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4913784008",
+      "technical": true
+    },
+    {
+      "id": "4823376008",
+      "title": "Technical Revenue Accounting",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4823376008",
+      "technical": false
+    },
+    {
+      "id": "4893296008",
+      "title": "Technical Revenue Accounting - Seattle",
+      "department": "Finance",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4893296008",
+      "technical": false
+    },
+    {
+      "id": "4790445008",
+      "title": "Technical Sourcer",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4790445008",
+      "technical": false
+    },
+    {
+      "id": "4896342008",
+      "title": "Technical Threat Investigator, Safeguards",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4896342008",
+      "technical": true
+    },
+    {
+      "id": "4740637008",
+      "title": "Technical Threat Investigator, Safeguards (CBRN)",
+      "department": "Safeguards (Trust & Safety)",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4740637008",
+      "technical": true
+    },
+    {
+      "id": "4720576008",
+      "title": "TPU Kernel Engineer",
+      "department": "AI Research & Engineering",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4720576008",
+      "technical": true
+    },
+    {
+      "id": "4680272008",
+      "title": "Workday Business Systems Analyst",
+      "department": "People",
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/4680272008",
+      "technical": false
+    }
+  ]
+}

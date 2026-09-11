@@ -78,6 +78,42 @@ Creates `data/processed/baselines.json` with data for:
 - 30 days ago
 - 1 day ago
 
+### Anthropic Job-Posting Baselines
+
+```bash
+# Backfill the baseline nearest today minus 365 days
+uv run python scripts/backfill_anthropic_job_baseline.py
+
+# Or backfill specific archive dates
+uv run python scripts/backfill_anthropic_job_baseline.py 2025-09-06 2025-09-17
+
+# Rebuild the published job-postings metrics from the new baselines
+uv run python scripts/refresh_job_postings_metrics.py
+```
+
+Writes a record into `data/processed/job_posting_baselines.json` plus a
+per-capture evidence file under `website/evidence/job-postings/`.
+
+Quirks worth knowing:
+
+- **Use the `/departments` endpoint, not the HTML board.** Wayback captures of
+  `job-boards.greenhouse.io/anthropic` only contain the first 50 listings
+  (pagination is client-side), and the remaining pages were captured on
+  different days, which is why the original 2025-09-07 baseline had to be
+  recorded as "count unverifiable". `boards-api.greenhouse.io/v1/boards/anthropic/departments`
+  carries every role in one response and was archived roughly weekly.
+- **Classification runs through the same Gemini prompt as the live count**
+  (`GeminiCollector.classify_anthropic_jobs`), so the baseline and today's
+  number are produced by identical rules. Archived departments payloads nest
+  child departments, so jobs are de-duplicated by ID before classification.
+- **The comparison window moves daily.** `researched_job_change` only accepts a
+  baseline within seven days of today minus 365, so a single backfilled date
+  stops matching after a week. Backfill several nearby captures at once.
+- **Coverage gap:** Anthropic's `/departments` endpoint has no captures between
+  2025-10-06 and 2026-04, so the one-year comparison will fall back to "N/A"
+  once the target date passes 2025-10-13, until the project's own daily
+  snapshots (which start 2026-01-06) become a year old.
+
 ## Development
 
 ### Run Tests
@@ -132,6 +168,8 @@ aredevscooked/
 ├── scripts/
 │   ├── run_collection.py         # Main orchestration script
 │   ├── backfill_baselines.py     # Historical baseline collector
+│   ├── backfill_anthropic_job_baseline.py  # Archived Greenhouse board baselines
+│   ├── refresh_job_postings_metrics.py     # Rebuild job metrics from baselines
 │   └── serve_website.py          # Local development server
 ├── tests/                         # pytest test suite
 ├── website/
