@@ -229,6 +229,70 @@ def test_collect_headcount_defaults_missing_confidence_to_medium(
     assert result["current_headcount"] == 78165
 
 
+def _amazon_response(current, one_year_ago=335000, q1_2023=385000):
+    return json.dumps(
+        {
+            "company": "Amazon",
+            "current": {"headcount": current, "as_of_date": "2025-12-31"},
+            "30_days_ago": {"headcount": current, "as_of_date": "2026-08-13"},
+            "one_year_ago": {"headcount": one_year_ago, "as_of_date": "2024-12-31"},
+            "q1_2023": {"headcount": q1_2023, "as_of_date": "2023-03-31"},
+            "confidence": "high",
+        }
+    )
+
+
+def test_collect_headcount_rejects_amazon_total_headcount(
+    collector, mock_gemini_response, mocker
+):
+    """Amazon's 10-K total (incl. warehouse workers) must not replace corporate-only."""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(
+        _amazon_response(1576000, one_year_ago=1556000, q1_2023=1465000)
+    )
+
+    with pytest.raises(ValueError, match="exceeds company cap"):
+        collector.collect_headcount("Amazon")
+
+
+@pytest.mark.parametrize("period", ["one_year_ago", "q1_2023"])
+def test_collect_headcount_rejects_amazon_total_in_historical_period(
+    collector, mock_gemini_response, mocker, period
+):
+    """A total-headcount baseline alone should reject the Amazon response."""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(
+        _amazon_response(320000, **{period: 1465000})
+    )
+
+    with pytest.raises(ValueError, match=period):
+        collector.collect_headcount("Amazon")
+
+
+def test_collect_headcount_accepts_amazon_corporate_headcount(
+    collector, mock_gemini_response, mocker
+):
+    """Corporate-only Amazon figures should pass the company cap."""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(_amazon_response(320000))
+
+    result = collector.collect_headcount("Amazon")
+    assert result["current_headcount"] == 320000
+
+
+def test_company_cap_does_not_apply_to_other_companies(
+    collector, mock_gemini_response, mocker
+):
+    """Companies without a cap keep the global range check only."""
+    mock_generate = mocker.patch.object(collector.client.models, "generate_content")
+    mock_generate.return_value = mock_gemini_response(
+        _amazon_response(1576000).replace('"Amazon"', '"Walmart"')
+    )
+
+    result = collector.collect_headcount("Walmart")
+    assert result["current_headcount"] == 1576000
+
+
 # Job Postings Collection Tests
 
 

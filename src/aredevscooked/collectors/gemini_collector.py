@@ -372,6 +372,19 @@ class GeminiCollector:
                 f"[{min_headcount}, {max_headcount}]"
             )
 
+        company_max = VALIDATION["headcount"]["company_max"].get(company_name)
+        if company_max is not None:
+            period_headcounts = {"current": headcount}
+            for period in ["30_days_ago", "one_year_ago", "q1_2023"]:
+                if isinstance(data.get(period), dict):
+                    period_headcounts[period] = data[period].get("headcount")
+            for period, period_headcount in period_headcounts.items():
+                if period_headcount and period_headcount > company_max:
+                    raise ValueError(
+                        f"{company_name} {period} headcount {period_headcount} "
+                        f"exceeds company cap {company_max}"
+                    )
+
         confidence = data.get("confidence", "medium")
         if confidence == "low":
             print(

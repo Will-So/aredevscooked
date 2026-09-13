@@ -81,7 +81,11 @@ TIME_PERIODS = {
 VALIDATION = {
     "headcount": {
         "min": 1000,  # Minimum plausible headcount
-        "max": 2_000_000,  # Maximum plausible headcount (Amazon has 1.5M+)
+        "max": 2_000_000,  # Maximum plausible headcount
+        # Per-company caps applied to every period Gemini returns. Amazon is
+        # tracked as corporate-only (~300k); its 10-K total (~1.5M) includes
+        # warehouse workers and Gemini sometimes returns it despite the prompt.
+        "company_max": {"Amazon": 1_000_000},
         "max_daily_change_pct": 5.0,  # Max 5% change in 1 day
         "max_30day_change_pct": 10.0,  # Max 10% change in 30 days
     },
