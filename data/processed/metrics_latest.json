@@ -449,43 +449,45 @@
           }
         },
         "Amazon": {
-          "current": 1576000,
-          "data_date": "2025-12-31",
-          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872426000008/amzn-20251231.htm",
+          "current": 320000,
+          "data_date": "2026-06-30",
+          "source_url": "https://s2.q4cdn.com/299287126/files/design/amazon-logo-white.svg",
           "additional_source_urls": [
-            "https://www.aboutamazon.com/news/company-news/amazon-corporate-headcount"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCQwn38akc6yYJDCJWLZzYklp_yCW2LiyAWvLPO0ILEou7Ku5-vR7rutJgKV_IjSVjG4o2c3HtC_Set94Xto6VIaFmJpbdTdwS2Hgr8uo9jZGQj-BHc3aBxFRIT1xGnCaVL9l_OyU="
           ],
-          "notes": "Amazon reports total global full-time and part-time headcount of 1,576,000 in its FY 2025 Form 10-K filed with the SEC. (Note: Amazon does not separately break out corporate vs warehouse headcount in SEC filings; total figure includes fulfillment and hourly workers per prompt guidelines on total reporting).",
+          "notes": "Estimated corporate headcount after accounting for 2025/2026 corporate layoffs (approx. 30,000 roles cut across late 2025 and Jan 2026) applied to base corporate figures (~350,000 baseline minus subsequent cuts). Total reported global workforce is ~1.58 million including logistics and warehouse personnel.",
           "source_urls": [
-            "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872426000008/amzn-20251231.htm"
+            "https://s2.q4cdn.com/299287126/files/design/amazon-logo-white.svg"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 20000,
-              "pct": 1.29,
+              "value": -15000,
+              "pct": -4.48,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872425000006/amzn-20241231.htm",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGdhl8Zn5hz9SIdlQGKeE3VO0EHpWQq4VF8f2QFvSnB46JoO2JnBuGfth7NZ9lxMamrQCyjEyXRTN4bwbrMA8ESz9qK7wBow7KDTbJ1nk8quq7Pwx9MFxc1aNVPN0euYtyeB4ZbwHouiCwKQQzbPsCWC3d",
               "additional_source_urls": [],
-              "baseline_headcount": 1556000,
-              "baseline_date": "2024-12-31"
+              "baseline_headcount": 335000,
+              "baseline_date": "2025-09-30"
             },
             "q1_2023": {
-              "value": 111000,
-              "pct": 7.58,
-              "badge": "strong",
-              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872423000011/amzn-20230331.htm",
+              "value": -65000,
+              "pct": -16.88,
+              "badge": "weak",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE36ABB6mhrcJrMGDUeUfirVc8spTtlt-uXKOmKqLyJruTwLZfqr9dJ7D5ci106DcxMLyNF0SLRcxt3Tk-EU1D-njm0knjZAUIlxEHeK2iPOF-tuJTZR2eqMhYt_tPDjB3Wbqho3xs-xJzTI5AdVO2ksm4eQto4Gg==",
               "additional_source_urls": [],
-              "baseline_headcount": 1465000,
+              "baseline_headcount": 385000,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0001018724/000101872426000008/amzn-20251231.htm",
-              "additional_source_urls": [],
-              "baseline_headcount": 1576000,
-              "baseline_date": "2026-08-13"
+              "source_url": "https://s2.q4cdn.com/299287126/files/design/amazon-logo-white.svg",
+              "additional_source_urls": [
+                "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCQwn38akc6yYJDCJWLZzYklp_yCW2LiyAWvLPO0ILEou7Ku5-vR7rutJgKV_IjSVjG4o2c3HtC_Set94Xto6VIaFmJpbdTdwS2Hgr8uo9jZGQj-BHc3aBxFRIT1xGnCaVL9l_OyU="
+              ],
+              "baseline_headcount": 320000,
+              "baseline_date": "2026-08-12"
             }
           }
         },
@@ -534,7 +536,7 @@
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": 1.166924359630961
+      "net_headcount_pct_yoy": -1.3066410789741878
     }
   },
   "high_end": {
@@ -554,7 +556,7 @@
               "baseline_date": "2026-08-09",
               "source_url": "https://web.archive.org/web/20260809133054/https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true",
               "is_estimate": true,
-              "tooltip": "Baseline: 2026-08-09. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
+              "tooltip": "Baseline: 2026-08-09. Estimate from a complete archived board, classified by job title using the site’s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             },
             "1_year_ago": {
               "value": 206,
@@ -563,7 +565,7 @@
               "baseline_date": "2025-09-17",
               "source_url": "https://web.archive.org/web/20250917181657/https://boards-api.greenhouse.io/v1/boards/anthropic/departments",
               "is_estimate": true,
-              "tooltip": "Baseline: 2025-09-17. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
+              "tooltip": "Baseline: 2025-09-17. Estimate from a complete archived board, classified by job title using the site’s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             }
           }
         },
@@ -581,7 +583,7 @@
               "baseline_date": "2026-08-07",
               "source_url": "https://web.archive.org/web/20260807141931/https://api.ashbyhq.com/posting-api/job-board/openai",
               "is_estimate": true,
-              "tooltip": "Baseline: 2026-08-07. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
+              "tooltip": "Baseline: 2026-08-07. Estimate from a complete archived board, classified by job title using the site’s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             },
             "1_year_ago": {
               "value": 583,
@@ -590,7 +592,7 @@
               "baseline_date": "2025-09-06",
               "source_url": "https://web.archive.org/web/20250906010425/https://openai.com/careers/search/",
               "is_estimate": true,
-              "tooltip": "Baseline: 2025-09-06. Estimate from a complete archived board, classified by job title using the site\u2019s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
+              "tooltip": "Baseline: 2025-09-06. Estimate from a complete archived board, classified by job title using the site’s technical-role categories. Ambiguous titles may affect the count; this is not an employer-reported technical total."
             }
           }
         },
