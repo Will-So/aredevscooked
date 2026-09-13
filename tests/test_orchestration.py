@@ -368,6 +368,58 @@ def test_find_recent_headcount_data_skips_amazon_total_headcount(tmp_path, mocke
     assert result["current_headcount"] == 320000
 
 
+def test_find_recent_headcount_data_carries_forward_previous_baselines(
+    tmp_path, mocker
+):
+    """Fallback data should keep last run's baselines, dropping over-cap ones."""
+    history_file = tmp_path / "metrics_history.json"
+    metrics_file = tmp_path / "metrics_latest.json"
+    yesterday = (date.today() - timedelta(days=1)).isoformat()
+    history_file.write_text(
+        json.dumps(
+            {
+                "snapshots": {
+                    yesterday: {"headcounts": {"Amazon": {"headcount": 320000}}}
+                }
+            }
+        )
+    )
+    metrics_file.write_text(
+        json.dumps(
+            {
+                "medium_end": {
+                    "headcount": {
+                        "companies": {
+                            "Amazon": {
+                                "current": 320000,
+                                "changes": {
+                                    "1_year_ago": {
+                                        "baseline_headcount": 335000,
+                                        "baseline_date": "2025-09-30",
+                                    },
+                                    "q1_2023": {"baseline_headcount": 1465000},
+                                },
+                            }
+                        }
+                    }
+                }
+            }
+        )
+    )
+    paths = {
+        "data/processed/metrics_history.json": history_file,
+        "data/processed/metrics_latest.json": metrics_file,
+    }
+    mocker.patch("scripts.run_collection.Path", side_effect=paths.__getitem__)
+
+    result = find_recent_headcount_data("Amazon", max_days_old=7)
+
+    assert result["current_headcount"] == 320000
+    assert result["one_year_ago"]["headcount"] == 335000
+    assert result["one_year_ago"]["as_of_date"] == "2025-09-30"
+    assert "q1_2023" not in result
+
+
 def test_load_same_day_headcount_data_skips_amazon_total_headcount(tmp_path, mocker):
     """Cached Amazon total headcount or baselines should force re-collection."""
     metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"

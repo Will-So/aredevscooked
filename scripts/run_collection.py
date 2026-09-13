@@ -577,6 +577,8 @@ def calculate_headcount_changes(
     elif history_snapshot_30d:
         company_snapshot = history_snapshot_30d.get("headcounts", {}).get(company_name)
         headcount_30d = company_snapshot.get("headcount") if company_snapshot else None
+        if exceeds_company_headcount_cap(company_name, headcount_30d):
+            headcount_30d = None
         snapshot_date = history_snapshot_30d.get("date", "") if headcount_30d else ""
         source_url_30d = (company_snapshot or {}).get("source_url", "")
         source = "history"
@@ -892,6 +894,56 @@ def exceeds_company_headcount_cap(company_name: str, *headcounts: int | None) ->
     )
 
 
+def baseline_periods_from_changes(
+    changes: dict[str, Any],
+) -> dict[str, dict[str, Any]]:
+    """Convert metrics "changes" baselines back into Gemini-style period payloads."""
+    periods = {}
+    for metrics_key, payload_key in [
+        ("1_year_ago", "one_year_ago"),
+        ("q1_2023", "q1_2023"),
+    ]:
+        change = changes.get(metrics_key) or {}
+        baseline_headcount = change.get("baseline_headcount")
+        if baseline_headcount:
+            periods[payload_key] = {
+                "headcount": baseline_headcount,
+                "as_of_date": change.get("baseline_date", ""),
+                "source_url": change.get("source_url", ""),
+                "additional_source_urls": change.get("additional_source_urls", []),
+            }
+    return periods
+
+
+def load_previous_headcount_baselines(company_name: str) -> dict[str, dict[str, Any]]:
+    """Load a company's 1-year and Q1 2023 baselines from the last metrics file.
+
+    History snapshots only store the current headcount, so without this a failed
+    collection falls back to the older static values in baselines.json (for Amazon,
+    350k from Oct 2024 instead of the last researched 335k). Over-cap baselines
+    are dropped so a bad run's total-headcount figures are never carried forward.
+    """
+    metrics_file = Path("data/processed/metrics_latest.json")
+    if not metrics_file.exists():
+        return {}
+
+    with open(metrics_file, "r") as f:
+        metrics = json.load(f)
+
+    for tier_name in ["low_end", "medium_end"]:
+        companies = metrics.get(tier_name, {}).get("headcount", {}).get("companies", {})
+        if company_name in companies:
+            periods = baseline_periods_from_changes(
+                companies[company_name].get("changes", {})
+            )
+            return {
+                period: data
+                for period, data in periods.items()
+                if not exceeds_company_headcount_cap(company_name, data["headcount"])
+            }
+    return {}
+
+
 def find_recent_headcount_data(
     company_name: str, max_days_old: int = 7
 ) -> dict[str, Any] | None:
@@ -931,6 +983,7 @@ def find_recent_headcount_data(
                 "current_headcount": headcount_data["headcount"],
                 "data_date": headcount_data.get("data_date", ""),
                 "source_urls": headcount_data.get("source_urls", []),
+                **load_previous_headcount_baselines(company_name),
             }
 
     return None
@@ -1003,23 +1056,9 @@ def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
                 },
             }
 
-            changes = company_data.get("changes", {})
-            for metrics_key, payload_key in [
-                ("1_year_ago", "one_year_ago"),
-                ("q1_2023", "q1_2023"),
-            ]:
-                change = changes.get(metrics_key, {})
-                baseline_headcount = change.get("baseline_headcount")
-                if baseline_headcount:
-                    reconstructed[payload_key] = {
-                        "headcount": baseline_headcount,
-                        "as_of_date": change.get("baseline_date", ""),
-                        "source_url": change.get("source_url", ""),
-                        "additional_source_urls": change.get(
-                            "additional_source_urls", []
-                        ),
-                    }
-
+            reconstructed.update(
+                baseline_periods_from_changes(company_data.get("changes", {}))
+            )
             same_day_data[company_name] = reconstructed
 
     return same_day_data

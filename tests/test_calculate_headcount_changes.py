@@ -43,6 +43,24 @@ def gemini_data():
     }
 
 
+def test_30_day_history_ignores_over_cap_headcount(headcount_processor, baselines_data):
+    """A total-headcount history snapshot must not look like an 80% Amazon collapse."""
+    history_snapshot = {
+        "date": "2026-09-12",
+        "headcounts": {"Amazon": {"headcount": 1576000}},
+    }
+
+    changes = calculate_headcount_changes(
+        320000,
+        "Amazon",
+        baselines_data,
+        headcount_processor,
+        history_snapshot_30d=history_snapshot,
+    )
+
+    assert changes["30_days_ago"]["pct"] is None
+
+
 def test_30d_with_history_snapshot(headcount_processor, baselines_data, gemini_data):
     snapshot = {
         "date": "2026-02-16",
