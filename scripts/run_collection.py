@@ -880,6 +880,18 @@ def find_recent_job_posting_data(
     return None
 
 
+def exceeds_company_headcount_cap(company_name: str, *headcounts: int | None) -> bool:
+    """Return True if any headcount is above the company's configured cap.
+
+    Cached and historical data predating the cap (e.g. Amazon's ~1.5M total
+    headcount saved on 2026-09-12) must not be reused as a fallback.
+    """
+    company_max = VALIDATION["headcount"]["company_max"].get(company_name)
+    return company_max is not None and any(
+        headcount and headcount > company_max for headcount in headcounts
+    )
+
+
 def find_recent_headcount_data(
     company_name: str, max_days_old: int = 7
 ) -> dict[str, Any] | None:
@@ -910,6 +922,8 @@ def find_recent_headcount_data(
 
         if snapshot and company_name in snapshot.get("headcounts", {}):
             headcount_data = snapshot["headcounts"][company_name]
+            if exceeds_company_headcount_cap(company_name, headcount_data["headcount"]):
+                continue
             log(
                 f"  ⏪ Using {days_back}-day-old headcount data for {company_name}: {headcount_data['headcount']:,}"
             )
@@ -961,6 +975,17 @@ def load_same_day_headcount_data() -> dict[str, dict[str, Any]]:
         for company_name, company_data in companies.items():
             current_headcount = company_data.get("current")
             if current_headcount is None:
+                continue
+            baseline_headcounts = [
+                change.get("baseline_headcount")
+                for change in company_data.get("changes", {}).values()
+            ]
+            if exceeds_company_headcount_cap(
+                company_name, current_headcount, *baseline_headcounts
+            ):
+                log(
+                    f"  ⚠️  Recollecting {company_name}: cached headcount exceeds company cap"
+                )
                 continue
 
             reconstructed: dict[str, Any] = {

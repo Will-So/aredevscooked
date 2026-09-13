@@ -341,6 +341,65 @@ def test_find_recent_headcount_data_returns_most_recent(tmp_path, mocker):
     assert result["current_headcount"] == 70799
 
 
+def test_find_recent_headcount_data_skips_amazon_total_headcount(tmp_path, mocker):
+    """A snapshot with Amazon's total headcount should not be used as a fallback."""
+    history_file = tmp_path / "data" / "processed" / "metrics_history.json"
+    history_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today()
+    yesterday = today - timedelta(days=1)
+    history_data = {
+        "snapshots": {
+            yesterday.isoformat(): {
+                "headcounts": {"Amazon": {"headcount": 320000, "data_date": "x"}}
+            },
+            today.isoformat(): {
+                "headcounts": {"Amazon": {"headcount": 1576000, "data_date": "x"}}
+            },
+        },
+    }
+    with open(history_file, "w") as f:
+        json.dump(history_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=history_file)
+
+    result = find_recent_headcount_data("Amazon", max_days_old=7)
+
+    assert result["current_headcount"] == 320000
+
+
+def test_load_same_day_headcount_data_skips_amazon_total_headcount(tmp_path, mocker):
+    """Cached Amazon total headcount or baselines should force re-collection."""
+    metrics_file = tmp_path / "data" / "processed" / "metrics_latest.json"
+    metrics_file.parent.mkdir(parents=True, exist_ok=True)
+
+    today = date.today().isoformat()
+    metrics_data = {
+        "metadata": {"last_updated": f"{today}T12:00:00+00:00"},
+        "low_end": {"headcount": {"companies": {}}},
+        "medium_end": {
+            "headcount": {
+                "companies": {
+                    "Amazon": {
+                        "current": 320000,
+                        "changes": {"q1_2023": {"baseline_headcount": 1465000}},
+                    },
+                    "Meta": {"current": 78000, "changes": {}},
+                }
+            }
+        },
+    }
+    with open(metrics_file, "w") as f:
+        json.dump(metrics_data, f)
+
+    mocker.patch("scripts.run_collection.Path", return_value=metrics_file)
+
+    result = load_same_day_headcount_data()
+
+    assert "Amazon" not in result
+    assert result["Meta"]["current_headcount"] == 78000
+
+
 def test_find_recent_headcount_data_returns_none_if_not_found(tmp_path, mocker):
     """Should return None if company not found in recent history."""
     history_file = tmp_path / "data" / "processed" / "metrics_history.json"
