@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-13T06:20:35.935746+00:00"
+    "last_updated": "2026-09-13T13:16:20.862853+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -20179,7 +20179,7 @@
     },
     "2026-09-13": {
       "date": "2026-09-13",
-      "timestamp": "2026-09-13T06:20:35.935714+00:00",
+      "timestamp": "2026-09-13T13:16:20.862824+00:00",
       "stock_prices": {
         "HCLTech": {
           "price": 1206.1,
@@ -20218,7 +20218,7 @@
             "https://www.hcltech.com/investors/quarter-results"
           ],
           "source_url": "https://www.hcltech.com/investors/quarter-results",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "LTIMindtree": {
           "headcount": 87886,
@@ -20227,7 +20227,7 @@
             "https://www.moneycontrol.com/news/business/earnings/ltm-q1fy27-results-profit-up-17-margin-at-15-5-12759901.html"
           ],
           "source_url": "https://www.moneycontrol.com/news/business/earnings/ltm-q1fy27-results-profit-up-17-margin-at-15-5-12759901.html",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Cognizant": {
           "headcount": 356700,
@@ -20236,7 +20236,7 @@
             "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000015/cognizanta.jpg"
           ],
           "source_url": "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000015/cognizanta.jpg",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Infosys": {
           "headcount": 328062,
@@ -20245,7 +20245,7 @@
             "https://www.moneycontrol.com/news/business/earnings/infosys-headcount-falls-by-532-employees-in-june-quarter-12782341.html"
           ],
           "source_url": "https://www.moneycontrol.com/news/business/earnings/infosys-headcount-falls-by-532-employees-in-june-quarter-12782341.html",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "TCS": {
           "headcount": 593798,
@@ -20254,7 +20254,7 @@
             "https://www.tcs.com/content/dam/global-tcs/en/pdf/investors/financial-results/2027/q1-fy27-press-release.pdf"
           ],
           "source_url": "https://www.tcs.com/content/dam/global-tcs/en/pdf/investors/financial-results/2027/q1-fy27-press-release.pdf",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Tech Mahindra": {
           "headcount": 146760,
@@ -20263,7 +20263,7 @@
             "https://www.staffingindustry.com/news/global-it-services-provider-tech-mahindra-reported-revenue-climbed-177-year-over-year"
           ],
           "source_url": "https://www.staffingindustry.com/news/global-it-services-provider-tech-mahindra-reported-revenue-climbed-177-year-over-year",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Wipro": {
           "headcount": 243044,
@@ -20272,7 +20272,7 @@
             "https://www.wipro.com/content/dam/nexus/en/newsroom/press-releases/2026/wipro-announces-results-for-the-quarter-ended-june-30-2026-pdf.pdf"
           ],
           "source_url": "https://www.wipro.com/content/dam/nexus/en/newsroom/press-releases/2026/wipro-announces-results-for-the-quarter-ended-june-30-2026-pdf.pdf",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Microsoft": {
           "headcount": 223000,
@@ -20281,7 +20281,7 @@
             "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000032/msft-20260630.htm"
           ],
           "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000032/msft-20260630.htm",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Meta": {
           "headcount": 75472,
@@ -20290,7 +20290,7 @@
             "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g19.jpg"
           ],
           "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g19.jpg",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Apple": {
           "headcount": 166000,
@@ -20299,7 +20299,7 @@
             "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927_g2.jpg"
           ],
           "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927_g2.jpg",
-          "confidence": "high"
+          "confidence": "unknown"
         },
         "Amazon": {
           "headcount": 320000,
@@ -20308,7 +20308,7 @@
             "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGziH4KLvhXqIOnYIy5Qvm58vx04bVnOZizexKfyHa4glXZzE_rzOnZikLSBvrPcHxGyA4Ar4NBB1E24ctizIZAegvAdyajZtAH_zvvoDVZOoaivfH6BVZ_LtoUQDEt1HYQdJ1FIzA0sYg="
           ],
           "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGziH4KLvhXqIOnYIy5Qvm58vx04bVnOZizexKfyHa4glXZzE_rzOnZikLSBvrPcHxGyA4Ar4NBB1E24ctizIZAegvAdyajZtAH_zvvoDVZOoaivfH6BVZ_LtoUQDEt1HYQdJ1FIzA0sYg=",
-          "confidence": "medium"
+          "confidence": "unknown"
         },
         "NVIDIA": {
           "headcount": 42000,
@@ -20317,7 +20317,7 @@
             "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
           ],
           "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
-          "confidence": "high"
+          "confidence": "unknown"
         }
       },
       "job_postings": {
@@ -20327,6 +20327,20 @@
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids"
+        },
+        "OpenAI": {
+          "total_technical_jobs": 781,
+          "collection_date": "2026-09-07",
+          "source_url": "https://openai.com/careers/search/",
+          "additional_source_urls": [],
+          "collection_method": "google_search"
+        },
+        "DeepMind": {
+          "total_technical_jobs": 3,
+          "collection_date": "2026-03-07",
+          "source_url": "https://job-boards.greenhouse.io/deepmind",
+          "additional_source_urls": [],
+          "collection_method": "google_search"
         }
       },
       "indeed_index": {
