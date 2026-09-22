@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-09-21T15:04:32.544499+00:00"
+    "last_updated": "2026-09-22T13:21:55.361701+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -21617,6 +21617,167 @@
         "Anthropic": {
           "total_technical_jobs": 333,
           "collection_date": "2026-09-21",
+          "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
+          "additional_source_urls": [],
+          "collection_method": "greenhouse_classified_ids"
+        }
+      },
+      "indeed_index": {
+        "value": 76.62,
+        "date": "2026-09-11"
+      },
+      "total_indeed_index": {
+        "value": 103.15,
+        "date": "2026-09-11"
+      }
+    },
+    "2026-09-22": {
+      "date": "2026-09-22",
+      "timestamp": "2026-09-22T13:21:55.361666+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1270.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 59.38,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 10.89,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2105.0,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1551.6,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 1.67,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 773.5,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 223889,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.thehindubusinessline.com/info-tech/hcltechs-workforce-declines-by-3292-in-q1-fy27/article69812348.ece"
+          ],
+          "source_url": "https://www.thehindubusinessline.com/info-tech/hcltechs-workforce-declines-by-3292-in-q1-fy27/article69812348.ece",
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87886,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF039B-pO8LFhglFJ0qFFbQA4w8WUXSxMXNVGMxjoR-e1DAhjUl12UCZSzK3tt3-1fyD_kKDWcj5WlGFMiVM5pmxi4d_hABc22AMQj4ycC0slNQs_Brta2KO6e4YNe_P8AbOjdRxNbFMh2RkVHlqOvuEzKLs9ezJkhDcq0N2Kq5sOdT2fg0ZVCabu2i7x8="
+          ],
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF039B-pO8LFhglFJ0qFFbQA4w8WUXSxMXNVGMxjoR-e1DAhjUl12UCZSzK3tt3-1fyD_kKDWcj5WlGFMiVM5pmxi4d_hABc22AMQj4ycC0slNQs_Brta2KO6e4YNe_P8AbOjdRxNbFMh2RkVHlqOvuEzKLs9ezJkhDcq0N2Kq5sOdT2fg0ZVCabu2i7x8=",
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 356700,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://investors.cognizant.com/"
+          ],
+          "source_url": "https://investors.cognizant.com/",
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328062,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q1/documents/fact-sheet.pdf"
+          ],
+          "source_url": "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q1/documents/fact-sheet.pdf",
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 593798,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.tcs.com/content/dam/global-tcs/en/investor-relations/financial-statements/2026-27/q1/q1-fy27-fact-sheet.pdf"
+          ],
+          "source_url": "https://www.tcs.com/content/dam/global-tcs/en/investor-relations/financial-statements/2026-27/q1/q1-fy27-fact-sheet.pdf",
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 146760,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.ndtvprofit.com/business/tech-mahindra-q1-attrition-slips-to-118-it-headcount-falls-below-75000"
+          ],
+          "source_url": "https://www.ndtvprofit.com/business/tech-mahindra-q1-attrition-slips-to-118-it-headcount-falls-below-75000",
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 243044,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.wipro.com/content/dam/nexus/en/newsroom/press-releases/2026/wipro-announces-results-for-the-quarter-ended-june-30-2026.pdf"
+          ],
+          "source_url": "https://www.wipro.com/content/dam/nexus/en/newsroom/press-releases/2026/wipro-announces-results-for-the-quarter-ended-june-30-2026.pdf",
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 223000,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000036/msft-20260630.htm"
+          ],
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000036/msft-20260630.htm",
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 75472,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026- Results/default.aspx"
+          ],
+          "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026- Results/default.aspx",
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927_g2.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927_g2.jpg",
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 334000,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amazonlogorgba09a.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amazonlogorgba09a.jpg",
+          "confidence": "medium"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg",
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 324,
+          "collection_date": "2026-09-22",
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids"
