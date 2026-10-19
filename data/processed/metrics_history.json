@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-10-18T12:34:57.086859+00:00"
+    "last_updated": "2026-10-19T15:31:21.153937+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -25908,6 +25908,158 @@
         "Anthropic": {
           "total_technical_jobs": 379,
           "collection_date": "2026-10-18",
+          "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
+          "additional_source_urls": [],
+          "collection_method": "greenhouse_classified_ids"
+        }
+      },
+      "indeed_index": {
+        "value": 78.099876168,
+        "date": "2026-10-09"
+      },
+      "total_indeed_index": {
+        "value": 104.1454125029,
+        "date": "2026-10-09"
+      }
+    },
+    "2026-10-19": {
+      "date": "2026-10-19",
+      "timestamp": "2026-10-19T15:31:21.153907+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1379.9,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 66.0,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 12.15,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2460.9,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1779.1,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 1.93,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 769.96,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 230339,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.prnewswire.com/news-releases/hcltech-delivers-strong-q2-led-by-record-deal-bookings-of-33-billion-302271811.html"
+          ],
+          "source_url": "https://www.prnewswire.com/news-releases/hcltech-delivers-strong-q2-led-by-record-deal-bookings-of-33-billion-302271811.html",
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 88835,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.businessworld.in/article/ltm-q2-net-profit-falls-6-sequentially-despite-revenue-growth-535310"
+          ],
+          "source_url": "https://www.businessworld.in/article/ltm-q2-net-profit-falls-6-sequentially-despite-revenue-growth-535310",
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 356700,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://cognizant.q4cdn.com/123993165/files/doc_downloads/2026/Q2/Infographic-Q2-2026.pdf"
+          ],
+          "source_url": "https://cognizant.q4cdn.com/123993165/files/doc_downloads/2026/Q2/Infographic-Q2-2026.pdf",
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 328062,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q1/documents/fact-sheet.pdf"
+          ],
+          "source_url": "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q1/documents/fact-sheet.pdf",
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 598056,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.newsbytesapp.com/news/business/tcs-adds-4-258-employees-headcount-598-056-attrition-at-13-3/story"
+          ],
+          "source_url": "https://www.newsbytesapp.com/news/business/tcs-adds-4-258-employees-headcount-598-056-attrition-at-13-3/story",
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 152206,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.cnbctv18.com/business/tech-mahindra-adds-nearly-5500-employees-in-q2-highest-quarterly-addition-in-two-years-19515901.htm"
+          ],
+          "source_url": "https://www.cnbctv18.com/business/tech-mahindra-adds-nearly-5500-employees-in-q2-highest-quarterly-addition-in-two-years-19515901.htm",
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 236328,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.wipro.com/content/dam/nexus/en/investor/financial-results/2026-2027/q2/datasheet-q2fy27.pdf"
+          ],
+          "source_url": "https://www.wipro.com/content/dam/nexus/en/investor/financial-results/2026-2027/q2/datasheet-q2fy27.pdf",
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 223000,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.sec.gov/edgar/browse/?owner=MSFT"
+          ],
+          "source_url": "https://www.sec.gov/edgar/browse/?owner=MSFT",
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 75472,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g19.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g19.jpg",
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 166000,
+          "data_date": "2025-09-27",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+          ],
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+          "confidence": "high"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 379,
+          "collection_date": "2026-10-19",
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids"
