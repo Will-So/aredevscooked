@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "last_updated": "2026-10-20T13:31:39.878930+00:00",
+    "last_updated": "2026-10-21T13:41:56.236038+00:00",
     "collection_status": "success"
   },
   "low_end": {
@@ -9,31 +9,31 @@
         "HCLTech": {
           "current": 230339,
           "data_date": "2026-09-30",
-          "source_url": "https://www.hcltech.com/press-releases/hcltech-delivers-strong-q2-led-by-record-deal-bookings-3-3-billion",
+          "source_url": "https://www.hcltech.com/investors/quarter-results",
           "additional_source_urls": [
-            "https://www.moneycontrol.com/news/business/hcltech-adds-6450-employees-in-q2-highest-quarterly-hiring-in-16-quarters-12829281.html"
+            "https://www.financialexpress.com/industry/hcltech-headcount-grows-6450-in-q2-4322434/"
           ],
-          "notes": "Q2 FY27 earnings release reporting total headcount of 230,339 as of September 30, 2026.",
+          "notes": "Q2 FY27 investor release and financial results reporting total headcount as of September 30, 2026.",
           "source_urls": [
-            "https://www.hcltech.com/press-releases/hcltech-delivers-strong-q2-led-by-record-deal-bookings-3-3-billion"
+            "https://www.hcltech.com/investors/quarter-results"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 3699,
-              "pct": 1.63,
+              "value": 4406,
+              "pct": 1.95,
               "badge": "neutral",
               "source_url": "https://www.hcltech.com/investors/quarter-results",
               "additional_source_urls": [
-                "https://www.moneycontrol.com/news/business/earnings/hcl-tech-q2-results-net-profit-up-at-rs-4235-crore-atrrition-drops-to-12-6-11516081.html"
+                "https://www.hcltech.com/sites/default/files/inline-images/cvk-img-1.jpg"
               ],
-              "baseline_headcount": 226640,
+              "baseline_headcount": 225933,
               "baseline_date": "2025-09-30"
             },
             "q1_2023": {
               "value": 4395,
               "pct": 1.95,
               "badge": "neutral",
-              "source_url": "https://www.hcltech.com/press-releases/hcltech-reports-strong-annual-growth",
+              "source_url": "https://www.hcltech.com/investors/quarter-results",
               "additional_source_urls": [],
               "baseline_headcount": 225944,
               "baseline_date": "2023-03-31"
@@ -42,51 +42,53 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.hcltech.com/press-releases/hcltech-delivers-strong-q2-led-by-record-deal-bookings-3-3-billion",
+              "source_url": "https://www.hcltech.com/investors/quarter-results",
               "additional_source_urls": [],
               "baseline_headcount": 230339,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "LTIMindtree": {
           "current": 87886,
           "data_date": "2026-06-30",
-          "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/investors/pdf/financial-results/FY2027/Q1/Earnings-Release-and-Factsheet-Q1FY27.pdf",
+          "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/refresh-images/Investors-Notices.webp",
           "additional_source_urls": [
-            "https://www.bwbusinessworld.com/article/ltm-q2-net-profit-falls-6-sequentially-despite-revenue-growth-550993"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBe-R_KaG3pRx7xcq6KRwn-FBDxHiV-7kxfhFUw3UtOzpf5gZmErLFrZ11bUn3eC6MnJIIVuahvFbfI9rFOPUJBnkrkN6Cvl5n9JiYPi-jb7U_Ur_94W7VAeaT0prnWAz6VeYuIcDqsQI-boeGkl5onp82jGK2pqYsjpAdEaOMV26Oeo2THEQAkhj0Dh_n"
           ],
-          "notes": "Q1 FY27 earnings release and factsheet reports headcount at 87,886 as of June 30, 2026 (subsequent Q2 report noted 88,835 or 87,886 depending on specific filings/factsheet disclosures; using official Q1 fact sheet base of 87,886).",
+          "notes": "Q1 FY27 Factsheet/Earnings Release reporting total employees as of June 30, 2026.",
           "source_urls": [
-            "https://www.ltm.com/content/dam/ltimcorporatewebsite/investors/pdf/financial-results/FY2027/Q1/Earnings-Release-and-Factsheet-Q1FY27.pdf"
+            "https://www.ltm.com/content/dam/ltimcorporatewebsite/refresh-images/Investors-Notices.webp"
           ],
           "changes": {
             "1_year_ago": {
               "value": 1439,
               "pct": 1.66,
               "badge": "neutral",
-              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/investors/pdf/financial-results/FY2026/Q2/Earnings-Release-Q2-FY26.pdf",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFKZzAEe5TUTxe1qEqG2xdKH7oa07NhkeuEGKtGD0Grpo8FpZPpBtPq3816pG9aebI9svuJR-rHwbG3oalXHa1TdJlSxxDR3VjhPi-uPKw4pkFvPfUhXGsguqYSokWvsy8PqeFrbuh7N_O4mQrU2wPGk7u48bIuWPuFMvchPP1hy_MJ0dWcYQnfDfu",
               "additional_source_urls": [],
               "baseline_headcount": 86447,
               "baseline_date": "2025-09-30"
             },
             "q1_2023": {
-              "value": 3340,
-              "pct": 3.95,
-              "badge": "neutral",
-              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/investors/pdf/annual-reports/FY2023/LTIMindtree-Annual-Report-2023.pdf",
+              "value": 5149,
+              "pct": 6.22,
+              "badge": "strong",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8Fn5NNGhyl7uXA9fgSTI8w0JcDqxPXSttBv_h8uz4wmoxqKtFijbEv_3C6QS29QRXBp8GsYBR6HX0bqJ4ShncrKt3Q0gyKhWMHJQqYvt4Jm1wKChkNGbBDl1NAg==",
               "additional_source_urls": [],
-              "baseline_headcount": 84546,
+              "baseline_headcount": 82737,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/investors/pdf/financial-results/FY2027/Q1/Earnings-Release-and-Factsheet-Q1FY27.pdf",
-              "additional_source_urls": [],
+              "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/refresh-images/Investors-Notices.webp",
+              "additional_source_urls": [
+                "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBe-R_KaG3pRx7xcq6KRwn-FBDxHiV-7kxfhFUw3UtOzpf5gZmErLFrZ11bUn3eC6MnJIIVuahvFbfI9rFOPUJBnkrkN6Cvl5n9JiYPi-jb7U_Ur_94W7VAeaT0prnWAz6VeYuIcDqsQI-boeGkl5onp82jGK2pqYsjpAdEaOMV26Oeo2THEQAkhj0Dh_n"
+              ],
               "baseline_headcount": 87886,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
@@ -95,9 +97,9 @@
           "data_date": "2026-06-30",
           "source_url": "https://investors.cognizant.com",
           "additional_source_urls": [
-            "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630_g6.jpg"
+            "https://www.sec.gov/edgar/browse/?CIK=1058290"
           ],
-          "notes": "Q2 2026 Form 10-Q and earnings release reporting total headcount as of June 30, 2026.",
+          "notes": "From Q2 2026 Form 10-Q and earnings release reporting headcount of approximately 356,700 as of June 30, 2026.",
           "source_urls": [
             "https://investors.cognizant.com"
           ],
@@ -107,9 +109,7 @@
               "pct": 1.97,
               "badge": "neutral",
               "source_url": "https://investors.cognizant.com",
-              "additional_source_urls": [
-                "https://www.sec.gov/edgar/searchedgar/companysearch"
-              ],
+              "additional_source_urls": [],
               "baseline_headcount": 349800,
               "baseline_date": "2025-09-30"
             },
@@ -118,9 +118,7 @@
               "pct": 1.48,
               "badge": "neutral",
               "source_url": "https://investors.cognizant.com",
-              "additional_source_urls": [
-                "https://www.sec.gov/edgar/searchedgar/companysearch"
-              ],
+              "additional_source_urls": [],
               "baseline_headcount": 351500,
               "baseline_date": "2023-03-31"
             },
@@ -130,114 +128,114 @@
               "badge": "neutral",
               "source_url": "https://investors.cognizant.com",
               "additional_source_urls": [
-                "https://www.sec.gov/Archives/edgar/data/1058290/000105829026000031/ctsh-20260630_g6.jpg"
+                "https://www.sec.gov/edgar/browse/?CIK=1058290"
               ],
               "baseline_headcount": 356700,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "Infosys": {
           "current": 328062,
           "data_date": "2026-06-30",
-          "source_url": "https://www.infosys.com/content/dam/infosys-web/en/global-resource/26/fact-sheet/first-quarter-fy27-fact-sheet.pdf",
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFesiqoUKPzRalo-qSFlDYrMWWlOB0Be5XMzIsc-0ZXvA4TnBRrqUVgjYSnQZBr5L9ZkpHLcA-TfqyWHd90klIdqAiqsU4EU8Wc4rc2efu8CoTUFIIDAV8bVNDLA1BRkbpiopGF0FkTOeZVTb_Q-3OiNNl0TfSTXUiHuJ5yqlTlnaxKALIwoK6Wo9pQzn-UuH289R6uYd9C90EenxtPWBQ2BI0MHCOm7h4u7OLAKqxiE_rxhChZ8pkPV0CdMDTRoC6RCA3SKGg=",
           "additional_source_urls": [
-            "https://economictimes.indiatimes.com/tech/information-tech/infosys-headcount-falls-by-532-employees-in-june-quarter/articleshow/111977759.cms"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHHBFZcP1OAlbP3ikBtjwjqdFZ6PWETDcILPfsSrJQi3x9LzNqCDQ7i4F5yDWR_yWK5hXY8lhlzwd7MVsFwXL7-5kpx4OLun5s3VIMMxdhbz8GsCwNELCPIEcEcXUBrPWyhxYKfwm4kTknx5p-ovNohuH87vK6iKUqiaq8EZh3iFYeli1k65Wqnj_8oKvVZNRsx4Hbx-3omps4OSL8Grbs="
           ],
-          "notes": "Q1 FY27 Fact Sheet / 6-K report for the period ended June 30, 2026.",
+          "notes": "Q1 FY27 quarterly fact sheet and earnings report showing total workforce of 328,062 as of June 30, 2026.",
           "source_urls": [
-            "https://www.infosys.com/content/dam/infosys-web/en/global-resource/26/fact-sheet/first-quarter-fy27-fact-sheet.pdf"
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFesiqoUKPzRalo-qSFlDYrMWWlOB0Be5XMzIsc-0ZXvA4TnBRrqUVgjYSnQZBr5L9ZkpHLcA-TfqyWHd90klIdqAiqsU4EU8Wc4rc2efu8CoTUFIIDAV8bVNDLA1BRkbpiopGF0FkTOeZVTb_Q-3OiNNl0TfSTXUiHuJ5yqlTlnaxKALIwoK6Wo9pQzn-UuH289R6uYd9C90EenxtPWBQ2BI0MHCOm7h4u7OLAKqxiE_rxhChZ8pkPV0CdMDTRoC6RCA3SKGg="
           ],
           "changes": {
             "1_year_ago": {
               "value": -3929,
               "pct": -1.18,
               "badge": "neutral",
-              "source_url": "https://www.infosys.com/content/dam/infosys-web/en/global-resource/26/press-release/q2-fy26-financial-results.pdf",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGt-d5lVu9R9Cecxz2jmrQxi2JmY2U8D1vDg7MCROPlUs8ipGPn80j5y20IVlCXIO4qE34gQq6x01mTtLRHXaAdlyfNbLF3BYH6L-ryZcfbjlb63Bn-4f9PGqsfmcvCVbmIyUj7dmuVuf6jGXOQZd8WPc1b6qKaTPwse9GL-9VfkVq-7yRpSNpIXDYcpRvycs0G8PyNLTgiArGBugIiWnMb2oZbY5PpMNnffXVWp1XkL4hEa7Q=",
               "additional_source_urls": [
-                "https://economictimes.indiatimes.com/tech/information-tech/all-it-giants-add-talent-tcs-sits-it-out/articleshow/124607797.cms"
+                "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXAE4NmEK55w7AQPYLltDWwVPgCDj5BkRFUXRbzcDIHccBKZOtujIcyGSF5KqkUuQiQd2_dnHTF8XJMbv-BpVcqESmbGjsdwJBs7BgT9RnOBKbaARzo9bAgcVksPqSmaHPo2qDg6vft0SAzdzUQPq1rs8NzMx3GR2ddPWJ1QLkUBW57urftA7LL8VJJygLmwqnNSqwFe0XcWZSER8Dw8E="
               ],
               "baseline_headcount": 331991,
               "baseline_date": "2025-09-30"
             },
             "q1_2023": {
-              "value": -8232,
-              "pct": -2.45,
+              "value": -15172,
+              "pct": -4.42,
               "badge": "neutral",
-              "source_url": "https://www.infosys.com/content/dam/infosys-web/en/global-resource/23/fact-sheet/first-quarter-fy24-fact-sheet.pdf",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOKWWKYidk-dfM44xVNNVrCNGbH2W5DL5nOvLbqADu13PifJBc92c_uQrB6HMavfQO42XlA6st5x1zgzduqRGPa3aBynul0xMa7FxAlPpMfFtFzY0WPyXSdmcR66RUTsQW9vQsMs4L4UoKD81oSaFAkbg8amr7gYO2WEiUUdL1YfN5Bw1Y5n4CKpB_3meYb9BFdcIhO9fIKy09nfg9tE8=",
               "additional_source_urls": [],
-              "baseline_headcount": 336294,
-              "baseline_date": "2023-06-30"
-            },
-            "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
-              "badge": "neutral",
-              "source_url": "https://www.infosys.com/content/dam/infosys-web/en/global-resource/26/fact-sheet/first-quarter-fy27-fact-sheet.pdf",
-              "additional_source_urls": [],
-              "baseline_headcount": 328062,
-              "baseline_date": "2026-09-20"
-            }
-          }
-        },
-        "TCS": {
-          "current": 598056,
-          "data_date": "2026-09-30",
-          "source_url": "https://www.thehindubusinessline.com/info-tech/tcs-q2-headcount-4258-employees-added-as-attrition-slips-to-133/article68739121.ece",
-          "additional_source_urls": [
-            "https://www.indiainfoline.com/news/tcs-q2-fy27-results-net-profit-rises-15-revenue-at-73188-crore-ai-revenue-crosses-3-1-billion"
-          ],
-          "notes": "Q2 FY27 quarterly financial results and fact sheet ending September 30, 2026.",
-          "source_urls": [
-            "https://www.thehindubusinessline.com/info-tech/tcs-q2-headcount-4258-employees-added-as-attrition-slips-to-133/article68739121.ece"
-          ],
-          "changes": {
-            "1_year_ago": {
-              "value": -14668,
-              "pct": -2.39,
-              "badge": "neutral",
-              "source_url": "https://www.tcs.com/content/dam/tcs/pdf/investors/financial-results/revised/q2-fy25-press-release.pdf",
-              "additional_source_urls": [],
-              "baseline_headcount": 612724,
-              "baseline_date": "2024-09-30"
-            },
-            "q1_2023": {
-              "value": -16739,
-              "pct": -2.72,
-              "badge": "neutral",
-              "source_url": "https://www.tcs.com/content/dam/tcs/pdf/investors/financial-results/annual-reports/2024-25/integrated-annual-report-2024-2025.pdf",
-              "additional_source_urls": [],
-              "baseline_headcount": 614795,
+              "baseline_headcount": 343234,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.thehindubusinessline.com/info-tech/tcs-q2-headcount-4258-employees-added-as-attrition-slips-to-133/article68739121.ece",
+              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFesiqoUKPzRalo-qSFlDYrMWWlOB0Be5XMzIsc-0ZXvA4TnBRrqUVgjYSnQZBr5L9ZkpHLcA-TfqyWHd90klIdqAiqsU4EU8Wc4rc2efu8CoTUFIIDAV8bVNDLA1BRkbpiopGF0FkTOeZVTb_Q-3OiNNl0TfSTXUiHuJ5yqlTlnaxKALIwoK6Wo9pQzn-UuH289R6uYd9C90EenxtPWBQ2BI0MHCOm7h4u7OLAKqxiE_rxhChZ8pkPV0CdMDTRoC6RCA3SKGg=",
+              "additional_source_urls": [],
+              "baseline_headcount": 328062,
+              "baseline_date": "2026-09-21"
+            }
+          }
+        },
+        "TCS": {
+          "current": 598056,
+          "data_date": "2026-09-30",
+          "source_url": "https://www.etnownews.com/business/tcs-headcount-it-giant-adds-over-4200-in-q2-as-attrition-holds-steady-at-13-3-ai-revenue-crosses-3-1-billion-article-114050209",
+          "additional_source_urls": [
+            "https://www.tcs.com/content/dam/global-tcs/en/pdf/investors/financial-results/2026-27/q2/financial-results-quarter-ended-september-30-2026.pdf"
+          ],
+          "notes": "Q2 FY27 earnings report for the quarter ended September 30, 2026 reporting total workforce strength of 598,056.",
+          "source_urls": [
+            "https://www.etnownews.com/business/tcs-headcount-it-giant-adds-over-4200-in-q2-as-attrition-holds-steady-at-13-3-ai-revenue-crosses-3-1-billion-article-114050209"
+          ],
+          "changes": {
+            "1_year_ago": {
+              "value": 4742,
+              "pct": 0.8,
+              "badge": "neutral",
+              "source_url": "https://www.angelone.in/news/market-insights/tcs-employees-count-drops-nearly-by-20000-in-q2fy26-amid-restructuring",
+              "additional_source_urls": [],
+              "baseline_headcount": 593314,
+              "baseline_date": "2025-09-30"
+            },
+            "q1_2023": {
+              "value": -17262,
+              "pct": -2.81,
+              "badge": "neutral",
+              "source_url": "https://www.tcs.com/content/dam/global-tcs/en/pdf/investors/financial-results/2023-24/q1/press-release-q1-fy24.pdf",
+              "additional_source_urls": [],
+              "baseline_headcount": 615318,
+              "baseline_date": "2023-06-30"
+            },
+            "30_days_ago": {
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral",
+              "source_url": "https://www.etnownews.com/business/tcs-headcount-it-giant-adds-over-4200-in-q2-as-attrition-holds-steady-at-13-3-ai-revenue-crosses-3-1-billion-article-114050209",
               "additional_source_urls": [],
               "baseline_headcount": 598056,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "Tech Mahindra": {
           "current": 152206,
           "data_date": "2026-09-30",
-          "source_url": "https://www.techmahindra.com/",
+          "source_url": "https://www.thehindu.com/business/Industry/tech-mahindra-q2-profit-jumps-33/article68758444.ece",
           "additional_source_urls": [
-            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6qzokSAw__ZT0pVLLxmxrVPlemwmLZWD29cLw4ymU2i8dyxzTNpIbtAYxBNHRlE5t1QrE3yuhI3rfuz45tqp6iH3ukETVLu1GdBLDTUHDdmhuM4TvGEYz3s1inkm09Vm7KUx6GVvgSrJKghufsd1ET0chVVONQIOtCGj8xaZmOUDXDtAI5UM="
+            "https://insights.techmahindra.com/images/sspg-newbanner.jpg"
           ],
-          "notes": "Q2 FY27 earnings release reports total headcount at 152,206 as of September 30, 2026.",
+          "notes": "Total headcount reported for Q2 FY27 as of September 30, 2026.",
           "source_urls": [
-            "https://www.techmahindra.com/"
+            "https://www.thehindu.com/business/Industry/tech-mahindra-q2-profit-jumps-33/article68758444.ece"
           ],
           "changes": {
             "1_year_ago": {
               "value": -508,
               "pct": -0.33,
               "badge": "neutral",
-              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo3Ovw0l0eBiQIEM9_mZcY7b2QQjlU8CEsQQe69o0J8WmbripLbI8djOPMxK9sTwSdMgzJhs1xd7jBIriAn-Nk4EB2fZl6yTRHTH3pSJh9kNtb9HxdD0kkPswgnzha-zFDG1v1SrbfbJebyw1VwywCeJa9thxKgLuz8w7-iLyOFY-ARW9UK0-1AJAlMMFAO9jVskjJONpeEBam7R6gJEkGULsXyhhuEw==",
+              "source_url": "https://insights.techmahindra.com/images/cloud-banner.jpg",
               "additional_source_urls": [],
               "baseline_headcount": 152714,
               "baseline_date": "2025-09-30"
@@ -246,7 +244,7 @@
               "value": 3909,
               "pct": 2.64,
               "badge": "neutral",
-              "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHU8ALO0P5QTtW1MlkzHgpMLNVwC3Z8Kmq-TsH03GJD45_r1rgP1Aio-MqmhptyoYFBay5w4W2d5RY4WJ_xldny3xaeMpMuXaTzbur2GTB3A7Tn2KGDwnvBaWs5JRodfCOIdslQ_zYKtXbkgTLczqhA3WACFuDvpiylN46iTWhTDCFlSOmJty8zNuKpZGLd5vBuPAAt8B6pmDK9zHuPAHgzggcezqdjUSK4aOqKFKHqPgeOAky3ouRsXCniakYu18AWIQ==",
+              "source_url": "https://www.moneycontrol.com/news/business/earnings/tech-mahindra-q1-results-headcount-plunges-9-by-4103-in-june-quarter-11032331.html",
               "additional_source_urls": [],
               "baseline_headcount": 148297,
               "baseline_date": "2023-06-30"
@@ -255,12 +253,12 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.techmahindra.com/",
+              "source_url": "https://www.thehindu.com/business/Industry/tech-mahindra-q2-profit-jumps-33/article68758444.ece",
               "additional_source_urls": [
-                "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6qzokSAw__ZT0pVLLxmxrVPlemwmLZWD29cLw4ymU2i8dyxzTNpIbtAYxBNHRlE5t1QrE3yuhI3rfuz45tqp6iH3ukETVLu1GdBLDTUHDdmhuM4TvGEYz3s1inkm09Vm7KUx6GVvgSrJKghufsd1ET0chVVONQIOtCGj8xaZmOUDXDtAI5UM="
+                "https://insights.techmahindra.com/images/sspg-newbanner.jpg"
               ],
               "baseline_headcount": 152206,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
@@ -269,9 +267,9 @@
           "data_date": "2026-09-30",
           "source_url": "https://www.businesswire.com/news/home/20261015694200/en/Wipro-Announces-Results-for-the-Quarter-Ended-September-30-2026",
           "additional_source_urls": [
-            "https://www.hrkatha.com/brief-news/wipro-s-workforce-falls-by-6716-in-september-quarter-as-attrition-eases/"
+            "https://indiantelevision.com/tv/tv-channels/people/wipro-sheds-6716-employees-as-q2-profit-falls-19-per-cent-261017"
           ],
-          "notes": "Q2 FY27 quarterly datasheet / earnings report showing total headcount of 236,328 as of September 30, 2026.",
+          "notes": "Q2 FY27 quarterly datasheet and earnings release reporting total headcount of 236,328 as of September 30, 2026.",
           "source_urls": [
             "https://www.businesswire.com/news/home/20261015694200/en/Wipro-Announces-Results-for-the-Quarter-Ended-September-30-2026"
           ],
@@ -280,38 +278,36 @@
               "value": 836,
               "pct": 0.36,
               "badge": "neutral",
-              "source_url": "https://www.livemint.com/market/stock-market-news/wipro-q2-results-revenue-beats-estimates-attrition-rate-drops-to-14-9-large-deal-bookings-jump-91-yoy-11760630737401.html",
-              "additional_source_urls": [
-                "https://www.businesswire.com/news/home/20251016834645/en/Wipro-announces-results-for-the-Quarter-ended-September-30-2025"
-              ],
+              "source_url": "https://peoplematters.in/news/hiring-and-recruitment/wipros-workforce-declines-28-percent-sequentially-to-236328-in-q2-fy27-46387",
+              "additional_source_urls": [],
               "baseline_headcount": 235492,
               "baseline_date": "2025-09-30"
             },
             "q1_2023": {
-              "value": -22246,
-              "pct": -8.6,
+              "value": -13430,
+              "pct": -5.38,
               "badge": "reasonably_weak",
-              "source_url": "https://www.scribd.com/document/830374399/Wipro-Q1-FY22-23-Revenue-Insights",
+              "source_url": "https://www.wipro.com/content/dam/nexus/en/investor/financial-results/2023/q1-fy23/quarterly-results-q1-fy2023.pdf",
               "additional_source_urls": [],
-              "baseline_headcount": 258574,
-              "baseline_date": "2022-06-30"
+              "baseline_headcount": 249758,
+              "baseline_date": "2023-06-30"
             },
             "30_days_ago": {
-              "value": 0,
-              "pct": 0.0,
+              "value": -6716,
+              "pct": -2.76,
               "badge": "neutral",
-              "source_url": "https://www.businesswire.com/news/home/20261015694200/en/Wipro-Announces-Results-for-the-Quarter-Ended-September-30-2026",
+              "source_url": "https://www.wipro.com/content/dam/nexus/en/investor/financial-results/2026/datasheet-q1fy27.pdf",
               "additional_source_urls": [
-                "https://www.hrkatha.com/brief-news/wipro-s-workforce-falls-by-6716-in-september-quarter-as-attrition-eases/"
+                "https://www.businesswire.com/news/home/20261015694200/en/Wipro-Announces-Results-for-the-Quarter-Ended-September-30-2026"
               ],
-              "baseline_headcount": 236328,
-              "baseline_date": "2026-09-20"
+              "baseline_headcount": 243044,
+              "baseline_date": "2026-09-21"
             }
           }
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": -0.3122043803812792
+      "net_headcount_pct_yoy": 0.7028427016168014
     }
   },
   "medium_end": {
@@ -320,20 +316,18 @@
         "Microsoft": {
           "current": 223000,
           "data_date": "2026-06-30",
-          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000032/msft-20260630.htm",
-          "additional_source_urls": [
-            "https://www.sec.gov/edgar/searchedgar/companysearch"
-          ],
-          "notes": "FY 2026 Form 10-K filing reporting full-time employee count as of June 30, 2026.",
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901926000032/msft-20260630.htm",
+          "additional_source_urls": [],
+          "notes": "FY2026 Form 10-K filing reports approximately 223,000 full-time employees as of June 30, 2026.",
           "source_urls": [
-            "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000032/msft-20260630.htm"
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901926000032/msft-20260630.htm"
           ],
           "changes": {
             "1_year_ago": {
               "value": -5000,
               "pct": -2.19,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901925000024/msft-20250630.htm",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901925000055/msft-20250630.htm",
               "additional_source_urls": [],
               "baseline_headcount": 228000,
               "baseline_date": "2025-06-30"
@@ -342,10 +336,8 @@
               "value": 2000,
               "pct": 0.9,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901923000033/msft-20230630.htm",
-              "additional_source_urls": [
-                "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901923000013/msft-20230331.htm"
-              ],
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901923000038/msft-20230331.htm",
+              "additional_source_urls": [],
               "baseline_headcount": 221000,
               "baseline_date": "2023-03-31"
             },
@@ -353,161 +345,163 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/000078901926000032/msft-20260630.htm",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/789019/000078901926000032/msft-20260630.htm",
               "additional_source_urls": [],
               "baseline_headcount": 223000,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "Meta": {
-          "current": 69986,
+          "current": 75472,
           "data_date": "2026-06-30",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g12.jpg",
           "additional_source_urls": [
-            "https://investor.fb.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+            "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
           ],
-          "notes": "Q2 2026 10-Q filing reported 77,986 base as of June 30, 2026 minus 8,000 employees impacted by the May 2026 headcount reduction transitioning out by end of Q3 2026.",
+          "notes": "Q2 2026 10-Q filing; headcount was 75,472 as of June 30, 2026, which includes approximately 8,000 employees impacted by the May 2026 headcount reduction.",
           "source_urls": [
-            "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+            "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g12.jpg"
           ],
           "changes": {
             "1_year_ago": {
-              "value": 2669,
-              "pct": 3.96,
+              "value": -2978,
+              "pct": -3.8,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000011/meta-20231231.htm",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025047240/meta-20250930_g12.jpg",
               "additional_source_urls": [
-                "https://investor.fb.com/investor-news/press-release-details/2025/Meta-Reports-Third-Quarter-2025-Results/default.aspx"
+                "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Third-Quarter-2025-Results/default.aspx"
               ],
-              "baseline_headcount": 67317,
+              "baseline_headcount": 78450,
               "baseline_date": "2025-09-30"
             },
             "q1_2023": {
-              "value": -7128,
-              "pct": -9.24,
-              "badge": "reasonably_weak",
-              "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000067/meta-20230331.htm",
+              "value": -1642,
+              "pct": -2.13,
+              "badge": "neutral",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000132680123000067/meta-20230331_g4.jpg",
               "additional_source_urls": [],
               "baseline_headcount": 77114,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -8000,
-              "pct": -10.26,
-              "badge": "weak",
-              "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630_g12.jpg",
               "additional_source_urls": [],
-              "baseline_headcount": 77986,
-              "baseline_date": "2026-09-20"
+              "baseline_headcount": 75472,
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "Apple": {
           "current": 166000,
           "data_date": "2025-09-27",
-          "source_url": "https://www.sec.gov/edgar/browse/images/loading.gif",
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
           "additional_source_urls": [
-            "https://investor.apple.com/sec-filings/default.aspx"
+            "https://investor.apple.com/sec-filings/default.aspx?FilingID=17945484"
           ],
-          "notes": "Fiscal Year 2025 Form 10-K filing reports 166,000 full-time equivalent employees.",
+          "notes": "Form 10-K for the fiscal year ended September 27, 2025 reporting approximately 166,000 full-time equivalent employees.",
           "source_urls": [
-            "https://www.sec.gov/edgar/browse/images/loading.gif"
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
           ],
           "changes": {
             "1_year_ago": {
               "value": 2000,
               "pct": 1.22,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/edgar/browse/images/loading.gif",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
               "additional_source_urls": [
-                "https://investor.apple.com/sec-filings/default.aspx"
+                "https://investor.apple.com/sec-filings/default.aspx?FilingID=18012921"
               ],
               "baseline_headcount": 164000,
               "baseline_date": "2024-09-28"
             },
             "q1_2023": {
-              "value": 2000,
-              "pct": 1.22,
+              "value": 5000,
+              "pct": 3.11,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/edgar/browse/images/loading.gif",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm",
               "additional_source_urls": [
-                "https://investor.apple.com/sec-filings/default.aspx"
+                "https://investor.apple.com/sec-filings/default.aspx?FilingID=17112024"
               ],
-              "baseline_headcount": 164000,
-              "baseline_date": "2022-09-24"
+              "baseline_headcount": 161000,
+              "baseline_date": "2023-09-30"
             },
             "30_days_ago": {
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/edgar/browse/images/loading.gif",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
               "additional_source_urls": [
-                "https://investor.apple.com/sec-filings/default.aspx"
+                "https://investor.apple.com/sec-filings/default.aspx?FilingID=17945484"
               ],
               "baseline_headcount": 166000,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "Amazon": {
-          "current": 320000,
-          "data_date": "2026-06-30",
-          "source_url": "",
-          "additional_source_urls": [],
-          "notes": "",
+          "current": 336000,
+          "data_date": "2026-05-31",
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872426000024/amzn-20251231.htm",
+          "additional_source_urls": [
+            "https://www.pbs.org/newshour/economy/amazon-to-lay-off-14000-corporate-employees-as-spending-on-artificial-intelligence-accelerates"
+          ],
+          "notes": "Estimated corporate headcount base (~350,000 baseline from late 2025 disclosures minus subsequent announced 2026 corporate layoffs of ~14,000\u201316,000 roles, noting SEC filings only give total global headcount of 1,576,000 including fulfillment/warehouse workers).",
           "source_urls": [
-            "https://www.aboutamazon.com/news/company-news/amazon-earnings-q2-2026"
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872426000024/amzn-20251231.htm"
           ],
           "changes": {
             "1_year_ago": {
-              "value": -16000,
-              "pct": -4.76,
+              "value": -14000,
+              "pct": -4.0,
               "badge": "neutral",
-              "source_url": "https://ir.aboutamazon.com/sec-filings/default.aspx",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872425000121/amzn-20250930.htm",
               "additional_source_urls": [
-                "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2025"
+                "https://www.pbs.org/newshour/economy/amazon-to-lay-off-14000-corporate-employees-as-spending-on-artificial-intelligence-accelerates"
               ],
-              "baseline_headcount": 336000,
-              "baseline_date": "2025-09-30"
+              "baseline_headcount": 350000,
+              "baseline_date": "2025-10-28"
             },
             "q1_2023": {
-              "value": -30000,
-              "pct": -8.57,
-              "badge": "reasonably_weak",
-              "source_url": "https://ir.aboutamazon.com/sec-filings/default.aspx",
+              "value": -49000,
+              "pct": -12.73,
+              "badge": "weak",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872423000004/amzn-20221231.htm",
               "additional_source_urls": [],
-              "baseline_headcount": 350000,
+              "baseline_headcount": 385000,
               "baseline_date": "2023-03-31"
             },
             "30_days_ago": {
-              "value": -30000,
-              "pct": -8.57,
-              "badge": "reasonably_weak",
-              "source_url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+              "value": 0,
+              "pct": 0.0,
+              "badge": "neutral",
+              "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1018724/000101872426000024/amzn-20251231.htm",
               "additional_source_urls": [],
-              "baseline_headcount": 350000,
-              "baseline_date": "2026-09-20"
+              "baseline_headcount": 336000,
+              "baseline_date": "2026-09-21"
             }
           }
         },
         "NVIDIA": {
           "current": 42000,
           "data_date": "2026-01-25",
-          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg",
           "additional_source_urls": [
-            "https://www.sec.gov/ix?doc=/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+            "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512_g23.jpg"
           ],
-          "notes": "Fiscal year 2026 Form 10-K annual report reporting approximately 42,000 employees at fiscal year-end (ended January 25, 2026).",
+          "notes": "From NVIDIA Form 10-K for the fiscal year ended January 25, 2026 (approx. 42,000 employees).",
           "source_urls": [
-            "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+            "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg"
           ],
           "changes": {
             "1_year_ago": {
               "value": 6000,
               "pct": 16.67,
               "badge": "strong",
-              "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126.htm",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000023/nvda-20250126_g2.jpg",
               "additional_source_urls": [],
               "baseline_headcount": 36000,
               "baseline_date": "2025-01-26"
@@ -516,8 +510,10 @@
               "value": 15804,
               "pct": 60.33,
               "badge": "strong",
-              "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000028/nvda-20230129.htm",
-              "additional_source_urls": [],
+              "source_url": "https://stockanalysis.com/img/icons/threads.svg",
+              "additional_source_urls": [
+                "https://www.sec.gov/Archives/edgar/data/1045810/000104581023000030/nvda-20230129.htm"
+              ],
               "baseline_headcount": 26196,
               "baseline_date": "2023-01-29"
             },
@@ -525,36 +521,36 @@
               "value": 0,
               "pct": 0.0,
               "badge": "neutral",
-              "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg",
               "additional_source_urls": [],
               "baseline_headcount": 42000,
-              "baseline_date": "2026-09-20"
+              "baseline_date": "2026-09-21"
             }
           }
         }
       },
       "aggregate_badge": "neutral",
-      "net_headcount_pct_yoy": -1.2427269020121086
+      "net_headcount_pct_yoy": -1.6320859361317064
     }
   },
   "high_end": {
     "job_postings": {
       "companies": {
         "Anthropic": {
-          "current": 392,
-          "collection_date": "2026-10-20",
+          "current": 381,
+          "collection_date": "2026-10-21",
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids",
           "changes": {
             "30_days_ago": {
-              "value": 59,
+              "value": 48,
               "badge": "strong",
               "baseline_jobs": 333,
-              "baseline_date": "2026-09-20",
+              "baseline_date": "2026-09-21",
               "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
               "is_estimate": false,
-              "tooltip": "Baseline: 2026-09-20. No cited technical-job count found within seven days of the target date."
+              "tooltip": "Baseline: 2026-09-21. No cited technical-job count found within seven days of the target date."
             },
             "1_year_ago": {
               "value": null,
@@ -573,117 +569,117 @@
     }
   },
   "stock_index": {
-    "current_value": 73.72,
-    "baseline_date": "2025-10-20",
+    "current_value": 75.97,
+    "baseline_date": "2025-10-21",
     "changes": {
-      "30_day": -14.83,
-      "1_year": -26.28
+      "30_day": -12.18,
+      "1_year": -24.03
     },
     "companies": {
       "HCLTech": {
         "ticker": "HCLTECH.NS",
-        "current_price": 1379.9,
+        "current_price": 1424.2,
         "weight": 0.14285714285714285,
-        "change_30_day": -14.71,
-        "change_1_year": -24.64
+        "change_30_day": -11.97,
+        "change_1_year": -22.22
       },
       "Cognizant": {
         "ticker": "CTSH",
-        "current_price": 67.5,
+        "current_price": 68.46,
         "weight": 0.14285714285714285,
-        "change_30_day": -12.39,
-        "change_1_year": -14.14
+        "change_30_day": -11.15,
+        "change_1_year": -12.92
       },
       "Infosys": {
         "ticker": "INFY",
-        "current_price": 12.27,
+        "current_price": 12.62,
         "weight": 0.14285714285714285,
-        "change_30_day": -29.56,
-        "change_1_year": -44.2
+        "change_30_day": -27.55,
+        "change_1_year": -42.61
       },
       "TCS": {
         "ticker": "TCS.NS",
-        "current_price": 2460.9,
+        "current_price": 2529.0,
         "weight": 0.14285714285714285,
-        "change_30_day": -22.19,
-        "change_1_year": -38.92
+        "change_30_day": -20.04,
+        "change_1_year": -37.23
       },
       "Tech Mahindra": {
         "ticker": "TECHM.NS",
-        "current_price": 1779.1,
+        "current_price": 1834.7,
         "weight": 0.14285714285714285,
-        "change_30_day": 17.02,
-        "change_1_year": 7.76
+        "change_30_day": 20.67,
+        "change_1_year": 11.13
       },
       "Wipro": {
         "ticker": "WIT",
-        "current_price": 1.96,
+        "current_price": 2.07,
         "weight": 0.14285714285714285,
-        "change_30_day": -27.14,
-        "change_1_year": -43.52
+        "change_30_day": -23.05,
+        "change_1_year": -40.35
       }
     },
     "aggregate_badge": "collapsing",
     "spy_benchmark": {
-      "current_price": 765.56,
+      "current_price": 770.73,
       "ticker": "SPY",
       "source_url": "https://finance.yahoo.com/quote/SPY",
       "changes": {
-        "30_day": 13.28,
-        "1_year": 29.16
+        "30_day": 14.04,
+        "1_year": 30.03
       }
     },
     "relative_to_spy": {
       "changes": {
         "30_day": {
-          "pct": -28.11,
+          "pct": -26.22,
           "badge": "collapsing"
         },
         "1_year": {
-          "pct": -55.44,
+          "pct": -54.06,
           "badge": "collapsing"
         }
       },
       "aggregate_badge": "collapsing"
     }
   },
-  "ai_summary": "IT consultancy stocks are collapsing (-26% YoY, -15% in 30 days), pricing in AI automation. Indeed software postings show strong 1-year growth (+20%) but recently flattened (+0. Plunging 15% in just 30 days, IT consultancy stocks are dropping faster than a junior dev pushing straight to main on a Friday.",
+  "ai_summary": "Developers aren't universally cooked. While IT consultancy stocks are collapsing (-12.18% 30-day, -24.03% yearly), signaling AI outsourcing fears, broad demand holds. Sure, IT consultancy stocks are taking a 24% nosedive, but someone still has to explain to ChatGPT why the legacy COBOL database is on fire.",
   "indeed_index": {
-    "current_value": 119.55,
-    "date": "2026-10-09",
+    "current_value": 120.74,
+    "date": "2026-10-16",
     "series_id": "IHLIDXUSTPSOFTDEVE",
     "source_url": "https://fred.stlouisfed.org/series/IHLIDXUSTPSOFTDEVE",
     "changes": {
       "30_day": {
-        "pct": 0.24,
+        "pct": 0.92,
         "badge": "neutral"
       },
       "1_year": {
-        "pct": 19.55,
+        "pct": 20.74,
         "badge": "strong"
       },
       "q1_2023": {
-        "pct": -21.61,
+        "pct": -20.85,
         "badge": "collapsing"
       }
     },
     "aggregate_badge": "strong",
     "total_market": {
-      "current_value": 104.15,
-      "date": "2026-10-09",
+      "current_value": 103.8,
+      "date": "2026-10-16",
       "series_id": "IHLIDXUS",
       "source_url": "https://fred.stlouisfed.org/series/IHLIDXUS",
       "changes": {
         "30_day": {
-          "pct": 0.42,
+          "pct": -0.04,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": 3.35,
+          "pct": 3.23,
           "badge": "neutral"
         },
         "q1_2023": {
-          "pct": -23.16,
+          "pct": -23.41,
           "badge": "collapsing"
         }
       }
@@ -691,15 +687,15 @@
     "relative_to_market": {
       "changes": {
         "30_day": {
-          "pct": -0.18,
+          "pct": 0.96,
           "badge": "neutral"
         },
         "1_year": {
-          "pct": 16.2,
+          "pct": 17.51,
           "badge": "strong"
         },
         "q1_2023": {
-          "pct": 1.55,
+          "pct": 2.56,
           "badge": "neutral"
         }
       },
