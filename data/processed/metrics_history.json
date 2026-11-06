@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-11-05T16:23:20.872569+00:00"
+    "last_updated": "2026-11-06T15:52:24.918029+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -28781,6 +28781,140 @@
         "Anthropic": {
           "total_technical_jobs": 373,
           "collection_date": "2026-11-05",
+          "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
+          "additional_source_urls": [],
+          "collection_method": "greenhouse_classified_ids"
+        }
+      },
+      "indeed_index": {
+        "value": 81.5774524195,
+        "date": "2026-10-30"
+      },
+      "total_indeed_index": {
+        "value": 103.7931426722,
+        "date": "2026-10-30"
+      }
+    },
+    "2026-11-06": {
+      "date": "2026-11-06",
+      "timestamp": "2026-11-06T15:52:24.918002+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1440.0,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 64.41,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 12.53,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2498.5,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1831.0,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.17,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 740.63,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 230339,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.hcltech.com/investors/financial-results"
+          ],
+          "source_url": "https://www.hcltech.com/investors/financial-results",
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 87886,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.ltm.com/content/dam/ltimcorporatewebsite/investor-relations/financial-results/financial-results-pdf/2026-27/Q1-FY27-Earnings-Release-and-Factsheet.pdf"
+          ],
+          "source_url": "https://www.ltm.com/content/dam/ltimcorporatewebsite/investor-relations/financial-results/financial-results-pdf/2026-27/Q1-FY27-Earnings-Release-and-Factsheet.pdf",
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 359900,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://cognizant.q4cdn.com/123993165/files/doc_news/archive/20261029-073010534.pdf"
+          ],
+          "source_url": "https://cognizant.q4cdn.com/123993165/files/doc_news/archive/20261029-073010534.pdf",
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 332542,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q2.html"
+          ],
+          "source_url": "https://www.infosys.com/investors/reports-filings/quarterly-results/2026-2027/q2.html",
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 598056,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.tcs.com/content/dam/global-tcs/en/pdf/investors/financial-results/2026-27/q2/press-release.pdf"
+          ],
+          "source_url": "https://www.tcs.com/content/dam/global-tcs/en/pdf/investors/financial-results/2026-27/q2/press-release.pdf",
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 152206,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.moneycontrol.com/news/business/earnings/tech-mahindros-profit-climbs-33-to-rs-1586-crore-12839442.html"
+          ],
+          "source_url": "https://www.moneycontrol.com/news/business/earnings/tech-mahindros-profit-climbs-33-to-rs-1586-crore-12839442.html",
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 223000,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.sec.gov/edgar/browse/?owner=MSFT"
+          ],
+          "source_url": "https://www.sec.gov/edgar/browse/?owner=MSFT",
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 167000,
+          "data_date": "2026-09-26",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926_g2.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926_g2.jpg",
+          "confidence": "high"
+        },
+        "Amazon": {
+          "headcount": 350000,
+          "data_date": "2026-10-29",
+          "source_urls": [
+            "https://www.sec.gov/edgar/searchedgar/companysearch"
+          ],
+          "source_url": "https://www.sec.gov/edgar/searchedgar/companysearch",
+          "confidence": "medium"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 386,
+          "collection_date": "2026-11-06",
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids"
