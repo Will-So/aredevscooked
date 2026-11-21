@@ -2,7 +2,7 @@
   "metadata": {
     "description": "Daily snapshots of market data",
     "first_snapshot": "2025-12-26",
-    "last_updated": "2026-11-20T16:54:57.022649+00:00"
+    "last_updated": "2026-11-21T16:05:35.890924+00:00"
   },
   "snapshots": {
     "2025-12-26": {
@@ -31097,6 +31097,158 @@
         "Anthropic": {
           "total_technical_jobs": 376,
           "collection_date": "2026-11-20",
+          "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
+          "additional_source_urls": [],
+          "collection_method": "greenhouse_classified_ids"
+        }
+      },
+      "indeed_index": {
+        "value": 81.7053003084,
+        "date": "2026-11-13"
+      },
+      "total_indeed_index": {
+        "value": 106.2343235213,
+        "date": "2026-11-13"
+      }
+    },
+    "2026-11-21": {
+      "date": "2026-11-21",
+      "timestamp": "2026-11-21T16:05:35.890894+00:00",
+      "stock_prices": {
+        "HCLTech": {
+          "price": 1344.4,
+          "ticker": "HCLTECH.NS"
+        },
+        "Cognizant": {
+          "price": 58.06,
+          "ticker": "CTSH"
+        },
+        "Infosys": {
+          "price": 12.03,
+          "ticker": "INFY"
+        },
+        "TCS": {
+          "price": 2376.2,
+          "ticker": "TCS.NS"
+        },
+        "Tech Mahindra": {
+          "price": 1746.2,
+          "ticker": "TECHM.NS"
+        },
+        "Wipro": {
+          "price": 2.05,
+          "ticker": "WIT"
+        },
+        "S&P 500": {
+          "price": 689.81,
+          "ticker": "SPY"
+        }
+      },
+      "headcounts": {
+        "HCLTech": {
+          "headcount": 230339,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsaAXrz0p0jTOJ0vmy7BwiCP1ceFGlJvulAh-UkgGNL_wlt3qii38sIUugdnrMXMOQlHqq86095QmwMg7TZKqBqW-mPKNlyE_BK4Lk3h0a1urYdNan0JYw4MBgGJ3VgyEuX9sXmx0AJCeqXLZAigL5suQc8qYcC_QUuH_NZFk7bppM8TDguOrdv7DXsQDij-FOZxb2syu0zMk6l8jyzubVwl6DQ6x4rso2tLU="
+          ],
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGsaAXrz0p0jTOJ0vmy7BwiCP1ceFGlJvulAh-UkgGNL_wlt3qii38sIUugdnrMXMOQlHqq86095QmwMg7TZKqBqW-mPKNlyE_BK4Lk3h0a1urYdNan0JYw4MBgGJ3VgyEuX9sXmx0AJCeqXLZAigL5suQc8qYcC_QUuH_NZFk7bppM8TDguOrdv7DXsQDij-FOZxb2syu0zMk6l8jyzubVwl6DQ6x4rso2tLU=",
+          "confidence": "high"
+        },
+        "LTIMindtree": {
+          "headcount": 88835,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGDQChmbUBV5WZFwe1CUJkxl92cRcozoqhAqDwk-B_ObBhtIC-t5-jHAN67I4eYgMdu4rOOkJZD1uqcpyur9pF6wAoDn0Lwi8m6ZDxEyEHqIUqQH4RbhT6Ebe0pzEnzlm2-VsQYtkxs4HxUh9Pdd78GRuZi_9CvGPu2cBxHf5yoB2HjDtGrlWn5pF2tmoQnw5I"
+          ],
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFGDQChmbUBV5WZFwe1CUJkxl92cRcozoqhAqDwk-B_ObBhtIC-t5-jHAN67I4eYgMdu4rOOkJZD1uqcpyur9pF6wAoDn0Lwi8m6ZDxEyEHqIUqQH4RbhT6Ebe0pzEnzlm2-VsQYtkxs4HxUh9Pdd78GRuZi_9CvGPu2cBxHf5yoB2HjDtGrlWn5pF2tmoQnw5I",
+          "confidence": "high"
+        },
+        "Cognizant": {
+          "headcount": 359900,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/1058290/000105829026000037/ctsh-20260930.htm"
+          ],
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/1058290/000105829026000037/ctsh-20260930.htm",
+          "confidence": "high"
+        },
+        "Infosys": {
+          "headcount": 332542,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.ndtvprofit.com/business/infosys-q2-attrition-falls-to-127-headcount-rises-to-333-lakh-on-8000-new-fresher-hires"
+          ],
+          "source_url": "https://www.ndtvprofit.com/business/infosys-q2-attrition-falls-to-127-headcount-rises-to-333-lakh-on-8000-new-fresher-hires",
+          "confidence": "high"
+        },
+        "TCS": {
+          "headcount": 598056,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.tcs.com/news-room/press-release/international-growth-strategic-wins-underpin-tcs-q2-fy27"
+          ],
+          "source_url": "https://www.tcs.com/news-room/press-release/international-growth-strategic-wins-underpin-tcs-q2-fy27",
+          "confidence": "high"
+        },
+        "Tech Mahindra": {
+          "headcount": 152206,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.techmahindra.com/"
+          ],
+          "source_url": "https://www.techmahindra.com/",
+          "confidence": "high"
+        },
+        "Wipro": {
+          "headcount": 236328,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFesomDJ6Cwbq87yuGyteTyet95bDv3Q5Xw4x0WNc8nXNg5WG7oiiyJWKgSYQBhRVFjJnMowMscPxoBlZQwAZBMLouqogun7ouheqqJO2poVSf8U8CdrjF1A8REvF9kPkbCAEidvYa2Udt2Oz0vY_td2PbO3GXNTyj6pDABPBl3b_0q3i8SZrSWfMShEIE_f1Bd"
+          ],
+          "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFesomDJ6Cwbq87yuGyteTyet95bDv3Q5Xw4x0WNc8nXNg5WG7oiiyJWKgSYQBhRVFjJnMowMscPxoBlZQwAZBMLouqogun7ouheqqJO2poVSf8U8CdrjF1A8REvF9kPkbCAEidvYa2Udt2Oz0vY_td2PbO3GXNTyj6pDABPBl3b_0q3i8SZrSWfMShEIE_f1Bd",
+          "confidence": "high"
+        },
+        "Microsoft": {
+          "headcount": 223000,
+          "data_date": "2026-06-30",
+          "source_urls": [
+            "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/26000021/msft-20260630.htm"
+          ],
+          "source_url": "https://www.sec.gov/ix?doc=/Archives/edgar/data/0000789019/26000021/msft-20260630.htm",
+          "confidence": "high"
+        },
+        "Meta": {
+          "headcount": 66775,
+          "data_date": "2026-09-30",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930_g6.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066773/meta-20260930_g6.jpg",
+          "confidence": "high"
+        },
+        "Apple": {
+          "headcount": 167000,
+          "data_date": "2026-09-26",
+          "source_urls": [
+            "https://www.sec.gov/edgar/browse/?CIK=0000320193"
+          ],
+          "source_url": "https://www.sec.gov/edgar/browse/?CIK=0000320193",
+          "confidence": "high"
+        },
+        "NVIDIA": {
+          "headcount": 42000,
+          "data_date": "2026-01-25",
+          "source_urls": [
+            "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg"
+          ],
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125_g2.jpg",
+          "confidence": "high"
+        }
+      },
+      "job_postings": {
+        "Anthropic": {
+          "total_technical_jobs": 367,
+          "collection_date": "2026-11-21",
           "source_url": "https://boards-api.greenhouse.io/v1/boards/anthropic/jobs",
           "additional_source_urls": [],
           "collection_method": "greenhouse_classified_ids"
